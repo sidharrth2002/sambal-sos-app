@@ -12,6 +12,6 @@ export {
     UserActiveIcon,
     EmailIcon,
     EmailActiveIcon,
-    WhiteFlagIcon
+    WhiteFlagIcon,
     GoogleLoginIcon
 }
