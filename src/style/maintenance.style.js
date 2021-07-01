@@ -100,8 +100,7 @@ export const MaintenenceInputField = styled.input`
 `
 
 export const MaintenenceNotificationWrapper = styled.div`
-    ${globalStyled.box_shadow};
-    border: 1px solid #6ED48E;
+    /* ${globalStyled.box_shadow}; */
     border-radius: 8px;
     padding: 10px 40px;
     background-color: #C6F6D5;
