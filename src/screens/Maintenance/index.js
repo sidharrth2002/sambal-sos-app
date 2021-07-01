@@ -15,12 +15,25 @@ let pageclip = new Pageclip("api_IyH7kWlJA14Tm4Sw6JYAlOXfnwYvZLDZ");
 
 const Maintenance = () => {
     const [active, setActive] = useState("none");
-    const [loading, setLoading] = useState(false);
+    const [sent, setSent] = useState(false);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     return (
         <Global.Wrapper>
             <Global.Body center={true}>
+
+                {
+                    sent ? 
+
+                    <MT.MaintenenceNotificationWrapper type="submitted" >
+                        Submitted
+                    </MT.MaintenenceNotificationWrapper>
+
+                    :
+
+                    null
+                }
+
                 <MT.MaintenanceWrapper>
                     <div>
                     <MT.MaintenencePrimaryFont>
@@ -40,17 +53,17 @@ const Maintenance = () => {
                     <MT.MaintenenceFormWrapper action="https://send.pageclip.co/dlzPBOnEYM63SqvOKNptD5u93dv7O1W0" className="pageclip-form" method="POST">
                         <MT.MaintenanceFormBlock onClick={ () => {setActive('user')}} active={ active === 'user' ? 'true' : 'false' } >
                             <MT.MaintenceFormIcon src={ active === 'user' ? BDGraphics.UserActiveIcon : BDGraphics.UserIcon  } alt="User Icon" />
-                            <MT.MaintenenceInputField name="name" defaultValue="eg:john" {...register("name")} />
+                            <MT.MaintenenceInputField name="name" placeholder="eg:John" {...register("name")} />
                         </MT.MaintenanceFormBlock>
                     
                         <MT.MaintenanceFormBlock onClick={ () => {setActive('email')}} active={ active === "email" ? 'true' : 'false' } >
                             <MT.MaintenceFormIcon src={ active === 'email' ? BDGraphics.EmailActiveIcon : BDGraphics.EmailIcon } alt="Email Icon" />
-                            <MT.MaintenenceInputField name="email" defaultChecked="eg: john@gmail.com" {...register("email", { required: true })} />
+                            <MT.MaintenenceInputField name="email" placeholder="eg:email" {...register("email", { required: true })} />
                         </MT.MaintenanceFormBlock>
 
                         {errors.email && <span>This field is required</span>}
                         
-                        <MT.MaintenenceSubmitButton className="pageclip-form__submit" name="submit" type="submit" placeholder="Submit" />
+                        <MT.MaintenenceSubmitButton className="pageclip-form__submit" name="submit" type="submit" placeholder="Submit" onClick={() => {setSent(true)}} />
                     </MT.MaintenenceFormWrapper>
                     </div>
                 </MT.MaintenanceWrapper>

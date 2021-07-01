@@ -103,10 +103,17 @@ export const MaintenenceNotificationWrapper = styled.div`
     /* ${globalStyled.box_shadow}; */
     border-radius: 8px;
     padding: 10px 40px;
-    background-color: #C6F6D5;
 
     position: fixed;
     top: 20px;
+
+    ${props => {
+        if(props.type === 'submitted'){
+            return 'background-color: #C6F6D5;'
+        }else if(props.type === 'failed'){
+            return '';
+        }
+    }}
 
     ${globalStyled.smoothTransition};
 `
