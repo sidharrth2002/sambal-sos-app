@@ -4,6 +4,7 @@ import UserActiveIcon from './svgs/user-active.svg';
 import EmailIcon from './svgs/email.svg';
 import EmailActiveIcon from './svgs/email-active.svg';
 import WhiteFlagIcon from './svgs/white-flag.svg';
+import GoogleLoginIcon from './svgs/google-outline.svg'
 
 export {
     MaintenanceSVG,
@@ -12,4 +13,5 @@ export {
     EmailIcon,
     EmailActiveIcon,
     WhiteFlagIcon
+    GoogleLoginIcon
 }

@@ -1,18 +1,90 @@
 import styled from 'styled-components';
-import { globalStyled } from '../style';
+import { css } from 'styled-components';
+
+export const Colors = {
+    'primary': '#a8c2f0',
+    'primaryWhite': '#FFFFFF',
+    'secondaryWhite': '#EEEEEE',
+    'tertiaryWhite': '#DADADA',
+    'primaryBlack': '#39393A',
+    'secondaryBlack': '#535353',
+    'tertiaryBlack': '#A6A6A6'
+}
+
+export const QuicksandFont = css`
+    font-family: 'Quicksand';
+`
+
+export const PoppinsFont = css`
+    font-family: 'Poppins';
+`
+
+export const PrimaryFontSize = css`
+    font-size: 2.5rem;
+`;
+
+export const SecondaryFontSize = css`
+    font-size: 1.25rem
+`;
+
+export const TertiaryFontSize = css`
+    font-size: 0.85rem;
+`;
+
+export const box_shadow = css`
+    box-shadow: 0px 16px 40px rgba(133, 133, 133, 0.25);
+`;
+
+export const smoothTransition = css`
+    transition: all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080) !important; /* custom */
+    transition-timing-function: cubic-bezier(0.740, -0.175, 0.000, 1.080) !important; /* custom */
+`;
+
+export const Wrapper = styled.div`
+    width: 100%;
+    height: 100%;
+`;
+
+export const Body = styled.div`
+    width: 100%;
+    padding: 50px 50px;
+    max-width: 1300px;
+
+    ${props => {
+        if(props.size === 'larger'){
+            return 'max-width: 1550px !important';
+        }
+    }};
+
+    ${props => {
+        if(props.type === 'row'){
+            return 'display: flex; justify-content: space-around;';
+        }
+    }};
+
+    ${props => {
+        if(props.center === true){
+            return 'display: flex; justify-content: center !important; align-items:center !important;';
+        }
+    }}
+
+    @media (max-width: 1440px) {
+        flex-direction: column;
+    }
+`;
 
 export const MaintenencePrimaryFont = styled.div`
-    ${globalStyled.PoppinsFont};
-    ${globalStyled.PrimaryFontSize};
+    ${PoppinsFont};
+    ${PrimaryFontSize};
 
-    color: ${globalStyled.Colors.primaryBlack};
+    color: ${Colors.primaryBlack};
 `
 
 export const MaintenanceSecondaryFont = styled.div`
-    ${globalStyled.QuicksandFont};
-    ${globalStyled.SecondaryFontSize};
+    ${QuicksandFont};
+    ${SecondaryFontSize};
 
-    color: ${globalStyled.Colors.secondaryBlack};
+    color: ${Colors.secondaryBlack};
 
     ${props => {
         if(props.gradient === true){
@@ -54,8 +126,8 @@ export const MaintenanceFormBlock = styled.div`
     margin: 1rem auto;
     width: 100%;
     padding: 10px 15px;
-    background: ${globalStyled.Colors.primaryWhite};
-    border: 1px solid ${globalStyled.Colors.tertiaryBlack};
+    background: ${Colors.primaryWhite};
+    border: 1px solid ${Colors.tertiaryBlack};
     box-sizing: border-box;
     border-radius: 5px;
 
@@ -65,7 +137,7 @@ export const MaintenanceFormBlock = styled.div`
         }
     }}
 
-    ${globalStyled.smoothTransition};
+    ${smoothTransition};
 `
 
 export const MaintenceFormIcon = styled.img`
@@ -74,7 +146,7 @@ export const MaintenceFormIcon = styled.img`
 `
 
 export const MaintenenceSubmitButton = styled.input`
-    ${globalStyled.Colors.secondaryBlack};
+    ${Colors.secondaryBlack};
     background: #1982E3;
     color: white;
     box-shadow: 0px 16px 40px rgba(157, 157, 157, 0.25);
@@ -89,7 +161,7 @@ export const MaintenenceSubmitButton = styled.input`
 `
 
 export const MaintenenceInputField = styled.input`
-    ${globalStyled.QuicksandFont};
+    ${QuicksandFont};
     outline: none;
     background: transparent;
     border: none;
@@ -100,7 +172,7 @@ export const MaintenenceInputField = styled.input`
 `
 
 export const MaintenenceNotificationWrapper = styled.div`
-    /* ${globalStyled.box_shadow}; */
+    /* ${box_shadow}; */
     border-radius: 8px;
     padding: 10px 40px;
 
@@ -115,5 +187,5 @@ export const MaintenenceNotificationWrapper = styled.div`
         }
     }}
 
-    ${globalStyled.smoothTransition};
+    ${smoothTransition};
 `

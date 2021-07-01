@@ -1,0 +1,1 @@
+Besides the maintenance page, this folder is no longer needed.
