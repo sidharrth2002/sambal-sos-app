@@ -5,7 +5,7 @@ import Maintenance from './screens/Maintenance';
 import Flags from './screens/Flags';
 
 require('dotenv').config()
-configureFirebase();
+// configureFirebase();
 
 function App() {
   return (
