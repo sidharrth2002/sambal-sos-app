@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
-import firebase from "firebase/app";
-import "firebase/firestore";
-import axios from "axios";
-import qs from 'qs';
-import { lottieDefault, BlackLoader } from '../../constants/index'
-import Lottie from 'react-lottie'
 import * as Global from '../../style/global.style';
 import * as MT from '../../style/maintenance.style';
 import * as BDGraphics from '../../assets/';
 
 const Pageclip = require('pageclip');
-let pageclip = new Pageclip("api_IyH7kWlJA14Tm4Sw6JYAlOXfnwYvZLDZ");
 
 const Maintenance = () => {
     const [active, setActive] = useState("none");
@@ -21,10 +14,8 @@ const Maintenance = () => {
     return (
         <Global.Wrapper>
             <Global.Body center={true}>
-
                 {
                     sent ? 
-
                     <MT.MaintenenceNotificationWrapper type="submitted" >
                         Submitted
                     </MT.MaintenenceNotificationWrapper>
@@ -47,18 +38,18 @@ const Maintenance = () => {
                     <MT.MaintenenceSplashImg src={ BDGraphics.MaintenanceSVG } alt="" />
 
                     <MT.MaintenanceSecondaryFont gradient={true}>
-                        Fill up this form to be the earliest to use our app when it launches.
+                        Fill up this form to be the earliest to use the app when it launches.
                     </MT.MaintenanceSecondaryFont>
 
                     <MT.MaintenenceFormWrapper action="https://send.pageclip.co/dlzPBOnEYM63SqvOKNptD5u93dv7O1W0" className="pageclip-form" method="POST">
                         <MT.MaintenanceFormBlock onClick={ () => {setActive('user')}} active={ active === 'user' ? 'true' : 'false' } >
                             <MT.MaintenceFormIcon src={ active === 'user' ? BDGraphics.UserActiveIcon : BDGraphics.UserIcon  } alt="User Icon" />
-                            <MT.MaintenenceInputField name="name" placeholder="eg:John" {...register("name")} />
+                            <MT.MaintenenceInputField name="name" placeholder="eg:John" {...register("name")} required />
                         </MT.MaintenanceFormBlock>
                     
                         <MT.MaintenanceFormBlock onClick={ () => {setActive('email')}} active={ active === "email" ? 'true' : 'false' } >
                             <MT.MaintenceFormIcon src={ active === 'email' ? BDGraphics.EmailActiveIcon : BDGraphics.EmailIcon } alt="Email Icon" />
-                            <MT.MaintenenceInputField name="email" placeholder="eg:email" {...register("email", { required: true })} />
+                            <MT.MaintenenceInputField name="email" placeholder="eg:email" {...register("email", { required: true })} required />
                         </MT.MaintenanceFormBlock>
 
                         {errors.email && <span>This field is required</span>}
