@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "chakra-ui-steps": "^1.1.1",
     "dotenv": "^8.2.0",
     "exif-js": "^2.3.0",
     "firebase": "^8.6.8",

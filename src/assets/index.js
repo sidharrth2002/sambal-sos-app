@@ -7,6 +7,8 @@ import WhiteFlagIcon from './svgs/white-flag.svg';
 import GoogleLoginIcon from './svgs/google-outline.svg';
 import BackButtonIcon from './svgs/back-button.svg';
 import InfoIcon from './svgs/info.svg';
+import ImageIcon from './svgs/image.svg';
+import LocationIcon from './svgs/location.svg';
 
 export {
     MaintenanceSVG,
@@ -17,5 +19,7 @@ export {
     WhiteFlagIcon,
     GoogleLoginIcon,
     BackButtonIcon,
-    InfoIcon
+    InfoIcon,
+    ImageIcon,
+    LocationIcon
 }

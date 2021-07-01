@@ -1494,7 +1494,7 @@
   dependencies:
     "@chakra-ui/utils" "^1.7.0"
 
-"@chakra-ui/react@^1.6.4":
+"@chakra-ui/react@^1.6.4", "@chakra-ui/react@>=1":
   "integrity" "sha512-TBsSNT7+UHmsilXWWXFmwn+mFmBqHhsnjn443B9rL5AlfYBzXKP75TrIJ4AnQdZtgvAdVwIbWEkzs4nXvxHcjw=="
   "resolved" "https://registry.npmjs.org/@chakra-ui/react/-/react-1.6.4.tgz"
   "version" "1.6.4"
@@ -1803,7 +1803,7 @@
   "resolved" "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.5.tgz"
   "version" "0.7.5"
 
-"@emotion/react@^11.0.0", "@emotion/react@^11.0.0-rc.0", "@emotion/react@^11.4.0", "@emotion/react@>=10.0.35":
+"@emotion/react@^11", "@emotion/react@^11.0.0", "@emotion/react@^11.0.0-rc.0", "@emotion/react@^11.4.0", "@emotion/react@>=10.0.35":
   "integrity" "sha512-4XklWsl9BdtatLoJpSjusXhpKv9YVteYKh9hPKP1Sxl+mswEFoUe0WtmtWjxEjkA51DQ2QRMCNOvKcSlCQ7ivg=="
   "resolved" "https://registry.npmjs.org/@emotion/react/-/react-11.4.0.tgz"
   "version" "11.4.0"
@@ -1832,7 +1832,7 @@
   "resolved" "https://registry.npmjs.org/@emotion/sheet/-/sheet-1.0.1.tgz"
   "version" "1.0.1"
 
-"@emotion/styled@^11.0.0", "@emotion/styled@^11.3.0":
+"@emotion/styled@^11", "@emotion/styled@^11.0.0", "@emotion/styled@^11.3.0":
   "integrity" "sha512-fUoLcN3BfMiLlRhJ8CuPUMEyKkLEoM+n+UyAbnqGEsCd5IzKQ7VQFLtzpJOaCD2/VR2+1hXQTnSZXVJeiTNltA=="
   "resolved" "https://registry.npmjs.org/@emotion/styled/-/styled-11.3.0.tgz"
   "version" "11.3.0"
@@ -4342,6 +4342,11 @@
     "crc-32" "~1.2.0"
     "printj" "~1.1.2"
 
+"chakra-ui-steps@^1.1.1":
+  "integrity" "sha512-niczIkrueHzmLw42UkqCwcklT9LnXQwfT+JgoLCWjgiSQ+U6TH6Tp8vt8BdMA286hs7fgm138WjTNMsLH9QW9A=="
+  "resolved" "https://registry.npmjs.org/chakra-ui-steps/-/chakra-ui-steps-1.1.1.tgz"
+  "version" "1.1.1"
+
 "chalk@^2.0.0":
   "integrity" "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ=="
   "resolved" "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz"
@@ -6571,7 +6576,7 @@
   dependencies:
     "map-cache" "^0.2.2"
 
-"framer-motion@^4.1.17", "framer-motion@3.x || 4.x":
+"framer-motion@^4", "framer-motion@^4.1.17", "framer-motion@3.x || 4.x":
   "integrity" "sha512-thx1wvKzblzbs0XaK2X0G1JuwIdARcoNOW7VVwjO8BUltzXPyONGAElLu6CiCScsOQRI7FIk/45YTFtJw5Yozw=="
   "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-4.1.17.tgz"
   "version" "4.1.17"
@@ -11104,7 +11109,7 @@
     "invariant" "^2.2.4"
     "tslib" "^1.0.0"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^0.14.7 || ^15.0.0 || ^16.0.0", "react@^15.3.0 || ^16.0.0 || ^17.0.0", "react@^16.14.0 || ^17.0.0", "react@^16.3.0 || ^17.0.0", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || 17.x", "react@^16.8.3 || ^17", "react@^17.0.2", "react@>= 16", "react@>= 16.8", "react@>= 16.8.0", "react@>=15", "react@>=16.8 || ^17.0.0", "react@>=16.8.0", "react@>=16.8.6", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^0.14.7 || ^15.0.0 || ^16.0.0", "react@^15.3.0 || ^16.0.0 || ^17.0.0", "react@^16.14.0 || ^17.0.0", "react@^16.3.0 || ^17.0.0", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || 17.x", "react@^16.8.3 || ^17", "react@^17.0.2", "react@>= 16", "react@>= 16.8", "react@>= 16.8.0", "react@>=15", "react@>=16", "react@>=16.8 || ^17.0.0", "react@>=16.8.0", "react@>=16.8.6", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

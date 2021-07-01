@@ -11,14 +11,14 @@ configureFirebase();
 
 function App() {
   return (
-    <div className="App">
-        <Switch>
-          <Route exact path='/login'>
-            <Auth />
-          </Route>
-          <ProtectedRoute exact path="/report-flag" component={ReportForm} />
-        </Switch>
-    </div>
+      <div className="App">
+          <Switch>
+            <Route exact path='/login'>
+              <Auth />
+            </Route>
+            <ProtectedRoute exact path="/report-flag" component={ReportForm} />
+          </Switch>
+      </div>
   );
 }
 
