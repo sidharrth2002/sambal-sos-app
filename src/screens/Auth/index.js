@@ -7,11 +7,13 @@ import "firebase/firestore";
 import '@firebase/auth';
 import { useDispatch } from 'react-redux';
 import { LOGIN } from '../../features/counter/authSlice';
+import { useHistory } from 'react-router-dom';
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
 const Auth = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const authHandler = () => {
         firebase.auth()
         .signInWithPopup(provider)
@@ -26,6 +28,8 @@ const Auth = () => {
             dispatch(
                 LOGIN(user)
             );
+            history.push('/report-flag');
+            
             // ...
         }).catch((error) => {
             // Handle Errors here.
