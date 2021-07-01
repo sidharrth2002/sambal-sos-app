@@ -40,11 +40,13 @@ const Maintenance = () => {
                         The Bendera Putih App
                     </MT.MaintenencePrimaryFont>
 
+                    {/* <img src={ BDGraphics.WhiteFlagIcon } alt="Bendera-Putih" height="125px" width="100px" /> */}
+
                     <MT.MaintenanceSecondaryFont>
                         We're under construction. Stay Tuned for Beta!
                     </MT.MaintenanceSecondaryFont>
 
-                    <MT.MaintenenceSplashImg src={ BDGraphics.MaintenanceSVG } alt="" />
+                    <MT.MaintenenceSplashImg src={ BDGraphics.WhiteFlagIcon } alt="" />
 
                     <MT.MaintenanceSecondaryFont gradient={true}>
                         Fill up this form to be the earliest to use our app when it launches.
