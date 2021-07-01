@@ -16,7 +16,7 @@ function App() {
           <Route exact path='/login'>
             <Auth />
           </Route>
-          <ProtectedRoute exact path="/report-flag" component={ReportForm} />
+          <Route exact path="/report-flag" component={ReportForm} />
         </Switch>
     </div>
   );

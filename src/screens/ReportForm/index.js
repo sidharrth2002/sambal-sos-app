@@ -13,7 +13,20 @@ const ReportForm = () => {
 
     useEffect(() => {
         console.log('Inside use effect');
-        function getLocation() {
+        function handlePermission() {
+            navigator.permissions.query({name:'geolocation'}).then(function(result) {
+              if (result.state == 'granted') {
+              } else if (result.state == 'prompt') {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else if (result.state == 'denied') {
+              }
+              result.onchange = function() {
+                console.log(result.state);
+                }
+            });
+        }
+
+          function getLocation() {
             if(navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(showPosition);
             } else {
@@ -22,15 +35,16 @@ const ReportForm = () => {
         }
           //function that retrieves the position
         function showPosition(position) {
-        var location = {
-            longitude: position.coords.longitude,
-            latitude: position.coords.latitude
+            var location = {
+                longitude: position.coords.longitude,
+                latitude: position.coords.latitude
+            }
+            setCoords(location);
+            console.log(location)
         }
-        setCoords(location);
-        console.log(location)
-    }
           //request for location
-    getLocation();
+        handlePermission();
+          // getLocation();
     }, [])
 
     return (
