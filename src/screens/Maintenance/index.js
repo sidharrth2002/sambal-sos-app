@@ -1,13 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
-
+import firebase from "firebase/app";
+import "firebase/firestore";
 import * as Global from '../../style/global.style';
 import * as MT from '../../style/maintenance.style';
 
 const Maintenance = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        firebase
+            .firestore()
+            .collection('notifier')
+            .add({
+                name: data.name,
+                email: data.email
+            })
+            .then(() => {
+                // open notification here
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    };
 
     return (
         <Global.Wrapper>
@@ -18,12 +33,12 @@ const Maintenance = () => {
 
                 <form onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
-                <input defaultValue="test" {...register("example")} />
+                <input defaultValue="test" {...register("name")} />
                 
                 {/* include validation with required or other standard HTML validation rules */}
-                <input {...register("exampleRequired", { required: true })} />
+                <input {...register("email", { required: true })} />
                 {/* errors will return when field validation fails  */}
-                {errors.exampleRequired && <span>This field is required</span>}
+                {errors.email && <span>This field is required</span>}
                 
                 <input type="submit" />
                 </form>
