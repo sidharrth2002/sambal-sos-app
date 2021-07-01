@@ -11,7 +11,6 @@ function App() {
   return (
     <div className="App">
       <Maintenance />
-      <Flags />
     </div>
   );
 }

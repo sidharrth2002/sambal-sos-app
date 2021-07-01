@@ -20,15 +20,15 @@ export const PoppinsFont = css`
 `
 
 export const PrimaryFontSize = css`
-    font-size: 25px;
+    font-size: 2.5rem;
 `;
 
 export const SecondaryFontSize = css`
-    font-size: 13px;
+    font-size: 1.25rem
 `;
 
 export const TertiaryFontSize = css`
-    font-size: 11px;
+    font-size: 0.85rem;
 `;
 
 export const box_shadow = css`
@@ -43,14 +43,11 @@ export const smoothTransition = css`
 export const Wrapper = styled.div`
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 `;
 
 export const Body = styled.div`
     width: 100%;
-    padding: 50px 20px;
+    padding: 50px 50px;
     max-width: 1300px;
 
     ${props => {
@@ -64,6 +61,12 @@ export const Body = styled.div`
             return 'display: flex; justify-content: space-around;';
         }
     }};
+
+    ${props => {
+        if(props.center === true){
+            return 'display: flex; justify-content: center !important; align-items:center !important;';
+        }
+    }}
 
     @media (max-width: 1440px) {
         flex-direction: column;
