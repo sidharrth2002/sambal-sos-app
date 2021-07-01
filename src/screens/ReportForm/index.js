@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react';
 import {useDropzone} from 'react-dropzone';
 
 import { Image, Flex, Text, Progress, Box, Textarea, Center } from '@chakra-ui/react';
-import { useDispatch } from 'react-redux';
-import { LOGIN } from '../../features/counter/authSlice';
-
 import * as BDGraphics from '../../assets/';
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 const ReportForm = () => {
     const [coords, setCoords] = useState(null);
     const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
+    const currentUser = firebase.auth().currentUser;
 
     useEffect(() => {
-        console.log('Inside use effect');
         function handlePermission() {
             navigator.permissions.query({name:'geolocation'}).then(function(result) {
                 if (result.state == 'granted') {
@@ -35,16 +34,36 @@ const ReportForm = () => {
         }
           //function that retrieves the position
         function showPosition(position) {
-        var location = {
-            longitude: position.coords.longitude,
-            latitude: position.coords.latitude
+            var location = {
+                longitude: position.coords.longitude,
+                latitude: position.coords.latitude
+            }
+            setCoords(location);
+            console.log(location)
         }
-        setCoords(location);
-        console.log(location)
-    }
           //request for location
     handlePermission();
     }, [])
+
+    const reportFlag = () => {
+        firebase
+            .firestore()
+            .collection("flags")
+            .add({
+                coordinates: new firebase.firestore.GeoPoint(coords.latitude, coords.longitude),
+                description: "Change to state",
+                image: "cloudinary link",
+                title: "If there's a title, but don't know why we would have one",
+                userId: currentUser.uid
+            })
+            .then(() => {
+                // success message
+            })
+            .catch(err => {
+                console.log(err);
+                // error message
+            })
+    }
 
     return (
         <>
