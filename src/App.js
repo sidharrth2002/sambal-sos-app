@@ -7,7 +7,7 @@ import Auth from './screens/Auth';
 import ReportForm from './screens/ReportForm';
 
 require('dotenv').config()
-configureFirebase();
+// configureFirebase();
 
 function App() {
   return (
