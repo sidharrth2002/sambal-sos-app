@@ -17,25 +17,6 @@ const Maintenance = () => {
     const [active, setActive] = useState("none");
     const [loading, setLoading] = useState(false);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    
-    const onSubmit = data => {
-        setLoading(true)       
-        firebase
-            .firestore()
-            .collection('notifier')
-            .add({
-                name: data.name,
-                email: data.email
-            })
-            .then(() => {
-                // open notification here
-                setLoading(false)
-            })
-            .catch(err => {
-                console.log(err);
-                setLoading(false)
-            })
-    }; 
 
     return (
         <Global.Wrapper>
@@ -56,7 +37,7 @@ const Maintenance = () => {
                         Fill up this form to be the earliest to use our app when it launches.
                     </MT.MaintenanceSecondaryFont>
 
-                    <MT.MaintenenceFormWrapper onSubmit={onSubmit} className="pageclip-form">
+                    <MT.MaintenenceFormWrapper action="https://send.pageclip.co/dlzPBOnEYM63SqvOKNptD5u93dv7O1W0" className="pageclip-form" method="POST">
                         <MT.MaintenanceFormBlock onClick={ () => {setActive('user')}} active={ active === 'user' ? 'true' : 'false' } >
                             <MT.MaintenceFormIcon src={ active === 'user' ? BDGraphics.UserActiveIcon : BDGraphics.UserIcon  } alt="User Icon" />
                             <MT.MaintenenceInputField name="name" defaultValue="eg:john" {...register("name")} />
