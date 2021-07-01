@@ -8,13 +8,17 @@ import { BrowserRouter } from 'react-router-dom';
 import store from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const history = createHistory()
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <Router history={history}>    <App />
+      <Router history={history}>
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
       </Router>
     </Provider>
   </BrowserRouter>,

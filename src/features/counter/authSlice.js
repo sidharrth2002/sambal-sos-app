@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import cookie from 'js-cookie'
-import axios from "axios"
 
 const defaultState = {
   user: undefined,
@@ -12,13 +11,13 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState: {
     user : cookie.get('user') !== undefined? JSON.parse(cookie.get('user')) : {},
-    token: cookie.get('access_token'),
     isAuthenticated: cookie.get('access_token') ? true : false,
   },
   // fix all this
   reducers: {
     LOGIN: (state, action) => {
-      // state.refreshToken = action.payload.access_token.token.refresh.token;
+      console.log(action.payload);
+      state.user = action.payload;
       state.isAuthenticated = true;
     },
     LOGOUT: (state) => {

@@ -5,18 +5,18 @@ import "firebase/firestore";
 const Flags = () => {
     const [flags, setFlags] = useState([]);
 
-    useEffect(() => {
-        firebase
-        .firestore()
-        .collection('flags')
-        .get()
-        .then(snapshot => {
-            snapshot.forEach(doc => {
-                console.log(doc);
-                setFlags([...flags, doc.data()])
-            })
-        })
-    }, []);
+    // useEffect(() => {
+    //     firebase
+    //     .firestore()
+    //     .collection('flags')
+    //     .get()
+    //     .then(snapshot => {
+    //         snapshot.forEach(doc => {
+    //             console.log(doc);
+    //             setFlags([...flags, doc.data()])
+    //         })
+    //     })
+    // }, []);
 
     return (
         <div>
