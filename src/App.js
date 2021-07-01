@@ -1,8 +1,7 @@
 import './App.css';
 import './index.css';
 import configureFirebase from './config';
-import ProtectedRoute from './screens/ProtectedRoute';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Auth from './screens/Auth';
 
 require('dotenv').config()

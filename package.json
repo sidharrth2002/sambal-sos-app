@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "exif-js": "^2.3.0",
     "firebase": "^8.6.8",
     "framer-motion": "^4.1.17",
     "js-cookie": "^2.2.1",
