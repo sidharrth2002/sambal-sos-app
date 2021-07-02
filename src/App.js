@@ -13,10 +13,9 @@ function App() {
   return (
       <div className="App">
           <Switch>
-            <Route exact path='/login'>
-              <Auth />
-            </Route>
-            <ProtectedRoute exact path="/report-flag" component={ReportForm} />
+            <Route exact path='/' component={Auth} />
+            <Route exact path='/login' component={Auth} />
+            <Route exact path="/report-flag" component={ReportForm} />
           </Switch>
       </div>
   );

@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import {useDropzone} from 'react-dropzone';
-
+import NavigationFooter from '../../components/NavigationFooter';
 import { Image, Flex, Text, Progress, Box, Textarea, Center } from '@chakra-ui/react';
 import * as BDGraphics from '../../assets/';
 import firebase from "firebase/app";
 import "firebase/firestore";
 
 const ReportForm = () => {
-    const [coords, setCoords] = useState(null);
-    const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
+    const [coordinates, setCoordinates] = useState(null);
+    const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
     const currentUser = firebase.auth().currentUser;
 
     useEffect(() => {
         function handlePermission() {
             navigator.permissions.query({name:'geolocation'}).then(function(result) {
-                if (result.state == 'granted') {
-                } else if (result.state == 'prompt') {
+                if (result.state === 'granted') {
+                } else if (result.state === 'prompt') {
                     navigator.geolocation.getCurrentPosition(showPosition);
-                } else if (result.state == 'denied') {
+                } else if (result.state === 'denied') {
                 }
                 result.onchange = function() {
                     console.log(result.state);
@@ -34,12 +34,10 @@ const ReportForm = () => {
         }
           //function that retrieves the position
         function showPosition(position) {
-            var location = {
+            setCoordinates({
                 longitude: position.coords.longitude,
                 latitude: position.coords.latitude
-            }
-            setCoords(location);
-            console.log(location)
+            });
         }
           //request for location
     handlePermission();
@@ -50,7 +48,7 @@ const ReportForm = () => {
             .firestore()
             .collection("flags")
             .add({
-                coordinates: new firebase.firestore.GeoPoint(coords.latitude, coords.longitude),
+                coordinates: new firebase.firestore.GeoPoint(coordinates.latitude, coordinates.longitude),
                 description: "Change to state",
                 image: "cloudinary link",
                 title: "If there's a title, but don't know why we would have one",
@@ -67,9 +65,6 @@ const ReportForm = () => {
 
     return (
         <>
-            <Box>
-                { coords ? JSON.stringify(coords) : "" }
-            </Box>
             <Flex w="100%" h="100%" backgroundColor="#F5F5F5" flexDirection="column" >
                 <Box className="navbar" backgroundColor="#FFFFFF" px="2.0rem" py="1.0rem" >
                     <Flex position="relative" flexDirection="row" justifyContent="center" alignItems="center" >
@@ -136,6 +131,7 @@ const ReportForm = () => {
 
                 </Flex>
             </Flex>
+            <NavigationFooter />
         </>
     );
 };
