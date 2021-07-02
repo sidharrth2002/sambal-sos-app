@@ -3,11 +3,16 @@ import { Grid, Center, Icon, VStack, Text } from "@chakra-ui/react"
 import { AddIcon, WarningIcon, SearchIcon, SunIcon } from '@chakra-ui/icons'
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { LOGOUT } from '../../features/counter/authSlice';
+import firebase from "firebase/app";
+import "firebase/firestore";
+import '@firebase/auth';
 
 const NavigationFooter = (props) => {
     const { activeTab } = props;
     const history = useHistory();
+    const dispatch = useDispatch();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
     return (
@@ -32,7 +37,11 @@ const NavigationFooter = (props) => {
             </Center>
             {
                 isAuthenticated &&
-                <Center w="100%" padding="5px 0" onClick={() => history.push('/logout')}>
+                <Center w="100%" padding="5px 0" onClick={() => {
+                    firebase.auth().signOut();
+                    dispatch(LOGOUT());
+                    history.push('/login')
+                }}>
                     <VStack>
                         <WarningIcon />
                         <Text>Logout</Text>
