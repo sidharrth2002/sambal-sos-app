@@ -25,6 +25,7 @@
     "pageclip": "^1.0.0",
     "qs": "^6.7.0",
     "react": "^17.0.2",
+    "react-bingmaps": "^3.6.1",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.3.4",
     "react-hook-form": "^7.9.0",

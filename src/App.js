@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import ProtectedRoute from './screens/ProtectedRoute';
 import Auth from './screens/Auth';
 import ReportForm from './screens/ReportForm';
+import Home from './screens/Home';
 
 require('dotenv').config()
 configureFirebase();
@@ -15,6 +16,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Auth} />
             <Route exact path='/login' component={Auth} />
+            <Route exact path='/home' component={Home} />
             <Route exact path="/report-flag" component={ReportForm} />
           </Switch>
       </div>
