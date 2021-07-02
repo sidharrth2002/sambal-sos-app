@@ -7,8 +7,7 @@
 
 \
 Hop on the [app](https://www.benderaputih.app)  if:
-- you're in need of necessary resources (eg: food, water, shelter)
-
+- you see a flag and want to report it
 or 
 - you're looking to support other fellow Malaysians
 
