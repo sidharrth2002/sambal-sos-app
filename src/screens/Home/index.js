@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Spinner, Box, Text, Image, Link } from '@chakra-ui/react';
+import { Center, Spinner, Box, Text, Image, Link, Flex } from '@chakra-ui/react';
 import firebase from "firebase/app";
 import "firebase/firestore";
 import NavigationFooter from '../../components/NavigationFooter';
@@ -76,6 +76,14 @@ const Home = () => {
                     infoboxesWithPushPins={flags}                       
                     />
             }
+            <Flex position="fixed" bottom="125px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="white" padding="20px 20px" >
+                <Flex backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" >
+                    Ask for help
+                </Flex>
+                <Flex boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="15px 25px" color="black" fontFamily="Montserrat" fontWeight="500" >
+                    Report a Flag
+                </Flex>
+            </Flex>
             <NavigationFooter activeTab={0} />
         </div>
     );
