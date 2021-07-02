@@ -5,12 +5,16 @@ import { Image, Flex, Text, Button, Heading, Box } from '@chakra-ui/react';
 import firebase from "firebase/app";
 import "firebase/firestore";
 import '@firebase/auth';
+import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 import { LOGIN } from '../../features/counter/authSlice';
+import { GoogleLogin } from 'react-google-login';
 import { useHistory } from 'react-router-dom';
 
 const provider = new firebase.auth.GoogleAuthProvider();
+
+require('dotenv').config()
 
 const Auth = () => {
     const dispatch = useDispatch();
@@ -22,27 +26,43 @@ const Auth = () => {
         .then((result) => {
             /** @type {firebase.auth.OAuthCredential} */
             const credential = result.credential;
-
-            // This gives you a Google Access Token. You can use it to access the Google API.
             const token = credential.accessToken;
-            // The signed-in user info.
             const user = result.user;
             dispatch(
                 LOGIN(user)
             );
             history.push('/home');
-            
-            // ...
+    
         }).catch((error) => {
-            // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
-            // The email of the user's account used.
             const email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
             const credential = error.credential;
-            // ...
         });
+    }
+
+    const handleGoogleLogin = async googleData => {
+        console.log(googleData)
+        if(googleData){
+            
+            await axios.post(`http://localhost:5000/api/auth/google`, {
+                token: googleData.tokenId
+            })
+            .then((res) => {
+                if(res.status === 201){
+                    console.log(res.data.user)
+                    dispatch(
+                        LOGIN(res.data.user)
+                    )
+                }else{
+                }
+            })
+            .catch((err) => {
+                /* console.log(err) */
+            })
+        }else{
+            console.log('error')
+        }
     }
 
     if(isAuthenticated) {
@@ -57,6 +77,24 @@ const Auth = () => {
                 <Heading fontFamily="Montserrat" as="h3" fontSize="2xl" fontWeight="300">Now In Beta!</Heading>
             </Box>
             <Flex maxWidth="600px" flexDirection="column" justifyContent="center" alignItems="center" width="300px" maxWidth="90%" margin="0 auto">
+
+                <GoogleLogin
+                    clientId={ process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID }
+                    render={renderProps => (
+                        <Button backgroundColor="#B2C8F5" padding="28px 25px" onClick={ () => { renderProps.onClick()} } disabled={renderProps.disabled}>
+                            <Flex borderRadius="8px" fontFamily="Poppins" width="100%" flexDirection="row" justifyContent="center" alignItems="center" position="relative">
+                                <Image alt="Google Login Button Svg" src={BDGraphics.GoogleLoginIcon} height="18px" width="18px" mr="20px" />
+                                <Text fontWeight="light">Login with Google</Text>
+                            </Flex>
+                        </Button>
+                    )}
+                    autoLoad={false}
+                    buttonText="Log in with Google"
+                    onSuccess={handleGoogleLogin}
+                    onFailure={handleGoogleLogin}
+                    cookiePolicy={'single_host_origin'}
+                />
+
                 <Button backgroundColor="#B2C8F5" padding="28px 25px" onClick={authHandler}>
                     <Flex borderRadius="8px" fontFamily="Poppins" width="100%" flexDirection="row" justifyContent="center" alignItems="center" position="relative">
                         <Image alt="Google Login Button Svg" src={BDGraphics.GoogleLoginIcon} height="18px" width="18px" mr="20px" />

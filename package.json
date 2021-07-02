@@ -28,6 +28,7 @@
     "react-bingmaps": "^3.6.1",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.3.4",
+    "react-google-login": "^5.2.2",
     "react-hook-form": "^7.9.0",
     "react-lottie": "^1.2.3",
     "react-redux": "^7.2.4",
