@@ -47,7 +47,8 @@ Currently, our team consists of mostly student developers, and we are running on
 ### Monetary
 If you're willing to support us financially, please do get in touch with us!
 
-Monetary donations will be primarily utilized for maintenance costs of the [Bendera Putih App](https://www.benderaputih.app), which includes: server costs, domain costs, etc.
+Monetary donations will be primarily utilized for maintenance costs of the [Bendera Putih App](https://www.benderaputih.app), which includes: server costs, domain costs, etc. 
+You can contribute to the server costs here: https://www.buymeacoffee.com/benderaputih
 
 ### Development
 If you have experience in any of the following skills, you're exactly who we're looking for to join the team:
