@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {useDropzone} from 'react-dropzone';
 import NavigationFooter from '../../components/NavigationFooter';
-import { Image, Flex, Text, Progress, Box, Textarea, Center } from '@chakra-ui/react';
+import { Image, Flex, Text, Progress, Box, Textarea, Center, Skeleton } from '@chakra-ui/react';
+import {
+    Alert,
+    AlertIcon,
+    useToast
+} from "@chakra-ui/react"
 import * as BDGraphics from '../../assets/';
 import firebase from "firebase/app";
 import "firebase/firestore";
@@ -10,38 +15,38 @@ const ReportForm = () => {
     const [coordinates, setCoordinates] = useState(null);
     const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
     const currentUser = firebase.auth().currentUser;
+    const [locationLoading, setLocationLoading] = useState(false);
+    const toast = useToast()
 
-    useEffect(() => {
+    const popupLocation = () => {
+        setLocationLoading(true);
         function handlePermission() {
             navigator.permissions.query({name:'geolocation'}).then(function(result) {
-                if (result.state === 'granted') {
-                } else if (result.state === 'prompt') {
+                if (result.state === 'granted' || result.state === 'prompt') {
                     navigator.geolocation.getCurrentPosition(showPosition);
-                } else if (result.state === 'denied') {
-                }
-                result.onchange = function() {
-                    console.log(result.state);
+                } else {
+                    toast({
+                        title: "We need your location!",
+                        description: "Please enable it and try again",
+                        status: "error",
+                        duration: 9000,
+                        isClosable: true,
+                    })
+                    setLocationLoading(false);
                 }
             });
         }
 
-        function getLocation() {
-            if(navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                console.log("Geo Location not supported by browser");
-            }
-        }
-          //function that retrieves the position
+        // function that retrieves the position
         function showPosition(position) {
             setCoordinates({
                 longitude: position.coords.longitude,
                 latitude: position.coords.latitude
             });
+            setLocationLoading(false);
         }
-          //request for location
-    handlePermission();
-    }, [])
+        handlePermission();
+    }
 
     const reportFlag = () => {
         firebase
@@ -58,8 +63,13 @@ const ReportForm = () => {
                 // success message
             })
             .catch(err => {
-                console.log(err);
-                // error message
+                toast({
+                    title: "Failed to save!",
+                    description: "Something went wrong on our side!",
+                    status: "error",
+                    duration: 9000,
+                    isClosable: true,
+                })
             })
     }
 
@@ -107,10 +117,20 @@ const ReportForm = () => {
                             <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" >Set the address</Text>
                         </Flex>
                         <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
-                            <Flex flexDirection="row" justifyContent="center" alignItems="center" w="100%" h="100%" backgroundColor="#464646" borderRadius="5px" color="white" padding="1.0rem" >
-                                <Image h="15px" w="15px" mr="0.9rem" src={ BDGraphics.LocationIcon } alt="Location Icon" />
-                                Use My Location
-                            </Flex>
+                            {
+                                coordinates ?
+                                <Alert status="success">
+                                    <AlertIcon />
+                                    Location has been set! 😄
+                                </Alert>
+                                :
+                                <Skeleton isLoaded={!locationLoading} width="100%">
+                                    <Flex flexDirection="row" justifyContent="center" alignItems="center" w="100%" h="100%" backgroundColor="#464646" borderRadius="5px" color="white" padding="1.0rem" onClick={() => popupLocation()}>
+                                        <Image h="15px" w="15px" mr="0.9rem" src={ BDGraphics.LocationIcon } alt="Location Icon" />
+                                        Use My Location
+                                    </Flex>
+                                </Skeleton>
+                            }
                         </Flex>
                     </Flex>
 
