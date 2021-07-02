@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Box, Input, VStack, Text, Link, Alert } from '@chakra-ui/react';
 import { foodbanks } from './foodbanks'
+import NavigationFooter from '../../components/NavigationFooter';
 
 const FoodBanks = () => {
     const [searchQuery, setSearchQuery] = useState("");
     return (
+        <Box>
         <Box padding="19px" maxWidth="500px" width="100%" margin="0 auto">
             <Input variant="filled" placeholder="Search for Food Banks" onChange={(e) => setSearchQuery(e.target.value.toLowerCase())} />
             <Box marginTop="2rem">
@@ -35,9 +37,10 @@ const FoodBanks = () => {
                             )
                         })
                     }
-
                 </VStack>
             </Box>
+        </Box>
+        <NavigationFooter activeTab={1} />
         </Box>
     );
 };
