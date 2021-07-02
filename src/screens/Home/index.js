@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Center, Spinner, Box, Text, Image, Link, Flex } from '@chakra-ui/react';
 import firebase from "firebase/app";
+import { useHistory } from 'react-router-dom';
 import "firebase/firestore";
 import NavigationFooter from '../../components/NavigationFooter';
 import { ReactBingmaps } from 'react-bingmaps';
@@ -8,6 +9,8 @@ import { ReactBingmaps } from 'react-bingmaps';
 import * as BDGraphics from '../../assets/'
 
 const Home = () => {
+    const history = useHistory();
+
     const [flags, setFlags] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -78,13 +81,13 @@ const Home = () => {
                     infoboxesWithPushPins={flags}                       
                     />
             }
-            <Flex position="fixed" bottom="125px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="white" padding="20px 20px" >
-                <Flex backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" >
+            <Flex borderTopRadius="15px" position="fixed" bottom="125px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="white" padding="20px 20px" >
+                <Flex w="48%" justifyContent="center" backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" >
                     Ask for help
                 </Flex>
-                <Flex alignItems="center" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="15px 25px" color="black" fontFamily="Montserrat" fontWeight="500" >
-                    <Image mr="3px" src={ BDGraphics.FlagIcon } height="15px" />
-                    Report a Flag
+                <Flex w="48%" justifyContent="center" alignItems="center" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="15px 25px" color="black" fontFamily="Montserrat" fontWeight="500" onClick={() => history.push('/report-flag')} >
+                    <Image mr="5px" src={ BDGraphics.FlagIcon } height="11px" />
+                    Report Flag
                 </Flex>
             </Flex>
             <NavigationFooter activeTab={0} />
