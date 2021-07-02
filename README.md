@@ -43,7 +43,8 @@ You can contribute to the server costs here: https://www.buymeacoffee.com/bender
 If you have experience in any of the following skills, you're exactly who we're looking for to join the team:
 - frontend development (JavaScript, React.js)
 - backend development (Firebase, Node.js, Express.js)
-- machine learning, deep learning, computer vision (this is a very technical expertise 😅)
+- DevOps (GCP, AWS, Deploying a Node.js server with PostgreSQL)
+- machine learning, deep learning, computer vision
 - social media management
 - crowdsourcing data
 
