@@ -9,6 +9,7 @@ import BackButtonIcon from './svgs/back-button.svg';
 import InfoIcon from './svgs/info.svg';
 import ImageIcon from './svgs/image.svg';
 import LocationIcon from './svgs/location.svg';
+import FlagIcon from './svgs/flag.svg';
 
 export {
     MaintenanceSVG,
@@ -21,5 +22,6 @@ export {
     BackButtonIcon,
     InfoIcon,
     ImageIcon,
-    LocationIcon
+    LocationIcon,
+    FlagIcon
 }

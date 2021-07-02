@@ -20,19 +20,19 @@ const NavigationFooter = (props) => {
             <Center w="100%" padding="5px 0" onClick={() => history.push('/home')}>
                 <VStack>
                     <SearchIcon />
-                    <Text fontWeight={activeTab === 0 ? "bold" : "normal"}>Find Flags</Text>
+                    <Text fontWeight={activeTab === 0 ? "bold" : "normal"} fontSize="0.8rem" >Find Flags</Text>
                 </VStack>
             </Center>
             <Center w="100%" padding="5px 0" onClick={() => history.push('/foodbanks')}>
                 <VStack>
                     <SunIcon />
-                    <Text fontWeight={activeTab === 1 ? "bold" : "normal"}>Food Banks</Text>
+                    <Text fontWeight={activeTab === 1 ? "bold" : "normal"} fontSize="0.8rem" >Food Banks</Text>
                 </VStack>
             </Center>
             <Center w="100%" padding="5px 0" onClick={() => history.push('/report-flag')}>
                 <VStack>
                     <AddIcon />
-                    <Text fontWeight={activeTab === 2 ? "bold" : "normal"}>Report a Flag</Text>
+                    <Text fontWeight={activeTab === 2 ? "bold" : "normal"}fontSize="0.8rem" >Report a Flag</Text>
                 </VStack>
             </Center>
             {
@@ -44,7 +44,7 @@ const NavigationFooter = (props) => {
                 }}>
                     <VStack>
                         <WarningIcon />
-                        <Text>Logout</Text>
+                        <Text fontSize="0.8rem" >Logout</Text>
                     </VStack>
                 </Center>
             }

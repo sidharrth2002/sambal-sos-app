@@ -5,6 +5,8 @@ import "firebase/firestore";
 import NavigationFooter from '../../components/NavigationFooter';
 import { ReactBingmaps } from 'react-bingmaps';
 
+import * as BDGraphics from '../../assets/'
+
 const Home = () => {
     const [flags, setFlags] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -80,7 +82,8 @@ const Home = () => {
                 <Flex backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" >
                     Ask for help
                 </Flex>
-                <Flex boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="15px 25px" color="black" fontFamily="Montserrat" fontWeight="500" >
+                <Flex alignItems="center" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="15px 25px" color="black" fontFamily="Montserrat" fontWeight="500" >
+                    <Image mr="3px" src={ BDGraphics.FlagIcon } height="15px" />
                     Report a Flag
                 </Flex>
             </Flex>
