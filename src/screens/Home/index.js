@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Spinner, Box, Text, Image, Link, Flex } from '@chakra-ui/react';
+import { Center, Spinner, Image, Flex } from '@chakra-ui/react';
 import firebase from "firebase/app";
 import { useHistory } from 'react-router-dom';
 import "firebase/firestore";
 import NavigationFooter from '../../components/NavigationFooter';
 import { ReactBingmaps } from 'react-bingmaps';
-
-import * as BDGraphics from '../../assets/'
+import * as BDGraphics from '../../assets/';
 
 const Home = () => {
     const history = useHistory();
@@ -70,7 +69,7 @@ const Home = () => {
                 :
                     <ReactBingmaps 
                         id="bingmaps" 
-                        bingmapKey={process.env.REACT_APP_BINGMAP_KEY} 
+                        bingmapKey={process.env.REACT_APP_BINGMAP_KEY}
                         zoom={15} 
                         center={[5.319607673855811, 100.47342256534424]} 
                         pushPins={[

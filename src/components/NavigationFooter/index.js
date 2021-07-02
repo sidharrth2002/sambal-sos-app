@@ -23,7 +23,7 @@ const NavigationFooter = (props) => {
                     <Text fontWeight={activeTab === 0 ? "bold" : "normal"} fontSize="0.8rem" >Find Flags</Text>
                 </VStack>
             </Center>
-            <Center w="100%" padding="5px 0" onClick={() => history.push('/foodbanks')}>
+            <Center w="100%" padding="5px 0" onClick={() => history.push('/food-banks')}>
                 <VStack>
                     <SunIcon />
                     <Text fontWeight={activeTab === 1 ? "bold" : "normal"} fontSize="0.8rem" >Food Banks</Text>
