@@ -46,12 +46,9 @@ Currently, our team consists of mostly student developers, and we are running on
 
 
 ### Monetary
-If you're willing to support us financially, do pledge any amount at 
-\
-[_BUY ME A WAIFU_]()
-\
-\
-Monetary donations will be primarily utilized for maintenance costs of the [Bendera Putih App](https://www.benderaputih.app), which includes: server costs, domain costs, software subscriptions, etc.
+If you're willing to support us financially, please do get in touch with us!
+
+Monetary donations will be primarily utilized for maintenance costs of the [Bendera Putih App](https://www.benderaputih.app), which includes: server costs, domain costs, etc.
 
 ### Development
 If you have experience in any of the following skills, you're exactly who we're looking for to join the team:
@@ -81,7 +78,7 @@ Let's connect! 📧
 
 [Email ✉](mailto:info.benderaputih@gmail.com)
 \
-[Discord 👾](discord.com)
+[Discord 👾](https://discord.gg/fhtp5scw)
 
 
 
