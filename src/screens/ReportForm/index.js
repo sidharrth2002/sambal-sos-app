@@ -22,8 +22,21 @@ const ReportForm = () => {
     /* States */
     const [remark, setRemark] = useState('');
     const [coordinates, setCoordinates] = useState(null);
+    const [progressBarValue, setProgressBarValue] = useState(5)
     const [locationLoading, setLocationLoading] = useState(false);
     const [submitLoading, setSubmitLoading] = useState(false)
+
+    useEffect(() => {
+        let value = 5
+        if(acceptedFiles.length > 0)
+            value = value + 25
+        if(coordinates)
+            value = value + 25
+        if(remark)
+            value = value + 45
+
+        setProgressBarValue(value)
+    }, [acceptedFiles, remark, coordinates])
 
     const popupLocation = () => {
         setLocationLoading(true);
@@ -129,7 +142,7 @@ const ReportForm = () => {
                 </Box>
 
                 <Center padding="2rem" flexDirection="row" >
-                    <Progress w="100%" borderRadius="50px" value={20} size="md" colorScheme="linkedin" />
+                    <Progress w="100%" borderRadius="50px" value={progressBarValue} size="md" colorScheme="linkedin" />
                 </Center>
                     <Flex className="Flag-Form-Wrapper" flexDirection="column" backgroundColor="#FFFFFF" padding="2rem" borderRadius="20px" >
                         <Flex className="Form-Blocks" flexDirection="column" alignItems="flex-start" mb="4rem" >
@@ -138,13 +151,22 @@ const ReportForm = () => {
                                 <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" >Upload an image</Text>
                             </Flex>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
-                                <Center w="100%" padding="40px 40px" borderRadius="8px" border="1px solid #B2C8F5"  >
-                                    <Center flexDirection="column" {...getRootProps({className: 'dropzone'})}>
-                                        <Image mb="20px" src={BDGraphics.ImageIcon} alt="Image" />
-                                        <input {...getInputProps()} required />
-                                        <Text color="#A7A7A7" fontSize="md"  >Add an Image containing the White Flag</Text>
-                                    </Center>
-                                </Center>
+                                    {
+                                        acceptedFiles.length > 0 ? 
+                                        <Alert status="success">
+                                            <AlertIcon />
+                                            Image Approved! 😄
+                                        </Alert>
+                                        : 
+                                        <Center w="100%" padding="40px 40px" borderRadius="8px" border="1px solid #B2C8F5"  >
+                                            <Center flexDirection="column" {...getRootProps({className: 'dropzone'})}>
+                                                <Image mb="20px" src={BDGraphics.ImageIcon} alt="Image" />
+                                                <input {...getInputProps()} required />
+                                                <Text color="#A7A7A7" fontSize="md"  >Add an Image containing the White Flag</Text>
+                                            </Center>
+                                        </Center>
+                                    }
+                                
                             </Flex>
                         </Flex>
 
