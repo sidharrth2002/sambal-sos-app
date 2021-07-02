@@ -10,6 +10,7 @@ import InfoIcon from './svgs/info.svg';
 import ImageIcon from './svgs/image.svg';
 import LocationIcon from './svgs/location.svg';
 import FlagIcon from './svgs/flag.svg';
+import Logo from './svgs/logo.svg';
 
 export {
     MaintenanceSVG,
@@ -23,5 +24,6 @@ export {
     InfoIcon,
     ImageIcon,
     LocationIcon,
-    FlagIcon
+    FlagIcon,
+    Logo
 }
