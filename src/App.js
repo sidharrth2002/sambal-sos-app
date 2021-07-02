@@ -17,9 +17,9 @@ function App() {
           <Switch>
             <Route exact path='/' component={Auth} />
             <Route exact path='/login' component={Auth} />
-            <Route exact path='/food-banks' component={FoodBanks} />
-            <Route exact path='/home' component={Home} />
-            <Route exact path="/report-flag" component={ReportForm} />
+            <ProtectedRoute exact path='/food-banks' component={FoodBanks} />
+            <ProtectedRoute exact path='/home' component={Home} />
+            <ProtectedRoute exact path="/report-flag" component={ReportForm} />
           </Switch>
       </div>
   );
