@@ -131,7 +131,7 @@ const ReportForm = () => {
 
                 </Flex>
             </Flex>
-            <NavigationFooter />
+            <NavigationFooter activeTab={2} />
         </>
     );
 };

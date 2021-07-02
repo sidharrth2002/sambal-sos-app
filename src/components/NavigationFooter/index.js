@@ -12,27 +12,27 @@ const NavigationFooter = (props) => {
 
     return (
         <Grid templateColumns={`repeat(${isAuthenticated ? 4 : 3}, 1fr)`} gap={6} position="fixed" bottom="0" backgroundColor="white" width="100%" shadow="lg" padding="1rem">
-            <Center w="100%" h="30" padding="5px 0" onClick={() => history.push('/home')}>
+            <Center w="100%" padding="5px 0" onClick={() => history.push('/home')}>
                 <VStack>
                     <SearchIcon />
-                    <Text>Find Flags</Text>
+                    <Text fontWeight={activeTab === 0 ? "bold" : "normal"}>Find Flags</Text>
                 </VStack>
             </Center>
-            <Center w="100%" h="30" padding="5px 0" onClick={() => history.push('/foodbanks')}>
+            <Center w="100%" padding="5px 0" onClick={() => history.push('/foodbanks')}>
                 <VStack>
                     <SunIcon />
-                    <Text>Food Banks</Text>
+                    <Text fontWeight={activeTab === 1 ? "bold" : "normal"}>Food Banks</Text>
                 </VStack>
             </Center>
-            <Center w="100%" h="30" padding="5px 0" onClick={() => history.push('/report-flag')}>
+            <Center w="100%" padding="5px 0" onClick={() => history.push('/report-flag')}>
                 <VStack>
                     <AddIcon />
-                    <Text>Report a Flag</Text>
+                    <Text fontWeight={activeTab === 2 ? "bold" : "normal"}>Report a Flag</Text>
                 </VStack>
             </Center>
             {
                 isAuthenticated &&
-                <Center w="100%" h="30" padding="5px 0" onClick={() => history.push('/logout')}>
+                <Center w="100%" padding="5px 0" onClick={() => history.push('/logout')}>
                     <VStack>
                         <WarningIcon />
                         <Text>Logout</Text>
