@@ -6,16 +6,20 @@ export const authSlice = createSlice({
   initialState: {
     user : cookie.get('user') !== undefined? JSON.parse(cookie.get('user')) : {},
     isAuthenticated: cookie.get('access_token') ? true : false,
+    accessToken: cookie.get('accessToken') ? cookie.get('accessToken') : ''
   },
   // fix all this
   reducers: {
     LOGIN: (state, action) => {
-      console.log(action.payload);
-      state.user = action.payload;
+      console.log(action.payload.user);
+      state.user = action.payload.user;
+      state.accessToken = action.payload.accessToken
       state.isAuthenticated = true;
     },
     LOGOUT: (state) => {
       state.isAuthenticated = false
+      state.accessToken = ""
+      state.user = null
     },
     UPDATE: (state, action) => {
       state.user = action.payload;
