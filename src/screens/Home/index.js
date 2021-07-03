@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Spinner, Image, Flex, Text, Button, Heading} from '@chakra-ui/react';
+import { Center, Spinner, Image, Flex, Text, Button, Heading, Box } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
@@ -95,6 +95,16 @@ const Home = () => {
         )
     }
 
+    const toastOpener = () => {
+        toast({
+            title: "This feature is coming soon",
+            status: "warning",
+            duration: 1500,
+            isClosable: false,
+            position: 'top'
+        })
+    }
+
     return (
         <div>
             {
@@ -154,8 +164,12 @@ const Home = () => {
                                 <Flex flexDirection="row" alignItems="center" ><Image src={ BDGraphics.PinIcon } alt="" height="25px" mr="10px" /><Text textAlign="start" >{ selectedMarker.address } </Text></Flex>
                             </Flex>
                             <Flex className="button-groups" flexDirection="row" justifyContent="space-around" alignContent="center" padding="1rem" w="100%" >
-                                <Button fontFamily="Montserrat" fontWeight="600" w="100%" mr="10px" padding="1.5rem" backgroundColor="#5CFFC5" >Up-Vote <Image ml="5px" src={ BDGraphics.UpvoteIcon } height="15px" /> </Button>
-                                <Button fontFamily="Montserrat" fontWeight="600" w="100%" padding="1.5rem" backgroundColor="#FFECA7" >Supported <Image ml="5px" src={ BDGraphics.SupportedIcon } height="15px" /> </Button>
+                                <Box w="100%" mr="10px" onClick={ () => { toastOpener() } }>
+                                    <Button fontFamily="Montserrat" fontWeight="600" w="100%" padding="1.5rem" backgroundColor="#5CFFC5" >Up-Vote <Image ml="5px" src={ BDGraphics.UpvoteIcon } height="15px"/> </Button>
+                                </Box>
+                                <Box w="100%" onClick={ () => { toastOpener() } } >
+                                    <Button fontFamily="Montserrat" fontWeight="600" w="100%" padding="1.5rem" backgroundColor="#FFECA7" >Supported <Image ml="5px" src={ BDGraphics.SupportedIcon } height="15px"/> </Button>
+                                </Box>
                             </Flex>
                         </>
                     :

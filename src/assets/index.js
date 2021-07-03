@@ -17,6 +17,7 @@ import SupportedIcon from './svgs/supported.svg';
 import PinIcon from './svgs/pin.svg';
 import GroceriesOutlineIcon from './svgs/groceries-outline.svg'
 import LogoutIcon from './svgs/logout.svg'
+import GoogleMapsIcon from './svgs/google-maps.svg';
 
 export {
     MaintenanceSVG,
@@ -37,5 +38,6 @@ export {
     SupportedIcon,
     PinIcon,
     GroceriesOutlineIcon,
-    LogoutIcon
+    LogoutIcon,
+    GoogleMapsIcon
 }
