@@ -42,7 +42,6 @@ const Auth = () => {
     }
 
     const handleGoogleLogin = async googleData => {
-        console.log(googleData)
         if(googleData){
             
             await axios.post(`${process.env.REACT_APP_API_URL}auth/google`, {
@@ -57,7 +56,7 @@ const Auth = () => {
                 }
             })
             .catch((err) => {
-                /* console.log(err) */
+                console.log(err)
             })
         }else{
             console.log('error')

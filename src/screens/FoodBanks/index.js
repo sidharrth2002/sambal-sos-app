@@ -18,7 +18,6 @@ const FoodBanks = () => {
                         foodbanks.filter(bank => {
                             return bank.name.toLowerCase().includes(searchQuery)
                         }).map(foodbank => {
-                            console.log(foodbank)
                             return (
                                 <Box padding="1rem" borderRadius="8px" boxShadow="0px 16px 40px rgba(209, 209, 209, 0.25)" maxWidth="500px" width="90%" textAlign="left">
                                     <Text fontFamily="Montserrat" fontWeight="600" >{foodbank.name}</Text>

@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { Center, Spinner, Image, Flex, Text, Button, Heading, Box } from '@chakra-ui/react';
-import firebase from "firebase/app";
+import React, { useEffect, useState } from 'react';
+import { Center, Spinner, Image, Flex, Text, Button, Heading} from '@chakra-ui/react';
+import {
+    useToast
+} from "@chakra-ui/react";
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import "firebase/firestore";
@@ -9,12 +11,9 @@ import {
     GoogleMap,
     useLoadScript,
     Marker,
-    InfoWindow
 } from '@react-google-maps/api'
 import mapStyles from '../../utils/googleMapsStyle'
-import { ReactBingmaps } from 'react-bingmaps';
 import * as BDGraphics from '../../assets/';
-import { flatMapDepth } from 'lodash';
 
 import * as BDAPI from '../../api/index'
 import axios from 'axios';
@@ -24,14 +23,15 @@ require('dotenv').config()
 const Home = () => {
     const history = useHistory();
     const accessToken = useSelector(state => state.auth.accessToken);
-    const [center, setCenter] = useState({ lat: 5.317300222083933, lng: 100.46853021610015 })
+    const toast = useToast()
+
+    const [center, setCenter] = useState()
     const [flags, setFlags] = useState([]);
     const [loading, setLoading] = useState(true);
     const [getCurrentLocationLoading, setGetCurrentLocationLoading] = useState(true);
     const [selectedMarker, setSelectedMarker] = useState(null);
     const [modalVisible, setModalVisible] = useState(false)
 
-    const libraries = ["places"];
     const mapContainerStyle = {
         width: '100vw',
         height: '100vh'
@@ -41,16 +41,6 @@ const Home = () => {
         disableDefaultUI: true,
         zoomControl: true
     }
-    const tryFlags = [
-        {
-            lat: 5.317300222083933, 
-            lng: 100.46853021610015
-        },
-        {
-            lat: 5.917300222083933, 
-            lng: 101.46853021610015
-        }
-    ]
     const {isLoaded, loadError} = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries: ["places"]
@@ -62,7 +52,10 @@ const Home = () => {
             navigator.permissions.query({name:'geolocation'}).then(function(result) {
                 if (result.state === 'granted' || result.state === 'prompt') {
                     navigator.geolocation.getCurrentPosition(showPosition);
-                } 
+                } else {
+                    setCenter({ lat: 3.145081052343874, lng: 101.70524773008304 })
+                    setGetCurrentLocationLoading(false);
+                }
             });
         }
         // function that retrieves the position
@@ -77,48 +70,13 @@ const Home = () => {
     }
 
     useEffect(() => {
-        // firebase
-        // .firestore()
-        // .collection('flags')
-        // .get()
-        // .then(snapshot => {
-        //     snapshot.forEach(async(doc) => {
-        //         let flag = doc.data();
-        //         console.log(flag)
-        //         /* for bing maps */
-        //         /* let newInfoBoxObj = {
-        //             "location":[flag.coordinates._lat, flag.coordinates._long],
-        //             "infoboxOption": {
-        //                 htmlContent: InfoBoxTemplate(flag.coordinates._lat, flag.coordinates._long, flag.image)
-        //             },
-        //             "addHandler":"mousedown",
-        //             "pushPinOption":{  },
-        //             "infoboxAddHandler": {"type" : "click"},
-        //             "pushPinAddHandler": {"type" : "click"}
-        //         } */
-
-        //         /* for google maps */
-        //         let newInfoBoxObj = {
-        //             lat: flag.coordinates._lat,
-        //             lng: flag.coordinates._long,
-        //             address: await BDAPI.latlngToAddress(flag.coordinates._lat, flag.coordinates._long),
-        //             image: flag.image
-        //         }
-
-        //         setFlags((oldFlags) => [
-        //             ...oldFlags,
-        //             newInfoBoxObj
-        //         ]);
-        //     })
-        //     setLoading(false)
-        // })
+        popupLocation();
         axios.get(`${process.env.REACT_APP_API_URL}flag/getall`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }
         })
             .then(async (res) => {
-                console.log(res.data)
                 let flags = res.data
                 flags.forEach(async(flag) => {
                     let newInfoBoxObj = {
@@ -134,24 +92,23 @@ const Home = () => {
                         ...oldFlags,
                         newInfoBoxObj
                     ]);
-
-                    setLoading(false)
                 })
+                setLoading(false)
             })
             .catch((err) => {
                 console.log(err)
+                toast({
+                    title: "Failed to Load",
+                    description: "Something went wrong on our side!",
+                    status: "error",
+                    duration: 10000000000000,
+                    isClosable: false,
+                    position: 'top'
+                })
             })
 
         
     }, []);
-
-    useEffect(() => {
-        console.log(flags)
-    }, [flags])
-
-    useEffect(() => {
-        console.log(selectedMarker)
-    }, [selectedMarker])
 
     const InfoBoxTemplate = (latitude, longitude, image) => {
         let googleMapUrl = `http://maps.google.com/?q=${latitude},${longitude}`;
@@ -168,28 +125,16 @@ const Home = () => {
 
     return (
         <div>
-                            {/* <ReactBingmaps 
-                        id="bingmaps" 
-                        bingmapKey={process.env.REACT_APP_BINGMAP_KEY}
-                        zoom={15} 
-                        center={[5.319607673855811, 100.47342256534424]} 
-                        pushPins={[
-                            {
-                                "location":[5.319607673855811, 100.47342256534424], "option":{ color: 'red' }, "addHandler": {"type" : "click" }
-                            },
-                        ]}
-                    infoboxesWithPushPins={flags}                       
-                    /> */}
             {
-                ( loading && getCurrentLocationLoading ) ? 
-                    <Center>
+                ( loading || getCurrentLocationLoading ) ? 
+                    <Center h="80vh" flexDirection="column" justifyContent="center" alignItems="center" >
                         <Spinner />
                     </Center>
                 :
-                    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} options={options} onClick={() => { setModalVisible(false) }} >
+                    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={14} center={center} options={options} onClick={() => { setModalVisible(false) }} >
                         { flags.map((flag) => 
                             (<Marker 
-                                key={flag.image} 
+                                key={flag.image}
                                 position={{ lat: flag.lat, lng:flag.lng }} 
                                 icon={{
                                     url: '/white-flag.svg',
@@ -224,52 +169,6 @@ const Home = () => {
                             <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="1rem" >
                                 <Flex flexDirection="row" alignItems="center" ><Image src={ BDGraphics.PinIcon } alt="" height="25px" mr="10px" /><Text textAlign="start" >{ selectedMarker.address } </Text></Flex>
                             </Flex>
-                            {/* <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="1rem" overflowX="scroll" w="100% !important" >
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                                <Flex flexDirection="column" justifyContent="center" alignContent="center" mr="15px" >
-                                    <Image src={ BDGraphics.RiceIcon } alt="Rice Icon" height="50px" />
-                                    <Text>Count 2</Text>
-                                </Flex>
-                            </Flex> */}
                             <Flex className="button-groups" flexDirection="row" justifyContent="space-around" alignContent="center" padding="1rem" w="100%" >
                                 <Button fontFamily="Montserrat" fontWeight="600" w="100%" mr="10px" padding="1.5rem" backgroundColor="#5CFFC5" >Up-Vote <Image ml="5px" src={ BDGraphics.UpvoteIcon } height="15px" /> </Button>
                                 <Button fontFamily="Montserrat" fontWeight="600" w="100%" padding="1.5rem" backgroundColor="#FFECA7" >Supported <Image ml="5px" src={ BDGraphics.SupportedIcon } height="15px" /> </Button>

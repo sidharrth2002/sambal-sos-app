@@ -20,7 +20,6 @@ import { useSelector } from 'react-redux'
 require('dotenv').config()
 
 const ReportForm = () => {
-    const currentUser = firebase.auth().currentUser;
     const accessToken = useSelector(state => state.auth.accessToken);
     const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
     const toast = useToast()
@@ -97,36 +96,6 @@ const ReportForm = () => {
         if(acceptedFiles && remark && coordinates){
             setSubmitLoading(true)
             let image_url = await handleImageUpload();
-            /* firebase
-                .firestore()
-                .collection("flags")
-                .add({
-                    coordinates: new firebase.firestore.GeoPoint(coordinates.latitude, coordinates.longitude),
-                    description: `${remark}`,
-                    image: `${image_url}`,
-                    userId: currentUser.uid
-                })
-                .then(() => {
-                    toast({
-                        title: "Saved !",
-                        description: "This flag is being reported",
-                        status: "success",
-                        duration: 9000,
-                        isClosable: true,
-                    })
-                    setSubmitLoading(false)
-                })
-                .catch(err => {
-                    toast({
-                        title: "Failed to save!",
-                        description: "Something went wrong on our side!",
-                        status: "error",
-                        duration: 9000,
-                        isClosable: true,
-                    })
-                    setSubmitLoading(false)
-                }) */
-
             axios.post(`${process.env.REACT_APP_API_URL}flag/createflag`, {
                 latitude: coordinates.latitude,
                 longitude: coordinates.longitude,
@@ -146,10 +115,9 @@ const ReportForm = () => {
                         isClosable: true,
                     })
                     setSubmitLoading(false) 
-                    /* setTimeout(() => {
+                    setTimeout(() => {
                         window.location = '/home'
-                    }, 1800); */
-                    window.location = '/home'
+                    }, 1800);
                 })
                 .catch((err) => {
                     toast({
@@ -179,33 +147,24 @@ const ReportForm = () => {
         clearSuggestions,
     } = usePlacesAutocomplete({
         requestOptions: {
-          /* Define search scope here */
         },
         debounce: 300,
     });
 
     const ref = useOnclickOutside(() => {
-        // When user clicks outside of the component, we can dismiss
-        // the searched suggestions by calling this method
         clearSuggestions();
     });
 
     const handleInput = (e) => {
-        // Update the keyword of the input element
         setValue(e.target.value);
     };
 
     const handleSelect = ({ description }) => () => {
-        // When user selects a place, we can replace the keyword without request data from API
-        // by setting the second parameter as "false"
         setValue(description, false);
         clearSuggestions();
-    
-        // Get latitude and longitude via utility functions
         getGeocode({ address: description })
             .then((results) => getLatLng(results[0]))
             .then(({ lat, lng }) => {
-                console.log("📍 Coordinates: ", { lat, lng });
                 setCoordinates({
                     longitude: lat,
                     latitude: lng
@@ -213,7 +172,7 @@ const ReportForm = () => {
                 setUseMyLocationEnable(false);
             })
             .catch((error) => {
-                console.log("😱 Error: ", error);
+                console.log(error);
             });
         };
     
@@ -330,7 +289,7 @@ const ReportForm = () => {
                             </Flex>
                         </Flex>
 
-                        <Center backgroundColor="#B2C8F5" borderRadius="8px" py="1rem" mb="100px" onClick={ () => {reportFlag()} } >
+                        <Center backgroundColor="#3265CA" borderRadius="8px" py="1rem" mb="100px" onClick={ () => {reportFlag()} } >
                             {
                                 submitLoading ? 
                                 <Spinner />
