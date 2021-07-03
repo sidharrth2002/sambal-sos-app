@@ -1,6 +1,5 @@
 import './App.css';
 import './index.css';
-import configureFirebase from './config';
 import { Switch, Route } from 'react-router-dom';
 import ProtectedRoute from './screens/ProtectedRoute';
 import Auth from './screens/Auth';
@@ -9,7 +8,6 @@ import Home from './screens/Home';
 import FoodBanks from './screens/FoodBanks';
 
 require('dotenv').config()
-configureFirebase();
 
 function App() {
   return (

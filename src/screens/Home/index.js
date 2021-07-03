@@ -105,7 +105,7 @@ const Home = () => {
                         <Spinner />
                     </Center>
                 :
-                    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={18} center={center} options={options} onClick={() => { setModalVisible(false) }} >
+                    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} options={options} onClick={() => { setModalVisible(false) }} >
                         { flags.map((flag) => 
                             (<Marker 
                                 key={flag.image}
