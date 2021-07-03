@@ -4,7 +4,7 @@ import {
     useToast
 } from "@chakra-ui/react";
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import "firebase/firestore";
 import NavigationFooter from '../../components/NavigationFooter';
 import {
@@ -14,6 +14,7 @@ import {
 } from '@react-google-maps/api'
 import mapStyles from '../../utils/googleMapsStyle';
 import * as BDGraphics from '../../assets/';
+import { foodbanks } from '../FoodBanks/foodbanks.js'
 
 import * as BDAPI from '../../api/index'
 import axios from 'axios';
@@ -79,8 +80,6 @@ const Home = () => {
                     position: 'top'
                 })
             })
-
-        
     }, []);
 
     const InfoBoxTemplate = (latitude, longitude, image) => {
@@ -105,10 +104,10 @@ const Home = () => {
                     </Center>
                 :
                     <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} options={options} onClick={() => { setModalVisible(false) }} >
-                        { flags.map((flag) => 
-                            (<Marker 
+                        { flags.map((flag) =>
+                            (<Marker
                                 key={flag.image}
-                                position={{ lat: flag.lat, lng:flag.lng }} 
+                                position={{ lat: flag.lat, lng:flag.lng }}
                                 icon={{
                                     url: '/white-flag.svg',
                                     scaledSize: new window.google.maps.Size(35, 35),
@@ -119,6 +118,18 @@ const Home = () => {
                                     setSelectedMarker(flag);
                                     setModalVisible(true)
                                 }}
+                            />))}
+
+                        { foodbanks.map((foodbank) =>
+                            (<Marker
+                                position={{ lat: foodbank.address[0].coordinates.latitude, lng:foodbank.address[0].coordinates.longitude }}
+                                icon={{
+                                    url: '/groceries.svg',
+                                    scaledSize: new window.google.maps.Size(35, 35),
+                                    origin: new window.google.maps.Point(0,0),
+                                    anchor: new window.google.maps.Point(18, 18)
+                                }}
+                                onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${foodbank.address[0].coordinates.latitude},${foodbank.address[0].coordinates.longitude}`) }}
                             />))}
                     </GoogleMap>
             }
@@ -134,7 +145,7 @@ const Home = () => {
 
             <Flex className="more-details-modal" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" h="55%" w="100%" position="fixed" left="50%" transform="translate(-50%, -50%)" top={ modalVisible ? '60%' : '200%' } backgroundColor="white" borderRadius="8px" padding="1.5rem" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
                 {
-                    selectedMarker ? 
+                    selectedMarker ?
                         <>
                             <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="1rem" >
                                 <Heading> Flags </Heading>
@@ -150,7 +161,7 @@ const Home = () => {
                     :
                         <Text>No Selected Marker</Text>
                 }
-                
+
             </Flex>
 
             <NavigationFooter activeTab={0} />

@@ -2,6 +2,9 @@ import React from 'react';
 
 import * as BDGraphics from '../../assets/';
 import { Image, Flex, Text, Button, Heading, Box } from '@chakra-ui/react';
+import {
+    useToast
+} from "@chakra-ui/react";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import '@firebase/auth';
@@ -17,6 +20,7 @@ const provider = new firebase.auth.GoogleAuthProvider();
 require('dotenv').config()
 
 const Auth = () => {
+    const toast = useToast();
     const dispatch = useDispatch();
     const history = useHistory();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
@@ -32,7 +36,7 @@ const Auth = () => {
                 LOGIN(user)
             );
             history.push('/home');
-    
+
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -43,7 +47,7 @@ const Auth = () => {
 
     const handleGoogleLogin = async googleData => {
         if(googleData){
-            
+
             await axios.post(`${process.env.REACT_APP_API_URL}auth/google`, {
                 token: googleData.tokenId
             })
@@ -57,6 +61,14 @@ const Auth = () => {
             })
             .catch((err) => {
                 console.log(err)
+                toast({
+                    title: "Failed to Load",
+                    description: "Something went wrong on our side!",
+                    status: "error",
+                    duration: 10000000000000,
+                    isClosable: false,
+                    position: 'top'
+                })
             })
         }else{
             console.log('error')

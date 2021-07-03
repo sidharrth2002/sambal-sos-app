@@ -138,7 +138,139 @@ const foodbanks = [
             }
         ],
         website: ""
-    },    
+    },
+    {
+        name: "Happy Food Workshop",
+        address: [
+            {
+                coordinates: {
+                    latitude: 3.039666517514837,
+                    longitude: 101.61743541213227
+                },
+                fullAddress: "No 31 insight road 5/1 Puchong city centre 47160 Selangor"
+            }
+        ]
+    },
+    {
+        name: "Hotel Sentral Kuala Lumpur",
+        address: [
+            {
+                coordinates: {
+                    latitude: 3.1321145667442187,
+                    longitude: 101.68798129652832
+                },
+                fullAddress: "No 30, Jalan Thambypillai Brickfields, 50470 Kuala Lumpur, Malaysia"
+            },
+        ]
+    },
+    {
+        name: "BMS Organics Puchong Utama",
+        address: [
+            {
+                coordinates: {
+                    latitude: 2.995413066471872,
+                    longitude: 101.62092715420067
+                },
+                fullAddress: "70, Jalan BPU 1, Bandar Puchong Utama, 47100 Puchong, Selangor"
+            }
+        ]
+    },
+    {
+        name: "Restoran Lan Je",
+        address: [
+            {
+                coordinates: {
+                    latitude: 3.0757835323101035,
+                    longitude: 101.66122615234735
+                },
+                fullAddress: "29G, Jalan Dato Tan Yew Lai, Off Jalan Puchong, 58200 Kuala Lumpur"
+            }
+        ]
+    },
+    {
+        name: "Dimsumas Restaurant",
+        address: [
+            {
+                coordinates: {
+                    latitude: 3.017990849027273,
+                    longitude: 101.6053054542007
+                },
+                fullAddress: "514, Intan Street 1/4, Taman Puchong Intan, 47100 Puchong, Selangor"
+            }
+        ]
+    },
+    {
+        name: "MDD Restaurant",
+        address: [
+            {
+                coordinates: {
+                    latitude: 3.048651039106075,
+                    longitude: 101.58447711021007
+                },
+                fullAddress: "25, Jalan USJ 10/1c, Taipan, 47600 Subang Jaya, Selangor"
+            }
+        ]
+    },
+    {
+        name: "Seri Kembangan Food Bank",
+        address: [
+            {
+                coordinates: {
+                    latitude: 2.9990618985827067,
+                    longitude: 101.67752940909946
+                },
+                fullAddress: "No 2&4, Jalan Equine 9B, Taman Equine, 43300 Seri Kembangan, Selangor"
+            }
+        ]
+    },
+    {
+        name: "Semenyih Food Bank",
+        address: [
+            {
+                coordinates: {
+                    latitude: 2.9712212158580877,
+                    longitude: 101.82789839486858
+                },
+                fullAddress: "50, Jalan 1/10, Bandar Teknologi Kajang, 43500 Semenyih, Selangor"
+            }
+        ]
+    },
+    {
+        name: "kEATchen Ara Damansara",
+        address: [
+            {
+                coordinates: {
+                    latitude: 3.121383033651662,
+                    longitude: 101.57440168322229
+                },
+                fullAddress: "8, Jalan PJU 1a/14, Taman Peritndustrian Jaya, 47301 Petaling Jaya, Selangor"
+            }
+        ]
+    },
+    {
+        name: "Signature Tint Shop S/b & CO2 Coating Concept S/B",
+        address: [
+            {
+                coordinates: {
+                    latitude: 3.0400315797483874,
+                    longitude: 101.6184199857641
+                },
+                fullAddress: "No56, Pusat Perdangangan, One Puchong, Jalan Op 1/5, 47160 Selangor"
+            }
+        ]
+    },
+    {
+        name: "Cheras Food Bank",
+        address: [
+            {
+                coordinates: {
+                    latitude: 3.122606612130784,
+                    longitude: 101.72971093325174
+                },
+                fullAddress: "No4, Jalan Pudu Ulu 56100 Cheras, Kuala Lumpur"
+            }
+        ]
+    }
 ];
 
 module.exports = { foodbanks }
