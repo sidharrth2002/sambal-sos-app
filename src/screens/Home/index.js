@@ -23,12 +23,10 @@ require('dotenv').config()
 const Home = () => {
     const history = useHistory();
     const accessToken = useSelector(state => state.auth.accessToken);
-    const toast = useToast()
-
-    const [center, setCenter] = useState()
+    const toast = useToast();
+    const [center, setCenter] = useState({ lat: 3.145081052343874, lng: 101.70524773008304 })
     const [flags, setFlags] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [getCurrentLocationLoading, setGetCurrentLocationLoading] = useState(true);
     const [selectedMarker, setSelectedMarker] = useState(null);
     const [modalVisible, setModalVisible] = useState(false)
 
@@ -46,31 +44,7 @@ const Home = () => {
         libraries: ["places"]
     })
 
-
-    const popupLocation = () => {
-        function handlePermission() {
-            navigator.permissions.query({name:'geolocation'}).then(function(result) {
-                if (result.state === 'granted' || result.state === 'prompt') {
-                    navigator.geolocation.getCurrentPosition(showPosition);
-                } else {
-                    setCenter({ lat: 3.145081052343874, lng: 101.70524773008304 })
-                    setGetCurrentLocationLoading(false);
-                }
-            });
-        }
-        // function that retrieves the position
-        function showPosition(position) {
-            setCenter({
-                lng: position.coords.longitude,
-                lat: position.coords.latitude
-            });
-            setGetCurrentLocationLoading(false);
-        }
-        handlePermission();
-    }
-
     useEffect(() => {
-        popupLocation();
         axios.get(`${process.env.REACT_APP_API_URL}flag/getall`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
@@ -126,12 +100,12 @@ const Home = () => {
     return (
         <div>
             {
-                ( loading || getCurrentLocationLoading ) ? 
+                ( loading ) ?
                     <Center h="80vh" flexDirection="column" justifyContent="center" alignItems="center" >
                         <Spinner />
                     </Center>
                 :
-                    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={14} center={center} options={options} onClick={() => { setModalVisible(false) }} >
+                    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={18} center={center} options={options} onClick={() => { setModalVisible(false) }} >
                         { flags.map((flag) => 
                             (<Marker 
                                 key={flag.image}
