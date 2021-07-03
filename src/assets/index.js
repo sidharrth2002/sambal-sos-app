@@ -15,6 +15,9 @@ import RiceIcon from './svgs/rice.svg';
 import UpvoteIcon from './svgs/upvote.svg';
 import SupportedIcon from './svgs/supported.svg';
 import PinIcon from './svgs/pin.svg';
+import GroceriesIcon from './svgs/groceries.svg';
+import GroceriesOutlineIcon from './svgs/groceries-outline.svg'
+import LogoutIcon from './svgs/logout.svg'
 
 export {
     MaintenanceSVG,
@@ -33,5 +36,8 @@ export {
     RiceIcon,
     UpvoteIcon,
     SupportedIcon,
-    PinIcon
+    PinIcon,
+    GroceriesIcon,
+    GroceriesOutlineIcon,
+    LogoutIcon
 }

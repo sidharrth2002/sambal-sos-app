@@ -12,7 +12,7 @@ import {
     useLoadScript,
     Marker,
 } from '@react-google-maps/api'
-import mapStyles from '../../utils/googleMapsStyle'
+import mapStyles from '../../utils/googleMapsStyle';
 import * as BDGraphics from '../../assets/';
 
 import * as BDAPI from '../../api/index'

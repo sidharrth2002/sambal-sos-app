@@ -195,7 +195,7 @@ const ReportForm = () => {
             <Flex w="100%" h="100%" backgroundColor="#F5F5F5" flexDirection="column" >
                 <Box className="navbar" backgroundColor="#FFFFFF" px="2.0rem" py="1.0rem" >
                     <Flex position="relative" flexDirection="row" justifyContent="center" alignItems="center" >
-                        <Box className="back-button" position="absolute" left="5px" >
+                        <Box onClick={ () => {window.location = '/home'} } className="back-button" position="absolute" left="5px" >
                             <Image h="25px" src={ BDGraphics.BackButtonIcon } alt="back button" />
                         </Box>
                         <Box className="screen-title" >

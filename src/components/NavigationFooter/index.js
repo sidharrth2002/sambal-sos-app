@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Center, Icon, VStack, Text } from "@chakra-ui/react"
+import { Grid, Center, Icon, VStack, Text, Image } from "@chakra-ui/react"
 import { AddIcon, WarningIcon, SearchIcon, SunIcon } from '@chakra-ui/icons'
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
@@ -8,6 +8,8 @@ import { LOGOUT } from '../../features/counter/authSlice';
 import firebase from "firebase/app";
 import "firebase/firestore";
 import '@firebase/auth';
+
+import * as BDGraphics from '../../assets';
 
 const NavigationFooter = (props) => {
     const { activeTab } = props;
@@ -19,19 +21,19 @@ const NavigationFooter = (props) => {
         <Grid templateColumns={`repeat(${isAuthenticated ? 4 : 3}, 1fr)`} gap={6} position="fixed" bottom="0" backgroundColor="white" width="100%" height="125px" shadow="lg" padding="1rem" zIndex="1001" >
             <Center w="100%" padding="5px 0" onClick={() => history.push('/home')}>
                 <VStack>
-                    <SearchIcon />
-                    <Text fontWeight={activeTab === 0 ? "bold" : "normal"} fontSize="0.8rem" >Find Flags</Text>
+                    <SearchIcon height="25px" />
+                    <Text fontWeight={activeTab === 0 ? "bold" : "normal"} fontSize="0.8rem" >Find <br></br> Flags</Text>
                 </VStack>
             </Center>
             <Center w="100%" padding="5px 0" onClick={() => history.push('/food-banks')}>
                 <VStack>
-                    <SunIcon />
+                    <Image src={BDGraphics.GroceriesOutlineIcon} height="25px" />
                     <Text fontWeight={activeTab === 1 ? "bold" : "normal"} fontSize="0.8rem" >Food Banks</Text>
                 </VStack>
             </Center>
             <Center w="100%" padding="5px 0" onClick={() => history.push('/report-flag')}>
                 <VStack>
-                    <AddIcon />
+                    <AddIcon height="25px" />
                     <Text fontWeight={activeTab === 2 ? "bold" : "normal"}fontSize="0.8rem" >Report a Flag</Text>
                 </VStack>
             </Center>
@@ -42,8 +44,8 @@ const NavigationFooter = (props) => {
                     history.push('/login')
                 }}>
                     <VStack>
-                        <WarningIcon />
-                        <Text fontSize="0.8rem" >Logout</Text>
+                    <Image src={BDGraphics.LogoutIcon} height="20px" />
+                        <Text fontSize="0.8rem" >Log <br></br> Out</Text>
                     </VStack>
                 </Center>
             }
