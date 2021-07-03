@@ -28,13 +28,13 @@ const NavigationFooter = (props) => {
             <Center w="100%" padding="5px 0" onClick={() => history.push('/food-banks')}>
                 <VStack>
                     <Image src={BDGraphics.GroceriesOutlineIcon} height="25px" />
-                    <Text fontWeight={activeTab === 1 ? "bold" : "normal"} fontSize="0.8rem" >Food Banks</Text>
+                    <Text fontWeight={activeTab === 1 ? "bold" : "normal"} fontSize="0.8rem" >Food <br></br> Banks</Text>
                 </VStack>
             </Center>
             <Center w="100%" padding="5px 0" onClick={() => history.push('/report-flag')}>
                 <VStack>
                     <AddIcon height="25px" />
-                    <Text fontWeight={activeTab === 2 ? "bold" : "normal"}fontSize="0.8rem" >Report a Flag</Text>
+                    <Text fontWeight={activeTab === 2 ? "bold" : "normal"}fontSize="0.8rem" >Report <br></br> a Flag</Text>
                 </VStack>
             </Center>
             {
