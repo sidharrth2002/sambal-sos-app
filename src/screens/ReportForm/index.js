@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import {useDropzone} from 'react-dropzone';
 import NavigationFooter from '../../components/NavigationFooter';
-import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner } from '@chakra-ui/react';
+import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input } from '@chakra-ui/react';
 import {
     Alert,
     AlertIcon,
     useToast
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
+import usePlacesAutocomplete, {
+    getGeocode,
+    getLatLng,
+} from "use-places-autocomplete";
+import useOnclickOutside from "react-cool-onclickoutside";
 import axios from 'axios';
 import * as BDGraphics from '../../assets/';
 import firebase from "firebase/app";
 import "firebase/firestore";
-
 require('dotenv').config()
 
 const ReportForm = () => {
@@ -124,6 +128,65 @@ const ReportForm = () => {
         }
     }
 
+    const {
+        ready,
+        value,
+        suggestions: { status, data },
+        setValue,
+        clearSuggestions,
+    } = usePlacesAutocomplete({
+        requestOptions: {
+          /* Define search scope here */
+        },
+        debounce: 300,
+    });
+
+    const ref = useOnclickOutside(() => {
+        // When user clicks outside of the component, we can dismiss
+        // the searched suggestions by calling this method
+        clearSuggestions();
+    });
+
+    const handleInput = (e) => {
+        // Update the keyword of the input element
+        setValue(e.target.value);
+    };
+
+    const handleSelect = ({ description }) => () => {
+        // When user selects a place, we can replace the keyword without request data from API
+        // by setting the second parameter as "false"
+        setValue(description, false);
+        clearSuggestions();
+    
+        // Get latitude and longitude via utility functions
+        getGeocode({ address: description })
+            .then((results) => getLatLng(results[0]))
+            .then(({ lat, lng }) => {
+                console.log("📍 Coordinates: ", { lat, lng });
+                setCoordinates({
+                    longitude: lat,
+                    latitude: lng
+                });
+            })
+            .catch((error) => {
+                console.log("😱 Error: ", error);
+            });
+        };
+    
+    const renderSuggestions = () =>
+        data.map((suggestion) => {
+            const {
+                id,
+                structured_formatting: { main_text, secondary_text },
+            } = suggestion;
+        
+            return (
+                <Flex key={id} onClick={handleSelect(suggestion)} flexDirection="row" justifyContent="flex-start" alignItems="flex-start" mb="10px" padding="0.5rem" borderBottom="1px solid #EAEAEA" >
+                    <Text w="100%" flexDirection="row" alignItems="center" textAlign="start" > {main_text} {secondary_text} </Text>
+                </Flex>
+            );
+        });
+
     return (
         <>
             <Flex w="100%" h="100%" backgroundColor="#F5F5F5" flexDirection="column" >
@@ -194,7 +257,19 @@ const ReportForm = () => {
                                             <Spinner />
                                         }
                                     </Flex>
+
                                 }
+
+                                <Box w="100%" mt="20px" ref={ref}>
+                                    <Input
+                                        style={{ width:'100%' }}
+                                        value={value}
+                                        onChange={handleInput}
+                                        disabled={!ready}
+                                        placeholder="Where are you going?"
+                                    />
+                                    {status === "OK" && <Box backgroundColor="#FFFFFF" w="100%" padding="1rem" border="1px solid #F5F5F5" mt="15px" borderRadius="8px" boxShadow="0px 16px 40px rgba(212, 212, 212, 0.25);" >{renderSuggestions()}</Box>}
+                                </Box>
                             </Flex>
                         </Flex>
 

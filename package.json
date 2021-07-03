@@ -8,6 +8,7 @@
     "@craco/craco": "^6.1.2",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@react-google-maps/api": "^2.2.0",
     "@reduxjs/toolkit": "^1.6.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -26,6 +27,7 @@
     "qs": "^6.7.0",
     "react": "^17.0.2",
     "react-bingmaps": "^3.6.1",
+    "react-cool-onclickoutside": "^1.6.2",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.3.4",
     "react-google-login": "^5.2.2",
@@ -37,6 +39,7 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.0",
+    "use-places-autocomplete": "^1.9.3",
     "web-vitals": "^1.0.1",
     "xlsx": "^0.17.0"
   },
