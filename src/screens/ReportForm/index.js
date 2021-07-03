@@ -145,7 +145,7 @@ const ReportForm = () => {
                         duration: 9000,
                         isClosable: true,
                     })
-                    setSubmitLoading(false)
+                    setSubmitLoading(false) 
                     /* setTimeout(() => {
                         window.location = '/home'
                     }, 1800); */
