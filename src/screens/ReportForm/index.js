@@ -117,7 +117,7 @@ const ReportForm = () => {
                     setSubmitLoading(false) 
                     setTimeout(() => {
                         window.location = '/home'
-                    }, 1800);
+                    }, 1500);
                 })
                 .catch((err) => {
                     toast({

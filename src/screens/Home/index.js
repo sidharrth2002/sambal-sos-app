@@ -37,7 +37,6 @@ const Home = () => {
         height: '100vh'
     }
     const options = {
-        styles: mapStyles,
         disableDefaultUI: true,
         zoomControl: true
     }
