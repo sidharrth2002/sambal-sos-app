@@ -38,7 +38,6 @@ const NavigationFooter = (props) => {
             {
                 isAuthenticated &&
                 <Center w="100%" padding="5px 0" onClick={() => {
-                    firebase.auth().signOut();
                     dispatch(LOGOUT());
                     history.push('/login')
                 }}>

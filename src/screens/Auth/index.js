@@ -82,7 +82,7 @@ const Auth = () => {
                         <Button backgroundColor="#B2C8F5" padding="28px 25px" onClick={ () => { renderProps.onClick()} } disabled={renderProps.disabled}>
                             <Flex borderRadius="8px" fontFamily="Poppins" width="100%" flexDirection="row" justifyContent="center" alignItems="center" position="relative">
                                 <Image alt="Google Login Button Svg" src={BDGraphics.GoogleLoginIcon} height="18px" width="18px" mr="20px" />
-                                <Text fontWeight="light">Login with Google (with nodejs)</Text>
+                                <Text fontWeight="light">Login with Google</Text>
                             </Flex>
                         </Button>
                     )}
@@ -93,12 +93,6 @@ const Auth = () => {
                     cookiePolicy={'single_host_origin'}
                 />
 
-                <Button backgroundColor="#B2C8F5" padding="28px 25px" onClick={authHandler}>
-                    <Flex borderRadius="8px" fontFamily="Poppins" width="100%" flexDirection="row" justifyContent="center" alignItems="center" position="relative">
-                        <Image alt="Google Login Button Svg" src={BDGraphics.GoogleLoginIcon} height="18px" width="18px" mr="20px" />
-                        <Text fontWeight="light">Login with Google (with firebase)</Text>
-                    </Flex>
-                </Button>
             </Flex>
         </Flex>
     );
