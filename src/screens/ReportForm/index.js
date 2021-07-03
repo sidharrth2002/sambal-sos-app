@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useDropzone} from 'react-dropzone';
 import NavigationFooter from '../../components/NavigationFooter';
-import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input } from '@chakra-ui/react';
+import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input, Tag } from '@chakra-ui/react';
 import {
     Alert,
     AlertIcon,
@@ -16,10 +16,12 @@ import axios from 'axios';
 import * as BDGraphics from '../../assets/';
 import firebase from "firebase/app";
 import "firebase/firestore";
+import { useSelector } from 'react-redux'
 require('dotenv').config()
 
 const ReportForm = () => {
     const currentUser = firebase.auth().currentUser;
+    const accessToken = useSelector(state => state.auth.accessToken);
     const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
     const toast = useToast()
 
@@ -28,6 +30,10 @@ const ReportForm = () => {
     const [coordinates, setCoordinates] = useState(null);
     const [progressBarValue, setProgressBarValue] = useState(5)
     const [locationLoading, setLocationLoading] = useState(false);
+
+    const [useMyLocationEnable, setUseMyLocationEnable] = useState(true);
+    const [searchLocationEnable, setSearchLocationEnable] = useState(true);
+
     const [submitLoading, setSubmitLoading] = useState(false)
 
     useEffect(() => {
@@ -68,6 +74,8 @@ const ReportForm = () => {
                 latitude: position.coords.latitude
             });
             setLocationLoading(false);
+            setUseMyLocationEnable(false);
+            setSearchLocationEnable(false);
         }
         handlePermission();
     }
@@ -89,7 +97,7 @@ const ReportForm = () => {
         if(acceptedFiles && remark && coordinates){
             setSubmitLoading(true)
             let image_url = await handleImageUpload();
-            firebase
+            /* firebase
                 .firestore()
                 .collection("flags")
                 .add({
@@ -109,6 +117,41 @@ const ReportForm = () => {
                     setSubmitLoading(false)
                 })
                 .catch(err => {
+                    toast({
+                        title: "Failed to save!",
+                        description: "Something went wrong on our side!",
+                        status: "error",
+                        duration: 9000,
+                        isClosable: true,
+                    })
+                    setSubmitLoading(false)
+                }) */
+
+            axios.post(`${process.env.REACT_APP_API_URL}flag/createflag`, {
+                latitude: coordinates.latitude,
+                longitude: coordinates.longitude,
+                description: remark,
+                image: image_url
+            }, {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }
+            })
+                .then((res) => {
+                    toast({
+                        title: "Saved !",
+                        description: "This flag is being reported",
+                        status: "success",
+                        duration: 9000,
+                        isClosable: true,
+                    })
+                    setSubmitLoading(false)
+                    /* setTimeout(() => {
+                        window.location = '/home'
+                    }, 1800); */
+                    window.location = '/home'
+                })
+                .catch((err) => {
                     toast({
                         title: "Failed to save!",
                         description: "Something went wrong on our side!",
@@ -167,6 +210,7 @@ const ReportForm = () => {
                     longitude: lat,
                     latitude: lng
                 });
+                setUseMyLocationEnable(false);
             })
             .catch((error) => {
                 console.log("😱 Error: ", error);
@@ -181,7 +225,7 @@ const ReportForm = () => {
             } = suggestion;
         
             return (
-                <Flex key={id} onClick={handleSelect(suggestion)} flexDirection="row" justifyContent="flex-start" alignItems="flex-start" mb="10px" padding="0.5rem" borderBottom="1px solid #EAEAEA" >
+                <Flex key={id} onClick={handleSelect(suggestion)} flexDirection="row" justifyContent="flex-start" alignItems="flex-start" mb="10px" padding="0.5rem" borderBottom="1px solid #EAEAEA" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
                     <Text w="100%" flexDirection="row" alignItems="center" textAlign="start" > {main_text} {secondary_text} </Text>
                 </Flex>
             );
@@ -221,7 +265,7 @@ const ReportForm = () => {
                                             Image Approved! 😄
                                         </Alert>
                                         : 
-                                        <Center w="100%" padding="40px 40px" borderRadius="8px" border="1px solid #B2C8F5"  >
+                                        <Center w="100%" padding="40px 40px" borderRadius="8px" border="1px solid #DEDEDE"  >
                                             <Center flexDirection="column" {...getRootProps({className: 'dropzone'})}>
                                                 <Image mb="20px" src={BDGraphics.ImageIcon} alt="Image" />
                                                 <input {...getInputProps()} required />
@@ -241,18 +285,18 @@ const ReportForm = () => {
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
                                 {
                                     coordinates ?
-                                    <Alert status="success">
+                                    <Alert status="success" mb="15px">
                                         <AlertIcon />
                                         Location has been set! 😄
                                     </Alert>
                                     :
-                                    <Flex flexDirection="row" justifyContent="center" alignItems="center" w="100%" h="100%" backgroundColor="#464646" borderRadius="5px" color="white" padding="1.0rem" onClick={() => popupLocation()}>
+                                    <Flex display={useMyLocationEnable ? 'block' : 'none'} flexDirection="row" justifyContent="center" alignItems="center" w="100%" h="100%" backgroundColor="#464646" borderRadius="5px" color="white" padding="1.0rem" onClick={() => popupLocation()}>
                                         {
                                             !locationLoading ?
-                                            <>
-                                                <Image h="15px" w="15px" mr="0.9rem" src={ BDGraphics.LocationIcon } alt="Location Icon" />
-                                                Use My Location
-                                            </>
+                                                <Flex flexDirection="row" justifyContent="center" alignItems="center" >
+                                                    <Image h="15px" w="15px" mr="0.9rem" src={ BDGraphics.LocationIcon } alt="Location Icon" />
+                                                    Use My Location
+                                                </Flex>
                                             :
                                             <Spinner />
                                         }
@@ -260,9 +304,12 @@ const ReportForm = () => {
 
                                 }
 
-                                <Box w="100%" mt="20px" ref={ref}>
+                                <Text display={(useMyLocationEnable && searchLocationEnable) ? 'block' : 'none'} marginY="10px" fontFamily="Poppins" fontSize="13px" color="#5F5F5F" > Or </Text>
+
+                                <Box display={searchLocationEnable ? 'block' : 'none'} w="100%" ref={ref}>
                                     <Input
                                         style={{ width:'100%' }}
+                                        padding="1.5rem"
                                         value={value}
                                         onChange={handleInput}
                                         disabled={!ready}

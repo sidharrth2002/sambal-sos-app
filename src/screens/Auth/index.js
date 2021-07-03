@@ -45,7 +45,7 @@ const Auth = () => {
         console.log(googleData)
         if(googleData){
             
-            await axios.post(`http://localhost:5000/api/auth/google`, {
+            await axios.post(`${process.env.REACT_APP_API_URL}auth/google`, {
                 token: googleData.tokenId
             })
             .then((res) => {

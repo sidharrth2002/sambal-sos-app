@@ -27,6 +27,7 @@ const Home = () => {
     const [center, setCenter] = useState({ lat: 5.317300222083933, lng: 100.46853021610015 })
     const [flags, setFlags] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [getCurrentLocationLoading, setGetCurrentLocationLoading] = useState(true);
     const [selectedMarker, setSelectedMarker] = useState(null);
     const [modalVisible, setModalVisible] = useState(false)
 
@@ -54,6 +55,26 @@ const Home = () => {
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries: ["places"]
     })
+
+
+    const popupLocation = () => {
+        function handlePermission() {
+            navigator.permissions.query({name:'geolocation'}).then(function(result) {
+                if (result.state === 'granted' || result.state === 'prompt') {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } 
+            });
+        }
+        // function that retrieves the position
+        function showPosition(position) {
+            setCenter({
+                lng: position.coords.longitude,
+                lat: position.coords.latitude
+            });
+            setGetCurrentLocationLoading(false);
+        }
+        handlePermission();
+    }
 
     useEffect(() => {
         // firebase
@@ -91,7 +112,7 @@ const Home = () => {
         //     })
         //     setLoading(false)
         // })
-        axios.get(`http://localhost:5000/api/flag/getall`, {
+        axios.get(`${process.env.REACT_APP_API_URL}flag/getall`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }
@@ -101,6 +122,7 @@ const Home = () => {
                 let flags = res.data
                 flags.forEach(async(flag) => {
                     let newInfoBoxObj = {
+                        flag_id: flag.id,
                         lat: flag.coordinates.coordinates[0],
                         lng: flag.coordinates.coordinates[1],
                         address: await BDAPI.latlngToAddress(flag.coordinates.coordinates[0], flag.coordinates.coordinates[1]),
@@ -159,7 +181,7 @@ const Home = () => {
                     infoboxesWithPushPins={flags}                       
                     /> */}
             {
-                loading ? 
+                ( loading && getCurrentLocationLoading ) ? 
                     <Center>
                         <Spinner />
                     </Center>
