@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Spinner, Image, Flex, Text, Button, Heading, Box } from '@chakra-ui/react';
+import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
@@ -157,10 +157,18 @@ const Home = () => {
                     selectedMarker ?
                         <>
                             <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="1rem" >
-                                <Heading> Flags </Heading>
+                                <Heading> Flag Details </Heading>
                             </Flex>
-                            <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="1rem" >
-                                <Flex flexDirection="row" alignItems="center" ><Image src={ BDGraphics.PinIcon } alt="" height="25px" mr="10px" /><Text textAlign="start" >{ selectedMarker.address } </Text></Flex>
+                            <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="0.2rem">
+                                <HStack>
+                                    <Box maxWidth="50%">
+                                        <Image src={ selectedMarker?.image } width="170px" maxWidth="100%" marginRight="1rem" />
+                                    </Box>
+                                    <Center flexDirection="column" maxWidth="50%">
+                                        <Image src={ BDGraphics.PinIcon } alt="" height="25px" mr="10px" marginBottom="1rem"/>
+                                        <Text fontSize="sm">{ selectedMarker?.description }</Text>
+                                    </Center>
+                                </HStack>
                             </Flex>
                             <Flex className="button-groups" flexDirection="row" justifyContent="space-around" alignContent="center" padding="1rem" w="100%" >
                                 <Box w="100%" mr="10px" onClick={ () => { toastOpener() } }>
