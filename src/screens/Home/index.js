@@ -146,7 +146,7 @@ const Home = () => {
                             />))}
                     </GoogleMap>
             }
-            <Flex borderTopRadius="15px" position="fixed" bottom="125px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="white" padding="20px 20px" >
+            <Flex borderTopRadius="15px" position="fixed" bottom="100px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="white" padding="20px 20px" >
                 <Flex w="48%" justifyContent="center" backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" >
                     Ask for help
                 </Flex>
@@ -156,21 +156,24 @@ const Home = () => {
                 </Flex>
             </Flex>
 
-            <Flex className="more-details-modal" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" h="55%" w="100%" position="fixed" left="50%" transform="translate(-50%, -50%)" top={ modalVisible ? '60%' : '200%' } backgroundColor="white" borderRadius="8px" padding="1.5rem" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
+            <Flex className="more-details-modal" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" h="55%" w="100%" position="fixed" left="50%" transform="translate(-50%, -50%)" top={ modalVisible ? '65%' : '200%' } backgroundColor="white" borderRadius="8px" padding="0.8rem" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
                 {
                     selectedMarker ?
                         <>
                             <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="1rem" >
                                 <Heading> Flag Details </Heading>
                             </Flex>
-                            <Center flexDirection="row" justifyContent="flex-start" alignContent="center" padding="0.2rem">
-                                <HStack>
-                                    <Box maxWidth="50%">
-                                        <Image src={ selectedMarker?.image } width="170px" maxWidth="100%" marginRight="1rem" />
+                            <Center flexDirection="row" justifyContent="flex-start" alignContent="flex-start" padding="1rem">
+                                <HStack h="100%" >
+                                    <Box maxWidth="50%" px="0.5rem" py="0.5rem">
+                                        <Image borderRadius="8px" src={ selectedMarker?.image } width="100%" maxWidth="200px" marginRight="1rem" />
                                     </Box>
-                                    <Center flexDirection="column" maxWidth="50%">
-                                        <Image src={ BDGraphics.PinIcon } alt="" height="25px" mr="10px" marginBottom="1rem"/>
-                                        <Text fontSize="sm">{ selectedMarker?.description }</Text>
+                                    <Center flexDirection="column" justifyContent="flex-start" maxWidth="50%" h="100%" py="0.5rem">
+                                        <Flex backgroundColor="#B2C8F5" borderRadius="8px" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
+                                            <Image src={ BDGraphics.PinIcon } alt="" height="15px" />
+                                            <Text fontSize="13px" >Go to this location</Text>
+                                        </Flex>
+                                        <Text textAlign="start" fontSize="12px" px="0.5rem">{ selectedMarker?.description }</Text>
                                     </Center>
                                 </HStack>
                             </Center>
