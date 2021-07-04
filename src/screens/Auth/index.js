@@ -84,7 +84,7 @@ const Auth = () => {
             <Image src={BDGraphics.Logo} maxWidth="150px" width="80%" marginBottom="2rem" />
             <Box marginBottom="4rem">
                 <Heading fontFamily="Montserrat" as="h1" fontWeight="5fr00" marginBottom="1rem">The Bendera Putih App</Heading>
-                <Heading fontFamily="Montserrat" as="h3" fontSize="2xl" fontWeight="300">Now In Beta!</Heading>
+                <Heading fontFamily="Montserrat" as="h3" fontSize="2xl" fontWeight="300">Now In Production!</Heading>
             </Box>
             <Flex maxWidth="600px" flexDirection="column" justifyContent="center" alignItems="center" width="300px" maxWidth="90%" margin="0 auto">
 
