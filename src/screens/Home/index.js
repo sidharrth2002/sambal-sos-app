@@ -159,7 +159,7 @@ const Home = () => {
                             <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="1rem" >
                                 <Heading> Flag Details </Heading>
                             </Flex>
-                            <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="0.2rem">
+                            <Center flexDirection="row" justifyContent="flex-start" alignContent="center" padding="0.2rem">
                                 <HStack>
                                     <Box maxWidth="50%">
                                         <Image src={ selectedMarker?.image } width="170px" maxWidth="100%" marginRight="1rem" />
@@ -169,7 +169,7 @@ const Home = () => {
                                         <Text fontSize="sm">{ selectedMarker?.description }</Text>
                                     </Center>
                                 </HStack>
-                            </Flex>
+                            </Center>
                             <Flex className="button-groups" flexDirection="row" justifyContent="space-around" alignContent="center" padding="1rem" w="100%" >
                                 <Box w="100%" mr="10px" onClick={ () => { toastOpener() } }>
                                     <Button fontFamily="Montserrat" fontWeight="600" w="100%" padding="1.5rem" backgroundColor="#5CFFC5" >Up-Vote <Image ml="5px" src={ BDGraphics.UpvoteIcon } height="15px"/> </Button>
