@@ -87,7 +87,7 @@ const ReportForm = () => {
         const formData = new FormData();
         formData.append('file', acceptedFiles[0]);
         formData.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET);
-        let result = await axios.post('https://api.Cloudinary.com/v1_1/benderaputihapp/image/upload/e_blur_faces:1000', formData)
+        let result = await axios.post('https://api.Cloudinary.com/v1_1/benderaputihapp/image/upload/', formData)
         let secure_url = result.data.secure_url
         return secure_url;
     }
@@ -114,7 +114,7 @@ const ReportForm = () => {
                         duration: 9000,
                         isClosable: true,
                     })
-                    setSubmitLoading(false) 
+                    setSubmitLoading(false)
                     setTimeout(() => {
                         window.location = '/home'
                     }, 1500);
@@ -171,18 +171,16 @@ const ReportForm = () => {
                 });
                 setUseMyLocationEnable(false);
             })
-            .catch((error) => {
-                console.log(error);
-            });
+            .catch((error) => {});
         };
-    
+
     const renderSuggestions = () =>
         data.map((suggestion) => {
             const {
                 id,
                 structured_formatting: { main_text, secondary_text },
             } = suggestion;
-        
+
             return (
                 <Flex key={id} onClick={handleSelect(suggestion)} flexDirection="row" justifyContent="flex-start" alignItems="flex-start" mb="10px" padding="0.5rem" borderBottom="1px solid #EAEAEA" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
                     <Text w="100%" flexDirection="row" alignItems="center" textAlign="start" > {main_text} {secondary_text} </Text>
@@ -218,12 +216,12 @@ const ReportForm = () => {
                             </Flex>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
                                     {
-                                        acceptedFiles.length > 0 ? 
+                                        acceptedFiles.length > 0 ?
                                         <Alert status="success">
                                             <AlertIcon />
-                                            Image Approved! 😄
+                                            Image Added! 😄
                                         </Alert>
-                                        : 
+                                        :
                                         <Center w="100%" padding="40px 40px" borderRadius="8px" border="1px solid #DEDEDE"  >
                                             <Center flexDirection="column" {...getRootProps({className: 'dropzone'})}>
                                                 <Image mb="20px" src={BDGraphics.ImageIcon} alt="Image" />
@@ -232,7 +230,7 @@ const ReportForm = () => {
                                             </Center>
                                         </Center>
                                     }
-                                
+                                    <Text mt="10px" color="#A7A7A7" textAlign="start" px="0.5rem">By uploading this image, you understand that the image will be public. Please ensure that there is no privacy breach. Your picture will be reviewed.</Text>
                             </Flex>
                         </Flex>
 
@@ -291,7 +289,7 @@ const ReportForm = () => {
 
                         <Center backgroundColor="#3265CA" borderRadius="8px" py="1rem" mb="100px" onClick={ () => {reportFlag()} } >
                             {
-                                submitLoading ? 
+                                submitLoading ?
                                 <Spinner />
                                 :
                                 <Text color="white" fontFamily="Montserrat" fontWeight="800" >Submit</Text>
