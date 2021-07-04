@@ -13,15 +13,16 @@ import { ChakraProvider } from '@chakra-ui/react';
 const history = createHistory()
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <Router history={history}>
-        <ChakraProvider>
-          <App />
-        </ChakraProvider>
-      </Router>
-    </Provider>
-  </BrowserRouter>,
+    <BrowserRouter>
+      <Provider store={store}>
+        <Router history={history}>
+          <ChakraProvider>
+              <App />
+          </ChakraProvider>
+        </Router>
+      </Provider>
+    </BrowserRouter>
+  ,
   document.getElementById('root')
 );
 

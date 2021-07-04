@@ -11,6 +11,7 @@ require('dotenv').config()
 
 function App() {
   return (
+
       <div className="App">
           <Switch>
             <Route exact path='/login' component={Auth} />
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' component={Auth} />
           </Switch>
       </div>
+
   );
 }
 
