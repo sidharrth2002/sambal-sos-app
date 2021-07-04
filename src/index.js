@@ -7,7 +7,7 @@ import { Router } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import store from './app/store';
 import { Provider } from 'react-redux';
-import * as serviceWorker from './service-worker';
+import * as serviceWorker from './serviceWorker';
 import { ChakraProvider } from '@chakra-ui/react';
 
 const history = createHistory()
