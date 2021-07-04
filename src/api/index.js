@@ -10,7 +10,5 @@ export const latlngToAddress = async(latitude, longitude) => {
         .then((res) => {
             return res.data.results[0].formatted_address
         })
-        .catch((err) => {
-            console.log(err)
-        })
+        .catch((err) => {})
 }
