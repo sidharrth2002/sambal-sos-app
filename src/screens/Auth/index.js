@@ -5,17 +5,12 @@ import { Image, Flex, Text, Button, Heading, Box } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
-import firebase from "firebase/app";
-import "firebase/firestore";
-import '@firebase/auth';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 import { LOGIN } from '../../features/counter/authSlice';
 import { GoogleLogin } from 'react-google-login';
 import { useHistory } from 'react-router-dom';
-
-const provider = new firebase.auth.GoogleAuthProvider();
 
 require('dotenv').config()
 
@@ -24,26 +19,6 @@ const Auth = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
-    const authHandler = () => {
-        firebase.auth()
-        .signInWithPopup(provider)
-        .then((result) => {
-            /** @type {firebase.auth.OAuthCredential} */
-            const credential = result.credential;
-            const token = credential.accessToken;
-            const user = result.user;
-            dispatch(
-                LOGIN(user)
-            );
-            history.push('/home');
-
-        }).catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            const email = error.email;
-            const credential = error.credential;
-        });
-    }
 
     const handleGoogleLogin = async googleData => {
         if(googleData){
@@ -55,7 +30,8 @@ const Auth = () => {
                 if(res.status === 201){
                     dispatch(
                         LOGIN(res.data)
-                    )
+                    );
+                    history.push('/home');
                 }else{
                 }
             })
