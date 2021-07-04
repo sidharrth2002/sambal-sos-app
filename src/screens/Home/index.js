@@ -56,7 +56,6 @@ const Home = () => {
                         flag_id: flag.id,
                         lat: flag.coordinates.coordinates[0],
                         lng: flag.coordinates.coordinates[1],
-                        address: await BDAPI.latlngToAddress(flag.coordinates.coordinates[0], flag.coordinates.coordinates[1]),
                         image: flag.image ?? "",
                         description: flag.description ?? ""
                     }
