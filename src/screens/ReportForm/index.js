@@ -166,8 +166,8 @@ const ReportForm = () => {
             .then((results) => getLatLng(results[0]))
             .then(({ lat, lng }) => {
                 setCoordinates({
-                    longitude: lat,
-                    latitude: lng
+                    longitude: lng,
+                    latitude: lat
                 });
                 setUseMyLocationEnable(false);
             })

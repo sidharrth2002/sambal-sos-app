@@ -68,7 +68,6 @@ const Home = () => {
                 setLoading(false)
             })
             .catch((err) => {
-                console.log(err)
                 toast({
                     title: "Failed to Load",
                     description: "Something went wrong on our side!",
@@ -112,21 +111,27 @@ const Home = () => {
                     </Center>
                 :
                     <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} options={options} onClick={() => { setModalVisible(false) }} >
-                        { flags.map((flag) =>
-                            (<Marker
-                                key={flag.image}
-                                position={{ lat: flag.lat, lng:flag.lng }}
-                                icon={{
-                                    url: '/white-flag.svg',
-                                    scaledSize: new window.google.maps.Size(35, 35),
-                                    origin: new window.google.maps.Point(0,0),
-                                    anchor: new window.google.maps.Point(18, 18)
-                                }}
-                                onClick={() => {
-                                    setSelectedMarker(flag);
-                                    setModalVisible(true)
-                                }}
-                            />))}
+                        { flags.map((flag) => {
+                            return (
+
+                                <Marker
+                                    key={flag.id}
+                                    position={{ lat: flag.lat, lng:flag.lng }}
+                                    icon={{
+                                        url: '/white-flag.svg',
+                                        scaledSize: new window.google.maps.Size(35, 35),
+                                        origin: new window.google.maps.Point(0,0),
+                                        anchor: new window.google.maps.Point(18, 18)
+                                    }}
+                                    onClick={() => {
+                                        setSelectedMarker(flag);
+                                        setModalVisible(true)
+                                    }}
+                                />
+                            );
+                        })
+                    }
+
 
                         { foodbanks.map((foodbank) =>
                             (<Marker
