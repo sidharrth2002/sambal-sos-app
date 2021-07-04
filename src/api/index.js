@@ -1,5 +1,3 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
 import axios from 'axios';
 // define API calls here
 
