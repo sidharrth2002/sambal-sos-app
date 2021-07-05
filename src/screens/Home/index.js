@@ -11,6 +11,7 @@ import {
     GoogleMap,
     useLoadScript,
     Marker,
+    useJsApiLoader
 } from '@react-google-maps/api'
 import * as BDGraphics from '../../assets/';
 import { foodbanks } from '../FoodBanks/foodbanks.js'
@@ -28,7 +29,8 @@ const Home = () => {
     const [flags, setFlags] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedMarker, setSelectedMarker] = useState(null);
-    const [modalVisible, setModalVisible] = useState(false)
+    const [modalVisible, setModalVisible] = useState(false);
+    const [map, setMap] = useState(null);
 
     const mapContainerStyle = {
         width: '100vw',
@@ -38,10 +40,19 @@ const Home = () => {
         disableDefaultUI: true,
         zoomControl: true
     }
-    const {isLoaded, loadError} = useLoadScript({
+    const {isLoaded, loadError} = useJsApiLoader({
+        id: 'google-map-script',
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries: ["places"]
     })
+
+    const onLoad = React.useCallback(function callback(map) {
+        setMap(map);
+    }, [])
+
+    const onUnmount = React.useCallback(function callback(map) {
+        setMap(null);
+    }, [])
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}flag/getall`, {
@@ -97,7 +108,7 @@ const Home = () => {
             title: "This feature is coming soon",
             status: "warning",
             duration: 1500,
-            isClosable: false,
+            isClosable: true,
             position: 'top'
         })
     }
@@ -105,12 +116,12 @@ const Home = () => {
     return (
         <div>
             {
-                ( loading ) ?
+                ( loading || !isLoaded ) ?
                     <Center h="80vh" flexDirection="column" justifyContent="center" alignItems="center" >
                         <Spinner />
                     </Center>
                 :
-                    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} options={options} onClick={() => { setModalVisible(false) }} >
+                    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} onLoad={onLoad} onUnmount={onUnmount} options={options} onClick={() => { setModalVisible(false) }} >
                         { flags.map((flag) => {
                             return (
 
@@ -156,7 +167,7 @@ const Home = () => {
                 </Flex>
             </Flex>
 
-            <Flex className="more-details-modal" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" h="55%" w="100%" position="fixed" left="50%" transform="translate(-50%, -50%)" top={ modalVisible ? '65%' : '200%' } backgroundColor="white" borderRadius="8px" padding="0.8rem" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
+            <Flex className="more-details-modal" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" h="55%" mh="55%" w="100%" position="fixed" left="50%" transform="translate(-50%, -50%)" top={ modalVisible ? '60%' : '200%' } backgroundColor="white" borderRadius="8px" padding="0.8rem" overflowY="scroll" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
                 {
                     selectedMarker ?
                         <>
@@ -169,7 +180,7 @@ const Home = () => {
                                         <Image borderRadius="8px" src={ selectedMarker?.image } width="100%" maxWidth="200px" marginRight="1rem" />
                                     </Box>
                                     <Center flexDirection="column" justifyContent="flex-start" maxWidth="50%" h="100%" py="0.5rem">
-                                        <Flex backgroundColor="#B2C8F5" borderRadius="8px" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
+                                        <Flex backgroundColor="#B2C8F5" borderRadius="8px" w="100%" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
                                             <Image src={ BDGraphics.PinIcon } alt="" height="15px" />
                                             <Text fontSize="13px" >Go to this location</Text>
                                         </Flex>
