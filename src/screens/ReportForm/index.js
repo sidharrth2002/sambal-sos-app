@@ -312,10 +312,6 @@ const ReportForm = () => {
                                     </ListItem>
                                     <ListItem>
                                         <ListIcon as={CheckIcon} color="green.500" />
-                                        Location details in the SOS report should be the approximate location of the subject (without revealing their exact home addresses)
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListIcon as={CheckIcon} color="green.500" />
                                         Strictly no NSFW content, political content, sensitive issues, religious issues, or any other content that violates Article 10 of the Constitution of Malaysia
                                     </ListItem>
                                 </List>
