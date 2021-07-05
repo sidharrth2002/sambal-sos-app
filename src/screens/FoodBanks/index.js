@@ -42,7 +42,7 @@ const FoodBanks = () => {
                                             )
                                         })
                                     }
-                                    <Link marginTop="5px" >{foodbank.website}</Link>
+                                    <Link marginTop="5px" href={foodbank.website} target="_blank">{foodbank.website}</Link>
 
                                     <Center backgroundColor="#B2C8F5" borderRadius="8px" py="0.6rem" mt="20px" cursor="pointer" fontSize="13px" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${foodbank.address[0].coordinates.latitude},${foodbank.address[0].coordinates.longitude}`) }} >
                                         Open in google maps
