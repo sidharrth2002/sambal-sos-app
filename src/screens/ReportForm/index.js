@@ -270,7 +270,7 @@ const ReportForm = () => {
                                         value={value}
                                         onChange={handleInput}
                                         disabled={!ready}
-                                        placeholder="Where are you going?"
+                                        placeholder="Where are you?"
                                     />
                                     {status === "OK" && <Box backgroundColor="#FFFFFF" w="100%" padding="1rem" border="1px solid #F5F5F5" mt="15px" borderRadius="8px" boxShadow="0px 16px 40px rgba(212, 212, 212, 0.25);" >{renderSuggestions()}</Box>}
                                 </Box>

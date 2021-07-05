@@ -19,15 +19,15 @@ const FoodBanks = () => {
                     {
                         foodbanks.filter(bank => {
                             return bank.name.toLowerCase().includes(searchQuery)
-                        }).map(foodbank => {
+                        }).map((foodbank, index) => {
                             return (
-                                <Box padding="1rem" borderRadius="8px" boxShadow="0px 16px 40px rgba(209, 209, 209, 0.25)" maxWidth="500px" width="90%" textAlign="left">
+                                <Box key={index} padding="1rem" borderRadius="8px" boxShadow="0px 16px 40px rgba(209, 209, 209, 0.25)" maxWidth="500px" width="90%" textAlign="left">
                                     <Text fontFamily="Montserrat" fontWeight="600" >{foodbank.name}</Text>
                                     <Divider marginY="10px" />
                                     {
-                                        foodbank.address.map(address => {
+                                        foodbank.address.map((address, addressIndex) => {
                                             return (
-                                                <div>
+                                                <div key={addressIndex}>
                                                     <Text>{address.fullAddress}</Text>
                                                 </div>
                                             )

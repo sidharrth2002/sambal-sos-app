@@ -5,7 +5,6 @@ import {
 } from "@chakra-ui/react";
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import "firebase/firestore";
 import NavigationFooter from '../../components/NavigationFooter';
 import {
     GoogleMap,
@@ -31,6 +30,7 @@ const Home = () => {
     const [selectedMarker, setSelectedMarker] = useState(null);
     const [modalVisible, setModalVisible] = useState(false);
     const [map, setMap] = useState(null);
+    const [libraries] = useState(['places']);
 
     const mapContainerStyle = {
         width: '100vw',
@@ -43,7 +43,7 @@ const Home = () => {
     const {isLoaded, loadError} = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-        libraries: ["places"]
+        libraries
     })
 
     const onLoad = React.useCallback(function callback(map) {
@@ -122,11 +122,11 @@ const Home = () => {
                     </Center>
                 :
                     <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} onLoad={onLoad} onUnmount={onUnmount} options={options} onClick={() => { setModalVisible(false) }} >
-                        { flags.map((flag) => {
+                        { flags.map((flag, index) => {
                             return (
 
                                 <Marker
-                                    key={flag.id}
+                                    key={index}
                                     position={{ lat: flag.lat, lng:flag.lng }}
                                     icon={{
                                         url: '/white-flag.svg',
@@ -144,8 +144,9 @@ const Home = () => {
                     }
 
 
-                        { foodbanks.map((foodbank) =>
+                        { foodbanks.map((foodbank, index) =>
                             (<Marker
+                                key={index}
                                 position={{ lat: foodbank.address[0].coordinates.latitude, lng:foodbank.address[0].coordinates.longitude }}
                                 icon={{
                                     url: '/groceries.svg',
@@ -158,7 +159,7 @@ const Home = () => {
                     </GoogleMap>
             }
             <Flex borderTopRadius="15px" position="fixed" bottom="100px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="white" padding="20px 20px" >
-                <Flex w="48%" justifyContent="center" backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" >
+                <Flex w="48%" justifyContent="center" backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" onClick={() => history.push('/report-flag')}>
                     Ask for help
                 </Flex>
                 <Flex w="48%" justifyContent="center" alignItems="center" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="15px 25px" color="black" fontFamily="Montserrat" fontWeight="500" onClick={() => history.push('/report-flag')} >
@@ -208,4 +209,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default React.memo(Home);
