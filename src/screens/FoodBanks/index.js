@@ -26,8 +26,9 @@ const FoodBanks = () => {
                 <VStack spacing="10" mb="150px" >
                     {
                         foodbanks.filter(bank => {
-                            return bank.name.toLowerCase().includes(searchQuery)
-                        }).map((foodbank, index) => {
+                            return bank.name.toLowerCase().includes(searchQuery) || bank.address[0].fullAddress.toLowerCase().includes(searchQuery)
+                        })
+                        .map((foodbank, index) => {
                             return (
                                 <Box key={index} padding="1rem" borderRadius="8px" boxShadow="0px 16px 40px rgba(209, 209, 209, 0.25)" maxWidth="500px" width="90%" textAlign="left">
                                     <Text fontFamily="Montserrat" fontWeight="600" >{foodbank.name}</Text>
