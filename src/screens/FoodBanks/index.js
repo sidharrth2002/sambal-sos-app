@@ -15,6 +15,14 @@ const FoodBanks = () => {
             <Alert status="success" width="90%" maxWidth="500px" margin="20px auto" borderRadius="10px">
                 This page will soon be updated through a crowdsourced Google Sheets file!
             </Alert>
+            <Alert status="warning" width="90%" maxWidth="500px" margin="20px auto" borderRadius="10px" flexDirection="column">
+                <Box>
+                    For now, if you know a foodbank that you would like the team to add to the app, please fill in the form here.
+                </Box>
+                <Center backgroundColor="#B2C8F5" borderRadius="8px" p="1rem" mt="20px" cursor="pointer" fontSize="13px" onClick={() => { window.open(`https://docs.google.com/forms/d/e/1FAIpQLSftvjrOg72Vu2_z1qc1Hf1LsQrNGuvx2qSts_76lZ2dul5yHQ/viewform?usp=sf_link`) }}>
+                    Go to form
+                </Center>
+            </Alert>
                 <VStack spacing="10" mb="150px" >
                     {
                         foodbanks.filter(bank => {
