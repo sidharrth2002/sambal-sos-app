@@ -18,6 +18,8 @@ import PinIcon from './svgs/pin.svg';
 import GroceriesOutlineIcon from './svgs/groceries-outline.svg'
 import LogoutIcon from './svgs/logout.svg'
 import GoogleMapsIcon from './svgs/google-maps.svg';
+import SambalSosLogo from './sambalsos.svg';
+import GoogleIcon from './svgs/google.svg';
 
 export {
     MaintenanceSVG,
@@ -39,5 +41,7 @@ export {
     PinIcon,
     GroceriesOutlineIcon,
     LogoutIcon,
-    GoogleMapsIcon
+    GoogleMapsIcon,
+    SambalSosLogo,
+    GoogleIcon
 }

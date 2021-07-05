@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as BDGraphics from '../../assets/';
-import { Image, Flex, Text, Button, Heading, Box } from '@chakra-ui/react';
+import { Image, Flex, Text, Button, Heading, Box, VStack, Center } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
@@ -56,21 +56,28 @@ const Auth = () => {
     }
 
     return (
+        <VStack>
         <Flex flexDirection="column" justifyContent="center" alignItems="center" minHeight="80vh" width="100%" padding="1rem" >
-            <Image src={BDGraphics.Logo} maxWidth="150px" width="80%" marginBottom="2rem" />
-            <Box marginBottom="4rem">
-                <Heading fontFamily="Montserrat" as="h1" fontWeight="5fr00" marginBottom="1rem">The Bendera Putih App</Heading>
+            <img src={BDGraphics.SambalSosLogo} style={{ maxWidth: '150px', width: '80%', height: '80%', marginBottom: '2rem' }} alt="Logo" />
+            <VStack marginBottom="2rem" spacing={5} width="100%">
+                <Heading fontFamily="Montserrat" as="h1" fontWeight="5fr00">Sambal SOS</Heading>
                 <Heading fontFamily="Montserrat" as="h3" fontSize="2xl" fontWeight="300">Available Now!</Heading>
-            </Box>
+                <br></br>
+                <Box width="600px" maxWidth="80%">
+                    <Text fontFamily="Montserrat" as="h3" fontSize="15px">
+                        If you're looking for the Bendera Putih app, this is the <b>rebranded</b> and <b>upgraded</b> version for a better user experience.
+                    </Text>
+                </Box>
+            </VStack>
             <Flex maxWidth="600px" flexDirection="column" justifyContent="center" alignItems="center" width="300px" maxWidth="90%" margin="0 auto">
 
                 <GoogleLogin
                     clientId={ process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID }
                     render={renderProps => (
-                        <Button backgroundColor="#B2C8F5" padding="28px 25px" onClick={ () => { renderProps.onClick()} } disabled={renderProps.disabled}>
+                        <Button backgroundColor="#ff8c82" color="white" padding="28px 25px" mt="35px" onClick={ () => { renderProps.onClick()} } disabled={renderProps.disabled}>
                             <Flex borderRadius="8px" fontFamily="Poppins" width="100%" flexDirection="row" justifyContent="center" alignItems="center" position="relative">
                                 <Image alt="Google Login Button Svg" src={BDGraphics.GoogleLoginIcon} height="18px" width="18px" mr="20px" />
-                                <Text fontWeight="light">Login with Google</Text>
+                                <Text fontWeight="light" color="black" >Login with Google</Text>
                             </Flex>
                         </Button>
                     )}
@@ -83,6 +90,14 @@ const Auth = () => {
 
             </Flex>
         </Flex>
+        <Center position="fixed" bottom="0" padding="1rem">
+            <Text fontFamily="Poppins" fontSize="0.8rem" as="i">
+                Built by For the Malaysians.
+                <br />
+                For Malaysians. By Malaysians.
+            </Text>
+        </Center>
+        </VStack>
     );
 }
 

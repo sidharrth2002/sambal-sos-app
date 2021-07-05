@@ -129,10 +129,10 @@ const Home = () => {
                                     key={index}
                                     position={{ lat: flag.lat, lng:flag.lng }}
                                     icon={{
-                                        url: '/white-flag.svg',
-                                        scaledSize: new window.google.maps.Size(35, 35),
+                                        url: '/siren.svg',
+                                        scaledSize: new window.google.maps.Size(50, 50),
                                         origin: new window.google.maps.Point(0,0),
-                                        anchor: new window.google.maps.Point(18, 18)
+                                        anchor: new window.google.maps.Point(25, 25)
                                     }}
                                     onClick={() => {
                                         setSelectedMarker(flag);
@@ -142,7 +142,6 @@ const Home = () => {
                             );
                         })
                     }
-
 
                         { foodbanks.map((foodbank, index) =>
                             (<Marker
@@ -164,7 +163,7 @@ const Home = () => {
                 </Flex>
                 <Flex w="48%" justifyContent="center" alignItems="center" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="15px 25px" color="black" fontFamily="Montserrat" fontWeight="500" onClick={() => history.push('/report-flag')} >
                     <Image mr="5px" src={ BDGraphics.FlagIcon } height="11px" />
-                    Report Flag
+                    Report SOS
                 </Flex>
             </Flex>
 
@@ -173,7 +172,7 @@ const Home = () => {
                     selectedMarker ?
                         <>
                             <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="1rem" >
-                                <Heading> Flag Details </Heading>
+                                <Heading> SOS Details </Heading>
                             </Flex>
                             <Center flexDirection="row" justifyContent="flex-start" alignContent="flex-start" padding="1rem">
                                 <HStack h="100%" >
@@ -181,7 +180,7 @@ const Home = () => {
                                         <Image borderRadius="8px" src={ selectedMarker?.image } width="100%" maxWidth="200px" marginRight="1rem" />
                                     </Box>
                                     <Center flexDirection="column" justifyContent="flex-start" maxWidth="50%" h="100%" py="0.5rem">
-                                        <Flex backgroundColor="#B2C8F5" borderRadius="8px" w="100%" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
+                                        <Flex backgroundColor="#ff8c82" borderRadius="8px" w="100%" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
                                             <Image src={ BDGraphics.PinIcon } alt="" height="15px" />
                                             <Text fontSize="13px" >Go to this location</Text>
                                         </Flex>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useDropzone} from 'react-dropzone';
 import NavigationFooter from '../../components/NavigationFooter';
-import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input, Tag } from '@chakra-ui/react';
+import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input, List, ListIcon, ListItem, MdCheckCircle } from '@chakra-ui/react';
 import {
     Alert,
     AlertIcon,
@@ -11,6 +11,7 @@ import usePlacesAutocomplete, {
     getGeocode,
     getLatLng,
 } from "use-places-autocomplete";
+import { CheckIcon } from '@chakra-ui/icons';
 import useOnclickOutside from "react-cool-onclickoutside";
 import axios from 'axios';
 import * as BDGraphics from '../../assets/';
@@ -93,9 +94,10 @@ const ReportForm = () => {
     }
 
     const reportFlag = async() => {
-        if(acceptedFiles && remark && coordinates){
+        if(acceptedFiles.length > 0 && remark && coordinates){
             setSubmitLoading(true)
             let image_url = await handleImageUpload();
+
             axios.post(`${process.env.REACT_APP_API_URL}flag/createflag`, {
                 latitude: coordinates.latitude,
                 longitude: coordinates.longitude,
@@ -197,7 +199,7 @@ const ReportForm = () => {
                             <Image h="25px" src={ BDGraphics.BackButtonIcon } alt="back button" />
                         </Box>
                         <Box className="screen-title" >
-                            <Text fontFamily="Poppins" fontWeight="600" >REPORT A FLAG</Text>
+                            <Text fontFamily="Poppins" fontWeight="600" >REPORT FOR HELP</Text>
                         </Box>
                         <Box className="info-button" position="absolute" right="5px">
                             <Image h="18px" src={ BDGraphics.InfoIcon } alt="back button" />
@@ -226,7 +228,7 @@ const ReportForm = () => {
                                             <Center flexDirection="column" {...getRootProps({className: 'dropzone'})}>
                                                 <Image mb="20px" src={BDGraphics.ImageIcon} alt="Image" />
                                                 <input {...getInputProps()} required />
-                                                <Text color="#A7A7A7" fontSize="md">Add The Image (Remember that the flag is just a symbol and there doesn't have to be a flag in the photo. This photo is just for us to verify and if necessary, it may not be shown on the map.)</Text>
+                                                <Text color="#A7A7A7" fontSize="md">Add an image (We want to protect privacy. Please just take a picture in front of the house. <Text fontWeight="bold">There doesn't need to be a white flag.</Text></Text>
                                             </Center>
                                         </Center>
                                     }
@@ -239,7 +241,6 @@ const ReportForm = () => {
                                 <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 2 of 3</Text>
                                 <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" >Set the address</Text>
                             </Flex>
-                            <Text mb={"1rem"} fontSize="sm" fontFamily="Poppins" fontWeight="500">We will change this to the general vicinity to protect the person's privacy when moderating. The exact location won't be shown on the map. The area will.</Text>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
                                 {
                                     coordinates ?
@@ -284,11 +285,44 @@ const ReportForm = () => {
                                 <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" >Remarks</Text>
                             </Flex>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
-                                <Textarea placeholder="Eg: What did you see?" onChange={ handleRemark } />
+                                <Textarea placeholder="Eg: What did you see? What do you need?" onChange={ handleRemark } />
                             </Flex>
                         </Flex>
 
-                        <Center backgroundColor="#3265CA" borderRadius="8px" py="1rem" mb="100px" onClick={ () => {reportFlag()} } >
+                        <Box textAlign="start" mb="1rem">
+                            <Text fontWeight="medium" mb="20px">
+                                In order to maintain a healthy environment on the Sambal SOS App, all reports made will be subject to human review.
+                                This is to ensure that the reports made on the Sambal SOS App are authentic, and respecting. Reports are typically approved/rejected within 24 hours of posting.
+                            </Text>
+
+                            <Text fontWeight="light" mb="20px" >
+                                <Text mb="10px" fontWeight="medium" >If you're creating an SOS report on the Sambal SOS App, do follow the following guidelines: </Text>
+                                <List spacing={3}>
+                                    <ListItem>
+                                        <ListIcon as={CheckIcon} color="green.500" />
+                                        Images could be, but not limited to: location of the report, screenshots of chat histories
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListIcon as={CheckIcon} color="green.500" />
+                                        Images should not contain faces of people, or personal identifiable information
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListIcon as={CheckIcon} color="green.500" />
+                                        Content in the SOS report should provide more details of the report so that other users of the app are able to discover the rough location of those who are in need
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListIcon as={CheckIcon} color="green.500" />
+                                        Location details in the SOS report should be the approximate location of the subject (without revealing their exact home addresses)
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListIcon as={CheckIcon} color="green.500" />
+                                        Strictly no NSFW content, political content, sensitive issues, religious issues, or any other content that violates Article 10 of the Constitution of Malaysia
+                                    </ListItem>
+                                </List>
+                            </Text>
+                        </Box>
+
+                        <Center backgroundColor="#fa6255" borderRadius="8px" py="1rem" mb="100px" onClick={ () => {reportFlag()} } >
                             {
                                 submitLoading ?
                                 <Spinner />
