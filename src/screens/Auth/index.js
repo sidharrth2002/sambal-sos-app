@@ -61,7 +61,7 @@ const Auth = () => {
             <img src={BDGraphics.SambalSosLogo} style={{ maxWidth: '150px', width: '80%', height: '80%', marginBottom: '2rem' }} alt="Logo" />
             <VStack marginBottom="2rem" spacing={5} width="100%">
                 <Heading fontFamily="Montserrat" as="h1" fontWeight="5fr00">Sambal SOS</Heading>
-                <Heading fontFamily="Montserrat" as="h3" fontSize="2xl" fontWeight="300">Available Now!</Heading>
+                <Heading fontFamily="Montserrat" as="h3" fontSize="xl" fontWeight="300">Crowdsourcing aid data across the nation</Heading>
                 <br></br>
                 <Box width="600px" maxWidth="80%">
                     <Text fontFamily="Montserrat" as="h3" fontSize="15px">
