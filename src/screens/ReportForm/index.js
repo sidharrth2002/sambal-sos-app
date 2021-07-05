@@ -226,7 +226,7 @@ const ReportForm = () => {
                                             <Center flexDirection="column" {...getRootProps({className: 'dropzone'})}>
                                                 <Image mb="20px" src={BDGraphics.ImageIcon} alt="Image" />
                                                 <input {...getInputProps()} required />
-                                                <Text color="#A7A7A7" fontSize="md">Add An Image</Text>
+                                                <Text color="#A7A7A7" fontSize="md">Add The Image (Remember that the flag is just a symbol and there doesn't have to be a flag in the photo. This photo is just for us to verify and if necessary, it may not be shown on the map.)</Text>
                                             </Center>
                                         </Center>
                                     }
