@@ -239,6 +239,7 @@ const ReportForm = () => {
                                 <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 2 of 3</Text>
                                 <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" >Set the address</Text>
                             </Flex>
+                            <Text mb={"1rem"} fontSize="sm" fontFamily="Poppins" fontWeight="500">We will change this to the general vicinity to protect the person's privacy when moderating. The exact location won't be shown on the map. The area will.</Text>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
                                 {
                                     coordinates ?
