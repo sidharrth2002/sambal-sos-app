@@ -15,7 +15,7 @@ function App() {
       <div className="App">
           <Switch>
             <Route exact path='/login' component={Auth} />
-            <ProtectedRoute exact path='/food-banks' component={FoodBanks} />
+            <Route exact path='/food-banks' component={FoodBanks} />
             <ProtectedRoute exact path='/home' component={Home} />
             <ProtectedRoute exact path="/report-flag" component={ReportForm} />
             <Route path='/' component={Auth} />

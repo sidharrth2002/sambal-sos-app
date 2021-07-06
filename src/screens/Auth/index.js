@@ -12,6 +12,8 @@ import { LOGIN } from '../../features/counter/authSlice';
 import { GoogleLogin } from 'react-google-login';
 import { useHistory } from 'react-router-dom';
 
+import LoginMapAsset from '../../assets/png/login-map.png'
+
 require('dotenv').config()
 
 const Auth = () => {
@@ -57,24 +59,29 @@ const Auth = () => {
 
     return (
         <VStack>
-        <Flex flexDirection="column" justifyContent="center" alignItems="center" minHeight="80vh" width="100%" padding="1rem" >
-            <img src={BDGraphics.SambalSosLogo} style={{ maxWidth: '150px', width: '80%', height: '80%', marginBottom: '2rem' }} alt="Logo" />
-            <VStack marginBottom="2rem" spacing={5} width="100%">
-                <Heading fontFamily="Montserrat" as="h1" fontWeight="5fr00">Sambal SOS</Heading>
-                <Heading fontFamily="Montserrat" as="h3" fontSize="xl" fontWeight="300">Crowdsourcing aid data across the nation</Heading>
-                <br></br>
-                <Box width="600px" maxWidth="80%">
-                    <Text fontFamily="Montserrat" as="h3" fontSize="15px">
-                        If you're looking for the Bendera Putih app, this is the <b>rebranded</b> and <b>upgraded</b> version for a better user experience.
-                    </Text>
-                </Box>
-            </VStack>
-            <Flex maxWidth="600px" flexDirection="column" justifyContent="center" alignItems="center" width="300px" maxWidth="90%" margin="0 auto">
+        <Flex flexDirection="column" justifyContent="space-between" alignItems="center" minHeight="90vh" width="100%" padding="0.5rem" >
+            <Flex flexDirection="row" justifyContent="center" alignItems="center" w="100%" >
+                <img src={BDGraphics.SambalSosLogo} style={{ width: '75px', height: '75px' }} alt="Logo" />
+                <Heading fontFamily="Montserrat" as="h1" fontWeight="5fr00" fontSize="25px">Sambal SOS</Heading>
+            </Flex>
+            <VStack marginBottom="0.5rem" spacing={5} width="100%" >
+                <img mb="100px" mt="50px" src={LoginMapAsset} alt="Map" />
 
+                <Flex w="100%" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" padding="1rem" >
+                    <Heading fontFamily="Montserrat" as="h3" fontSize="xl" fontWeight="600" textAlign="start" >Crowdsourcing aid data across the nation</Heading>
+                    <br></br>
+                    <Box width="600px" maxWidth="80%">
+                        <Text fontFamily="Montserrat" as="h3" fontSize="15px" textAlign="start">
+                            If you're looking for the Bendera Putih app, this is the <b>rebranded</b> and <b>upgraded</b> version for a better user experience.
+                        </Text>
+                    </Box>
+                </Flex>
+            </VStack>
+            <Flex flexDirection="column" justifyContent="center" alignItems="center" w="100%" padding="1rem" margin="0 auto">
                 <GoogleLogin
                     clientId={ process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID }
                     render={renderProps => (
-                        <Button backgroundColor="#ff8c82" color="white" padding="28px 25px" mt="35px" onClick={ () => { renderProps.onClick()} } disabled={renderProps.disabled}>
+                        <Button backgroundColor="#ff8c82" color="white" w="100%" padding="28px 25px" mt="0px" onClick={ () => { renderProps.onClick()} } disabled={renderProps.disabled}>
                             <Flex borderRadius="8px" fontFamily="Poppins" width="100%" flexDirection="row" justifyContent="center" alignItems="center" position="relative">
                                 <Image alt="Google Login Button Svg" src={BDGraphics.GoogleLoginIcon} height="18px" width="18px" mr="20px" />
                                 <Text fontWeight="light" color="black" >Login with Google</Text>
@@ -87,11 +94,10 @@ const Auth = () => {
                     onFailure={handleGoogleLogin}
                     cookiePolicy={'single_host_origin'}
                 />
-
             </Flex>
         </Flex>
         <Center position="fixed" bottom="0" padding="1rem">
-            <Text fontFamily="Poppins" fontSize="0.8rem" as="i">
+            <Text fontFamily="Poppins" fontSize="0.7rem" as="i">
                 Built by For the Malaysians.
                 <br />
                 For Malaysians. By Malaysians.
