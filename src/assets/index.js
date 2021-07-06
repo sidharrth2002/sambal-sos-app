@@ -20,6 +20,8 @@ import LogoutIcon from './svgs/logout.svg'
 import GoogleMapsIcon from './svgs/google-maps.svg';
 import SambalSosLogo from './sambalsos.svg';
 import GoogleIcon from './svgs/google.svg';
+import FoodBankIcon from './svgs/groceries.svg';
+import SirenIcon from './svgs/siren.svg';
 
 export {
     MaintenanceSVG,
@@ -43,5 +45,7 @@ export {
     LogoutIcon,
     GoogleMapsIcon,
     SambalSosLogo,
-    GoogleIcon
+    GoogleIcon,
+    FoodBankIcon,
+    SirenIcon
 }
