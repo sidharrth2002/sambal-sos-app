@@ -228,7 +228,7 @@ const ReportForm = () => {
                                             <Center flexDirection="column" {...getRootProps({className: 'dropzone'})}>
                                                 <Image mb="20px" src={BDGraphics.ImageIcon} alt="Image" />
                                                 <input {...getInputProps()} required />
-                                                <Text color="#A7A7A7" fontSize="md">Add an image (We want to protect privacy. Please just take a picture in front of the house. <Text fontWeight="bold">There doesn't need to be a white flag.</Text></Text>
+                                                <Text color="#A7A7A7" fontSize="md">Add an image (We want to protect privacy. Please just take a picture in front of the house. <Text fontWeight="bold">There should not be a white flag in the image.</Text></Text>
                                             </Center>
                                         </Center>
                                     }
