@@ -130,9 +130,9 @@ const Home = () => {
                                     position={{ lat: flag.lat, lng:flag.lng }}
                                     icon={{
                                         url: '/siren.svg',
-                                        scaledSize: new window.google.maps.Size(50, 50),
+                                        scaledSize: new window.google.maps.Size(25, 25),
                                         origin: new window.google.maps.Point(0,0),
-                                        anchor: new window.google.maps.Point(25, 25)
+                                        anchor: new window.google.maps.Point(13, 13)
                                     }}
                                     onClick={() => {
                                         setSelectedMarker(flag);
@@ -149,9 +149,9 @@ const Home = () => {
                                 position={{ lat: foodbank.address[0].coordinates.latitude, lng:foodbank.address[0].coordinates.longitude }}
                                 icon={{
                                     url: '/groceries.svg',
-                                    scaledSize: new window.google.maps.Size(35, 35),
+                                    scaledSize: new window.google.maps.Size(18, 18),
                                     origin: new window.google.maps.Point(0,0),
-                                    anchor: new window.google.maps.Point(18, 18)
+                                    anchor: new window.google.maps.Point(9, 9)
                                 }}
                                 onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${foodbank.address[0].coordinates.latitude},${foodbank.address[0].coordinates.longitude}`) }}
                             />))}

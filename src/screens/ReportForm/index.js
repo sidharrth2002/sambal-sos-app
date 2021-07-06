@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useDropzone} from 'react-dropzone';
 import NavigationFooter from '../../components/NavigationFooter';
-import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input, List, ListIcon, ListItem, MdCheckCircle } from '@chakra-ui/react';
+import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input, List, ListIcon, ListItem, Link } from '@chakra-ui/react';
 import {
     Alert,
     AlertIcon,
@@ -313,6 +313,11 @@ const ReportForm = () => {
                                     <ListItem>
                                         <ListIcon as={CheckIcon} color="green.500" />
                                         Strictly no NSFW content, political content, sensitive issues, religious issues, or any other content that violates Article 10 of the Constitution of Malaysia
+                                    </ListItem>
+                                    <ListItem>
+                                        <Box marginBottom="1rem">
+                                            By submitting the form, you agree to our <Link href="/privacy-policy" target="_blank" color="blue">privacy policy</Link>.
+                                        </Box>
                                     </ListItem>
                                 </List>
                             </Text>

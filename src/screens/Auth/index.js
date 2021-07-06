@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as BDGraphics from '../../assets/';
-import { Image, Flex, Text, Button, Heading, Box, VStack, Center } from '@chakra-ui/react';
+import { Image, Flex, Text, Button, Heading, Box, VStack, Center, Link } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
@@ -78,6 +78,9 @@ const Auth = () => {
                 </Flex>
             </VStack>
             <Flex flexDirection="column" justifyContent="center" alignItems="center" w="100%" padding="1rem" margin="0 auto">
+                <Box marginBottom="1rem">
+                    <Text fontFamily="Montserrat">By logging in, you agree to our <Link href="/privacy-policy" target="_blank" color="blue">privacy policy</Link>. We only use this authentication to get your email and protect the app from unauthorised input.</Text>
+                </Box>
                 <GoogleLogin
                     clientId={ process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID }
                     render={renderProps => (
