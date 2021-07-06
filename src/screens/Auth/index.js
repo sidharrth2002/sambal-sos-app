@@ -96,7 +96,7 @@ const Auth = () => {
                 />
             </Flex>
         </Flex>
-        <Center position="fixed" bottom="0" padding="1rem">
+        <Center bottom="0" padding="1rem">
             <Text fontFamily="Poppins" fontSize="0.7rem" as="i">
                 Built by For the Malaysians.
                 <br />
