@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack } from '@chakra-ui/react';
+import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
@@ -157,6 +157,17 @@ const Home = () => {
                             />))}
                     </GoogleMap>
             }
+            <Flex flexDirection="column" position="absolute" top="15px" right="15px" borderRadius="8px" py="0.1rem" px="0.8rem" backgroundColor="white" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" justifyContent="center" alignItems="center" >
+                <Flex flexDirection="row" justifyContent="flex-start" alignItems="center" w="100%" py="0.2rem" >
+                    <Image src={BDGraphics.FoodBankIcon} alt="Food Bank Indicator" height="20px" width="20px" mr="10px" />
+                    <Text fontFamily="Poppins" fontSize="11px" >Food Banks</Text>
+                </Flex>
+                <Divider mt="5px" />
+                <Flex flexDirection="row" justifyContent="flex-start" alignItems="center" w="100%" py="0.2rem" >
+                    <Image src={BDGraphics.SirenIcon} alt="SOS Indicator" height="25px" width="25px" mr="10px" />
+                    <Text fontFamily="Poppins" fontSize="11px" >SOS</Text>
+                </Flex>
+            </Flex>
             <Flex borderTopRadius="15px" position="fixed" bottom="100px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="white" padding="20px 20px" >
                 <Flex w="48%" justifyContent="center" backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" onClick={() => history.push('/report-flag')}>
                     Ask for help
