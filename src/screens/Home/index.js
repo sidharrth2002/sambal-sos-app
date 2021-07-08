@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider } from '@chakra-ui/react';
+import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider, VStack } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
@@ -28,7 +28,9 @@ const Home = () => {
     const [flags, setFlags] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedMarker, setSelectedMarker] = useState(null);
+    const [selectedFoodbank, setSelectedFoodbank] = useState(null);
     const [modalVisible, setModalVisible] = useState(false);
+    const [foodbankModalVisible, setFoodbankModalVisible] = useState(false);
     const [map, setMap] = useState(null);
     const [libraries] = useState(['places']);
 
@@ -121,13 +123,16 @@ const Home = () => {
                         <Spinner />
                     </Center>
                 :
-                    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} onLoad={onLoad} onUnmount={onUnmount} options={options} onClick={() => { setModalVisible(false) }} >
+                    <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} onLoad={onLoad} onUnmount={onUnmount} options={options} onClick={() => {
+                        setModalVisible(false);
+                        setFoodbankModalVisible(false);
+                    }} >
                         { flags.map((flag, index) => {
                             return (
 
                                 <Marker
                                     key={index}
-                                    position={{ lat: flag.lat, lng:flag.lng }}
+                                    position={{ lat: parseFloat(flag.lat), lng: parseFloat(flag.lng) }}
                                     icon={{
                                         url: '/siren.svg',
                                         scaledSize: new window.google.maps.Size(25, 25),
@@ -136,7 +141,8 @@ const Home = () => {
                                     }}
                                     onClick={() => {
                                         setSelectedMarker(flag);
-                                        setModalVisible(true)
+                                        setFoodbankModalVisible(false);
+                                        setModalVisible(true);
                                     }}
                                 />
                             );
@@ -146,14 +152,18 @@ const Home = () => {
                         { foodbanks.map((foodbank, index) =>
                             (<Marker
                                 key={index}
-                                position={{ lat: foodbank.address[0].coordinates.latitude, lng:foodbank.address[0].coordinates.longitude }}
+                                position={{ lat: parseFloat(foodbank.address[0].coordinates.latitude), lng: parseFloat(foodbank.address[0].coordinates.longitude) }}
                                 icon={{
                                     url: '/groceries.svg',
                                     scaledSize: new window.google.maps.Size(18, 18),
                                     origin: new window.google.maps.Point(0,0),
                                     anchor: new window.google.maps.Point(9, 9)
                                 }}
-                                onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${foodbank.address[0].coordinates.latitude},${foodbank.address[0].coordinates.longitude}`) }}
+                                onClick={() => {
+                                    setSelectedFoodbank(foodbank);
+                                    setModalVisible(false);
+                                    setFoodbankModalVisible(true);
+                                }}
                             />))}
                     </GoogleMap>
             }
@@ -213,6 +223,36 @@ const Home = () => {
                 }
 
             </Flex>
+
+            <Flex className="foodbank-details-modal" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" h="55%" mh="55%" w="100%" position="fixed" left="50%" transform="translate(-50%, -50%)" top={ foodbankModalVisible ? '60%' : '200%' } backgroundColor="white" borderRadius="8px" padding="0.8rem" overflowY="scroll" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
+                {
+                    selectedFoodbank ?
+                        <VStack textAlign="center" width="100%" spacing={5}>
+                            <Heading> Foodbank Details </Heading>
+                            <VStack padding="0.5rem">
+                                <Heading as="h5" fontSize="md">{selectedFoodbank?.name}</Heading>
+                                <Text>{selectedFoodbank?.address[0]?.fullAddress}</Text>
+                                <VStack flexDirection="column" justifyContent="flex-start" maxWidth="70%" h="100%" py="0.5rem">
+                                            <Button colorScheme="teal" onClick={() => {
+                                                window.open(`https://www.google.com.my/maps?daddr=${selectedFoodbank?.address[0]?.coordinates?.latitude},${selectedFoodbank?.address[0]?.coordinates?.longitude}`);
+                                            }}>
+                                                Go to location
+                                            </Button>
+                                            {
+                                                selectedFoodbank?.website !== "" &&
+                                                <Button onClick={() => {
+                                                    window.open(selectedFoodbank?.website);
+                                                }} >Go to the website</Button>
+                                            }
+                                </VStack>
+                            </VStack>
+                        </VStack>
+                    :
+                        <Text>No Selected Marker</Text>
+                }
+
+            </Flex>
+
 
             <NavigationFooter activeTab={0} />
         </div>
