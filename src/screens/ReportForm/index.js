@@ -88,7 +88,7 @@ const ReportForm = () => {
         const formData = new FormData();
         formData.append('file', acceptedFiles[0]);
         formData.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET);
-        let result = await axios.post('https://api.Cloudinary.com/v1_1/benderaputihapp/image/upload/', formData)
+        let result = await axios.post('https://api.Cloudinary.com/v1_1/sambal-sos/image/upload/', formData)
         let secure_url = result.data.secure_url
         return secure_url;
     }
