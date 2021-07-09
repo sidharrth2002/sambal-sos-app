@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider, VStack } from '@chakra-ui/react';
+import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider, VStack, CloseButton } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
@@ -192,8 +192,9 @@ const Home = () => {
                 {
                     selectedMarker ?
                         <>
-                            <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="1rem" >
+                            <Flex flexDirection="row" justifyContent="space-between" alignItems="center" padding="1rem" w="100%" >
                                 <Heading> SOS Details </Heading>
+                                <CloseButton onClick={ () => { setModalVisible(false); setFoodbankModalVisible(false); }} />
                             </Flex>
                             <Center flexDirection="row" justifyContent="flex-start" alignContent="flex-start" padding="1rem">
                                 <HStack h="100%" >
@@ -228,7 +229,10 @@ const Home = () => {
                 {
                     selectedFoodbank ?
                         <VStack textAlign="center" width="100%" spacing={5}>
-                            <Heading> Foodbank Details </Heading>
+                            <Flex flexDirection="row" justifyContent="space-between" alignItems="center" padding="1rem" w="100%" >
+                                <Heading> Food Banks Details </Heading>
+                                <CloseButton onClick={ () => { setModalVisible(false); setFoodbankModalVisible(false); }} />
+                            </Flex>
                             <VStack padding="0.5rem">
                                 <Heading as="h5" fontSize="md">{selectedFoodbank?.name}</Heading>
                                 <Text>{selectedFoodbank?.address[0]?.fullAddress}</Text>
