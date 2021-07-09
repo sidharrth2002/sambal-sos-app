@@ -41,9 +41,9 @@ const Home = () => {
     }
     const options = {
         disableDefaultUI: true,
-        zoomControl: true
+        zoomControl: false
     }
-    const {isLoaded, loadError} = useJsApiLoader({
+    const { isLoaded, loadError } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries
@@ -192,17 +192,17 @@ const Home = () => {
                     <Text fontFamily="Poppins" fontSize="11px" >SOS</Text>
                 </Flex>
             </Flex>
-            <Flex borderTopRadius="15px" position="fixed" bottom="75px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="#f2f2f2" padding="10px 20px" >
-                <Flex whiteSpace="nowrap" w="48%" justifyContent="center" backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" fontSize="0.8em" onClick={() => history.push('/report-flag')}>
+            <Flex borderRadius="15px" position="fixed" bottom="100px" width="75%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="rgba(255,255,255,0.75)" padding="10px 20px" left="50%" transform="translateX(-50%)">
+                <Flex whiteSpace="nowrap" w="48%" justifyContent="center" backgroundColor="#E63946" borderRadius="8px" padding="10px 20px" color="white" fontFamily="Montserrat" fontWeight="600" fontSize="0.8em" onClick={() => history.push('/report-flag')}>
                     Ask for help
                 </Flex>
-                <Flex whiteSpace="nowrap" w="48%" justifyContent="center" alignItems="center" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="15px 25px" fontSize="0.8em" color="black" fontFamily="Montserrat" fontWeight="500" onClick={() => history.push('/report-flag')} >
-                    <Image mr="5px" src={ BDGraphics.FlagIcon } height="11px" />
+                <Flex whiteSpace="nowrap" w="48%" justifyContent="center" alignItems="center" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="10px 20px" fontSize="0.8em" color="black" fontFamily="Montserrat" fontWeight="500" onClick={() => history.push('/report-flag')} >
+                    <Image mr="5px" src={BDGraphics.FlagIcon} height="11px" />
                     Report SOS
                 </Flex>
             </Flex>
 
-            <Flex className="more-details-modal" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" h="55%" mh="55%" w="100%" position="fixed" left="50%" transform="translate(-50%, -50%)" top={ modalVisible ? '60%' : '200%' } backgroundColor="white" borderRadius="8px" padding="0.8rem" overflowY="scroll" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
+            <Flex className="more-details-modal" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" h="55%" mh="55%" w="100%" position="fixed" left="50%" transform="translate(-50%, -50%)" top={modalVisible ? '60%' : '200%'} backgroundColor="white" borderRadius="8px" padding="0.8rem" overflowY="scroll" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
                 {
                     selectedMarker ?
                         <>
