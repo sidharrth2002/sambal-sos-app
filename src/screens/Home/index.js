@@ -192,11 +192,11 @@ const Home = () => {
                     <Text fontFamily="Poppins" fontSize="11px" >SOS</Text>
                 </Flex>
             </Flex>
-            <Flex borderTopRadius="15px" position="fixed" bottom="100px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="white" padding="20px 20px" >
-                <Flex w="48%" justifyContent="center" backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" onClick={() => history.push('/report-flag')}>
+            <Flex borderTopRadius="15px" position="fixed" bottom="75px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="#f2f2f2" padding="10px 20px" >
+                <Flex whiteSpace="nowrap" w="48%" justifyContent="center" backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" fontSize="0.8em" onClick={() => history.push('/report-flag')}>
                     Ask for help
                 </Flex>
-                <Flex w="48%" justifyContent="center" alignItems="center" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="15px 25px" color="black" fontFamily="Montserrat" fontWeight="500" onClick={() => history.push('/report-flag')} >
+                <Flex whiteSpace="nowrap" w="48%" justifyContent="center" alignItems="center" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" backgroundColor="white" borderRadius="10px" padding="15px 25px" fontSize="0.8em" color="black" fontFamily="Montserrat" fontWeight="500" onClick={() => history.push('/report-flag')} >
                     <Image mr="5px" src={ BDGraphics.FlagIcon } height="11px" />
                     Report SOS
                 </Flex>
