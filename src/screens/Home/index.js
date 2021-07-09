@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider, VStack } from '@chakra-ui/react';
+import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider, VStack, Checkbox } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
@@ -31,6 +31,7 @@ const Home = () => {
     const [selectedFoodbank, setSelectedFoodbank] = useState(null);
     const [modalVisible, setModalVisible] = useState(false);
     const [foodbankModalVisible, setFoodbankModalVisible] = useState(false);
+    const [showFoodbanks, setShowFoodBanks] = useState(true);
     const [map, setMap] = useState(null);
     const [libraries] = useState(['places']);
 
@@ -69,10 +70,10 @@ const Home = () => {
                         flag_id: flag.id,
                         lat: flag.coordinates.coordinates[0],
                         lng: flag.coordinates.coordinates[1],
-                        image: flag.image ?? "",
+                        image: flag.image ? getLowestQuality(flag.image) : "" ,
                         description: flag.description ?? ""
                     }
-
+                    console.log(newInfoBoxObj.image);
                     setFlags((oldFlags) => [
                         ...oldFlags,
                         newInfoBoxObj
@@ -113,6 +114,19 @@ const Home = () => {
             isClosable: true,
             position: 'top'
         })
+    }
+
+    const getLowestQuality = (url) => {
+        console.log(url.split('https://res.cloudinary.com/benderaputihapp/image/upload/'));
+        if(url.includes('benderaputihapp')) {
+            let newURL = 'https://res.cloudinary.com/benderaputihapp/image/upload/q_20/' + url.split('https://res.cloudinary.com/benderaputihapp/image/upload/')[1]
+            return newURL;
+        } else if (url.includes('sambal-sos')) {
+            let newURL = 'https://res.cloudinary.com/sambal-sos/image/upload/q_20/' + url.split('https://res.cloudinary.com/sambal-sos/image/upload/')[1]
+            return newURL;
+        } else {
+            return url;
+        }
     }
 
     return (
