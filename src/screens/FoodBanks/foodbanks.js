@@ -3259,7 +3259,7 @@ const foodbanks = [
                 "fullAddress": "12M, Jalan SS2/61 , 47300 petaling Jaya "
             }
         ],
-        "website": "@thebaoguys (insta / Facebook )"
+        "website": "https://www.instagram.com/thebaoguys"
     },
     {
         "name": "Pasar kecil melawati",
@@ -3548,19 +3548,6 @@ const foodbanks = [
         "website": ""
     },
     {
-        "name": "The Bao Guys",
-        "address": [
-            {
-                "coordinates": {
-                    "latitude": 3.11829,
-                    "longitude": 101.621
-                },
-                "fullAddress": "12M, Jalan SS2/61 , 47300 petaling Jaya "
-            }
-        ],
-        "website": "@thebaoguys (insta / Facebook )"
-    },
-    {
         "name": "Gerobok Anggerik",
         "address": [
             {
@@ -3597,7 +3584,7 @@ const foodbanks = [
                 "fullAddress": "No.4, Jalan Sejahtera 1, Taman Sri Temenggong, 84000 Muar, Johor"
             }
         ],
-        "website": "www.alimanhalmart.com"
+        "website": "https://www.alimanhalmart.com"
     },
     {
         "name": "Barang keperluan makanan",
