@@ -57,7 +57,27 @@ const Home = () => {
         setMap(null);
     }, [])
 
+    const geoOptions = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    };
+
+    const geoSuccess = (pos) => {
+        var crd = pos.coords;
+        setCenter({
+         lat: crd.latitude,
+         lng: crd.longitude    
+        });
+    }
+
+    const geoError = (err) => {
+        console.warn(`GEOLOCATION ERROR(${err.code}): ${err.message}`);
+    }
+
     useEffect(() => {
+        navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+
         axios.get(`${process.env.REACT_APP_API_URL}flag/getall`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
@@ -65,12 +85,12 @@ const Home = () => {
         })
             .then(async (res) => {
                 let flags = res.data
-                flags.forEach(async(flag) => {
+                flags.forEach(async (flag) => {
                     let newInfoBoxObj = {
                         flag_id: flag.id,
                         lat: flag.coordinates.coordinates[0],
                         lng: flag.coordinates.coordinates[1],
-                        image: flag.image ? getLowestQuality(flag.image) : "" ,
+                        image: flag.image ? getLowestQuality(flag.image) : "",
                         description: flag.description ?? ""
                     }
                     console.log(newInfoBoxObj.image);
@@ -95,8 +115,8 @@ const Home = () => {
 
     const InfoBoxTemplate = (latitude, longitude, image) => {
         let googleMapUrl = `http://maps.google.com/?q=${latitude},${longitude}`;
-        return(
-            <div style={{ backgroundColor:"white", padding:'10px', borderRadius: '8px', fontSize:'15px' }} >
+        return (
+            <div style={{ backgroundColor: "white", padding: '10px', borderRadius: '8px', fontSize: '15px' }} >
                 <a target="_blank" href={googleMapUrl} >
                     <p>Go to google maps</p>
                 </a>
@@ -118,7 +138,7 @@ const Home = () => {
 
     const getLowestQuality = (url) => {
         console.log(url.split('https://res.cloudinary.com/benderaputihapp/image/upload/'));
-        if(url.includes('benderaputihapp')) {
+        if (url.includes('benderaputihapp')) {
             let newURL = 'https://res.cloudinary.com/benderaputihapp/image/upload/q_20/' + url.split('https://res.cloudinary.com/benderaputihapp/image/upload/')[1]
             return newURL;
         } else if (url.includes('sambal-sos')) {
@@ -132,16 +152,16 @@ const Home = () => {
     return (
         <div>
             {
-                ( loading || !isLoaded ) ?
+                (loading || !isLoaded) ?
                     <Center h="80vh" flexDirection="column" justifyContent="center" alignItems="center" >
                         <Spinner />
                     </Center>
-                :
+                    :
                     <GoogleMap mapContainerStyle={mapContainerStyle} zoom={8} center={center} onLoad={onLoad} onUnmount={onUnmount} options={options} onClick={() => {
                         setModalVisible(false);
                         setFoodbankModalVisible(false);
                     }} >
-                        { flags.map((flag, index) => {
+                        {flags.map((flag, index) => {
                             return (
 
                                 <Marker
@@ -150,7 +170,7 @@ const Home = () => {
                                     icon={{
                                         url: '/siren.svg',
                                         scaledSize: new window.google.maps.Size(25, 25),
-                                        origin: new window.google.maps.Point(0,0),
+                                        origin: new window.google.maps.Point(0, 0),
                                         anchor: new window.google.maps.Point(13, 13)
                                     }}
                                     onClick={() => {
@@ -161,24 +181,24 @@ const Home = () => {
                                 />
                             );
                         })
-                    }
+                        }
 
-                        { foodbanks.map((foodbank, index) =>
-                            (<Marker
-                                key={index}
-                                position={{ lat: parseFloat(foodbank.address[0].coordinates.latitude), lng: parseFloat(foodbank.address[0].coordinates.longitude) }}
-                                icon={{
-                                    url: '/groceries.svg',
-                                    scaledSize: new window.google.maps.Size(18, 18),
-                                    origin: new window.google.maps.Point(0,0),
-                                    anchor: new window.google.maps.Point(9, 9)
-                                }}
-                                onClick={() => {
-                                    setSelectedFoodbank(foodbank);
-                                    setModalVisible(false);
-                                    setFoodbankModalVisible(true);
-                                }}
-                            />))}
+                        {foodbanks.map((foodbank, index) =>
+                        (<Marker
+                            key={index}
+                            position={{ lat: parseFloat(foodbank.address[0].coordinates.latitude), lng: parseFloat(foodbank.address[0].coordinates.longitude) }}
+                            icon={{
+                                url: '/groceries.svg',
+                                scaledSize: new window.google.maps.Size(18, 18),
+                                origin: new window.google.maps.Point(0, 0),
+                                anchor: new window.google.maps.Point(9, 9)
+                            }}
+                            onClick={() => {
+                                setSelectedFoodbank(foodbank);
+                                setModalVisible(false);
+                                setFoodbankModalVisible(true);
+                            }}
+                        />))}
                     </GoogleMap>
             }
             <Flex flexDirection="column" position="absolute" top="15px" right="15px" borderRadius="8px" py="0.1rem" px="0.8rem" backgroundColor="white" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" justifyContent="center" alignItems="center" >
@@ -212,33 +232,33 @@ const Home = () => {
                             <Center flexDirection="row" justifyContent="flex-start" alignContent="flex-start" padding="1rem">
                                 <HStack h="100%" >
                                     <Box maxWidth="50%" px="0.5rem" py="0.5rem">
-                                        <Image borderRadius="8px" src={ selectedMarker?.image } width="100%" maxWidth="200px" marginRight="1rem" />
+                                        <Image borderRadius="8px" src={selectedMarker?.image} width="100%" maxWidth="200px" marginRight="1rem" />
                                     </Box>
                                     <Center flexDirection="column" justifyContent="flex-start" maxWidth="50%" h="100%" py="0.5rem">
                                         <Flex backgroundColor="#ff8c82" borderRadius="8px" w="100%" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
-                                            <Image src={ BDGraphics.PinIcon } alt="" height="15px" />
+                                            <Image src={BDGraphics.PinIcon} alt="" height="15px" />
                                             <Text fontSize="13px" >Go to this location</Text>
                                         </Flex>
-                                        <Text textAlign="start" fontSize="12px" px="0.5rem">{ selectedMarker?.description }</Text>
+                                        <Text textAlign="start" fontSize="12px" px="0.5rem">{selectedMarker?.description}</Text>
                                     </Center>
                                 </HStack>
                             </Center>
                             <Flex className="button-groups" flexDirection="row" justifyContent="space-around" alignContent="center" padding="1rem" w="100%" >
-                                <Box w="100%" mr="10px" onClick={ () => { toastOpener() } }>
-                                    <Button fontFamily="Montserrat" fontWeight="600" w="100%" padding="1.5rem" backgroundColor="#5CFFC5" >Up-Vote <Image ml="5px" src={ BDGraphics.UpvoteIcon } height="15px"/> </Button>
+                                <Box w="100%" mr="10px" onClick={() => { toastOpener() }}>
+                                    <Button fontFamily="Montserrat" fontWeight="600" w="100%" padding="1.5rem" backgroundColor="#5CFFC5" >Up-Vote <Image ml="5px" src={BDGraphics.UpvoteIcon} height="15px" /> </Button>
                                 </Box>
-                                <Box w="100%" onClick={ () => { toastOpener() } } >
-                                    <Button fontFamily="Montserrat" fontWeight="600" w="100%" padding="1.5rem" backgroundColor="#FFECA7" >Supported <Image ml="5px" src={ BDGraphics.SupportedIcon } height="15px"/> </Button>
+                                <Box w="100%" onClick={() => { toastOpener() }} >
+                                    <Button fontFamily="Montserrat" fontWeight="600" w="100%" padding="1.5rem" backgroundColor="#FFECA7" >Supported <Image ml="5px" src={BDGraphics.SupportedIcon} height="15px" /> </Button>
                                 </Box>
                             </Flex>
                         </>
-                    :
+                        :
                         <Text>No Selected Marker</Text>
                 }
 
             </Flex>
 
-            <Flex className="foodbank-details-modal" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" h="55%" mh="55%" w="100%" position="fixed" left="50%" transform="translate(-50%, -50%)" top={ foodbankModalVisible ? '60%' : '200%' } backgroundColor="white" borderRadius="8px" padding="0.8rem" overflowY="scroll" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
+            <Flex className="foodbank-details-modal" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" h="55%" mh="55%" w="100%" position="fixed" left="50%" transform="translate(-50%, -50%)" top={foodbankModalVisible ? '60%' : '200%'} backgroundColor="white" borderRadius="8px" padding="0.8rem" overflowY="scroll" transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)" transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)" >
                 {
                     selectedFoodbank ?
                         <VStack textAlign="center" width="100%" spacing={5}>
@@ -247,21 +267,21 @@ const Home = () => {
                                 <Heading as="h5" fontSize="md">{selectedFoodbank?.name}</Heading>
                                 <Text>{selectedFoodbank?.address[0]?.fullAddress}</Text>
                                 <VStack flexDirection="column" justifyContent="flex-start" maxWidth="70%" h="100%" py="0.5rem">
-                                            <Button colorScheme="teal" onClick={() => {
-                                                window.open(`https://www.google.com.my/maps?daddr=${selectedFoodbank?.address[0]?.coordinates?.latitude},${selectedFoodbank?.address[0]?.coordinates?.longitude}`);
-                                            }}>
-                                                Go to location
-                                            </Button>
-                                            {
-                                                selectedFoodbank?.website !== "" &&
-                                                <Button onClick={() => {
-                                                    window.open(selectedFoodbank?.website);
-                                                }} >Go to the website</Button>
-                                            }
+                                    <Button colorScheme="teal" onClick={() => {
+                                        window.open(`https://www.google.com.my/maps?daddr=${selectedFoodbank?.address[0]?.coordinates?.latitude},${selectedFoodbank?.address[0]?.coordinates?.longitude}`);
+                                    }}>
+                                        Go to location
+                                    </Button>
+                                    {
+                                        selectedFoodbank?.website !== "" &&
+                                        <Button onClick={() => {
+                                            window.open(selectedFoodbank?.website);
+                                        }} >Go to the website</Button>
+                                    }
                                 </VStack>
                             </VStack>
                         </VStack>
-                    :
+                        :
                         <Text>No Selected Marker</Text>
                 }
 
