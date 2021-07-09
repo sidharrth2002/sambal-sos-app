@@ -69,9 +69,19 @@ const Home = () => {
                         flag_id: flag.id,
                         lat: flag.coordinates.coordinates[0],
                         lng: flag.coordinates.coordinates[1],
-                        image: flag.image ?? "",
                         description: flag.description ?? ""
                     }
+
+                    let imageURL;
+
+                    // we don't have enough money so we have to switch between buckets
+                    if(flag.image !== null) {
+                        imageURL = 'https://minio-server.sambalsos.com:9000/reports/' + flag.image.split('/')[flag.image.split('/').length - 1];
+                    } else {
+                        imageURL = flag.minioimage;
+                    }
+
+                    newInfoBoxObj.image = imageURL;
 
                     setFlags((oldFlags) => [
                         ...oldFlags,

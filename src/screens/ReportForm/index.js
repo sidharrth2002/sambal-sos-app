@@ -88,12 +88,13 @@ const ReportForm = () => {
         const formData = new FormData();
         formData.append('file', acceptedFiles[0]);
         try {
-            let result = await axios.post(`${process.env.REACT_APP_API_URL}upload/uploadgcs`, formData, {
+            let result = await axios.post(`${process.env.REACT_APP_API_URL}upload/minioupload`, formData, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
             });
-            let url = result.data.url
+            let url = result.data.secure_url;
+            console.log(url);
             return url;
         } catch(err) {
             console.log(err);
