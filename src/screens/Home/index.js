@@ -160,9 +160,9 @@ const Home = () => {
                                     position={{ lat: parseFloat(flag.lat), lng: parseFloat(flag.lng) }}
                                     icon={{
                                         url: '/siren.svg',
-                                        scaledSize: new window.google.maps.Size(25, 25),
+                                        scaledSize: new window.google.maps.Size(30, 30),
                                         origin: new window.google.maps.Point(0,0),
-                                        anchor: new window.google.maps.Point(13, 13)
+                                        anchor: new window.google.maps.Point(15, 15)
                                     }}
                                     onClick={() => {
                                         setSelectedMarker(flag);
@@ -180,9 +180,9 @@ const Home = () => {
                                 position={{ lat: parseFloat(foodbank.address[0].coordinates.latitude), lng: parseFloat(foodbank.address[0].coordinates.longitude) }}
                                 icon={{
                                     url: '/groceries.svg',
-                                    scaledSize: new window.google.maps.Size(18, 18),
+                                    scaledSize: new window.google.maps.Size(20, 20),
                                     origin: new window.google.maps.Point(0,0),
-                                    anchor: new window.google.maps.Point(9, 9)
+                                    anchor: new window.google.maps.Point(10, 10)
                                 }}
                                 onClick={() => {
                                     setSelectedFoodbank(foodbank);
