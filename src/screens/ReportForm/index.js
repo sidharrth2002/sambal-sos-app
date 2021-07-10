@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {useDropzone} from 'react-dropzone';
 import NavigationFooter from '../../components/NavigationFooter';
-import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input, List, ListIcon, ListItem, Link } from '@chakra-ui/react';
+import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input, List, ListIcon, ListItem, Link, InputGroup, InputLeftAddon } from '@chakra-ui/react';
 import {
     Alert,
     AlertIcon,
@@ -36,6 +36,9 @@ const ReportForm = () => {
     const [searchLocationEnable, setSearchLocationEnable] = useState(true);
 
     const [submitLoading, setSubmitLoading] = useState(false)
+
+    //catch errors
+    const [phoneNumberError, setPhoneNumberError] = useState(false);
 
     useEffect(() => {
         let value = 5
@@ -87,6 +90,12 @@ const ReportForm = () => {
 
     const handlePhoneNumber = (e) => {
         setPhoneNumber(e.target.value)
+        var reg = /^\d+$/;
+        if(reg.test(`${e.target.value}`) === false){
+            setPhoneNumberError(true);
+        }else{
+            setPhoneNumberError(false)
+        }
     }
 
     const handleImageUpload = async() => {
@@ -108,7 +117,7 @@ const ReportForm = () => {
     }
 
     const reportFlag = async() => {
-        if(acceptedFiles.length > 0 && remark && coordinates){
+        if(acceptedFiles.length > 0 && remark && coordinates && (phoneNumberError === false)){
             setSubmitLoading(true)
             let image_url = await handleImageUpload();
             console.log(image_url);
@@ -311,7 +320,10 @@ const ReportForm = () => {
                                 <Text fontSize="xs" fontFamily="Poppins" fontWeight="400">(Optional)</Text>
                             </Flex>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
-                                <Textarea placeholder="Enter your phone number" onChange={ handlePhoneNumber } />
+                                <InputGroup>
+                                    <InputLeftAddon children="+60" />
+                                    <Input isInvalid={ phoneNumberError ? true : false } focusBorderColor={ phoneNumberError ? 'red.300' : '' } type="tel" placeholder="Enter your phone number" onChange={ handlePhoneNumber } />
+                                </InputGroup>
                             </Flex>
                         </Flex>
 
