@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {useDropzone} from 'react-dropzone';
 import NavigationFooter from '../../components/NavigationFooter';
-import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input, List, ListIcon, ListItem, Link } from '@chakra-ui/react';
+import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input, List, ListIcon, ListItem, Link, InputGroup, InputLeftAddon } from '@chakra-ui/react';
 import {
     Alert,
     AlertIcon,
@@ -27,6 +27,7 @@ const ReportForm = () => {
 
     /* States */
     const [remark, setRemark] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [coordinates, setCoordinates] = useState(null);
     const [progressBarValue, setProgressBarValue] = useState(5)
     const [locationLoading, setLocationLoading] = useState(false);
@@ -35,6 +36,9 @@ const ReportForm = () => {
     const [searchLocationEnable, setSearchLocationEnable] = useState(true);
 
     const [submitLoading, setSubmitLoading] = useState(false)
+
+    //catch errors
+    const [phoneNumberError, setPhoneNumberError] = useState(false);
 
     useEffect(() => {
         let value = 5
@@ -84,6 +88,16 @@ const ReportForm = () => {
         setRemark(e.target.value)
     }
 
+    const handlePhoneNumber = (e) => {
+        setPhoneNumber(e.target.value)
+        var reg = /^\d+$/;
+        if(reg.test(`${e.target.value}`) === false){
+            setPhoneNumberError(true);
+        }else{
+            setPhoneNumberError(false)
+        }
+    }
+
     const handleImageUpload = async() => {
         const formData = new FormData();
         formData.append('file', acceptedFiles[0]);
@@ -103,7 +117,7 @@ const ReportForm = () => {
     }
 
     const reportFlag = async() => {
-        if(acceptedFiles.length > 0 && remark && coordinates){
+        if(acceptedFiles.length > 0 && remark && coordinates && (phoneNumberError === false)){
             setSubmitLoading(true)
             let image_url = await handleImageUpload();
             console.log(image_url);
@@ -111,7 +125,8 @@ const ReportForm = () => {
                 latitude: coordinates.latitude,
                 longitude: coordinates.longitude,
                 description: remark,
-                image: image_url
+                image: image_url,
+                phonenumber: phoneNumber
             }, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
@@ -222,7 +237,7 @@ const ReportForm = () => {
                     <Flex className="Flag-Form-Wrapper" flexDirection="column" backgroundColor="#FFFFFF" padding="2rem" borderRadius="20px" >
                         <Flex className="Form-Blocks" flexDirection="column" alignItems="flex-start" mb="4rem" >
                             <Flex className="Form-Title" flexDirection="row" alignItems="center" mb="15px" >
-                                <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 1 of 3</Text>
+                                <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 1 of 4</Text>
                                 <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" >Upload an image</Text>
                             </Flex>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
@@ -247,7 +262,7 @@ const ReportForm = () => {
 
                         <Flex className="Form-Blocks" flexDirection="column" alignItems="flex-start" mb="4rem" >
                             <Flex className="Form-Title" flexDirection="row" alignItems="center" mb="15px" >
-                                <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 2 of 3</Text>
+                                <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 2 of 4</Text>
                                 <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" >Set the address</Text>
                             </Flex>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
@@ -290,11 +305,25 @@ const ReportForm = () => {
 
                         <Flex className="Form-Blocks" flexDirection="column" alignItems="flex-start" mb="3rem" >
                             <Flex className="Form-Title" flexDirection="row" alignItems="center" mb="15px" >
-                                <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 3 of 3</Text>
+                                <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 3 of 4</Text>
                                 <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" >Remarks</Text>
                             </Flex>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
                                 <Textarea placeholder="Eg: What did you see? What do you need?" onChange={ handleRemark } />
+                            </Flex>
+                        </Flex>
+
+                        <Flex className="Form-Blocks" flexDirection="column" alignItems="flex-start" mb="3rem" >
+                            <Flex className="Form-Title" flexDirection="row" alignItems="center" mb="15px" >
+                                <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 4 of 4</Text>
+                                <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" mr="5px" >Phone Number</Text>
+                                <Text fontSize="xs" fontFamily="Poppins" fontWeight="400">(Optional)</Text>
+                            </Flex>
+                            <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
+                                <InputGroup>
+                                    <InputLeftAddon children="+60" />
+                                    <Input isInvalid={ phoneNumberError ? true : false } focusBorderColor={ phoneNumberError ? 'red.300' : '' } type="tel" placeholder="Enter your phone number" onChange={ handlePhoneNumber } />
+                                </InputGroup>
                             </Flex>
                         </Flex>
 
