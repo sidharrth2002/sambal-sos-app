@@ -89,7 +89,7 @@ const ReportForm = () => {
     }
 
     const handlePhoneNumber = (e) => {
-        setPhoneNumber(e.target.value)
+        setPhoneNumber('+60' + e.target.value)
         var reg = /^\d+$/;
         if(reg.test(`${e.target.value}`) === false){
             setPhoneNumberError(true);
@@ -252,7 +252,7 @@ const ReportForm = () => {
                                             <Center flexDirection="column" {...getRootProps({className: 'dropzone'})}>
                                                 <Image mb="20px" src={BDGraphics.ImageIcon} alt="Image" />
                                                 <input {...getInputProps()} required />
-                                                <Text color="#A7A7A7" fontSize="md">Add an image (We want to protect privacy. Please just take a picture in front of the house. <Text fontWeight="bold">There should not be a white flag in the image.</Text></Text>
+                                                <Text color="#A7A7A7" fontSize="md">Add an image (We want to protect privacy. Please just take a picture in front of the house.) <Text fontWeight="bold">There should not be a white flag in the image.</Text></Text>
                                             </Center>
                                         </Center>
                                     }
