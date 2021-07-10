@@ -22,6 +22,7 @@ import SambalSosLogo from './sambalsos.svg';
 import GoogleIcon from './svgs/google.svg';
 import FoodBankIcon from './svgs/groceries.svg';
 import SirenIcon from './svgs/siren.svg';
+import PhoneIcon from './svgs/phone.svg';
 
 export {
     MaintenanceSVG,
@@ -47,5 +48,6 @@ export {
     SambalSosLogo,
     GoogleIcon,
     FoodBankIcon,
-    SirenIcon
+    SirenIcon,
+    PhoneIcon
 }

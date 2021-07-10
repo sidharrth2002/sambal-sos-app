@@ -70,7 +70,8 @@ const Home = () => {
                         flag_id: flag.id,
                         lat: flag.coordinates.coordinates[0],
                         lng: flag.coordinates.coordinates[1],
-                        description: flag.description ?? ""
+                        description: flag.description ?? "",
+                        phonenumber: flag.phonenumber ?? ""
                     }
 
                     let imageURL;
@@ -226,10 +227,20 @@ const Home = () => {
                                         <Image borderRadius="8px" src={ selectedMarker?.image } width="100%" maxWidth="200px" marginRight="1rem" />
                                     </Box>
                                     <Center flexDirection="column" justifyContent="flex-start" maxWidth="50%" h="100%" py="0.5rem">
-                                        <Flex backgroundColor="#ff8c82" borderRadius="8px" w="100%" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
-                                            <Image src={ BDGraphics.PinIcon } alt="" height="15px" />
-                                            <Text fontSize="13px" >Go to this location</Text>
+                                        <Flex backgroundColor="#ff8c82" borderRadius="8px" w="100%" mb="5px" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
+                                            <Image src={ BDGraphics.PinIcon } alt="" height="15px" mr="10px" />
+                                            <Text fontSize="13px" >Go to location</Text>
                                         </Flex>
+                                        {
+                                            selectedMarker.phonenumber ? 
+                                            <Flex backgroundColor="#EAEAEA" borderRadius="8px" w="100%" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`tel:${selectedMarker.phonenumber}`) }} >
+                                                <Image src={ BDGraphics.PhoneIcon } alt="" height="15px" mr="15px" />
+                                                <Text fontSize="13px" >Call Phone</Text>
+                                            </Flex>
+                                            :
+                                            <>
+                                            </>
+                                        }
                                         <Text textAlign="start" fontSize="12px" px="0.5rem">{ selectedMarker?.description }</Text>
                                     </Center>
                                 </HStack>
