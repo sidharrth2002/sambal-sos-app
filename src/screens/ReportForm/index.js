@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import {useDropzone} from 'react-dropzone';
 import NavigationFooter from '../../components/NavigationFooter';
 import { Image, Flex, Text, Progress, Box, Textarea, Center, Spinner, Input, List, ListIcon, ListItem, Link, InputGroup, InputLeftAddon } from '@chakra-ui/react';
@@ -15,8 +15,6 @@ import { CheckIcon } from '@chakra-ui/icons';
 import useOnclickOutside from "react-cool-onclickoutside";
 import axios from 'axios';
 import * as BDGraphics from '../../assets/';
-import firebase from "firebase/app";
-import "firebase/firestore";
 import { useSelector } from 'react-redux'
 require('dotenv').config()
 
@@ -91,6 +89,10 @@ const ReportForm = () => {
     const handlePhoneNumber = (e) => {
         setPhoneNumber('+60' + e.target.value)
         var reg = /^\d+$/;
+        if(e.target.value === ""){
+            setPhoneNumberError(false)
+            return;
+        }
         if(reg.test(`${e.target.value}`) === false){
             setPhoneNumberError(true);
         }else{
