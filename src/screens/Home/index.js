@@ -31,6 +31,7 @@ const Home = () => {
     const [selectedFoodbank, setSelectedFoodbank] = useState(null);
     const [modalVisible, setModalVisible] = useState(false);
     const [foodbankModalVisible, setFoodbankModalVisible] = useState(false);
+    const [showFoodbanks, setShowFoodBanks] = useState(true);
     const [map, setMap] = useState(null);
     const [libraries] = useState(['places']);
 
@@ -69,9 +70,19 @@ const Home = () => {
                         flag_id: flag.id,
                         lat: flag.coordinates.coordinates[0],
                         lng: flag.coordinates.coordinates[1],
-                        image: flag.image ?? "",
                         description: flag.description ?? ""
                     }
+
+                    let imageURL;
+
+                    // we don't have enough money so we have to switch between buckets
+                    if(flag.image !== null) {
+                        imageURL = 'https://minio-server.sambalsos.com:9000/reports/' + flag.image.split('/')[flag.image.split('/').length - 1];
+                    } else {
+                        imageURL = flag.minioimage;
+                    }
+
+                    newInfoBoxObj.image = imageURL;
 
                     setFlags((oldFlags) => [
                         ...oldFlags,
@@ -113,6 +124,19 @@ const Home = () => {
             isClosable: true,
             position: 'top'
         })
+    }
+
+    const getLowestQuality = (url) => {
+        console.log(url.split('https://res.cloudinary.com/benderaputihapp/image/upload/'));
+        if(url.includes('benderaputihapp')) {
+            let newURL = 'https://res.cloudinary.com/benderaputihapp/image/upload/q_20/' + url.split('https://res.cloudinary.com/benderaputihapp/image/upload/')[1]
+            return newURL;
+        } else if (url.includes('sambal-sos')) {
+            let newURL = 'https://res.cloudinary.com/sambal-sos/image/upload/q_20/' + url.split('https://res.cloudinary.com/sambal-sos/image/upload/')[1]
+            return newURL;
+        } else {
+            return url;
+        }
     }
 
     return (
