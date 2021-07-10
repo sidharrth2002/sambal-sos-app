@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider, VStack, Checkbox } from '@chakra-ui/react';
+import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider, VStack, CloseButton } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
@@ -90,10 +90,21 @@ const Home = () => {
                         flag_id: flag.id,
                         lat: flag.coordinates.coordinates[0],
                         lng: flag.coordinates.coordinates[1],
-                        image: flag.image ? getLowestQuality(flag.image) : "",
-                        description: flag.description ?? ""
+                        description: flag.description ?? "",
+                        phonenumber: flag.phonenumber ?? ""
                     }
-                    console.log(newInfoBoxObj.image);
+
+                    let imageURL;
+
+                    // we don't have enough money so we have to switch between buckets
+                    if(flag.image !== null) {
+                        imageURL = 'https://minio-server.sambalsos.com:9000/reports/' + flag.image.split('/')[flag.image.split('/').length - 1];
+                    } else {
+                        imageURL = flag.minioimage;
+                    }
+
+                    newInfoBoxObj.image = imageURL;
+
                     setFlags((oldFlags) => [
                         ...oldFlags,
                         newInfoBoxObj
@@ -169,9 +180,9 @@ const Home = () => {
                                     position={{ lat: parseFloat(flag.lat), lng: parseFloat(flag.lng) }}
                                     icon={{
                                         url: '/siren.svg',
-                                        scaledSize: new window.google.maps.Size(25, 25),
-                                        origin: new window.google.maps.Point(0, 0),
-                                        anchor: new window.google.maps.Point(13, 13)
+                                        scaledSize: new window.google.maps.Size(30, 30),
+                                        origin: new window.google.maps.Point(0,0),
+                                        anchor: new window.google.maps.Point(15, 15)
                                     }}
                                     onClick={() => {
                                         setSelectedMarker(flag);
@@ -183,22 +194,22 @@ const Home = () => {
                         })
                         }
 
-                        {foodbanks.map((foodbank, index) =>
-                        (<Marker
-                            key={index}
-                            position={{ lat: parseFloat(foodbank.address[0].coordinates.latitude), lng: parseFloat(foodbank.address[0].coordinates.longitude) }}
-                            icon={{
-                                url: '/groceries.svg',
-                                scaledSize: new window.google.maps.Size(18, 18),
-                                origin: new window.google.maps.Point(0, 0),
-                                anchor: new window.google.maps.Point(9, 9)
-                            }}
-                            onClick={() => {
-                                setSelectedFoodbank(foodbank);
-                                setModalVisible(false);
-                                setFoodbankModalVisible(true);
-                            }}
-                        />))}
+                        { foodbanks.map((foodbank, index) =>
+                            (<Marker
+                                key={index}
+                                position={{ lat: parseFloat(foodbank.address[0].coordinates.latitude), lng: parseFloat(foodbank.address[0].coordinates.longitude) }}
+                                icon={{
+                                    url: '/groceries.svg',
+                                    scaledSize: new window.google.maps.Size(20, 20),
+                                    origin: new window.google.maps.Point(0,0),
+                                    anchor: new window.google.maps.Point(10, 10)
+                                }}
+                                onClick={() => {
+                                    setSelectedFoodbank(foodbank);
+                                    setModalVisible(false);
+                                    setFoodbankModalVisible(true);
+                                }}
+                            />))}
                     </GoogleMap>
             }
             <Flex flexDirection="column" position="absolute" top="15px" right="15px" borderRadius="8px" py="0.1rem" px="0.8rem" backgroundColor="white" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" justifyContent="center" alignItems="center" >
@@ -226,8 +237,9 @@ const Home = () => {
                 {
                     selectedMarker ?
                         <>
-                            <Flex flexDirection="row" justifyContent="flex-start" alignContent="center" padding="1rem" >
+                            <Flex flexDirection="row" justifyContent="space-between" alignItems="center" padding="1rem" w="100%" >
                                 <Heading> SOS Details </Heading>
+                                <CloseButton onClick={ () => { setModalVisible(false); setFoodbankModalVisible(false); }} />
                             </Flex>
                             <Center flexDirection="row" justifyContent="flex-start" alignContent="flex-start" padding="1rem">
                                 <HStack h="100%" >
@@ -235,11 +247,21 @@ const Home = () => {
                                         <Image borderRadius="8px" src={selectedMarker?.image} width="100%" maxWidth="200px" marginRight="1rem" />
                                     </Box>
                                     <Center flexDirection="column" justifyContent="flex-start" maxWidth="50%" h="100%" py="0.5rem">
-                                        <Flex backgroundColor="#ff8c82" borderRadius="8px" w="100%" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
-                                            <Image src={BDGraphics.PinIcon} alt="" height="15px" />
-                                            <Text fontSize="13px" >Go to this location</Text>
+                                        <Flex backgroundColor="#ff8c82" borderRadius="8px" w="100%" mb="5px" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
+                                            <Image src={ BDGraphics.PinIcon } alt="" height="15px" mr="10px" />
+                                            <Text fontSize="13px" >Go to location</Text>
                                         </Flex>
-                                        <Text textAlign="start" fontSize="12px" px="0.5rem">{selectedMarker?.description}</Text>
+                                        {
+                                            selectedMarker.phonenumber ? 
+                                            <Flex backgroundColor="#EAEAEA" borderRadius="8px" w="100%" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`tel:${selectedMarker.phonenumber}`) }} >
+                                                <Image src={ BDGraphics.PhoneIcon } alt="" height="15px" mr="15px" />
+                                                <Text fontSize="13px" >Call Phone</Text>
+                                            </Flex>
+                                            :
+                                            <>
+                                            </>
+                                        }
+                                        <Text textAlign="start" fontSize="12px" px="0.5rem">{ selectedMarker?.description }</Text>
                                     </Center>
                                 </HStack>
                             </Center>
@@ -262,7 +284,10 @@ const Home = () => {
                 {
                     selectedFoodbank ?
                         <VStack textAlign="center" width="100%" spacing={5}>
-                            <Heading> Foodbank Details </Heading>
+                            <Flex flexDirection="row" justifyContent="space-between" alignItems="center" padding="1rem" w="100%" >
+                                <Heading> Food Banks Details </Heading>
+                                <CloseButton onClick={ () => { setModalVisible(false); setFoodbankModalVisible(false); }} />
+                            </Flex>
                             <VStack padding="0.5rem">
                                 <Heading as="h5" fontSize="md">{selectedFoodbank?.name}</Heading>
                                 <Text>{selectedFoodbank?.address[0]?.fullAddress}</Text>
