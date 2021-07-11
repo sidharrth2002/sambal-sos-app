@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider, VStack, CloseButton } from '@chakra-ui/react';
+import { Center, Spinner, Image, Flex, Text, Button, Heading, Box, HStack, Divider, VStack, CloseButton, Checkbox } from '@chakra-ui/react';
 import {
     useToast
 } from "@chakra-ui/react";
@@ -32,6 +32,7 @@ const Home = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [foodbankModalVisible, setFoodbankModalVisible] = useState(false);
     const [showFoodbanks, setShowFoodBanks] = useState(true);
+    const [showSOS, setShowSOS] = useState(true);
     const [map, setMap] = useState(null);
     const [libraries] = useState(['places']);
 
@@ -71,7 +72,8 @@ const Home = () => {
                         lat: flag.coordinates.coordinates[0],
                         lng: flag.coordinates.coordinates[1],
                         description: flag.description ?? "",
-                        phonenumber: flag.phonenumber ?? ""
+                        phonenumber: flag.phonenumber ?? "",
+                        createdAt: flag.createdAt
                     }
 
                     let imageURL;
@@ -152,10 +154,11 @@ const Home = () => {
                         setModalVisible(false);
                         setFoodbankModalVisible(false);
                     }} >
-                        { flags.map((flag, index) => {
+                        {
+                        flags.map((flag, index) => {
                             return (
-
                                 <Marker
+                                    visible={showSOS}
                                     key={index}
                                     position={{ lat: parseFloat(flag.lat), lng: parseFloat(flag.lng) }}
                                     icon={{
@@ -174,34 +177,40 @@ const Home = () => {
                         })
                     }
 
-                        { foodbanks.map((foodbank, index) =>
-                            (<Marker
-                                key={index}
-                                position={{ lat: parseFloat(foodbank.address[0].coordinates.latitude), lng: parseFloat(foodbank.address[0].coordinates.longitude) }}
-                                icon={{
-                                    url: '/groceries.svg',
-                                    scaledSize: new window.google.maps.Size(20, 20),
-                                    origin: new window.google.maps.Point(0,0),
-                                    anchor: new window.google.maps.Point(10, 10)
-                                }}
-                                onClick={() => {
-                                    setSelectedFoodbank(foodbank);
-                                    setModalVisible(false);
-                                    setFoodbankModalVisible(true);
-                                }}
-                            />))}
+                        {
+                            foodbanks.map((foodbank, index) =>
+                                (
+                                <Marker
+                                    visible={showFoodbanks}
+                                    key={index}
+                                    position={{ lat: parseFloat(foodbank.address[0].coordinates.latitude), lng: parseFloat(foodbank.address[0].coordinates.longitude) }}
+                                    icon={{
+                                        url: '/groceries.svg',
+                                        scaledSize: new window.google.maps.Size(20, 20),
+                                        origin: new window.google.maps.Point(0,0),
+                                        anchor: new window.google.maps.Point(10, 10)
+                                    }}
+                                    onClick={() => {
+                                        setSelectedFoodbank(foodbank);
+                                        setModalVisible(false);
+                                        setFoodbankModalVisible(true);
+                                    }}
+                                />))
+                        }
                     </GoogleMap>
             }
             <Flex flexDirection="column" position="absolute" top="15px" right="15px" borderRadius="8px" py="0.1rem" px="0.8rem" backgroundColor="white" boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)" justifyContent="center" alignItems="center" >
-                <Flex flexDirection="row" justifyContent="flex-start" alignItems="center" w="100%" py="0.2rem" >
+                <HStack justifyContent="flex-start" alignItems="center" w="100%" py="0.2rem" >
+                    <Checkbox isChecked={showFoodbanks} onChange={(e) => setShowFoodBanks(e.target.checked)} />
                     <Image src={BDGraphics.FoodBankIcon} alt="Food Bank Indicator" height="20px" width="20px" mr="10px" />
                     <Text fontFamily="Poppins" fontSize="11px" >Food Banks</Text>
-                </Flex>
+                </HStack>
                 <Divider mt="5px" />
-                <Flex flexDirection="row" justifyContent="flex-start" alignItems="center" w="100%" py="0.2rem" >
+                <HStack justifyContent="flex-start" alignItems="center" w="100%" py="0.2rem" >
+                    <Checkbox isChecked={showSOS} onChange={(e) => setShowSOS(e.target.checked)} />
                     <Image src={BDGraphics.SirenIcon} alt="SOS Indicator" height="25px" width="25px" mr="10px" />
                     <Text fontFamily="Poppins" fontSize="11px" >SOS</Text>
-                </Flex>
+                </HStack>
             </Flex>
             <Flex borderTopRadius="15px" position="fixed" bottom="100px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="white" padding="20px 20px" >
                 <Flex w="48%" justifyContent="center" backgroundColor="#E63946" borderRadius="8px" padding="15px 25px" color="white" fontFamily="Montserrat" fontWeight="600" onClick={() => history.push('/report-flag')}>
