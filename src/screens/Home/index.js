@@ -155,11 +155,10 @@ const Home = () => {
                         setFoodbankModalVisible(false);
                     }} >
                         {
-                        showSOS &&
                         flags.map((flag, index) => {
                             return (
-
                                 <Marker
+                                    visible={showSOS}
                                     key={index}
                                     position={{ lat: parseFloat(flag.lat), lng: parseFloat(flag.lng) }}
                                     icon={{
@@ -179,9 +178,10 @@ const Home = () => {
                     }
 
                         {
-                            showFoodbanks &&
                             foodbanks.map((foodbank, index) =>
-                                (<Marker
+                                (
+                                <Marker
+                                    visible={showFoodbanks}
                                     key={index}
                                     position={{ lat: parseFloat(foodbank.address[0].coordinates.latitude), lng: parseFloat(foodbank.address[0].coordinates.longitude) }}
                                     icon={{
