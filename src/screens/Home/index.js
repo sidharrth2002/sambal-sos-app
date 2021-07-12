@@ -11,7 +11,8 @@ import {
     useLoadScript,
     Marker,
     useJsApiLoader
-} from '@react-google-maps/api'
+} from '@react-google-maps/api';
+import mapStyles from "../../utils/googleMapsStyle";
 import * as BDGraphics from '../../assets/';
 import { foodbanks } from '../FoodBanks/foodbanks.js'
 
@@ -41,6 +42,7 @@ const Home = () => {
         height: '100vh'
     }
     const options = {
+        styles: mapStyles,
         disableDefaultUI: true,
         zoomControl: true
     }

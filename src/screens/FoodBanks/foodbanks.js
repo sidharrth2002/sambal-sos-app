@@ -3988,6 +3988,71 @@ const foodbanks = [
             }
         ],
         "website": "www.leangiap.com"
+    },
+    {
+        "name": "Taman Kijang Chinese Temple Food Bank",
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.3172334,
+                    "longitude": 100.4733064
+                },
+                "fullAddress": "Taman Kijang"
+            }
+        ],
+        "website": ""
+    },
+    {
+        "name": "Taman Kijang Indian Temple Food Bank",
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.3201261,
+                    "longitude": 100.4718358
+                },
+                "fullAddress": "Taman Kijang"
+            }
+        ],
+        "website": ""
+    },
+    {
+        "name": "Surau Kampung Kijang Food Bank",
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.3251822,
+                    "longitude": 100.4752837
+                },
+                "fullAddress": "Surau Kampung Kijang"
+            }
+        ],
+        "website": ""
+    },
+    {
+        "name": "Permatang Tinggi Chinese Temple Food Bank",
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.3015033,
+                    "longitude": 100.4774507
+                },
+                "fullAddress": "1156-1160, Jalan Gereja, Permatang Tinggi, 14100 Bukit Mertajam, Pulau Pinang"
+            }
+        ],
+        "website": ""
+    },
+    {
+        "name": "Simpang Ampat Kedai Runcit Food Bank",
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.2776769,
+                    "longitude": 100.4766326
+                },
+                "fullAddress": "Taman Jentayu, 14100 Simpang Ampat, Penang"
+            }
+        ],
+        "website": ""
     }
 ];
 
