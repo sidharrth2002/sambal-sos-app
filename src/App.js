@@ -25,8 +25,8 @@ function App() {
           <Select size="sm" onChange={(e) => changeLanguage(e)}>
             <option value="en">English</option>
             <option value="malay">Malay</option>
-            <option value="cn">Chinese</option>
-            <option value="tamil">Tamil</option>
+            {/* <option value="cn">Chinese</option>
+            <option value="tamil">Tamil</option> */}
           </Select>
         </Box>
           <Switch>
