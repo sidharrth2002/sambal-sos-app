@@ -1,0 +1,55 @@
+{
+    "auth": {
+        "title": "Sambal SOS",
+        "tagline": "Data bantuan crowdsourcing di seluruh negara",
+        "rebranded": "rebranded",
+        "upgraded": "upgraded",
+        "bendera-putih-redirect": "Sekiranya anda mencari aplikasi Bendera Putih, ini adalah versi dijenamakan semula dan ditingkatkan untuk pengalaman pengguna yang lebih baik.",
+        "login-disclaimer": "Dengan log masuk, anda bersetuju dengan dasar privasi kami. Kami hanya menggunakan pengesahan ini untuk mendapatkan e-mel anda dan melindungi aplikasi daripada input yang tidak dibenarkan.",
+        "google-button": "Log Masuk Dengan Google"
+    },
+    "home": {
+        "food-banks": "Bank Makanan",
+        "sos": "SOS",
+        "ask-for-help": "Meninta Bantuan",
+        "report-sos": "Laporkan SOS"
+    },
+    "navigation": {
+        "find-sos": "Cari SOS",
+        "food-banks": "Bank Makanan",
+        "report-sos": "Laporkan SOS",
+        "log-out": "Log Keluar"
+    },
+    "foodbanks": {
+        "page-update-notice": "This page will soon be updated through a crowdsourced Google Sheets file!",
+        "add-foodbank-form": "For now, if you know a foodbank that you would like the team to add to the app, please fill in the form here.",
+        "go-to-form": "Go to form",
+        "open-in-google-maps": "Open in Google Maps"
+    },
+    "report-form": {
+        "report-for-help": "REPORT FOR HELP",
+        "image-added": "Image Added! 😄",
+        "add-image-prompt": "Add an image (We want to protect privacy. Please just take a picture in front of the house.)",
+        "should-not-be-a-white-flag": "There should not be a white flag in the image.",
+        "upload-disclaimer": "By uploading this image, you understand that the image will be public. Please ensure that there is no privacy breach. Your picture will be reviewed.",
+        "set-address": "Set the address",
+        "location-set": "Location has been set! 😄",
+        "use-location-button": "Use My Location",
+        "or": "Or",
+        "where-are-you": "Where are you?",
+        "remarks": "Remarks",
+        "what-did-you-see": "Eg: What did you see? What do you need?",
+        "phone-number": "Phone Number",
+        "optional": "Optional",
+        "enter-phone-number": "Enter your phone number",
+        "human-review-disclaimer": "In order to maintain a healthy environment on the Sambal SOS App, all reports made will be subject to human review. This is to ensure that the reports made on the Sambal SOS App are authentic, and respecting. Reports are typically approved/rejected within 24 hours of posting.",
+        "terms-title": "If you're creating an SOS report on the Sambal SOS App, do follow the following guidelines:",
+        "term-1": "Images could be, but not limited to: location of the report, screenshots of chat histories",
+        "term-2": "Images should not contain faces of people, or personal identifiable information",
+        "term-3": "Content in the SOS report should provide more details of the report so that other users of the app are able to discover the rough location of those who are in need",
+        "term-4": "Strictly no NSFW content, political content, sensitive issues, religious issues, or any other content that violates Article 10 of the Constitution of Malaysia",
+        "term-5": "By submitting the form, you agree to our",
+        "privacy-policy": "privacy policy",
+        "submit-button": "Submit"
+    }
+}
