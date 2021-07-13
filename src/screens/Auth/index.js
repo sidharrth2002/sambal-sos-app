@@ -11,6 +11,7 @@ import { Redirect } from 'react-router';
 import { LOGIN } from '../../features/counter/authSlice';
 import { GoogleLogin } from 'react-google-login';
 import { useHistory } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 
 import LoginMapAsset from '../../assets/png/login-map.png'
 
@@ -20,6 +21,7 @@ const Auth = () => {
     const toast = useToast();
     const dispatch = useDispatch();
     const history = useHistory();
+    const { t, i18n } = useTranslation();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
     const handleGoogleLogin = async googleData => {
@@ -62,24 +64,30 @@ const Auth = () => {
         <Flex flexDirection="column" justifyContent="space-between" alignItems="center" minHeight="90vh" width="100%" padding="0.5rem" >
             <Flex flexDirection="row" justifyContent="center" alignItems="center" w="100%" >
                 <img src={BDGraphics.SambalSosLogo} style={{ width: '75px', height: '75px' }} alt="Logo" />
-                <Heading fontFamily="Montserrat" as="h1" fontWeight="5fr00" fontSize="25px">Sambal SOS</Heading>
+                <Heading fontFamily="Montserrat" as="h1" fontWeight="5fr00" fontSize="25px">{t('auth.title')}</Heading>
             </Flex>
             <VStack marginBottom="0.5rem" spacing={5} width="100%" >
                 <img mb="100px" mt="50px" src={LoginMapAsset} alt="Map" />
 
                 <Flex w="100%" flexDirection="column" justifyContent="flex-start" alignItems="flex-start" padding="1rem" >
-                    <Heading fontFamily="Montserrat" as="h3" fontSize="xl" fontWeight="600" textAlign="start" >Crowdsourcing aid data across the nation</Heading>
+                    <Heading fontFamily="Montserrat" as="h3" fontSize="xl" fontWeight="600" textAlign="start">{t('auth.tagline')}</Heading>
                     <br></br>
                     <Box width="600px" maxWidth="80%">
                         <Text fontFamily="Montserrat" as="h3" fontSize="15px" textAlign="start">
-                            If you're looking for the Bendera Putih app, this is the <b>rebranded</b> and <b>upgraded</b> version for a better user experience.
+                            <Trans i18nKey="bendera-putih-redirect">
+                                If you're looking for the Bendera Putih app, this is the <strong title={t('auth.rebranded')}>{t('auth.rebranded')}</strong> and <strong title={t('auth.upgraded')}>{t('auth.upgraded')}</strong> version for a better user experience.
+                            </Trans>
                         </Text>
                     </Box>
                 </Flex>
             </VStack>
             <Flex flexDirection="column" justifyContent="center" alignItems="center" w="100%" padding="1rem" margin="0 auto">
                 <Box marginBottom="1rem">
-                    <Text fontFamily="Montserrat">By logging in, you agree to our <Link href="/privacy-policy" target="_blank" color="blue">privacy policy</Link>. We only use this authentication to get your email and protect the app from unauthorised input.</Text>
+                    <Text fontFamily="Montserrat">
+                        <Trans i18nKey="login-disclaimer">
+                            By logging in, you agree to our <Link href="/privacy-policy" target="_blank" color="blue">privacy policy</Link>. We only use this authentication to get your email and protect the app from unauthorised input.
+                        </Trans>
+                    </Text>
                 </Box>
                 <GoogleLogin
                     clientId={ process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID }
@@ -87,7 +95,7 @@ const Auth = () => {
                         <Button backgroundColor="#ff8c82" color="white" w="100%" padding="28px 25px" mt="0px" onClick={ () => { renderProps.onClick()} } disabled={renderProps.disabled}>
                             <Flex borderRadius="8px" fontFamily="Poppins" width="100%" flexDirection="row" justifyContent="center" alignItems="center" position="relative">
                                 <Image alt="Google Login Button Svg" src={BDGraphics.GoogleLoginIcon} height="18px" width="18px" mr="20px" />
-                                <Text fontWeight="light" color="black" >Login with Google</Text>
+                                <Text fontWeight="light" color="black">{t('auth.google-button')}</Text>
                             </Flex>
                         </Button>
                     )}

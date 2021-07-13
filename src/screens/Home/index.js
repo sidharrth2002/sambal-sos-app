@@ -17,11 +17,13 @@ import { foodbanks } from '../FoodBanks/foodbanks.js'
 
 import * as BDAPI from '../../api/index'
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 require('dotenv').config()
 
 const Home = () => {
     const history = useHistory();
+    const { t } = useTranslation();
     const accessToken = useSelector(state => state.auth.accessToken);
     const toast = useToast();
     const [center, setCenter] = useState({ lat: 3.145081052343874, lng: 101.70524773008304 })
@@ -203,13 +205,13 @@ const Home = () => {
                 <HStack justifyContent="flex-start" alignItems="center" w="100%" py="0.2rem" >
                     <Checkbox isChecked={showFoodbanks} onChange={(e) => setShowFoodBanks(e.target.checked)} />
                     <Image src={BDGraphics.FoodBankIcon} alt="Food Bank Indicator" height="20px" width="20px" mr="10px" />
-                    <Text fontFamily="Poppins" fontSize="11px" >Food Banks</Text>
+                    <Text fontFamily="Poppins" fontSize="11px" >{t('home.food-banks')}</Text>
                 </HStack>
                 <Divider mt="5px" />
                 <HStack justifyContent="flex-start" alignItems="center" w="100%" py="0.2rem" >
                     <Checkbox isChecked={showSOS} onChange={(e) => setShowSOS(e.target.checked)} />
                     <Image src={BDGraphics.SirenIcon} alt="SOS Indicator" height="25px" width="25px" mr="10px" />
-                    <Text fontFamily="Poppins" fontSize="11px" >SOS</Text>
+                    <Text fontFamily="Poppins" fontSize="11px" >{t('home.sos')}</Text>
                 </HStack>
             </Flex>
             <Flex borderTopRadius="15px" position="fixed" bottom="100px" width="100%" flexDirection="row" alignItems="center" justifyContent="space-around" backgroundColor="white" padding="20px 20px" >
