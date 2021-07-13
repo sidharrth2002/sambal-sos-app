@@ -11,6 +11,7 @@ import { Redirect } from 'react-router';
 import { LOGIN } from '../../features/counter/authSlice';
 import { GoogleLogin } from 'react-google-login';
 import { useHistory } from 'react-router-dom';
+import FacebookLogin from 'react-facebook-login';
 
 import LoginMapAsset from '../../assets/png/login-map.png'
 
@@ -51,6 +52,10 @@ const Auth = () => {
         }else{
             console.log('error')
         }
+    }
+
+    const responseFacebook = (response) => {
+        console.log(response);
     }
 
     if(isAuthenticated) {
@@ -96,6 +101,11 @@ const Auth = () => {
                     onSuccess={handleGoogleLogin}
                     onFailure={handleGoogleLogin}
                     cookiePolicy={'single_host_origin'}
+                />
+                <FacebookLogin
+                    appId="939197913322830"
+                    fields="name,email,picture"
+                    callback={responseFacebook}
                 />
             </Flex>
         </Flex>
