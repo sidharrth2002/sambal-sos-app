@@ -234,8 +234,8 @@ const Home = () => {
                             </Flex>
                             <Center flexDirection="row" justifyContent="flex-start" alignContent="flex-start" padding="1rem">
                                 <HStack h="100%" >
-                                    <Box maxWidth="50%" px="0.5rem" py="0.5rem">
-                                        <Image borderRadius="8px" src={ selectedMarker?.image } width="100%" maxWidth="200px" marginRight="1rem" />
+                                    <Box maxWidth="50%" px="0.5rem" py="0.5rem" h="100%">
+                                        <Image borderRadius="8px" src={ selectedMarker?.image } width="100%" maxWidth="200px" h="100%" marginRight="1rem" />
                                     </Box>
                                     <Center flexDirection="column" justifyContent="flex-start" maxWidth="50%" h="100%" py="0.5rem">
                                         <Flex backgroundColor="#ff8c82" borderRadius="8px" w="100%" mb="5px" py="0.5rem" px="0.5rem" flexDirection="row" justifyContent="center" alignItems="center" marginBottom="1rem" onClick={() => { window.open(`https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`) }} >
@@ -252,7 +252,7 @@ const Home = () => {
                                             <>
                                             </>
                                         }
-                                        <Text textAlign="start" fontSize="12px" px="0.5rem">{ selectedMarker?.description }</Text>
+                                        <Text textAlign="start" fontSize="12px" px="0.5rem" maxW="100%" >{ selectedMarker?.description }</Text>
                                     </Center>
                                 </HStack>
                             </Center>
