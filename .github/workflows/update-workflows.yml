@@ -27,7 +27,7 @@ jobs:
     - name: execute py script
       env:
         GMAPS_GEOCODING_API_KEY: ${{ secrets.GMAPS_GEOCODING_API_KEY }}
-      run: python3 update_foodbanks.py 1Pd5ceJ4uDwt85h4Krf94QL6sfF-CaUCmDC1atMspOqg src/screens/foodbanks/foodbanks.json
+      run: python3 update_foodbanks.py 1Pd5ceJ4uDwt85h4Krf94QL6sfF-CaUCmDC1atMspOqg src/screens/FoodBanks/foodbanks.json
     - name: commit changes
       run: |
         git config --local user.email "action@github.com"
