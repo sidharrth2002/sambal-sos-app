@@ -19,9 +19,8 @@ const FoodBanks = () => {
             }
 
             setTimeout(() => {
-                console.log(paginateCount)
-                setPaginateCount(paginateCount + 50)
-                setFoodBankList([...foodBankList, ...foodbanks.slice(paginateCount, paginateCount+50)])
+                setPaginateCount(paginateCount + 5)
+                setFoodBankList([...foodBankList, ...foodbanks.slice(paginateCount, paginateCount+5)])
             }, 2000)
         }
     const { t } = useTranslation();
