@@ -268,7 +268,7 @@ const ReportForm = () => {
                         <Flex className="Form-Blocks" flexDirection="column" alignItems="flex-start" mb="4rem" >
                             <Flex className="Form-Title" flexDirection="row" alignItems="center" mb="15px" >
                                 <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 2 of 4</Text>
-                                <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" >{t("report-form.set-address")}</Text>
+                                <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" >{t("report-form.location-set")}</Text>
                             </Flex>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
                                 {
@@ -321,8 +321,7 @@ const ReportForm = () => {
                         <Flex className="Form-Blocks" flexDirection="column" alignItems="flex-start" mb="3rem" >
                             <Flex className="Form-Title" flexDirection="row" alignItems="center" mb="15px" >
                                 <Text fontSize="xs" fontFamily="Poppins" fontWeight="500" color="#6598FF" mr="10px" >Step 4 of 4</Text>
-                                <Text fontSize="lg" fontFamily="Poppins" fontWeight="500" mr="5px" >{t("report-form.what-did-you-see")}</Text>
-                                <Text fontSize="xs" fontFamily="Poppins" fontWeight="400">({t("report-form.optional")})</Text>
+                                <Text fontSize="sm" fontFamily="Poppins" fontWeight="500" >{t("report-form.enter-your-phone-number")}</Text>
                             </Flex>
                             <Flex className="Form-Content" w="100%" flexDirection="column" justifyContent="center" alignItems="center" >
                                 <InputGroup>
