@@ -47,7 +47,7 @@ const FoodBanks = () => {
                             next={loadMoreFB}
                             hasMore={hasMoreFB}
                             loader={
-                                <img src="/loader.gif" alt="loading spinner" style={{margin: "auto"}}/>
+                                <img src="/loader.gif" alt="loading spinner" style={{margin: "auto", width: "100px"}}/>
                             }
                             endMessage={
                                 <p style={{ textAlign: 'center' }}>
