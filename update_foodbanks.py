@@ -42,7 +42,7 @@ try:
 
         for y in range(len(address_list)):
             current_address = address_list[y]
-            full_address = current_address['full_address']
+            full_address = current_address['fullAddress']
             addresses[full_address] = current_address['coordinates']
 
 except FileNotFoundError:
@@ -108,7 +108,7 @@ for x in range(len(output)):
     full_address = output[x]['address']
 
     if full_address != '' and full_address not in addresses:
-        address['full_address'] = output[x]['address']
+        address['fullAddress'] = output[x]['address']
         address['coordinates'] = {}
         address['coordinates']['longitude'] = 0.0
         address['coordinates']['latitude'] = 0.0
