@@ -122,15 +122,18 @@ for x in range(len(output)):
 
         except Exception as e:
             print("Unexpected error occurred.", e)
-        
-        finally:
-            output[x]['address'] = list()
-            output[x]['address'].append(address)
+    else:
+        # case where there are duplicates
+        address['fullAddress'] = full_address
+        address['coordinates'] = addresses[full_address]
+    
+    output[x]['address'] = list()
+    output[x]['address'].append(address)
 
 ## check if path exists
 if not os.path.exists(json_file_path):
     dir_name = os.path.dirname(json_file)
     Path(dir_name).mkdir(parents=True, exist_ok=True)
 
-with open(json_file_path, 'a+', encoding='utf-8') as f:
+with open(json_file_path, 'r+', encoding='utf-8') as f:
     json.dump(output, f, ensure_ascii=False, indent=4, sort_keys=True)
