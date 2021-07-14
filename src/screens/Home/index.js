@@ -14,7 +14,7 @@ import {
 } from '@react-google-maps/api';
 import mapStyles from "../../utils/googleMapsStyle";
 import * as BDGraphics from '../../assets/';
-import { foodbanks } from '../FoodBanks/foodbanks.js'
+import foodbanks from '../FoodBanks/foodbanks.json';
 
 import * as BDAPI from '../../api/index'
 import axios from 'axios';
