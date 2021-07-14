@@ -2,13 +2,21 @@ import React, { useState } from 'react';
 import { Box, Input, VStack, Text, Link, Alert, Divider, Center, Image } from '@chakra-ui/react';
 import { foodbanks } from './foodbanks'
 import NavigationFooter from '../../components/NavigationFooter';
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 import * as BDGraphics from '../../assets'
 import { useTranslation } from 'react-i18next';
 
 const FoodBanks = () => {
     const [searchQuery, setSearchQuery] = useState("");
+    const [foodBankList, setFoodBankList] = useState(foodbanks.slice(0, 5))
+    let paginateCount = 0
     const { t } = useTranslation();
+
+    // const loadMoreFB = {
+    //     //
+    // }
+
     return (
         <Box>
         <Box padding="19px" maxWidth="500px" width="100%" margin="0 auto">
@@ -26,13 +34,31 @@ const FoodBanks = () => {
                 </Center>
             </Alert>
                 <VStack spacing="10" mb="150px" >
-                    {
-                        foodbanks.filter(bank => {
+                    
+                        <InfiniteScroll
+                            dataLength={foodBankList.length}
+                            next={() => {
+                                setTimeout(() => {
+                                    paginateCount += 5
+                                    setFoodBankList([...foodBankList, ...foodbanks.slice(paginateCount, paginateCount+5)])
+                                }, 2000)
+                            }}
+                            hasMore={true}
+                            loader={
+                                <img src="/loader.gif" alt="loading spinner" style={{margin: "auto"}}/>
+                            }
+                            endMessage={
+                                <p style={{ textAlign: 'center' }}>
+                                    <b>Yay! You have seen it all</b>
+                                </p>
+                            }>
+                        {
+                        foodBankList.filter(bank => {
                             return bank.name.toLowerCase().includes(searchQuery) || bank.address[0].fullAddress.toLowerCase().includes(searchQuery)
                         })
                         .map((foodbank, index) => {
                             return (
-                                <Box key={index} padding="1rem" borderRadius="8px" boxShadow="0px 16px 40px rgba(209, 209, 209, 0.25)" maxWidth="500px" width="90%" textAlign="left">
+                                <Box key={index} padding="1rem" borderRadius="8px" boxShadow="0px 16px 40px rgba(209, 209, 209, 0.25)" maxWidth="500px" width="90%" textAlign="center">
                                     <Text fontFamily="Montserrat" fontWeight="600" >{foodbank.name}</Text>
                                     <Divider marginY="10px" />
                                     {
@@ -55,6 +81,9 @@ const FoodBanks = () => {
                             )
                         })
                     }
+
+                        </InfiniteScroll>
+    
                 </VStack>
             </Box>
         </Box>
