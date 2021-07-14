@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Input, VStack, Text, Link, Alert, Divider, Center, Image } from '@chakra-ui/react';
-import { foodbanks } from './foodbanks'
+import foodbanks from './foodbanks.json'
 import NavigationFooter from '../../components/NavigationFooter';
 
 import * as BDGraphics from '../../assets'
