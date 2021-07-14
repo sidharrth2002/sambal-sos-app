@@ -12,11 +12,6 @@ const FoodBanks = () => {
     const [foodBankList, setFoodBankList] = useState(foodbanks.slice(0, 5))
     let paginateCount = 0
     const { t } = useTranslation();
-
-    // const loadMoreFB = {
-    //     //
-    // }
-
     return (
         <Box>
         <Box padding="19px" maxWidth="500px" width="100%" margin="0 auto">
