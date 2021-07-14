@@ -10,7 +10,20 @@ import { useTranslation } from 'react-i18next';
 const FoodBanks = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [foodBankList, setFoodBankList] = useState(foodbanks.slice(0, 5))
-    let paginateCount = 0
+    const [paginateCount, setPaginateCount] = useState(5)
+    const [hasMoreFB, setHasMoreFB] = useState(true)
+    const loadMoreFB = () => {
+            if (foodBankList.length === foodbanks.length) {
+                setHasMoreFB(false)
+                return
+            }
+
+            setTimeout(() => {
+                console.log(paginateCount)
+                setPaginateCount(paginateCount + 50)
+                setFoodBankList([...foodBankList, ...foodbanks.slice(paginateCount, paginateCount+50)])
+            }, 2000)
+        }
     const { t } = useTranslation();
     return (
         <Box>
@@ -32,13 +45,8 @@ const FoodBanks = () => {
                     
                         <InfiniteScroll
                             dataLength={foodBankList.length}
-                            next={() => {
-                                setTimeout(() => {
-                                    paginateCount += 5
-                                    setFoodBankList([...foodBankList, ...foodbanks.slice(paginateCount, paginateCount+5)])
-                                }, 2000)
-                            }}
-                            hasMore={true}
+                            next={loadMoreFB}
+                            hasMore={hasMoreFB}
                             loader={
                                 <img src="/loader.gif" alt="loading spinner" style={{margin: "auto"}}/>
                             }
