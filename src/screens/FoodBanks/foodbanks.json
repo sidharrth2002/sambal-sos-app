@@ -3966,5 +3966,1029 @@
         "name": "smart cool solution",
         "remarks": "Gerobok amal",
         "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.966662299999999,
+                    "longitude": 116.0724878
+                },
+                "fullAddress": "Stanton Hotel, Lorong Karamunsing C, Jalan Karamunsing, kota kinabalu "
+            }
+        ],
+        "contactNumber": "",
+        "id": "F249",
+        "name": "Stanton Hotel",
+        "remarks": "Until 12 July 2021",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.4181303,
+                    "longitude": 100.3415226
+                },
+                "fullAddress": "Wisma Giap Chew 28 Lebuh Gereja 10200 Penang"
+            }
+        ],
+        "contactNumber": "0164992092",
+        "id": "F250",
+        "name": "Lean Giap Food Bank",
+        "remarks": "Refill every Friday.",
+        "website": "www.leangiap.com"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1353772,
+                    "longitude": 101.6859243
+                },
+                "fullAddress": "HRC Express, Suite 2B-G-1, Ground Floor, Plaza Sentral, Jalan Stesen Sentral 5, 50470 Kuala Lumpur, Malaysia"
+            }
+        ],
+        "contactNumber": "0193667218",
+        "id": "F251",
+        "name": "Eatzania Sdn. Bhd.",
+        "remarks": "Kami menyediakan cooked food (makanan yang telah dimasak) dari jam 8.00 pagi - 4.00 petang dari hari Isnin Hingga Jumaat. Pada yang memerlukan bantuan makanan bolehlah datang terus ke outlet kami yang beralamat seperti yang tertera di bawah, terima kasih.\nHRC Express, Suite 2B-G-1, Ground Floor, Plaza Sentral, Jalan Stesen Sentral 5, 50470 Kuala Lumpur, Malaysia",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1353772,
+                    "longitude": 101.6859243
+                },
+                "fullAddress": "HRC Express, Suite 2B-G-1, Ground Floor, Plaza Sentral, Jalan Stesen Sentral 5, 50470 Kuala Lumpur, Malaysia"
+            }
+        ],
+        "contactNumber": "+60 19-366 7218",
+        "id": "F252",
+        "name": "Eatzania Sdn.Bhd.",
+        "remarks": "Kami menyediakan cooked food (makanan yang telah dimasak) dari jam 8.00 pagi - 4.00 petang dari hari Isnin Hingga Jumaat. Pada yang memerlukan bantuan makanan bolehlah datang terus ke outlet kami yang beralamat seperti yang tertera di bawah, terima kasih.\nHRC Express, Suite 2B-G-1, Ground Floor, Plaza Sentral, Jalan Stesen Sentral 5, 50470 Kuala Lumpur, Malaysia",
+        "website": "https://eatzania.com/v2/ "
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1110858,
+                    "longitude": 101.5827784
+                },
+                "fullAddress": "D6-5-G,Ground Floor,Block D6, Dana 1 Commercial Centre, Jalan PJU 1a/46, Ara Damansara, 47301 Petaling Jaya, Selangor"
+            }
+        ],
+        "contactNumber": "010-8020003",
+        "id": "F253",
+        "name": "MJR Marketing",
+        "remarks": "",
+        "website": "www.mjr.asia"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.921465,
+                    "longitude": 101.8652895
+                },
+                "fullAddress": "No 36 Jalan 6/8B\nBandar rinching, Seksyen 6\n43500 Semenyih"
+            }
+        ],
+        "contactNumber": "+60175844769",
+        "id": "F254",
+        "name": "EMPAYAR KHADIJAH",
+        "remarks": "",
+        "website": "https://www.facebook.com/EmpayarKhadijahResources/"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.8152359,
+                    "longitude": 103.3300424
+                },
+                "fullAddress": "Berjaya Megamall, Jalan Tun Ismail, 25000, Kuantan, Pahang"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F255",
+        "name": "Berjaya Megamall",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1254532,
+                    "longitude": 101.6164397
+                },
+                "fullAddress": "82, Jalan SS 22/25, Damansara Jaya, 47400 Petaling Jaya, Selangor"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F256",
+        "name": "Pallets and pans",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1490226,
+                    "longitude": 101.5788003
+                },
+                "fullAddress": "11, Jalan Teknologi, Pju 5 Kota Damansara, 47810 Petaling Jaya, Selangor"
+            }
+        ],
+        "contactNumber": "03-62871111",
+        "id": "F257",
+        "name": "Thomson Hospital Kota Damansara",
+        "remarks": "https://www.instagram.com/p/CRBL-FtJXkJ/ ",
+        "website": "https://thomsonhospitals.com/"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.2085972,
+                    "longitude": 101.7347174
+                },
+                "fullAddress": "No. 401, Block G12, Section 2, Wangsa Maju, 53300 Kuala Lumpur"
+            }
+        ],
+        "contactNumber": "(+60) 14 922 1381",
+        "id": "F258",
+        "name": "Wangsa Maju",
+        "remarks": "Contact us for food aid and we will order for you. Food aid will be received by delivery. ",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 4.6034921,
+                    "longitude": 101.0864884
+                },
+                "fullAddress": "Jalan Raja Musa Aziz, 30450 Ipoh, Perak"
+            }
+        ],
+        "contactNumber": "052530801",
+        "id": "F259",
+        "name": "Food4U Bank Klinik Kesihatan Greentown",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 41.6580753,
+                    "longitude": -83.60622710000001
+                },
+                "fullAddress": "University Utama Square"
+            }
+        ],
+        "contactNumber": "0107837783",
+        "id": "F260",
+        "name": "Foodbank UUC Telipok",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.0869933,
+                    "longitude": 101.7089458
+                },
+                "fullAddress": "Lot 6637, Jalan 13 Salak South (Desa Petaling), 57100 Kuala Lumpur"
+            }
+        ],
+        "contactNumber": "012 711 6099 | 012 328 6099",
+        "id": "F261",
+        "name": "Ti-Ratana Bersama Rakyat (Main Food Bank)",
+        "remarks": "Open between 9am to 2pm daily. We are also able to send goods to those living outside of Kuala Lumpur upon request. Contact the numbers for help.",
+        "website": "www.ti-ratana.org"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.0217015,
+                    "longitude": 101.6142871
+                },
+                "fullAddress": "36 & 38, Jalan Puteri 4/2, Bandar Puteri, 47100 Puchong, Selangor"
+            }
+        ],
+        "contactNumber": "+603 8051 6630 (WhatsApp only)",
+        "id": "F262",
+        "name": "Ti-Ratana Food Cupboard (Puchong Branch)",
+        "remarks": "We are a food bank collection point of Ti-Ratana. Due to EMCO SOPs for our premises, we are unable to set up kiosk at our premises. Please contact us should you need any essentials, and we will get your needs delivered either to our premises or your doorstep from our food cupboard in Bangsar or food bank in Salak South Baru.",
+        "website": "www.ti-ratana.org"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 0.0,
+                    "longitude": 0.0
+                },
+                "fullAddress": "(2.8878854, 101.5134519)"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F263",
+        "name": "Koperasi Kampung Jenjarom",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.041742,
+                    "longitude": 101.765086
+                },
+                "fullAddress": "LORONG CP3/26 , CHERAS PERDANA 3, CHERAS"
+            }
+        ],
+        "contactNumber": "01127268412",
+        "id": "F264",
+        "name": "ANIS LINDA",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 1.5683852,
+                    "longitude": 103.7815558
+                },
+                "fullAddress": "No 2 Jalan Jaya Putra 2/14, Bandar Jaya Putra Perdana (JP Perdana). 81100 Johor Bahru"
+            }
+        ],
+        "contactNumber": "0127275769",
+        "id": "F265",
+        "name": "TeamInfaqHakakRoket",
+        "remarks": "If you see, if you hear, if you happened to know anyone that been affected in this pandemic situation or is you and family having a problem and urgently to get basic food, do not hesitate to call / wasap me directly (Madam Hana)",
+        "website": "FB - Hana Abd Rahman"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1282032,
+                    "longitude": 101.6730918
+                },
+                "fullAddress": "19 jalan tempinis 2 lucky garden bangsar kl"
+            }
+        ],
+        "contactNumber": "01123537692",
+        "id": "F266",
+        "name": "Sonny olivar obra",
+        "remarks": "None",
+        "website": "None"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1867091,
+                    "longitude": 113.0466154
+                },
+                "fullAddress": "Jalan Tun Ahmad Zaidi, Bintulu Sarawak"
+            }
+        ],
+        "contactNumber": "0169738892",
+        "id": "F267",
+        "name": "Borneo Foodbank",
+        "remarks": "",
+        "website": "Instagram.com/borneofoodbank_"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1182103,
+                    "longitude": 101.432295
+                },
+                "fullAddress": "Lot 32460, Jalan Salleh, 32404, Jalan Meru, 42200 Klang"
+            }
+        ],
+        "contactNumber": "0333933293",
+        "id": "F268",
+        "name": "Shell Jalan Meru",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.262967,
+                    "longitude": 101.5540636
+                },
+                "fullAddress": "No B47, Kampung Melayu Sri Kundang, Kuang, 48050 Rawang, Selangor."
+            }
+        ],
+        "contactNumber": "0175588527",
+        "id": "F269",
+        "name": "White Bakul",
+        "remarks": "Limited supply. First come first serve.",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.0850221,
+                    "longitude": 101.6911795
+                },
+                "fullAddress": "24, Jalan Kuchai Maju 11 Kuchai Entrepreneurs Park, Off, Jalan Kuchai Lama, Kuchai Lama, 58200 Kuala Lumpur"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F270",
+        "name": "O'Clock Food",
+        "remarks": "",
+        "website": "https://m.facebook.com/oclockfood/"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.191158,
+                    "longitude": 101.762142
+                },
+                "fullAddress": "Jalan Lingkaran Tengah 2 (MRR2) Ampang Bound (Besides Lim Tayar)"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F271",
+        "name": "Shell Beverly Heights Ampang",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 1.5683852,
+                    "longitude": 103.7815558
+                },
+                "fullAddress": "No 2 Jalan Jaya Putra 2/14, Bandar Jaya Putra Perdana (JP Perdana) 81100 Johor Bahru"
+            }
+        ],
+        "contactNumber": "0127275769",
+        "id": "F272",
+        "name": "Team Infaq Hakak Roket (Madam Hana)",
+        "remarks": "If anyone not working and runs out of food please don’t go to sleep with empty stomach\nDon’t be afraid or embarassed to send me private message\nI will be more happy to help you with foods\nWe have to be more gratefull and less selfish\nPlease contact me 0127275769 (Madam Hana)",
+        "website": "Fb - Hana Abd Rahman"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.9834304,
+                    "longitude": 101.6403997
+                },
+                "fullAddress": "D-1-19 Pangsapuri Sri Damai Jalan SP1/1 47100 Puchong,Selangor"
+            }
+        ],
+        "contactNumber": "0142362181",
+        "id": "F273",
+        "name": "Shahrul iskandar",
+        "remarks": "Bantuan makanan dan keperluan pribadi",
+        "website": "fatynramly84@gmail.com"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.4216661,
+                    "longitude": 101.1853798
+                },
+                "fullAddress": "Jalan 3/5, Taman Desa Mawar, Sungai Yu, 45500 Tanjong Karang, Selangor"
+            }
+        ],
+        "contactNumber": "014-2362549",
+        "id": "F274",
+        "name": "Aizat Food Bank",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.075176,
+                    "longitude": 101.7625146
+                },
+                "fullAddress": "Jalan persiaran you city , taman suntex"
+            }
+        ],
+        "contactNumber": "0168686512",
+        "id": "F275",
+        "name": "Badboys burgers ",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1113772,
+                    "longitude": 101.6786526
+                },
+                "fullAddress": "Saville Residence Lobby,\nJalan Klang Lama, Taman Seputeh,\n58100 KL"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F276",
+        "name": "Saville Food Bank",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.184707,
+                    "longitude": 101.607661
+                },
+                "fullAddress": "15, Jalan Damar 15/1 Bandar Sri Damansara"
+            }
+        ],
+        "contactNumber": "0123076648",
+        "id": "F277",
+        "name": "Bowl Bowl Food Bank",
+        "remarks": "Our Cafe Front is Rinse KL. Bowl Bowl is our cloud kitchen within Rinse KL. Can only operate within operational time of 11am till 5pm(tues-thurs) and 11am till 6.30pm (fri-sunday). Thank you for doing this app, you guys are amazing. ",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.2016719,
+                    "longitude": 101.7177432
+                },
+                "fullAddress": "No.22A, Plaza Usahawan Genting Klang Jalan Danau Niaga, Jalan Genting Klang, Taman Danau Kota, 53300, Wilayah Persekutuan Kuala Lumpur"
+            }
+        ],
+        "contactNumber": "0122861517",
+        "id": "F278",
+        "name": "Restoran Lucky Star",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 6.124511,
+                    "longitude": 102.2773612
+                },
+                "fullAddress": "Wisma Ismail Yaacob, Kg Tapang, Kota Bharu (berhadapan perabot Brezza)"
+            }
+        ],
+        "contactNumber": "0199811020",
+        "id": "F279",
+        "name": "PKKMS Food Bank",
+        "remarks": "Open Sunday to Thursday (Office hour)",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1306576,
+                    "longitude": 101.7540005
+                },
+                "fullAddress": "1G, Jalan Pandan Indah 4/6a, Pandan Indah, 55100 Ampang, Wilayah Persekutuan Kuala Lumpur"
+            }
+        ],
+        "contactNumber": "+60143316368",
+        "id": "F280",
+        "name": "KW restaurant好地方美食中心",
+        "remarks": "",
+        "website": "https://goo.gl/maps/BhixHcH9PMQ2CGVh9"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 1.5683852,
+                    "longitude": 103.7815558
+                },
+                "fullAddress": "No 2 Jln Jaya Putra 2/14, Bandar Jaya Putra Perdana (JP Perdana). 81100 Johor Bahru"
+            }
+        ],
+        "contactNumber": "0127275769",
+        "id": "F281",
+        "name": "Team Infaq Hakak Roket",
+        "remarks": "",
+        "website": "FB - Hana Abd Rahma"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.2193793,
+                    "longitude": 101.6191414
+                },
+                "fullAddress": "No 1 Gerai MPS Jalan Usaha Ehsan Kawasan Perindustrian Taman Ehsan 52100 Kepong Kuala Lumpur Malaysia"
+            }
+        ],
+        "contactNumber": "01135353191",
+        "id": "F282",
+        "name": "JCI Achiever TogetherWeRice",
+        "remarks": "We only provide delivery the people who need. No self-pick up at my place. Thanks. ",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 1.917411,
+                    "longitude": 103.180331
+                },
+                "fullAddress": "Lot 571, Jalan Johor, 86100 Ayer Hitam, Johor."
+            }
+        ],
+        "contactNumber": "",
+        "id": "F283",
+        "name": "AM PM Pharmacy ",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.0327965,
+                    "longitude": 101.6109204
+                },
+                "fullAddress": "3.032607, 101.610857"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F284",
+        "name": "Taman Mutiara Puchong Food Bank",
+        "remarks": "Food bank operate from 9am -6pm daily.",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.366609,
+                    "longitude": 100.2739596
+                },
+                "fullAddress": "Blk 61-8-7 Suria vista, 11060 paya terubong, pulau pinang"
+            }
+        ],
+        "contactNumber": "0175958620",
+        "id": "F285",
+        "name": "Sulaiman bin yahaya",
+        "remarks": "Perlukan bekalan makanan dan juga keperluan anak seperti susu dan pampers yang masih kecil 2 tahun dan 6 bulan sekiranya boleh",
+        "website": "No"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.3664482,
+                    "longitude": 100.274617
+                },
+                "fullAddress": "61-8-7 Tingkat paya terubong 4, 11060 paya terubong, pulau pinang"
+            }
+        ],
+        "contactNumber": "01162478851",
+        "id": "F286",
+        "name": "Muhamada solehin bin sulaiman",
+        "remarks": "Perlu bekalan makanan untuk sekeluarga dan juga anak yang masih baby",
+        "website": "Tiada"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.4214664,
+                    "longitude": 100.3315901
+                },
+                "fullAddress": "77, Lebuh Sri Bahari, 10050 Georgetown, Penang"
+            }
+        ],
+        "contactNumber": "04-2612301",
+        "id": "F287",
+        "name": "Saigon House Cuisine",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1970308,
+                    "longitude": 101.7410641
+                },
+                "fullAddress": "NO 6, Jalan Wangsa Delima 10, D'Wangsa, Wangsa Maju, 53300 Kuala Lumpur"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F288",
+        "name": "Klinik Dr Alyna",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 4.5495163,
+                    "longitude": 101.1084536
+                },
+                "fullAddress": "1 lapangan perdana 39 bandar cyber 31650 ipoh.perak."
+            }
+        ],
+        "contactNumber": "0182374969",
+        "id": "F289",
+        "name": "錦錦美食軒",
+        "remarks": "",
+        "website": "https://www.facebook.com/kamkamcafe/"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 4.5495163,
+                    "longitude": 101.1084536
+                },
+                "fullAddress": "1 lapangan perdana 39 bandar cyber 31650 ipoh.perak."
+            }
+        ],
+        "contactNumber": "0182374969",
+        "id": "F290",
+        "name": "Kedai minuman dan makanan kam kam 錦錦美食軒",
+        "remarks": "",
+        "website": "https://www.facebook.com/kamkamcafe/"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 4.5495163,
+                    "longitude": 101.1084536
+                },
+                "fullAddress": "1 lapangan perdana 39 bandar cyber 31650 ipoh.perak."
+            }
+        ],
+        "contactNumber": "0182374969",
+        "id": "F291",
+        "name": "Kedai minuman dan makanan kam kam 錦錦美食軒",
+        "remarks": "",
+        "website": "https://www.facebook.com/kamkamcafe/"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.2388553,
+                    "longitude": 101.6517927
+                },
+                "fullAddress": "No 12 Jalan SJ 6 Taman Selayang Jaya"
+            }
+        ],
+        "contactNumber": "0146798120",
+        "id": "F292",
+        "name": "Veggie century",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.0791118,
+                    "longitude": 101.6459585
+                },
+                "fullAddress": "Jalan PJS 1/32, Taman Medan Pejasa"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F293",
+        "name": "Pasar mini tasrima ",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.8356616,
+                    "longitude": 103.3367134
+                },
+                "fullAddress": "B30-B38, Jalan Air Putih, 25300 Kuantan, Pahang"
+            }
+        ],
+        "contactNumber": "09-567 9888 ext. 2050",
+        "id": "F294",
+        "name": "TMJ Mart Air Putih",
+        "remarks": "In front of TMJ store",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.0658391,
+                    "longitude": 101.4852622
+                },
+                "fullAddress": "Best Western i-City Shah Alam, A-GF-01, No. 6 Persiaran Multimedia, CityPark, 40000 i-City, Shah Alam, Selangor"
+            }
+        ],
+        "contactNumber": "+60355219000",
+        "id": "F295",
+        "name": "Best Western Food Bank",
+        "remarks": "",
+        "website": "Www.best western-icity.my"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 6.4453048,
+                    "longitude": 100.2353497
+                },
+                "fullAddress": "Masjid Muhammadi, Sungai Adam, Jejawi, 02600 Arau, Perlis"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F296",
+        "name": "Masjid Muhammadi",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 0.0,
+                    "longitude": 0.0
+                },
+                "fullAddress": "Komplek penghulu mukim 1 lubuk, parit sangit"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F297",
+        "name": "Gerobok makanan parit sangit",
+        "remarks": "Buka 9 pagi sehingga habis barang",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 1.5683852,
+                    "longitude": 103.7815558
+                },
+                "fullAddress": "No 2 Jalan Jaya Putra 2/14, Bandar Jaya Putra Perdana (JP Perdana) 81100 Johor Bahru"
+            }
+        ],
+        "contactNumber": "0127275769",
+        "id": "F298",
+        "name": "HakakRoket",
+        "remarks": "Just call / wasap me directly utk bantuan barangan keperluan asas 💚",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.6902865,
+                    "longitude": 101.9077089
+                },
+                "fullAddress": "Seremban 2, 70300 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F299",
+        "name": "Centrio S2",
+        "remarks": "In front of Klinik Azhar, Same row with RHB Bank",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.6890986,
+                    "longitude": 101.9426693
+                },
+                "fullAddress": "717, Jalan Merak 16, Taman Thivy Jaya, 70200 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F300",
+        "name": "Thivy Jaya, Restaurant QQ",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.6939004,
+                    "longitude": 101.922917
+                },
+                "fullAddress": "32, Jalan Belida 11, Taman Bukit Chedang Fasa 2, 70300 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F301",
+        "name": "Klinik Alam Medic Bukit Chedang",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.569221,
+                    "longitude": 101.8291412
+                },
+                "fullAddress": " Jalan Seremban, Taman Port Dickson, 71010 Port Dickson, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F302",
+        "name": "U Jia Vegetarian shop Segar city lukut",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.7326754,
+                    "longitude": 101.9374547
+                },
+                "fullAddress": "2, Jalan Temiang, Taman Unian, 70200 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F303",
+        "name": "Neighbour Grace Assembly Temiang",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.715371,
+                    "longitude": 101.90668
+                },
+                "fullAddress": "Taman Bukit Kepayang, 70200 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F304",
+        "name": "Restaurant Al Fazlin Bukit Kepayang Seremban 2",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.68018,
+                    "longitude": 101.945
+                },
+                "fullAddress": "70300 No. 3819-G, Taman Rasah Jaya Seremban Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F305",
+        "name": "Jayanthi cash and carry Jalan Rasah",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.6754849,
+                    "longitude": 101.9770828
+                },
+                "fullAddress": "Jalan SJ 8/2, Taman Seremban Jaya, 70450 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F306",
+        "name": "Seremban Jaya Restoran Weng Shun",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.727845,
+                    "longitude": 101.9128759
+                },
+                "fullAddress": "Taman Jasper Jaya, 70200 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F307",
+        "name": "Taman Jasper Medan Selera Galena Food Court",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.7035675,
+                    "longitude": 101.953206
+                },
+                "fullAddress": "Negeri Sembilan, Seremban, Unnamed Road, 70100邮政编码: 70100"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F308",
+        "name": "Rahang Soon Hup Car Battery",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.745618,
+                    "longitude": 101.9581531
+                },
+                "fullAddress": "Taman Sri Pulai, 70400 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F309",
+        "name": "Taman Sri Pulai",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.698747,
+                    "longitude": 101.9367158
+                },
+                "fullAddress": "Taman Tuan Sheikh, 70300 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F310",
+        "name": "Kampung Baru Rasah Restaurant Loy Loy",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.6884304,
+                    "longitude": 101.9634559
+                },
+                "fullAddress": "Taman Merpati, 70450 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F311",
+        "name": "Taman Merpati",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.6817521,
+                    "longitude": 101.9091349
+                },
+                "fullAddress": "Garden Homes, 70300 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F312",
+        "name": "Garden homes",
+        "remarks": "",
+        "website": ""
     }
 ]
