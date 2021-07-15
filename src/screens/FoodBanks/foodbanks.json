@@ -4766,5 +4766,37 @@
         "name": "HakakRoket",
         "remarks": "Just call / wasap me directly utk bantuan barangan keperluan asas 💚",
         "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.9077089,
+                    "longitude": 2.6902865
+                },
+                "fullAddress": "Seremban 2, 70300 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F299",
+        "name": "Centrio S2",
+        "remarks": "In front of Klinik Azhar, Same row with RHB Bank",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.9426693,
+                    "longitude": 2.6890986
+                },
+                "fullAddress": "717, Jalan Merak 16, Taman Thivy Jaya, 70200 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F300",
+        "name": "Thivy Jaya, Restaurant QQ",
+        "remarks": "",
+        "website": ""
     }
 ]
