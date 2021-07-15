@@ -4798,5 +4798,197 @@
         "name": "Thivy Jaya, Restaurant QQ",
         "remarks": "",
         "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.922917,
+                    "longitude": 2.6939004
+                },
+                "fullAddress": "32, Jalan Belida 11, Taman Bukit Chedang Fasa 2, 70300 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F301",
+        "name": "Klinik Alam Medic Bukit Chedang",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.8291412,
+                    "longitude": 2.569221
+                },
+                "fullAddress": " Jalan Seremban, Taman Port Dickson, 71010 Port Dickson, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F302",
+        "name": "U Jia Vegetarian shop Segar city lukut",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.9374547,
+                    "longitude": 2.7326754
+                },
+                "fullAddress": "2, Jalan Temiang, Taman Unian, 70200 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F303",
+        "name": "Neighbour Grace Assembly Temiang",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.90668,
+                    "longitude": 2.715371
+                },
+                "fullAddress": "Taman Bukit Kepayang, 70200 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F304",
+        "name": "Restaurant Al Fazlin Bukit Kepayang Seremban 2",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.945,
+                    "longitude": 2.68018
+                },
+                "fullAddress": "70300 No. 3819-G, Taman Rasah Jaya Seremban Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F305",
+        "name": "Jayanthi cash and carry Jalan Rasah",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.9770828,
+                    "longitude": 2.6754849
+                },
+                "fullAddress": "Jalan SJ 8/2, Taman Seremban Jaya, 70450 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F306",
+        "name": "Seremban Jaya Restoran Weng Shun",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.9128759,
+                    "longitude": 2.727845
+                },
+                "fullAddress": "Taman Jasper Jaya, 70200 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F307",
+        "name": "Taman Jasper Medan Selera Galena Food Court",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.953206,
+                    "longitude": 2.7035675
+                },
+                "fullAddress": "Negeri Sembilan, Seremban, Unnamed Road, 70100邮政编码: 70100"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F308",
+        "name": "Rahang Soon Hup Car Battery",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.9581531,
+                    "longitude": 2.745618
+                },
+                "fullAddress": "Taman Sri Pulai, 70400 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F309",
+        "name": "Taman Sri Pulai",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.9367158,
+                    "longitude": 2.698747
+                },
+                "fullAddress": "Taman Tuan Sheikh, 70300 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F310",
+        "name": "Kampung Baru Rasah Restaurant Loy Loy",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.9634559,
+                    "longitude": 2.6884304
+                },
+                "fullAddress": "Taman Merpati, 70450 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F311",
+        "name": "Taman Merpati",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 101.9091349,
+                    "longitude": 2.6817521
+                },
+                "fullAddress": "Garden Homes, 70300 Seremban, Negeri Sembilan"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F312",
+        "name": "Garden homes",
+        "remarks": "",
+        "website": ""
     }
 ]
