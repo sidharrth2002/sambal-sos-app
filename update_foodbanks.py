@@ -117,8 +117,8 @@ for x in range(len(output)):
                 geocode_result = google_maps.geocode(output[x]['address'])
 
                 if len(geocode_result) > 0:
-                    address['coordinates']['longitude'] = geocode_result[0]['geometry']['location'] ['lat']
-                    address['coordinates']['latitude'] = geocode_result[0]['geometry']['location']['lng']
+                    address['coordinates']['longitude'] = geocode_result[0]['geometry']['location'] ['lng']
+                    address['coordinates']['latitude'] = geocode_result[0]['geometry']['location']['lat']
 
         except Exception as e:
             print("Unexpected error occurred.", e)
