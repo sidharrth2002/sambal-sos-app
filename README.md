@@ -34,7 +34,6 @@ Currently, our team consists of mostly student developers, and we are running on
 ### Monetary
 If you're willing to support us financially, please do get in touch with us!
 Monetary donations will be primarily utilized for maintenance costs of the [Sambal SOS App](http://sambalsos.com/), which includes: server costs, domain costs, etc. 
-You can contribute to the server costs here: https://www.buymeacoffee.com/benderaputih
 
 ### Development
 Sambal SOS is built from the ground up on a monster stack: React.js (Chakra UI, Redux), Node.js (Express), PostgreSQL and Google Cloud. Ben Awad would be proud. The frontend is hosted on Vercel, while our backend lives on App Engine.
