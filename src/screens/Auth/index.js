@@ -75,7 +75,7 @@ const Auth = () => {
                     <Box width="600px" maxWidth="80%">
                         <Text fontFamily="Montserrat" as="h3" fontSize="15px" textAlign="start">
                             <Trans i18nKey="bendera-putih-redirect">
-                                If you're looking for the Bendera Putih app, this is the <strong title={t('auth.rebranded')}>{t('auth.rebranded')}</strong> and <strong title={t('auth.upgraded')}>{t('auth.upgraded')}</strong> version for a better user experience.
+                                {t('auth.bendera-putih-redirect-1')} <strong title={t('auth.rebranded')}>{t('auth.rebranded')}</strong> {t('auth.and')} <strong title={t('auth.upgraded')}>{t('auth.upgraded')}</strong> {t('auth.bendera-putih-redirect-2')}
                             </Trans>
                         </Text>
                     </Box>
@@ -85,7 +85,7 @@ const Auth = () => {
                 <Box marginBottom="1rem">
                     <Text fontFamily="Montserrat">
                         <Trans i18nKey="login-disclaimer">
-                            By logging in, you agree to our <Link href="/privacy-policy" target="_blank" color="blue">privacy policy</Link>. We only use this authentication to get your email and protect the app from unauthorised input.
+                            {t('auth.login-disclaimer-1')} <Link href="/privacy-policy" target="_blank" color="blue">{t('auth.privacy-policy')}</Link>. {t('auth.login-disclaimer-2')}.
                         </Trans>
                     </Text>
                 </Box>
