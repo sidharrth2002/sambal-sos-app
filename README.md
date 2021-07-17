@@ -5,15 +5,12 @@
 
 Hop on the [app](http://sambalsos.com/)  if:
 - you see someone who needs help when driving or in your neighbourhood and want to report it so someone can help
-or 
 - you're looking to support other fellow Malaysians
 
-\
-By Malaysians, for Malaysians.  🇲🇾
-\
-Developed by passionate Malaysian developers, under this time of the MCO. 🥰
-\
-Living in a lockdown may feel uncertain, but we're in this together 💪.
+Built:
+- By Malaysians, for Malaysians.  🇲🇾
+- Developed by passionate Malaysian developers, under this time of the MCO. 🥰
+- Living in a lockdown may feel uncertain, but we're in this together 💪.
 
 ## The [#benderaputih](https://twitter.com/hashtag/benderaputih) Movement
 In Malaysia, the [#benderaputih](https://twitter.com/hashtag/benderaputih) movement is a social media movement urging those in urgent need of living necessities or resources to place white flags outside their homes. In this time of a pandemic, white flags placed outside homes are notices to others that they are out of food or living necessities and need help right away. 
@@ -60,8 +57,6 @@ The features and milestones that we plan to achieve for [Sambal SOS App](http://
 
 ## Contact us
 Let's connect! 📧
-\
-&nbsp;
 
 [Email ✉](mailto:info.benderaputih@gmail.com)
 \
