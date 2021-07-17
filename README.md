@@ -3,8 +3,7 @@
 [Bendera Putih App](http://sambalsos.com/) is a social welfare platform that supports Malaysians in need by bridging the gap of social inequity. 
 
 Hop on the [app](http://sambalsos.com/)  if:
-- you see a flag when driving or in your neighbourhood and want to report it so someone can help
-
+- you see someone who needs help when driving or in your neighbourhood and want to report it so someone can help
 or 
 - you're looking to support other fellow Malaysians
 
@@ -40,11 +39,11 @@ Monetary donations will be primarily utilized for maintenance costs of the [Bend
 You can contribute to the server costs here: https://www.buymeacoffee.com/benderaputih
 
 ### Development
+Sambal SOS is built from the ground up on a monster stack: React.js (Chakra UI, Redux), Node.js (Express), PostgreSQL and Google Cloud. Ben Awad would be proud. The frontend is hosted on Vercel, while our backend lives on App Engine.
+
 If you have experience in any of the following skills, you're exactly who we're looking for to join the team:
 - frontend development (JavaScript, React.js)
-- backend development (Firebase, Node.js, Express.js)
-- DevOps (GCP, AWS, Deploying a Node.js server with PostgreSQL)
-- machine learning, deep learning, computer vision
+- backend development (Node.js, Express.js)
 - social media management
 - crowdsourcing data
 
