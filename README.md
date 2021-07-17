@@ -59,7 +59,7 @@ Let's connect! 📧
 
 [Email ✉](mailto:info.benderaputih@gmail.com)
 \
-[Discord 👾](discord.com)
+[Discord 👾](https://discord.gg/9QeJu9M9)
 
 ## License
 [Sambal SOS App](http://sambalsos.com/) is open source, licensed under the [MIT](https://choosealicense.com/licenses/mit/) license
