@@ -1,6 +1,7 @@
 # The Sambal SOS App (Formerly the Bendera Putih App)  🏳 🇲🇾
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Bendera Putih App](http://sambalsos.com/) is a social welfare platform that supports Malaysians in need by bridging the gap of social inequity. 
+[Sambal SOS App](http://sambalsos.com/) is a social welfare platform that supports Malaysians in need by bridging the gap of social inequity. 
 
 Hop on the [app](http://sambalsos.com/)  if:
 - you see someone who needs help when driving or in your neighbourhood and want to report it so someone can help
@@ -28,14 +29,14 @@ Members of our community can post a picture through this web app if they see a w
 We believe that our project will provide the necessary support for communities nationwide, and will benefit a lot of people in our communities, especially the underserved in tough times like these.
 
 ## About us
-We're a team of student developers passionate to make a positive impact to our community. The development of the [Bendera Putih App](http://sambalsos.com/) is a continuous process for the time being, and we believe that developing this app is a way for us to volunteer and contribute to the communities in Malaysia.
+We're a team of student developers passionate to make a positive impact to our community. The development of the [Sambal SOS App](http://sambalsos.com/) is a continuous process for the time being, and we believe that developing this app is a way for us to volunteer and contribute to the communities in Malaysia.
 
 ## Contributing
-Currently, our team consists of mostly student developers, and we are running on a 0 budget. Maintaining the [Bendera Putih App](http://sambalsos.com/) involves financial costs, hence we are opening up to the public for volunteering or contributions.
+Currently, our team consists of mostly student developers, and we are running on a 0 budget. Maintaining the [Sambal SOS App](http://sambalsos.com/) involves financial costs, hence we are opening up to the public for volunteering or contributions.
 
 ### Monetary
 If you're willing to support us financially, please do get in touch with us!
-Monetary donations will be primarily utilized for maintenance costs of the [Bendera Putih App](http://sambalsos.com/), which includes: server costs, domain costs, etc. 
+Monetary donations will be primarily utilized for maintenance costs of the [Sambal SOS App](http://sambalsos.com/), which includes: server costs, domain costs, etc. 
 You can contribute to the server costs here: https://www.buymeacoffee.com/benderaputih
 
 ### Development
@@ -51,7 +52,7 @@ If you have experience in any of the following skills, you're exactly who we're 
 If you're interested to support us in other ways, do reach out to us using any of the contact details listed in the [Contact us](src/README.md#Contact) section.
 
 ## Features & Milestones
-The features and milestones that we plan to achieve for [Bendera Putih App](http://sambalsos.com/) are:
+The features and milestones that we plan to achieve for [Sambal SOS App](http://sambalsos.com/) are:
 - ✅ @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 - ✅ Users having the ability to post white flag incidences
 - ✅ Users having the ability to view white flag incidences within a 10 KM radius of the user's location
@@ -67,4 +68,4 @@ Let's connect! 📧
 [Discord 👾](discord.com)
 
 ## License
-[Bendera Putih App](http://sambalsos.com/) is open source, licensed under the [MIT](https://choosealicense.com/licenses/mit/) license
+[Sambal SOS App](http://sambalsos.com/) is open source, licensed under the [MIT](https://choosealicense.com/licenses/mit/) license
