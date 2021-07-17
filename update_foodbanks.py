@@ -104,36 +104,52 @@ google_maps = google_maps(geocoding_api_key)
 ## Modify the address object to match the provided format and call geocaching
 for x in range(len(output)):
     address = dict()
+    sheetCellHasValidLatLng = False
 
     full_address = output[x]['address']
+    longitude = output[x]['longitude']
+    latitude = output[x]['latitude']
 
-    if full_address != '' and full_address not in addresses:
-        address['fullAddress'] = output[x]['address']
-        address['coordinates'] = {}
-        address['coordinates']['longitude'] = 0.0
-        address['coordinates']['latitude'] = 0.0
+    address['fullAddress'] = output[x]['address']
+    address['coordinates'] = {}
+    address['coordinates']['longitude'] = 0.0
+    address['coordinates']['latitude'] = 0.0
 
-        try:            
+    if latitude != '' and longitude != '':
+        try:
+            address['coordinates']['longitude'] = float(latitude)
+            address['coordinates']['latitude'] = float(longitude)
+            sheetCellHasValidLatLng = True
+        except ValueError:
+            address['coordinates']['longitude'] = 0.0
+            address['coordinates']['latitude'] = 0.0
+            sheetCellHasValidLatLng = False
+
+    if full_address != '' and sheetCellHasValidLatLng == False:
+        if full_address not in addresses:            
+            try:            
                 geocode_result = google_maps.geocode(output[x]['address'])
 
                 if len(geocode_result) > 0:
                     address['coordinates']['longitude'] = geocode_result[0]['geometry']['location'] ['lng']
                     address['coordinates']['latitude'] = geocode_result[0]['geometry']['location']['lat']
-
-        except Exception as e:
-            print("Unexpected error occurred.", e)
-    else:
-        # case where there are duplicates
-        address['fullAddress'] = full_address
-        address['coordinates'] = addresses[full_address]
+            except Exception as e:
+                print("Unexpected error occurred.", e)
+        else:
+            # case where there are duplicates
+            address['fullAddress'] = full_address
+            address['coordinates'] = addresses[full_address]
     
     output[x]['address'] = list()
     output[x]['address'].append(address)
+    
+    output[x].pop('longitude', None)
+    output[x].pop('latitude', None)
 
 ## check if path exists
 if not os.path.exists(json_file_path):
     dir_name = os.path.dirname(json_file)
     Path(dir_name).mkdir(parents=True, exist_ok=True)
 
-with open(json_file_path, 'r+', encoding='utf-8') as f:
+with open(json_file_path, 'w+', encoding='utf-8') as f:
     json.dump(output, f, ensure_ascii=False, indent=4, sort_keys=True)
