@@ -5,9 +5,6 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { LOGOUT } from '../../features/counter/authSlice';
-import firebase from "firebase/app";
-import "firebase/firestore";
-import '@firebase/auth';
 
 import * as BDGraphics from '../../assets';
 import { useTranslation } from 'react-i18next';
