@@ -24,6 +24,8 @@ import FoodBankIcon from "./svgs/groceries.svg";
 import SirenIcon from "./svgs/siren.svg";
 import PhoneIcon from "./svgs/phone.svg";
 import LanguageIcon from "./svgs/language.svg";
+import MalaysiaFlag from "./png/Malaysia.png";
+import UKFlag from './png/UK.png';
 
 export {
   MaintenanceSVG,
@@ -52,4 +54,6 @@ export {
   SirenIcon,
   PhoneIcon,
   LanguageIcon,
+  MalaysiaFlag,
+  UKFlag,
 };
