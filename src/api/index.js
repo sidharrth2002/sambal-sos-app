@@ -6,7 +6,6 @@ require("dotenv").config();
 export const latlngToAddress = async (latitude, longitude) => {
   return axios
     .get(
-      // eslint-disable-next-line no-undef
       `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
     )
     .then((res) => {
