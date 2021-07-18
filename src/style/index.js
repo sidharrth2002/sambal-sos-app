@@ -1,2 +1,2 @@
-module.exports.maintenanceStyled = require('./maintenance.style');
-module.exports.globalStyled = require('./global.style');
+export const maintenanceStyled = require("./maintenance.style");
+export const globalStyled = require("./global.style");
