@@ -13,6 +13,8 @@ import "./i18n";
 
 const history = createHistory();
 
+// I changed something
+
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
