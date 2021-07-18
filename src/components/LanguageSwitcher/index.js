@@ -49,7 +49,7 @@ const Index = () => {
             changeLanguage(key);
           }}
         >
-          {key === 'English' ? ( // display flag on each language
+          {key === "English" ? ( // display flag on each language
             <img src={SSIcons.UKFlag} />
           ) : (
             <img src={SSIcons.MalaysiaFlag} />
