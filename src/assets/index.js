@@ -25,7 +25,7 @@ import SirenIcon from "./svgs/siren.svg";
 import PhoneIcon from "./svgs/phone.svg";
 import LanguageIcon from "./svgs/language.svg";
 import MalaysiaFlag from "./png/Malaysia.png";
-import UKFlag from './png/UK.png';
+import UKFlag from "./png/UK.png";
 
 export {
   MaintenanceSVG,
