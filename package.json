@@ -66,8 +66,7 @@
     ],
     "*.+(json|css|md)": [
       "prettier --write"
-    ],
-    "*.js": "eslint --cache --fix"
+    ]
   },
   "eslintConfig": {
     "extends": [
