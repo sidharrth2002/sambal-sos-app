@@ -5,7 +5,13 @@
         "rebranded": "rebranded",
         "upgraded": "upgraded",
         "bendera-putih-redirect": "If you're looking for the Bendera Putih app, this is the rebranded and upgraded version for a better user experience.",
+        "bendera-putih-redirect-1": "If you're looking for the Bendera Putih app, this is the",
+        "bendera-putih-redirect-2": "version for a better user experience.",
+        "and": "and",
         "login-disclaimer": "By logging in, you agree to our privacy policy. We only use this authentication to get your email and protect the app from unauthorised input.",
+        "login-disclaimer-1": "By logging in, you agree to our",
+        "login-disclaimer-2": "We only use this authentication to get your email and protect the app from unauthorised input",
+        "privacy-policy": "privacy policy",
         "google-button": "Login with Google"
     },
     "home": {

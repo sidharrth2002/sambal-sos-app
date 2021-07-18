@@ -1,17 +1,23 @@
 {
     "auth": {
         "title": "Sambal SOS",
-        "tagline": "Pengumpulan data bantuan orang ramai dari seluruh negara",
+        "tagline": "Pengumpulan data bantuan orang ramai di seluruh negara",
         "rebranded": "dijenamakan semula",
         "upgraded": "dikemaskini",
         "bendera-putih-redirect": "Sekiranya anda mencari aplikasi Bendera Putih, ini adalah versi yang telah dijenamakan semula dan dikemaskini untuk pengalaman pengguna yang lebih baik.",
+        "bendera-putih-redirect-1": "Sekiranya anda mencari aplikasi Bendera Putih, ini adalah versi yang telah",
+        "bendera-putih-redirect-2": "untuk pengalaman pengguna yang lebih baik.",
+        "and": "dan",
         "login-disclaimer": "Dengan log masuk, anda bersetuju dengan dasar privasi kami. Kami hanya menggunakan pengesahan ini untuk mendapatkan emel anda dan melindungi aplikasi daripada input yang tidak dibenarkan.",
+        "login-disclaimer-1": "Dengan log masuk, anda bersetuju dengan",
+        "login-disclaimer-2": "Kami hanya menggunakan pengesahan ini untuk mendapatkan emel anda dan melindungi aplikasi daripada input yang tidak dibenarkan",
+        "privacy-policy": "dasar privasi",
         "google-button": "Log Masuk Dengan Google"
     },
     "home": {
         "food-banks": "Bank Makanan",
         "sos": "SOS",
-        "ask-for-help": "Meminta Bantuan",
+        "ask-for-help": "Minta Bantuan",
         "report-sos": "Laporkan SOS"
     },
     "navigation": {
