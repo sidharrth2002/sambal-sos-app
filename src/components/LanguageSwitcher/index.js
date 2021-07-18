@@ -50,7 +50,12 @@ const Index = () => {
             changeLanguage(key);
           }}
         >
-          <Text>{key}</Text>
+          {key === "English" ? ( // display flag on each language
+            <img src={SSIcons.UKFlag} />
+          ) : (
+            <img src={SSIcons.MalaysiaFlag} />
+          )}
+          <Text marginLeft="5px">{key}</Text>
         </Flex>
       );
     });
