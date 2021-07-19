@@ -26,6 +26,7 @@ import PhoneIcon from "./svgs/phone.svg";
 import LanguageIcon from "./svgs/language.svg";
 import MalaysiaFlag from "./png/Malaysia.png";
 import UKFlag from "./png/UK.png";
+import ClockIcon from "./svgs/clock.svg";
 
 export {
   MaintenanceSVG,
@@ -56,4 +57,5 @@ export {
   LanguageIcon,
   MalaysiaFlag,
   UKFlag,
+  ClockIcon,
 };
