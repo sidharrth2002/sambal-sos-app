@@ -4,7 +4,7 @@ import UserActiveIcon from "./svgs/user-active.svg";
 import EmailIcon from "./svgs/email.svg";
 import EmailActiveIcon from "./svgs/email-active.svg";
 import WhiteFlagIcon from "./svgs/white-flag.svg";
-import GoogleLoginIcon from "./svgs/google-outline.svg";
+import GoogleLoginIcon from "./svgs/google-login.svg";
 import BackButtonIcon from "./svgs/back-button.svg";
 import InfoIcon from "./svgs/info.svg";
 import ImageIcon from "./svgs/image.svg";
@@ -27,6 +27,7 @@ import LanguageIcon from "./svgs/language.svg";
 import MalaysiaFlag from "./png/Malaysia.png";
 import UKFlag from "./png/UK.png";
 import ClockIcon from "./svgs/clock.svg";
+import FacebookIcon from "./svgs/facebook.svg";
 
 export {
   MaintenanceSVG,
@@ -58,4 +59,5 @@ export {
   MalaysiaFlag,
   UKFlag,
   ClockIcon,
+  FacebookIcon,
 };
