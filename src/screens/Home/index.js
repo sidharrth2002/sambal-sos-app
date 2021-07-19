@@ -421,7 +421,7 @@ const Home = () => {
                         mr="5px"
                       />
                       <Text fontSize="9px" color="#2F2F2F">
-                        <Moment format="YYYY/MM/DD HH:MM">
+                        <Moment format="YYYY/MM/DD HH:MM" local>
                           {selectedMarker.createdAt}
                         </Moment>
                       </Text>
