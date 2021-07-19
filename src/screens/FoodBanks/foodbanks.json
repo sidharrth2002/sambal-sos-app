@@ -11086,5 +11086,501 @@
         "name": "Food bank at Suhaili Optometrist",
         "remarks": "",
         "website": "https://twitter.com/MegatAD/status/1410427683138203651"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.2604436,
+                    "longitude": 102.2410032
+                },
+                "fullAddress": "NO. 38, Jalan Pegaga, Taman Merdeka, 75350 Batu Berendam, Melaka."
+            }
+        ],
+        "contactNumber": "",
+        "id": "F694",
+        "name": "Oscec",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.7327828,
+                    "longitude": 101.9365154
+                },
+                "fullAddress": "3, Jalan Tun Dr. Ismail, 70200 Seremban"
+            }
+        ],
+        "contactNumber": "0162030627",
+        "id": "F695",
+        "name": "OPPO Care4U Food Bank",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.0146904,
+                    "longitude": 101.6167894
+                },
+                "fullAddress": "16, Jalan Puteri 5/16, Bandar Puteri Puchong, Selangor"
+            }
+        ],
+        "contactNumber": "60358888031",
+        "id": "F696",
+        "name": "Starman Coffee",
+        "remarks": "",
+        "website": "https://instagram.com/starmancoffee?utm_medium=copy_link"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.0658391,
+                    "longitude": 101.4852622
+                },
+                "fullAddress": "A-GF-01 Golden Triangle, No. 6, Jalan Multimedia, I-City, 40000 Shah Alam, Selangor"
+            }
+        ],
+        "contactNumber": "0143207547",
+        "id": "F697",
+        "name": "Best Western i-City Shah Alam Hotel",
+        "remarks": "We open at every Monday, Wednesday and Friday from 9am - 7pm \nKita buka setiap hari Isnin, Rabu dan Jumaat dari pukul 9 pagi hinggi 7 malam.",
+        "website": "WWW.BESTWESTERN-ICITY.MY"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.1945593,
+                    "longitude": 102.2562053
+                },
+                "fullAddress": "10-a jalan laksamana cheng ho"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F698",
+        "name": "Soon Heng",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1211045,
+                    "longitude": 101.5743695
+                },
+                "fullAddress": "\n\n8, Jalan PJU 1a/14, Taman Peritndustrian Jaya, 47301 Petaling Jaya, Selangor"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F699",
+        "name": "ketchata ara damansara ",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 0.0,
+                    "longitude": 0.0
+                },
+                "fullAddress": ""
+            }
+        ],
+        "contactNumber": "0173276454",
+        "id": "F700",
+        "name": "",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.9913641,
+                    "longitude": 101.7070854
+                },
+                "fullAddress": "Pejabat am, Kolej Pendeta Zaaba, Universiti Putra Malaysia, 43400 Serdang Selangor"
+            }
+        ],
+        "contactNumber": "+603 - 9769 1306",
+        "id": "F701",
+        "name": "FOODBANK #KPZPrihatin",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1061765,
+                    "longitude": 101.6249646
+                },
+                "fullAddress": "27 Jalan 20/13, Taman Paramount, 46300 PJ, SEL"
+            }
+        ],
+        "contactNumber": "0182312823",
+        "id": "F702",
+        "name": "bröom Artisan Bakery Donation Shelf",
+        "remarks": "",
+        "website": "www.instagram.com/broomartisanbakery"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.0165965,
+                    "longitude": 101.6775451
+                },
+                "fullAddress": "No. 1-120, Tingkat 1, Jalan PUJ 3/8, Taman Puncak Jalil, 43300 Seri Kembangan, Selangor Darul Ehsan"
+            }
+        ],
+        "contactNumber": "0174444980",
+        "id": "F703",
+        "name": "SemestaMart",
+        "remarks": "Kami adalah pembekal barangan runcit dan sejuk-beku didalam talian. Bagi sesiapa ingin membeli pakej #kitajagakita yang khusus dibuat untuk membantu rakyat Malaysia yang terkesan dengan pandemik Covid-19. Sila layari https://www.semestamart.my",
+        "website": "https://semestamart.my"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1110858,
+                    "longitude": 101.5827784
+                },
+                "fullAddress": "D6-5-G,Ground Floor,Block D6, Dana 1 Commercial Centre, Jalan PJU 1a/46, Ara Damansara, 47301 Petaling Jaya, Selangor"
+            }
+        ],
+        "contactNumber": "010-8020003",
+        "id": "F704",
+        "name": "MJR COMMERCIAL SDN BHD",
+        "remarks": "Collect Hours: 9am - 6pm (Mon - Fri)\nDelivery Available for those who has transportation issues (only PJ & Kepong area)",
+        "website": "https://l.facebook.com/l.php?u=http%3A%2F%2Fmjrmarketing.watsap.me%2F%3Ffbclid%3DIwAR15kCdxqDUwrYOkMDzScfmrLPOwgjHwHrd5Ac3pBJkiVIpHajCWj8IgvCc&h=AT2aTIFUqyEUjOdCb8-3G9bTQva_sbsR9IvK5lKyghhydReKfNxJ6NFDxVvMqsudXrCol74ywV4LBm5mL2_3SS4-aRG5v2oA_Z3BGCq5JxCLLg5VXh8--jAE0J9uYoWRj6Vt0CDl3Yj9Fz5lxVpA&__tn__=-UK-R&c[0]=AT157Ws9Lh6YaMbnf42vshaGgkg6aXEQnAnoRg0EkE9QPB2nlYQaVa4NcxcQ_Nern9nkclVl_ar4i5nSyReTjR5yC79o_29rG1LH8-5MsMHaDzStBIxvkaGvOl-5pa6ANIPk4awl8kaRDS9Aw3LUNUE68teMkBkym2HRZIXjOwJu0RozTlg49vcNiIoAN0wki0wI-1JAcm9sBYr3"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.2388854,
+                    "longitude": 101.6517741
+                },
+                "fullAddress": "No 12 Jalan SJ6, Taman Selayang Jaya 68100 batu caves"
+            }
+        ],
+        "contactNumber": "0146798120",
+        "id": "F705",
+        "name": "Veggie century",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.8893605,
+                    "longitude": 101.6741754
+                },
+                "fullAddress": "Surau Al-Huda P5R4, Presint 5"
+            }
+        ],
+        "contactNumber": "0122397568",
+        "id": "F706",
+        "name": "Gerobok Rezeki Surau AlHuda",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.9067308,
+                    "longitude": 101.8659591
+                },
+                "fullAddress": "17-g, jln kesuma 3/1, bdr tasik kesuma 43700 beranang"
+            }
+        ],
+        "contactNumber": "0196909990",
+        "id": "F707",
+        "name": "Flourlush Kesuma",
+        "remarks": "",
+        "website": "flourlush.com"
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1935423,
+                    "longitude": 101.6918914
+                },
+                "fullAddress": "Jalan 2/48b, Taman Sentul Jaya, 51000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
+            }
+        ],
+        "contactNumber": "0138600617",
+        "id": "F708",
+        "name": "Good Samaritan Food Bank",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 0.0,
+                    "longitude": 0.0
+                },
+                "fullAddress": ""
+            }
+        ],
+        "contactNumber": "",
+        "id": "F709",
+        "name": "",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 1.6393077,
+                    "longitude": 103.6680539
+                },
+                "fullAddress": "Senai International Airport, 81250, Johor Bahru, Johor (Near Information Counter)"
+            }
+        ],
+        "contactNumber": "+607-5994500 / +6019-3241006",
+        "id": "F710",
+        "name": "Kiosk Wecare Senai Airport",
+        "remarks": "Kiosk Wecare adalah program kerjasama antara Senai Airport Terminal Services Sdn Bhd bersama dengan Komuniti Lapangan Terbang Senai.\n\n- Bagi yang memerlukan bantuan, sila datang ke Kiosk Wecare (Berdekatan Kaunter Informasi)\n- Bagi yang ingin menghulurkan bantuan bolehlah hubungi 019-3241006 (En Saiful)\n\n1) Barangan dapur seperti beras (5kg), minyak masak, gula, garam, tepung, mi segera, susu dan lain-lain.\n2) Pakaian seperti kemeja-t, baju kurung, baju kanak-kanak dan lain-lain.\n3) Keperluan lain seperti lampin pakai buang, tuala, syampu, berus gigi, permainan kanak-kanak, sabun, tuala wanita dan lain-lain",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 1.6393077,
+                    "longitude": 103.6680539
+                },
+                "fullAddress": "Senai International Airport, 81250, Johor Bahru, Johor "
+            }
+        ],
+        "contactNumber": "+607-5994500 / +6019-3241006",
+        "id": "F711",
+        "name": "Kiosk Wecare Senai Airport, Johor",
+        "remarks": "Kiosk Wecare adalah program kerjasama antara Senai Airport Terminal Services Sdn Bhd & Komuniti Lapangan Terbang Senai. \n\n- Bagi yang memerlukan, boleh hadir ke Kiosk Wecare (Berdekatan dengan Kaunter Informasi, Senai Airport)\n- Bagi yang ingin memberikan sumbangan, bolehlah hubungi Encik Saiful di talian 019-3241006\n\n1) Barangan dapur seperti beras (5kg), minyak masak, gula, garam, tepung, mi segera, susu dan lain-lain.\n2) Pakaian (tidak koyak, rosak atau lusuh) seperti kemeja-t, seluar, tudung, kasut, selimut dan lain-lain.\n3) Keperluan lain seperti lampin pakai buang, tuala, syampu, berus gigi, permainan kanak-kanak, sabun, tuala wanita dan lain-lain.\n",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.4313744,
+                    "longitude": 100.311849
+                },
+                "fullAddress": "373, Jalan Burma, George Town, 10350 George Town, Pulau Pinang"
+            }
+        ],
+        "contactNumber": "04-227 6984",
+        "id": "F712",
+        "name": "Chan Aan Best",
+        "remarks": "It's a pawn shop, they setup a food bank table outside of their shop with free food & drinks. Phone number is the number of their shop.",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.4321591,
+                    "longitude": 100.3101941
+                },
+                "fullAddress": "415, Jalan Burma, Pulau Tikus, 10350 George Town, Pulau Pinang"
+            }
+        ],
+        "contactNumber": "",
+        "id": "F713",
+        "name": "Bee Hooi Restaurant",
+        "remarks": "It's a kopitiam. They setup a food bank table with free food & drinks at the front of the kopitiam.",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 5.4325287,
+                    "longitude": 100.3099103
+                },
+                "fullAddress": "421 & 423, Jalan Burma, Pulau Tikus, 10350 George Town, Pulau Pinang"
+            }
+        ],
+        "contactNumber": "018-408 2268",
+        "id": "F714",
+        "name": "AM PM PHARMACY SDN BHD (PULAU TIKUS)",
+        "remarks": "It is a pharmacy, with a food bank table setup outside of the pharmacy. Phone number is to the pharmacy.",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 0.0,
+                    "longitude": 0.0
+                },
+                "fullAddress": ""
+            }
+        ],
+        "contactNumber": "",
+        "id": "F715",
+        "name": "",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 4.55646,
+                    "longitude": 101.0521658
+                },
+                "fullAddress": "No 60,Jalan Menglembu Impiana 2,Taman Menglembu Impiana Adril,31450 Menglembu, Perak"
+            }
+        ],
+        "contactNumber": "01126431348",
+        "id": "F716",
+        "name": "Yashini Collection ",
+        "remarks": "For those who needed.",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.0583614,
+                    "longitude": 101.459556
+                },
+                "fullAddress": "18 & 20, Jalan Kasawari 8, Taman Eng Ann, 41150 Klang, Selangor. "
+            }
+        ],
+        "contactNumber": "",
+        "id": "F717",
+        "name": "Caring Taman Eng Ann ",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1001658,
+                    "longitude": 101.7158386
+                },
+                "fullAddress": "1G-3G Jalan Danau Lumayan, Off Jalan Tasik Permaisuri 1, Bandar Sri Permaisuri, 56000 Cheras"
+            }
+        ],
+        "contactNumber": "01154275008",
+        "id": "F718",
+        "name": "Pen & Pepper Cafe Projek Bendera Putih",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 6.103459399999999,
+                    "longitude": 100.3643447
+                },
+                "fullAddress": "Bilik gerakan JKM Daerah"
+            }
+        ],
+        "contactNumber": "019-2615999",
+        "id": "F719",
+        "name": "Bilik gerakan JKM Daerah",
+        "remarks": "Bakul Prihatin Negara dengan menghubungi Bilik Gerakan JKM Daerah, Talian Kasih 15999 atau WhatsApp ke 019-2615999",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 6.103459399999999,
+                    "longitude": 100.3643447
+                },
+                "fullAddress": "Bilik gerakan JKM Daerah"
+            }
+        ],
+        "contactNumber": "019-2615999",
+        "id": "F720",
+        "name": "Bilik gerakan JKM Daerah",
+        "remarks": "Bakul Prihatin Negara dengan menghubungi Bilik Gerakan JKM Daerah, Talian Kasih 15999 atau WhatsApp ke 019-2615999",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.04304,
+                    "longitude": 101.7043939
+                },
+                "fullAddress": "3, Jalan SR 7/3, Taman Serdang Raya, 43300 Seri Kembangan, Selangor"
+            }
+        ],
+        "contactNumber": "01123319161",
+        "id": "F721",
+        "name": "Serdang Boys Food Bank",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 2.9737648,
+                    "longitude": 101.4595352
+                },
+                "fullAddress": "62A , Jalan Jed 4, bandar parklands,41200 Klang, Selangor ."
+            }
+        ],
+        "contactNumber": "0163530302",
+        "id": "F722",
+        "name": "Posstore Bandar Parklands ",
+        "remarks": "Every Saturday of July 9am-5pm",
+        "website": "https://www.facebook.com/108388448127586/posts/125985546367876/?d=n "
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 0.0,
+                    "longitude": 0.0
+                },
+                "fullAddress": ""
+            }
+        ],
+        "contactNumber": "",
+        "id": "F723",
+        "name": "",
+        "remarks": "",
+        "website": ""
+    },
+    {
+        "address": [
+            {
+                "coordinates": {
+                    "latitude": 3.1117052,
+                    "longitude": 101.6061692
+                },
+                "fullAddress": "Dewan KRT SS4, No. 46, Jalan SS 4C/1, Kelana Jaya, 47301, Petaling Jaya "
+            }
+        ],
+        "contactNumber": "0102208385",
+        "id": "F724",
+        "name": "Kelana Jaya-Ara Damansara ",
+        "remarks": "",
+        "website": ""
     }
 ]
