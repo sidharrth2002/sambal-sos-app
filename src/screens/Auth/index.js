@@ -20,6 +20,7 @@ import { LOGIN } from "../../features/counter/authSlice";
 import { GoogleLogin } from "react-google-login";
 import { useHistory } from "react-router-dom";
 import { useTranslation, Trans } from "react-i18next";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 import LoginMapAsset from "../../assets/png/login-map.png";
 
@@ -50,13 +51,46 @@ const Auth = () => {
             title: "Failed to Load",
             description: "Something went wrong on our side!",
             status: "error",
-            duration: 10000000000000,
+            duration: 10,
             isClosable: false,
             position: "top",
           });
         });
     } else {
       console.log("error");
+    }
+  };
+
+  const responseFacebook = async (facebookData) => {
+    if (facebookData) {
+      axios
+        .post(`${process.env.REACT_APP_API_URL}auth/facebook`, facebookData)
+        .then((res) => {
+          if (res.status === 201) {
+            dispatch(LOGIN(res.data));
+            history.push("/home");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          toast({
+            title: "Failed to Load",
+            description: "Something went wrong on our side!",
+            status: "error",
+            duration: 10,
+            isClosable: false,
+            position: "top",
+          });
+        });
+    } else {
+      toast({
+        title: "Failed to Load",
+        description: "Something went wrong on our side!",
+        status: "error",
+        duration: 10,
+        isClosable: false,
+        position: "top",
+      });
     }
   };
 
@@ -146,57 +180,100 @@ const Auth = () => {
         >
           <Box marginBottom="1rem">
             <Text fontFamily="Montserrat">
-              <Trans i18nKey="login-disclaimer">
-                {t("auth.login-disclaimer-1")}{" "}
-                <Link href="/privacy-policy" target="_blank" color="blue">
-                  {t("auth.privacy-policy")}
-                </Link>
-                . {t("auth.login-disclaimer-2")}.
-              </Trans>
+              By logging in, you agree to our{" "}
+              <Link href="/privacy-policy" target="_blank" color="blue">
+                privacy policy
+              </Link>
+              . We only use this authentication to get your email and protect
+              the app from unauthorised input.
             </Text>
           </Box>
-          <GoogleLogin
-            clientId={process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID}
-            render={(renderProps) => (
-              <Button
-                backgroundColor="#ff8c82"
-                color="white"
-                w="100%"
-                padding="28px 25px"
-                mt="0px"
-                onClick={() => {
-                  renderProps.onClick();
-                }}
-                disabled={renderProps.disabled}
-              >
-                <Flex
-                  borderRadius="8px"
-                  fontFamily="Poppins"
-                  width="100%"
-                  flexDirection="row"
-                  justifyContent="center"
-                  alignItems="center"
-                  position="relative"
+          <VStack spacing={5}>
+            <GoogleLogin
+              clientId={process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID}
+              render={(renderProps) => (
+                <Button
+                  backgroundColor="#FFFFFF"
+                  boxShadow="lg"
+                  w="100%"
+                  padding="28px 25px"
+                  mt="0px"
+                  onClick={() => {
+                    renderProps.onClick();
+                  }}
+                  disabled={renderProps.disabled}
                 >
-                  <Image
-                    alt="Google Login Button Svg"
-                    src={BDGraphics.GoogleLoginIcon}
-                    height="18px"
-                    width="18px"
-                    mr="20px"
-                  />
-                  <Text fontWeight="light" color="black">
-                    {t("auth.google-button")}
-                  </Text>
-                </Flex>
-              </Button>
-            )}
-            autoLoad={false}
-            buttonText="Log in with Google"
-            onSuccess={handleGoogleLogin}
-            onFailure={handleGoogleLogin}
-            cookiePolicy={"single_host_origin"}
-          />
+                  <Flex
+                    borderRadius="8px"
+                    fontFamily="Poppins"
+                    width="100%"
+                    flexDirection="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    position="relative"
+                  >
+                    <Image
+                      alt="Google Login Button Svg"
+                      src={BDGraphics.GoogleLoginIcon}
+                      height="25px"
+                      width="25px"
+                      mr="20px"
+                    />
+                    <Text fontWeight="light" color="black">
+                      Login with Google
+                    </Text>
+                  </Flex>
+                </Button>
+              )}
+              autoLoad={false}
+              buttonText="Log in with Google"
+              onSuccess={handleGoogleLogin}
+              onFailure={handleGoogleLogin}
+              cookiePolicy={"single_host_origin"}
+            />
+            <FacebookLogin
+              size="medium"
+              autoLoad={false}
+              appId={process.env.REACT_APP_FACEBOOK_APP_ID}
+              fields="name,email"
+              callback={responseFacebook}
+              render={(renderProps) => (
+                <Button
+                  backgroundColor="#5476b9"
+                  _hover={null}
+                  color="white"
+                  boxShadow="lg"
+                  outline="#1877F2"
+                  w="100%"
+                  padding="28px 25px"
+                  mt="0px"
+                  onClick={() => {
+                    renderProps.onClick();
+                  }}
+                  disabled={renderProps.disabled}
+                >
+                  <Flex
+                    borderRadius="8px"
+                    fontFamily="Poppins"
+                    width="100%"
+                    flexDirection="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    position="relative"
+                  >
+                    <Image
+                      alt="Google Login Button Svg"
+                      src={BDGraphics.FacebookIcon}
+                      height="25px"
+                      width="25px"
+                      mr="20px"
+                    />
+                    <Text fontWeight="light">Login with Facebook</Text>
+                  </Flex>
+                </Button>
+              )}
+            />
+          </VStack>
         </Flex>
       </Flex>
       <Center bottom="0" padding="1rem">

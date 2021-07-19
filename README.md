@@ -36,7 +36,10 @@ If you're willing to support us financially, please do get in touch with us!
 Monetary donations will be primarily utilized for maintenance costs of the [Sambal SOS App](http://sambalsos.com/), which includes: server costs, domain costs, etc. 
 
 ### Development
-Sambal SOS is built from the ground up on a monster stack: React.js (Chakra UI, Redux), Node.js (Express), PostgreSQL and Google Cloud. Ben Awad would be proud. The frontend is hosted on Vercel, while our backend lives on App Engine.
+Sambal SOS is built from the ground up on a monster stack: React.js (Chakra UI, Redux), Node.js (Express), PostgreSQL and Google Cloud.
+Read about the development workflow, the issues we faced and how we solved them [here](https://medium.com/@sidharrth2002/how-sambal-sos-scaled-the-complete-development-workflow-8b5401bd952c).
+
+The frontend is hosted on Vercel, while our backend lives on App Engine.
 
 If you have experience in any of the following skills, you're exactly who we're looking for to join the team:
 - frontend development (JavaScript, React.js)
