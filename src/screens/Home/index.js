@@ -19,6 +19,7 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import NavigationFooter from "../../components/NavigationFooter";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+import Moment from "react-moment";
 import mapStyles from "../../utils/googleMapsStyle";
 import * as BDGraphics from "../../assets/";
 import foodbanks from "../FoodBanks/foodbanks.json";
@@ -121,16 +122,6 @@ const Home = () => {
         });
       });
   }, []);
-
-  const toastOpener = () => {
-    toast({
-      title: "This feature is coming soon",
-      status: "warning",
-      duration: 1500,
-      isClosable: true,
-      position: "top",
-    });
-  };
 
   return (
     <div>
@@ -413,6 +404,31 @@ const Home = () => {
                   ) : (
                     <></>
                   )}
+                  {selectedMarker.createdAt ? (
+                    <Flex
+                      borderRadius="8px"
+                      w="100%"
+                      px="0.2rem"
+                      flexDirection="row"
+                      justifyContent="flex-end"
+                      alignItems="center"
+                      marginBottom="0.5rem"
+                    >
+                      <Image
+                        src={BDGraphics.ClockIcon}
+                        alt=""
+                        height="12px"
+                        mr="5px"
+                      />
+                      <Text fontSize="9px" color="#2F2F2F">
+                        <Moment format="YYYY/MM/DD HH:MM">
+                          {selectedMarker.createdAt}
+                        </Moment>
+                      </Text>
+                    </Flex>
+                  ) : (
+                    <></>
+                  )}
                   <Text
                     textAlign="start"
                     fontSize="12px"
@@ -424,54 +440,6 @@ const Home = () => {
                 </Center>
               </HStack>
             </Center>
-            <Flex
-              className="button-groups"
-              flexDirection="row"
-              justifyContent="space-around"
-              alignContent="center"
-              padding="1rem"
-              w="100%"
-            >
-              <Box
-                w="100%"
-                mr="10px"
-                onClick={() => {
-                  toastOpener();
-                }}
-              >
-                <Button
-                  fontFamily="Montserrat"
-                  fontWeight="600"
-                  w="100%"
-                  padding="1.5rem"
-                  backgroundColor="#5CFFC5"
-                >
-                  Up-Vote{" "}
-                  <Image ml="5px" src={BDGraphics.UpvoteIcon} height="15px" />{" "}
-                </Button>
-              </Box>
-              <Box
-                w="100%"
-                onClick={() => {
-                  toastOpener();
-                }}
-              >
-                <Button
-                  fontFamily="Montserrat"
-                  fontWeight="600"
-                  w="100%"
-                  padding="1.5rem"
-                  backgroundColor="#FFECA7"
-                >
-                  Supported{" "}
-                  <Image
-                    ml="5px"
-                    src={BDGraphics.SupportedIcon}
-                    height="15px"
-                  />{" "}
-                </Button>
-              </Box>
-            </Flex>
           </>
         ) : (
           <Text>No Selected Marker</Text>
