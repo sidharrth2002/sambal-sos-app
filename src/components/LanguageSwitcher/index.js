@@ -7,7 +7,7 @@ import { resources } from "../../i18n";
 import * as SSIcons from "../../assets";
 
 const Index = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(
     `${i18n.languages[0]}`
   );
@@ -17,9 +17,9 @@ const Index = () => {
   useEffect(() => {
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
-    function handleClick(e: any) {
+    function handleClick(e) {
       if (componentRef && componentRef.current) {
-        const ref: any = componentRef.current;
+        const ref = componentRef.current;
         if (ref.contains(e.target)) {
           setFocused(true);
         } else {
@@ -38,6 +38,7 @@ const Index = () => {
     return Object.keys(resources).map((key) => {
       return (
         <Flex
+          key={key}
           justifyContent="center"
           alignItems="center"
           borderRadius="8px"
@@ -49,7 +50,12 @@ const Index = () => {
             changeLanguage(key);
           }}
         >
-          <Text>{key}</Text>
+          {key === "English" ? ( // display flag on each language
+            <img src={SSIcons.UKFlag} />
+          ) : (
+            <img src={SSIcons.MalaysiaFlag} />
+          )}
+          <Text marginLeft="5px">{key}</Text>
         </Flex>
       );
     });

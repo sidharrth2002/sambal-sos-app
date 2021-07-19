@@ -18,17 +18,12 @@ import { useToast } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import NavigationFooter from "../../components/NavigationFooter";
-import {
-  GoogleMap,
-  useLoadScript,
-  Marker,
-  useJsApiLoader,
-} from "@react-google-maps/api";
+import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+import Moment from "react-moment";
 import mapStyles from "../../utils/googleMapsStyle";
 import * as BDGraphics from "../../assets/";
 import foodbanks from "../FoodBanks/foodbanks.json";
 
-import * as BDAPI from "../../api/index";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 
@@ -39,7 +34,7 @@ const Home = () => {
   const { t } = useTranslation();
   const accessToken = useSelector((state) => state.auth.accessToken);
   const toast = useToast();
-  const [center, setCenter] = useState({
+  const [center] = useState({
     lat: 3.145081052343874,
     lng: 101.70524773008304,
   });
@@ -51,6 +46,7 @@ const Home = () => {
   const [foodbankModalVisible, setFoodbankModalVisible] = useState(false);
   const [showFoodbanks, setShowFoodBanks] = useState(true);
   const [showSOS, setShowSOS] = useState(true);
+  // eslint-disable-next-line no-unused-vars
   const [map, setMap] = useState(null);
   const [libraries] = useState(["places"]);
 
@@ -63,7 +59,7 @@ const Home = () => {
     disableDefaultUI: true,
     zoomControl: true,
   };
-  const { isLoaded, loadError } = useJsApiLoader({
+  const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
@@ -73,6 +69,7 @@ const Home = () => {
     setMap(map);
   }, []);
 
+  // eslint-disable-next-line no-unused-vars
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null);
   }, []);
@@ -113,6 +110,7 @@ const Home = () => {
         });
         setLoading(false);
       })
+      // eslint-disable-next-line no-unused-vars
       .catch((err) => {
         toast({
           title: "Failed to Load",
@@ -124,57 +122,6 @@ const Home = () => {
         });
       });
   }, []);
-
-  const InfoBoxTemplate = (latitude, longitude, image) => {
-    let googleMapUrl = `http://maps.google.com/?q=${latitude},${longitude}`;
-    return (
-      <div
-        style={{
-          backgroundColor: "white",
-          padding: "10px",
-          borderRadius: "8px",
-          fontSize: "15px",
-        }}
-      >
-        <a target="_blank" href={googleMapUrl}>
-          <p>Go to google maps</p>
-        </a>
-
-        <img width="125px" src={image} alt="image url" />
-      </div>
-    );
-  };
-
-  const toastOpener = () => {
-    toast({
-      title: "This feature is coming soon",
-      status: "warning",
-      duration: 1500,
-      isClosable: true,
-      position: "top",
-    });
-  };
-
-  const getLowestQuality = (url) => {
-    console.log(
-      url.split("https://res.cloudinary.com/benderaputihapp/image/upload/")
-    );
-    if (url.includes("benderaputihapp")) {
-      let newURL =
-        "https://res.cloudinary.com/benderaputihapp/image/upload/q_20/" +
-        url.split(
-          "https://res.cloudinary.com/benderaputihapp/image/upload/"
-        )[1];
-      return newURL;
-    } else if (url.includes("sambal-sos")) {
-      let newURL =
-        "https://res.cloudinary.com/sambal-sos/image/upload/q_20/" +
-        url.split("https://res.cloudinary.com/sambal-sos/image/upload/")[1];
-      return newURL;
-    } else {
-      return url;
-    }
-  };
 
   return (
     <div>
@@ -457,6 +404,31 @@ const Home = () => {
                   ) : (
                     <></>
                   )}
+                  {selectedMarker.createdAt ? (
+                    <Flex
+                      borderRadius="8px"
+                      w="100%"
+                      px="0.2rem"
+                      flexDirection="row"
+                      justifyContent="flex-end"
+                      alignItems="center"
+                      marginBottom="0.5rem"
+                    >
+                      <Image
+                        src={BDGraphics.ClockIcon}
+                        alt=""
+                        height="12px"
+                        mr="5px"
+                      />
+                      <Text fontSize="9px" color="#2F2F2F">
+                        <Moment format="YYYY/MM/DD HH:MM" local>
+                          {selectedMarker.createdAt}
+                        </Moment>
+                      </Text>
+                    </Flex>
+                  ) : (
+                    <></>
+                  )}
                   <Text
                     textAlign="start"
                     fontSize="12px"
@@ -468,54 +440,6 @@ const Home = () => {
                 </Center>
               </HStack>
             </Center>
-            <Flex
-              className="button-groups"
-              flexDirection="row"
-              justifyContent="space-around"
-              alignContent="center"
-              padding="1rem"
-              w="100%"
-            >
-              <Box
-                w="100%"
-                mr="10px"
-                onClick={() => {
-                  toastOpener();
-                }}
-              >
-                <Button
-                  fontFamily="Montserrat"
-                  fontWeight="600"
-                  w="100%"
-                  padding="1.5rem"
-                  backgroundColor="#5CFFC5"
-                >
-                  Up-Vote{" "}
-                  <Image ml="5px" src={BDGraphics.UpvoteIcon} height="15px" />{" "}
-                </Button>
-              </Box>
-              <Box
-                w="100%"
-                onClick={() => {
-                  toastOpener();
-                }}
-              >
-                <Button
-                  fontFamily="Montserrat"
-                  fontWeight="600"
-                  w="100%"
-                  padding="1.5rem"
-                  backgroundColor="#FFECA7"
-                >
-                  Supported{" "}
-                  <Image
-                    ml="5px"
-                    src={BDGraphics.SupportedIcon}
-                    height="15px"
-                  />{" "}
-                </Button>
-              </Box>
-            </Flex>
           </>
         ) : (
           <Text>No Selected Marker</Text>
