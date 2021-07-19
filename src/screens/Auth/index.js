@@ -44,7 +44,7 @@ const Auth = () => {
                     title: "Failed to Load",
                     description: "Something went wrong on our side!",
                     status: "error",
-                    duration: 10000000000000,
+                    duration: 10,
                     isClosable: false,
                     position: 'top'
                 })
@@ -72,7 +72,7 @@ const Auth = () => {
                     title: "Failed to Load",
                     description: "Something went wrong on our side!",
                     status: "error",
-                    duration: 10000000000000,
+                    duration: 10,
                     isClosable: false,
                     position: 'top'
                 })
@@ -82,7 +82,7 @@ const Auth = () => {
                 title: "Failed to Load",
                 description: "Something went wrong on our side!",
                 status: "error",
-                duration: 10000000000000,
+                duration: 10,
                 isClosable: false,
                 position: 'top'
             })
@@ -138,7 +138,7 @@ const Auth = () => {
                         size="medium"
                         autoLoad={false}
                         appId={process.env.REACT_APP_FACEBOOK_APP_ID}
-                        fields="name,email,picture"
+                        fields="name,email"
                         callback={responseFacebook}
                         render={renderProps => (
                             <Button backgroundColor="#5476b9" _hover={null} color="white" boxShadow="lg" outline="#1877F2" w="100%" padding="28px 25px" mt="0px" onClick={ () => { renderProps.onClick()} } disabled={renderProps.disabled}>
