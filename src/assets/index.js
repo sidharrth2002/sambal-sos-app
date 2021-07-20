@@ -28,6 +28,8 @@ import MalaysiaFlag from "./png/Malaysia.png";
 import UKFlag from "./png/UK.png";
 import ClockIcon from "./svgs/clock.svg";
 import FacebookIcon from "./svgs/facebook.svg";
+import SirenIconPNG from "./png/siren.png";
+import FoodBankIconPNG from "./png/groceries.png";
 
 export {
   MaintenanceSVG,
@@ -60,4 +62,6 @@ export {
   UKFlag,
   ClockIcon,
   FacebookIcon,
+  SirenIconPNG,
+  FoodBankIconPNG,
 };

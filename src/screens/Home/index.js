@@ -18,7 +18,12 @@ import { useToast } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import NavigationFooter from "../../components/NavigationFooter";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  Marker,
+  MarkerClusterer,
+  useJsApiLoader,
+} from "@react-google-maps/api";
 import Moment from "react-moment";
 import mapStyles from "../../utils/googleMapsStyle";
 import * as BDGraphics from "../../assets/";
@@ -147,51 +152,74 @@ const Home = () => {
             setFoodbankModalVisible(false);
           }}
         >
-          {flags.map((flag, index) => {
-            return (
-              <Marker
-                visible={showSOS}
-                key={index}
-                position={{
-                  lat: parseFloat(flag.lat),
-                  lng: parseFloat(flag.lng),
-                }}
-                icon={{
-                  url: "/siren.svg",
-                  scaledSize: new window.google.maps.Size(30, 30),
-                  origin: new window.google.maps.Point(0, 0),
-                  anchor: new window.google.maps.Point(15, 15),
-                }}
-                onClick={() => {
-                  setSelectedMarker(flag);
-                  setFoodbankModalVisible(false);
-                  setModalVisible(true);
-                }}
-              />
-            );
-          })}
+          <MarkerClusterer maxZoom={12} ignoreHidden={true}>
+            {(clusterer) => {
+              const sosMarkers = flags.map((flag, index) => {
+                return (
+                  <Marker
+                    visible={showSOS}
+                    key={index}
+                    clusterer={clusterer}
+                    position={{
+                      lat: parseFloat(flag.lat),
+                      lng: parseFloat(flag.lng),
+                    }}
+                    icon={{
+                      url: BDGraphics.SirenIconPNG,
+                      scaledSize: new window.google.maps.Size(30, 30),
+                      origin: new window.google.maps.Point(0, 0),
+                      anchor: new window.google.maps.Point(15, 15),
+                    }}
+                    options={{
+                      optimized: true,
+                    }}
+                    onVisibleChanged={() => {
+                      if (index + 1 === flags.length) {
+                        clusterer.repaint();
+                      }
+                    }}
+                    onClick={() => {
+                      setSelectedMarker(flag);
+                      setFoodbankModalVisible(false);
+                      setModalVisible(true);
+                    }}
+                  />
+                );
+              });
+              const foodbankMarkers = foodbanks.map((foodbank, index) => (
+                <Marker
+                  clusterer={clusterer}
+                  visible={showFoodbanks}
+                  key={index + flags.length + 1}
+                  position={{
+                    lat: parseFloat(foodbank.address[0].coordinates.latitude),
+                    lng: parseFloat(foodbank.address[0].coordinates.longitude),
+                  }}
+                  icon={{
+                    url: BDGraphics.FoodBankIconPNG,
+                    scaledSize: new window.google.maps.Size(20, 20),
+                    origin: new window.google.maps.Point(0, 0),
+                    anchor: new window.google.maps.Point(10, 10),
+                  }}
+                  options={{
+                    optimized: true,
+                  }}
+                  onVisibleChanged={() => {
+                    if (index + 1 === foodbanks.length) {
+                      clusterer.repaint();
+                    }
+                  }}
+                  onClick={() => {
+                    setSelectedFoodbank(foodbank);
+                    setModalVisible(false);
+                    setFoodbankModalVisible(true);
+                  }}
+                />
+              ));
 
-          {foodbanks.map((foodbank, index) => (
-            <Marker
-              visible={showFoodbanks}
-              key={index}
-              position={{
-                lat: parseFloat(foodbank.address[0].coordinates.latitude),
-                lng: parseFloat(foodbank.address[0].coordinates.longitude),
-              }}
-              icon={{
-                url: "/groceries.svg",
-                scaledSize: new window.google.maps.Size(20, 20),
-                origin: new window.google.maps.Point(0, 0),
-                anchor: new window.google.maps.Point(10, 10),
-              }}
-              onClick={() => {
-                setSelectedFoodbank(foodbank);
-                setModalVisible(false);
-                setFoodbankModalVisible(true);
-              }}
-            />
-          ))}
+              return sosMarkers.concat(foodbankMarkers);
+            }}
+          </MarkerClusterer>
         </GoogleMap>
       )}
       <Flex
