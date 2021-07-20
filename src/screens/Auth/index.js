@@ -238,7 +238,7 @@ const Auth = () => {
               fields="name,email"
               callback={responseFacebook}
               isMobile={true}
-              // redirectUri="https://www.sambalsos.com/auth/facebook/callback"
+              redirectUri="https://www.sambalsos.com/"
               disableMobileRedirect={false}
               render={(renderProps) => (
                 <Button
