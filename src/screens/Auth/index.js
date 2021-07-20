@@ -237,9 +237,9 @@ const Auth = () => {
               appId={process.env.REACT_APP_FACEBOOK_APP_ID}
               fields="name,email"
               callback={responseFacebook}
-              isMobile={false}
-              redirectUri="https://www.sambalsos.com/"
-              disableMobileRedirect={true}
+              isMobile={true}
+              // redirectUri="https://www.sambalsos.com/auth/facebook/callback"
+              disableMobileRedirect={false}
               render={(renderProps) => (
                 <Button
                   backgroundColor="#5476b9"
