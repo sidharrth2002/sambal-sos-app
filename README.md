@@ -1,5 +1,32 @@
-# The Sambal SOS App (Formerly the Bendera Putih App)  🏳 🇲🇾
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<h1 align="center">The Sambal SOS App</h1>
+
+<p align="center">
+    <img src="https://scontent.fpen1-1.fna.fbcdn.net/v/t1.6435-9/209366870_107350384947725_2117872645097933309_n.png?_nc_cat=107&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ymfBYb-3XBkAX-wE__9&_nc_ht=scontent.fpen1-1.fna&oh=cc77f617d14b12cbbfdddaea349330a6&oe=60FD4FB8" align="center" width="300px">
+</p>
+
+<h4 align="center"> <i> Formerly the Bendera Putih App </i> </h4>
+
+<p align="center">
+    <img src="https://img.shields.io/github/license/sidharrth2002/sambal-sos-app?style=for-the-badge">
+<a href="https://discord.gg/kJUVyfzjeZ">
+    <img src="https://img.shields.io/discord/859805317859377173?style=for-the-badge" alt="discord - users online" />
+</a>
+<img src="https://img.shields.io/github/languages/code-size/sidharrth2002/sambal-sos-app?style=for-the-badge">
+</p>
+
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [The #benderaputih Movement](#the-benderaputih-movement)
+- [Usage](#usage)
+- [About us](#about-us)
+- [Contributing](#contributing)
+  - [Monetary](#monetary)
+  - [Development](#development)
+  - [Other](#other)
+- [Features & Milestones](#features--milestones)
+- [Contact us](#contact-us)
+- [Publicity](#publicity)
+- [License](#license)
 
 [Sambal SOS App](http://sambalsos.com/) is a social welfare platform that supports Malaysians in need by bridging the gap of social inequity. 
 
@@ -30,6 +57,8 @@ We're a team of student developers passionate to make a positive impact to our c
 
 ## Contributing
 Currently, our team consists of mostly student developers, and we are running on a 0 budget. Maintaining the [Sambal SOS App](http://sambalsos.com/) involves financial costs, hence we are opening up to the public for volunteering or contributions.
+
+read [contributing.md](./contributing.md) for more info about how to help out
 
 ### Monetary
 If you're willing to support us financially, please do get in touch with us!
@@ -63,6 +92,9 @@ Let's connect! 📧
 [Email ✉](mailto:info.benderaputih@gmail.com)
 \
 [Discord 👾](https://discord.gg/9QeJu9M9)
+
+## Publicity 
+read [publicity.md](./publicity.md) for more details of our media outreach
 
 ## License
 [Sambal SOS App](http://sambalsos.com/) is open source, licensed under the [MIT](https://choosealicense.com/licenses/mit/) license
