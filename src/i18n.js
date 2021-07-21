@@ -2,6 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import en from "./translations/en/translations.json";
 import malay from "./translations/malay/translations.json";
+import cn from "./translations/cn/translations.json";
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -13,6 +14,9 @@ export const resources = {
   },
   Malay: {
     translation: malay,
+  },
+  Chinese: {
+    translation: cn,
   },
 };
 
