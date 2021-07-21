@@ -34,6 +34,36 @@ const Index = () => {
     i18n.changeLanguage(value);
   };
 
+  const LanguageIconRenderer = ({ imageKey }) => {
+    if (imageKey === "English") {
+      return (
+        <img src={SSIcons.UKFlag} alt="Flags" height="18px" width="18px" />
+      );
+    } else if (imageKey === "Chinese") {
+      return (
+        <img src={SSIcons.ChinaFlag} alt="Flags" height="18px" width="18px" />
+      );
+    } else if (imageKey === "Malay") {
+      return (
+        <img
+          src={SSIcons.MalaysiaFlag}
+          alt="Flags"
+          height="18px"
+          width="18px"
+        />
+      );
+    } else {
+      return (
+        <img
+          src={SSIcons.MalaysiaFlag}
+          alt="Flags"
+          height="18px"
+          width="18px"
+        />
+      );
+    }
+  };
+
   const LanguageChooserBlockRenderer = () => {
     return Object.keys(resources).map((key) => {
       return (
@@ -50,11 +80,7 @@ const Index = () => {
             changeLanguage(key);
           }}
         >
-          {key === "English" ? ( // display flag on each language
-            <img src={SSIcons.UKFlag} />
-          ) : (
-            <img src={SSIcons.MalaysiaFlag} />
-          )}
+          <LanguageIconRenderer imageKey={key} />
           <Text marginLeft="5px">{key}</Text>
         </Flex>
       );
