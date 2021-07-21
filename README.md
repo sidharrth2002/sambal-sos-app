@@ -14,19 +14,25 @@
 <img src="https://img.shields.io/github/languages/code-size/sidharrth2002/sambal-sos-app?style=for-the-badge">
 </p>
 
-## Table of Contents
-- [Table of Contents](#table-of-contents)
-- [The #benderaputih Movement](#the-benderaputih-movement)
-- [Usage](#usage)
-- [About us](#about-us)
-- [Contributing](#contributing)
-  - [Monetary](#monetary)
-  - [Development](#development)
-  - [Other](#other)
-- [Features & Milestones](#features--milestones)
-- [Contact us](#contact-us)
-- [Publicity](#publicity)
-- [License](#license)
+# Table of Contents
+  - [The #benderaputih Movement](#the-benderaputih-movement)
+  - [Usage](#usage)
+  - [About us](#about-us)
+  - [Contributing](#contributing)
+    - [Prerequisites](#prerequisites)
+    - [How to Install the app](#how-to-install-the-app)
+    - [Project Structure](#project-structure)
+    - [Protocols](#protocols)
+    - [Pull Request Template](#pull-request-template)
+    - [Branches](#branches)
+    - [Admins](#admins)
+    - [Monetary](#monetary)
+    - [Development](#development)
+    - [Other](#other)
+  - [Features & Milestones](#features--milestones)
+  - [Contact us](#contact-us)
+  - [Publicity](#publicity)
+  - [License](#license)
 
 [Sambal SOS App](http://sambalsos.com/) is a social welfare platform that supports Malaysians in need by bridging the gap of social inequity. 
 
@@ -56,9 +62,104 @@ We believe that our project will provide the necessary support for communities n
 We're a team of student developers passionate to make a positive impact to our community. The development of the [Sambal SOS App](http://sambalsos.com/) is a continuous process for the time being, and we believe that developing this app is a way for us to volunteer and contribute to the communities in Malaysia.
 
 ## Contributing
+<img src="https://img.shields.io/github/issues/sidharrth2002/sambal-sos-app?style=for-the-badge">
+
+<img src="https://img.shields.io/github/issues-pr/sidharrth2002/sambal-sos-app?style=for-the-badge">
+
+<img src="https://img.shields.io/website?down_color=red&down_message=website%20down&style=for-the-badge&up_color=green&up_message=website%20up%20and%20running&url=https%3A%2F%2Fwww.sambalsos.com">
+
+<img src="https://img.shields.io/github/contributors/sidharrth2002/sambal-sos-app?style=for-the-badge">
+
 Currently, our team consists of mostly student developers, and we are running on a 0 budget. Maintaining the [Sambal SOS App](http://sambalsos.com/) involves financial costs, hence we are opening up to the public for volunteering or contributions.
 
-read [contributing.md](./contributing.md) for more info about how to help out
+This Project is completely Open Source and we welcome all efforts to help the app grow and develop
+
+### Prerequisites 
+This app uses multiple APIs and has a list of env variables needed to start the app 
+
+follow the [.env template](./.env.example) to setup your own
+
+if you don't have the variables some parts of the app will not work
+
+### How to Install the app
+
+1. Clone the project
+   `$ gh repo clone sidharrth2002/sambal-sos-app `
+
+2. Install Dependencies
+   `$ npm install`
+
+3. Start the Development Server
+   ` $ npm start`
+
+> the script will bring you to your default browser, wait for the development server to fully start and you are ready to go
+
+### Project Structure
+
+| Directory | Description                     |
+| --------- | ------------------------------- |
+| /public   | Stores static files and images |
+| /src      | Stores main content of project  |
+
+> src
+> - **/api**-> endpoint to get geolocation data 
+> -  **/app** -> handles state in the app (redux)
+> - **/assets** -> static assets
+> - **/components** -> organize components
+> - **/constants** -> stores configurations and constants
+> - **/features** -> currently contains the auth slice (handles authentication and state of auth)
+> - **/screens** handles each page of the app
+    - *Auth* -> login & signup page
+    - *Foodbanks* -> contains a static list of food banks and the respective page
+    - *Home* -> contains the main page of the app (with the google maps component)
+    - *PrivacyPolicy* -> self explanatory
+    - *ReportForm* -> form page to report or request SOS
+> - **/style** -> stores the styling of the appp
+> - **/translations** -> contains i18n translation files
+> - **/utils** -> extra functions to help with the app
+
+### Protocols
+Please Follow these suggestions to make sure that the repo is organized and other people who wish to contribute can have a nice time doing so
+
+> if you wish to be on the main team and actively contribute, we would recommend that you join our [discord server](https://discord.gg/kJUVyfzjeZ)
+
+otherwise you can:
+
+1. Open an issue about something 
+2. Comment on Issues and Pull Requests
+3. Giving Suggestions
+4. Bug Reports 
+
+### Pull Request Template
+```NAMING CONVENTION: FEAT/FIX/REFACTOR nameOfContribution
+
+What type of change did you make?
+feat (add something new) or fix (fix an issue) or refactor (no changes to features, e.g. removing comments, logs)
+
+Describe the changes:
+1.
+2.
+3.
+
+Add screenshots:
+
+
+[] Does your change break anything?
+
+Mention someone for review
+@someone
+```
+
+### Branches
+main -> development branch, fork or clone from this branch
+
+production -> deployed to vercel, don't touch this
+
+## Admins
+@sidharrth2002
+@Shaunmak1214
+
+contact them for more information
 
 ### Monetary
 If you're willing to support us financially, please do get in touch with us!
@@ -94,7 +195,25 @@ Let's connect! 📧
 [Discord 👾](https://discord.gg/9QeJu9M9)
 
 ## Publicity 
-read [publicity.md](./publicity.md) for more details of our media outreach
+
+<img src="https://img.shields.io/github/forks/sidharrth2002/sambal-sos-app?style=social">
+<img src="https://img.shields.io/github/watchers/sidharrth2002/sambal-sos-app?style=social">
+<img src="https://img.shields.io/github/stars/sidharrth2002/sambal-sos-app?style=social">
+
+In the previous months, our app has gained the attention of the media, helping us widen our userbase
+
+here are the articles related to our app:
+1. JUICE (https://juiceonline.com/bendera-putih-app-track-white-flag-food-bank-locations/)
+2. Vulcan (https://vulcanpost.com/751770/kibar-bendera-putih-app-find-white-flags-food-banks/)
+3. SAYS (https://says.com/my/tech/student-built-bendera-putih-app-allows-users-to-upload-white-flags-food-banks-on-map)
+4. TechNave (https://technave.com/gadget/Local-students-developed-an-app-called-Sambal-SOS-to-assist-the-Bendera-Putih-movement-25579.html)
+5. Firstclasse (https://firstclasse.com.my/bendera-putih-app-sambal-sos-developers/)
+6. The Star (https://www.wargabiz.com.my/2021/07/07/four-local-students-launched-sambal-sos-app-for-msians-to-locate-white-flags-food-banks/)
+7. KL foodie (https://klfoodie.com/sambal-sos-app-bendera-putih-malaysia)
+
+Please help us spread word about the app on your favorite social media platforms
+
+people knowing about our existance helps grow the app and provides assistance to the needy, especially during times of crisis
 
 ## License
 [Sambal SOS App](http://sambalsos.com/) is open source, licensed under the [MIT](https://choosealicense.com/licenses/mit/) license
