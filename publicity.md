@@ -12,7 +12,7 @@ here are the articles related to our app:
 3. SAYS (https://says.com/my/tech/student-built-bendera-putih-app-allows-users-to-upload-white-flags-food-banks-on-map)
 4. TechNave (https://technave.com/gadget/Local-students-developed-an-app-called-Sambal-SOS-to-assist-the-Bendera-Putih-movement-25579.html)
 5. Firstclasse (https://firstclasse.com.my/bendera-putih-app-sambal-sos-developers/)
-6. The Start (https://www.wargabiz.com.my/2021/07/07/four-local-students-launched-sambal-sos-app-for-msians-to-locate-white-flags-food-banks/)
+6. The Star (https://www.wargabiz.com.my/2021/07/07/four-local-students-launched-sambal-sos-app-for-msians-to-locate-white-flags-food-banks/)
 7. KL foodie (https://klfoodie.com/sambal-sos-app-bendera-putih-malaysia)
 
 Please help us spread word about the app on your favorite social media platforms
