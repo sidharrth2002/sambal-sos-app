@@ -1,62 +1,62 @@
 {
-    "auth": {
-        "title": "Sambal SOS",
-        "tagline": "Crowdsourcing aid data across the nation",
-        "rebranded": "rebranded",
-        "upgraded": "upgraded",
-        "bendera-putih-redirect": "If you're looking for the Bendera Putih app, this is the rebranded and upgraded version for a better user experience.",
-        "bendera-putih-redirect-1": "If you're looking for the Bendera Putih app, this is the",
-        "bendera-putih-redirect-2": "version for a better user experience.",
-        "and": "and",
-        "login-disclaimer": "By logging in, you agree to our privacy policy. We only use this authentication to get your email and protect the app from unauthorised input.",
-        "login-disclaimer-1": "By logging in, you agree to our",
-        "login-disclaimer-2": "We only use this authentication to get your email and protect the app from unauthorised input",
-        "privacy-policy": "privacy policy",
-        "google-button": "Login with Google"
-    },
-    "home": {
-        "food-banks": "Food Banks",
-        "sos": "SOS",
-        "ask-for-help": "Ask for help",
-        "report-sos": "Report SOS"
-    },
-    "navigation": {
-        "find-sos": "Find SOS",
-        "food-banks": "Food Banks",
-        "report-sos": "Report SOS",
-        "log-out": "Log Out"
-    },
-    "foodbanks": {
-        "page-update-notice": "This page will soon be updated through a crowdsourced Google Sheets file!",
-        "add-foodbank-form": "For now, if you know a foodbank that you would like the team to add to the app, please fill in the form here.",
-        "go-to-form": "Go to form",
-        "open-in-google-maps": "Open in Google Maps"
-    },
-    "report-form": {
-        "report-for-help": "REPORT FOR HELP",
-        "image-added": "Image Added! 😄",
-        "add-image-prompt": "Add an image (We want to protect privacy. Please just take a picture in front of the house.)",
-        "should-not-be-a-white-flag": "There should not be a white flag in the image.",
-        "upload-disclaimer": "By uploading this image, you understand that the image will be public. Please ensure that there is no privacy breach. Your picture will be reviewed.",
-        "set-address": "Set the address",
-        "location-set": "Location has been set! 😄",
-        "use-location-button": "Use My Location",
-        "or": "Or",
-        "where-are-you": "Where are you?",
-        "remarks": "Remarks",
-        "what-did-you-see": "Eg: What did you see? What do you need?",
-        "enter-your-phone-number": "Enter your phone number",
-        "phone-number": "Phone Number",
-        "optional": "Optional",
-        "enter-phone-number": "Enter your phone number",
-        "human-review-disclaimer": "In order to maintain a healthy environment on the Sambal SOS App, all reports made will be subject to human review. This is to ensure that the reports made on the Sambal SOS App are authentic, and respecting. Reports are typically approved/rejected within 24 hours of posting.",
-        "terms-title": "If you're creating an SOS report on the Sambal SOS App, do follow the following guidelines:",
-        "term-1": "Images could be, but not limited to: location of the report, screenshots of chat histories",
-        "term-2": "Images should not contain faces of people, or personal identifiable information",
-        "term-3": "Content in the SOS report should provide more details of the report so that other users of the app are able to discover the rough location of those who are in need",
-        "term-4": "Strictly no NSFW content, political content, sensitive issues, religious issues, or any other content that violates Article 10 of the Constitution of Malaysia",
-        "term-5": "By submitting the form, you agree to our",
-        "privacy-policy": "privacy policy",
-        "submit-button": "Submit"
-    }
+  "auth": {
+    "title": "Sambal SOS",
+    "tagline": "集中全国援助数据",
+    "rebranded": "重新命名",
+    "upgraded": "升级",
+    "bendera-putih-redirect": "如果您正在寻找 Bendera Putih App，这是为更好的用户体验而重新命名和升级的版本。",
+    "bendera-putih-redirect-1": "如果您正在寻找 Bendera Putih App，这是为更好的用户体验而",
+    "bendera-putih-redirect-2": "的版本。",
+    "and": "和",
+    "login-disclaimer": "登录即表示您同意我们的隐私政策。我们仅使用此认证来获取您的电子邮件，并保护应用程序以免受未经授权的输入。",
+    "login-disclaimer-1": "登录即表示您同意我们的",
+    "login-disclaimer-2": "我们仅使用此认证来获取您的电子邮件，并保护应用程序以免受未经授权的输入。",
+    "privacy-policy": "隐私政策",
+    "google-button": "使用 Google 登入"
+  },
+  "home": {
+    "food-banks": "食物银行",
+    "sos": "SOS (求救信号)",
+    "ask-for-help": "寻求帮助",
+    "report-sos": "报告 SOS"
+  },
+  "navigation": {
+    "find-sos": "寻找 SOS",
+    "food-banks": "食物银行",
+    "report-sos": "报告 SOS",
+    "log-out": "登出"
+  },
+  "foodbanks": {
+    "page-update-notice": "此页面将通过 Google 表格文件进行更新！",
+    "add-foodbank-form": "现在，如果您有希望我们团队在此平台添加的食物银行，请在此处填写表格。",
+    "go-to-form": "前往表格",
+    "open-in-google-maps": "打开 Google Maps 前往位置"
+  },
+  "report-form": {
+    "report-for-help": "SOS 求助报告",
+    "image-added": "已添加照片！😄",
+    "add-image-prompt": "添加一张照片（为了保护隐私，请只拍房子前的照片。）",
+    "should-not-be-a-white-flag": "图像中不应是白旗。",
+    "upload-disclaimer": "通过上传此照片，您了解该图片将是公开的，请确保不会侵犯到个人隐私。您的照片将被审查，才发布到此平台。",
+    "set-address": "设置地址",
+    "location-set": "成功设置您的地点！😄",
+    "use-location-button": "使用我的位置",
+    "or": "或者",
+    "where-are-you": "你在哪里？",
+    "remarks": "备注",
+    "what-did-you-see": "例如：您看到了什么？ 您需要什么？",
+    "enter-your-phone-number": "输入您的电话号码",
+    "phone-number": "填写电话号码",
+    "optional": "可选择性提供",
+    "enter-phone-number": "输入您的电话号码",
+    "human-review-disclaimer": "为了让 Sambal SOS App 保持个良好的环境，所有报告将进行人工审查。这是为了确保 Sambal SOS App 上的报告是真实以及尊重他人的。报告将在提交后大约24小时内获得批准或拒绝发布。",
+    "terms-title": "如果您要在 Sambal SOS App 上创建 SOS 报告，请遵循以下准则：",
+    "term-1": "照片能是但不限于： SOS 求救信号地点，聊天记录截图",
+    "term-2": "照片不应包含人脸或个人身份信息",
+    "term-3": "SOS 报告的内容中应提供更详细的信息，以让此平台的其他用户能够找到需要帮助的人大致的位置",
+    "term-4": "严格禁止不适宜公众场合的内容、政治内容、敏感问题、宗教问题或任何其他违反马来西亚宪法第 10 条的内容",
+    "term-5": "提交表格即表示您同意我们的",
+    "privacy-policy": "隐私政策",
+    "submit-button": "提交"
+  }
 }
