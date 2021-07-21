@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Input, VStack, Text, Link, Alert, Divider, Center, Image } from '@chakra-ui/react';
+import { Box, Input, VStack, Text, Link, Alert, Divider, Center, Image, Spinner } from '@chakra-ui/react';
 import { foodbanks } from './foodbanks'
 import NavigationFooter from '../../components/NavigationFooter';
 import InfiniteScroll from 'react-infinite-scroll-component'
@@ -47,7 +47,7 @@ const FoodBanks = () => {
                             next={loadMoreFB}
                             hasMore={hasMoreFB}
                             loader={
-                                <img src="/loader.gif" alt="loading spinner" style={{margin: "auto", width: "100px"}}/>
+                                <Spinner size="xl" color="red.500"></Spinner>
                             }
                             endMessage={
                                 <p style={{ textAlign: 'center' }}>
