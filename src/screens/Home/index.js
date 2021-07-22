@@ -370,7 +370,6 @@ const Home = () => {
                     src={selectedMarker?.image}
                     width="100%"
                     maxWidth="200px"
-                    h="100%"
                     marginRight="1rem"
                   />
                 </Box>
