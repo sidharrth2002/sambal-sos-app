@@ -7,7 +7,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *' # Once per day at midnight UTC (8am MYT)
-  
 
 jobs:
   build:
@@ -16,6 +15,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: production
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:

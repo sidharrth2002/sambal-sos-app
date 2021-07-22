@@ -340,7 +340,7 @@ const ReportForm = () => {
                 Step 1 of 4
               </Text>
               <Text fontSize="lg" fontFamily="Poppins" fontWeight="500">
-                Upload an image
+                {t("report-form.upload-image-title")}
               </Text>
             </Flex>
             <Flex
@@ -405,7 +405,7 @@ const ReportForm = () => {
                 Step 2 of 4
               </Text>
               <Text fontSize="lg" fontFamily="Poppins" fontWeight="500">
-                {t("report-form.location-set")}
+                {t("report-form.set-address")}
               </Text>
             </Flex>
             <Flex
@@ -531,7 +531,7 @@ const ReportForm = () => {
               alignItems="center"
             >
               <Textarea
-                placeholder="Eg: What did you see? What do you need?"
+                placeholder={t("report-form.what-did-you-see")}
                 onChange={handleRemark}
               />
             </Flex>
@@ -558,7 +558,7 @@ const ReportForm = () => {
               >
                 Step 4 of 4
               </Text>
-              <Text fontSize="sm" fontFamily="Poppins" fontWeight="500">
+              <Text fontSize="lg" fontFamily="Poppins" fontWeight="500">
                 {t("report-form.enter-your-phone-number")}
               </Text>
             </Flex>

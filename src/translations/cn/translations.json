@@ -12,7 +12,8 @@
     "login-disclaimer-1": "登录即表示您同意我们的",
     "login-disclaimer-2": "我们仅使用此认证来获取您的电子邮件，并保护应用程序以免受未经授权的输入。",
     "privacy-policy": "隐私政策",
-    "google-button": "使用 Google 登入"
+    "google-button": "使用 Google 登入",
+    "facebook-button": "使用 Facebook 登入"
   },
   "home": {
     "food-banks": "食物银行",
@@ -33,6 +34,7 @@
     "open-in-google-maps": "打开 Google Maps 前往位置"
   },
   "report-form": {
+    "upload-image-title": "上传图片",
     "report-for-help": "SOS 求助报告",
     "image-added": "已添加照片！😄",
     "add-image-prompt": "添加一张照片（为了保护隐私，请只拍房子前的照片。）",

@@ -39,11 +39,11 @@ const Index = () => {
       return (
         <img src={SSIcons.UKFlag} alt="Flags" height="18px" width="18px" />
       );
-    } else if (imageKey === "Chinese") {
+    } else if (imageKey === "中文") {
       return (
         <img src={SSIcons.ChinaFlag} alt="Flags" height="18px" width="18px" />
       );
-    } else if (imageKey === "Malay") {
+    } else if (imageKey === "Bahasa Malaysia") {
       return (
         <img
           src={SSIcons.MalaysiaFlag}
