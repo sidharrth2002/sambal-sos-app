@@ -180,12 +180,13 @@ const Auth = () => {
         >
           <Box marginBottom="1rem">
             <Text fontFamily="Montserrat">
-              By logging in, you agree to our{" "}
-              <Link href="/privacy-policy" target="_blank" color="blue">
-                privacy policy
-              </Link>
-              . We only use this authentication to get your email and protect
-              the app from unauthorised input.
+              <Trans i18nKey="login-disclaimer">
+                {t("auth.login-disclaimer-1")}{" "}
+                <Link href="/privacy-policy" target="_blank" color="blue">
+                  {t("auth.privacy-policy")}
+                </Link>
+                . {t("auth.login-disclaimer-2")}.
+              </Trans>
             </Text>
           </Box>
           <VStack spacing={5}>
@@ -220,13 +221,13 @@ const Auth = () => {
                       mr="20px"
                     />
                     <Text fontWeight="light" color="black">
-                      Login with Google
+                      {t("auth.google-button")}
                     </Text>
                   </Flex>
                 </Button>
               )}
               autoLoad={false}
-              buttonText="Log in with Google"
+              buttonText={t("auth.google-button")}
               onSuccess={handleGoogleLogin}
               onFailure={handleGoogleLogin}
               cookiePolicy={"single_host_origin"}
@@ -265,13 +266,13 @@ const Auth = () => {
                     position="relative"
                   >
                     <Image
-                      alt="Google Login Button Svg"
+                      alt="Facebook Login Button Svg"
                       src={BDGraphics.FacebookIcon}
                       height="25px"
                       width="25px"
                       mr="20px"
                     />
-                    <Text fontWeight="light">Login with Facebook</Text>
+                    <Text fontWeight="light">{t("auth.facebook-button")}</Text>
                   </Flex>
                 </Button>
               )}
