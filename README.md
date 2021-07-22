@@ -200,6 +200,15 @@ Let's connect! 📧
 <img src="https://img.shields.io/github/watchers/sidharrth2002/sambal-sos-app?style=social">
 <img src="https://img.shields.io/github/stars/sidharrth2002/sambal-sos-app?style=social">
 
+<br>
+
+<img src="https://img.shields.io/twitter/follow/SambalSos?style=social">
+
+<div style="background-color: white; width: 25px; height:25px;">
+  <a href="https://www.facebook.com/sambalsosapp"> 
+    <img src="https://image.flaticon.com/icons/png/512/124/124010.png" width="25px" height="25px">
+  </a>
+</div>
 In the previous months, our app has gained the attention of the media, helping us widen our userbase
 
 here are the articles related to our app:
