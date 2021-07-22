@@ -1,61 +1,64 @@
 {
-    "auth": {
-        "title": "Sambal SOS",
-        "tagline": "Pengumpulan data bantuan orang ramai di seluruh negara",
-        "rebranded": "dijenamakan semula",
-        "upgraded": "dikemaskini",
-        "bendera-putih-redirect": "Sekiranya anda mencari aplikasi Bendera Putih, ini adalah versi yang telah dijenamakan semula dan dikemaskini untuk pengalaman pengguna yang lebih baik.",
-        "bendera-putih-redirect-1": "Sekiranya anda mencari aplikasi Bendera Putih, ini adalah versi yang telah",
-        "bendera-putih-redirect-2": "untuk pengalaman pengguna yang lebih baik.",
-        "and": "dan",
-        "login-disclaimer": "Dengan log masuk, anda bersetuju dengan dasar privasi kami. Kami hanya menggunakan pengesahan ini untuk mendapatkan emel anda dan melindungi aplikasi daripada input yang tidak dibenarkan.",
-        "login-disclaimer-1": "Dengan log masuk, anda bersetuju dengan",
-        "login-disclaimer-2": "Kami hanya menggunakan pengesahan ini untuk mendapatkan emel anda dan melindungi aplikasi daripada input yang tidak dibenarkan",
-        "privacy-policy": "dasar privasi",
-        "google-button": "Log Masuk Dengan Google"
-    },
-    "home": {
-        "food-banks": "Bank Makanan",
-        "sos": "SOS",
-        "ask-for-help": "Minta Bantuan",
-        "report-sos": "Laporkan SOS"
-    },
-    "navigation": {
-        "find-sos": "Cari SOS",
-        "food-banks": "Bank Makanan",
-        "report-sos": "Laporkan SOS",
-        "log-out": "Log Keluar"
-    },
-    "foodbanks": {
-        "page-update-notice": "Halaman ini akan dikemaskini melalui data dari fail Google Sheets!",
-        "add-foodbank-form": "Sekiranya anda ingin meletakkan info berkaitan mana-mana Bank Makanan yang anda ketahui pada halaman ini, sila isikan borang di bawah.",
-        "go-to-form": "Isi borang",
-        "open-in-google-maps": "Buka dengan Google Maps"
-    },
-    "report-form": {
-        "report-for-help": "LAPORKAN UNTUK BANTUAN",
-        "image-added": "Gambar telah ditambah! 😄",
-        "add-image-prompt": "Muat naik gambar (Untuk menjaga hak dan privasi, sila ambil gambar hadapan rumah berkenaan sahaja.)",
-        "should-not-be-a-white-flag": "Gambar tersebut tidak terhad dengan hanya bendera putih.",
-        "upload-disclaimer": "Dengan memuat naik gambar ini, anda memahami bahawa gambar tersebut akan dipaparkan kepada khalayak ramai. Sila pastikan tidak berlaku sebarang perlanggaran privasi. Kami akan menyemak gambar ini terlebih dahulu.",
-        "location-set": "Lokasi telah ditetapkan! 😄",
-        "use-location-button": "Gunakan lokasi semasa",
-        "or": "Atau",
-        "where-are-you": "Dimanakah anda berada?",
-        "remarks": "Notis",
-        "what-did-you-see": "Contoh: Apa yang anda perhatikan? Apa yang anda perlukan?",
-        "enter-your-phone-number": "Masukkan nombor telefon anda",
-        "phone-number": "Nombor telefon",
-        "optional": "Pilihan",
-        "enter-phone-number": "Masukkan nombor telefon anda",
-        "human-review-disclaimer": "Kami akan menyemak terlebih dahulu semua laporan yang dihantar bagi memastikan laporan yang dibuat adalah sahih. Laporan anda akan diterima/ditolak dalam tempoh masa 24 jam selepas laporan dibuat.",
-        "terms-title": "Sila patuhi garis panduan berikut semasa membuat laporan SOS: ",
-        "term-1": "Gambar yang dimuat naik tidak hanya terhad kepada: lokasi laporan, tangkap layar perbualan di media sosial",
-        "term-2": "Gambar tersebut tidak boleh mengandungi identiti, atau apa-apa informasi peribadi",
-        "term-3": "Kandungan yang diletakkan dalam laporan SOS perlulah jelas supaya pengguna lain dapat mengenal pasti lokasi tersebut",
-        "term-4": "Tidak mengandungi bahan lucah, isu politik, agama dan isu sensitif yang lain yang boleh disabitkan atas kesalahan di bawah Perkara 10 Perlembagaan Persekutuan Malaysia",
-        "term-5": "Dengan menghantar borang ini, anda bersetuju dengan",
-        "privacy-policy": "dasar privasi",
-        "submit-button": "Hantar"
-    }
+  "auth": {
+    "title": "Sambal SOS",
+    "tagline": "Pengumpulan data bantuan orang ramai di seluruh negara",
+    "rebranded": "dijenamakan semula",
+    "upgraded": "dikemaskini",
+    "bendera-putih-redirect": "Sekiranya anda mencari aplikasi Bendera Putih, ini adalah versi yang telah dijenamakan semula dan dikemaskini untuk pengalaman pengguna yang lebih baik.",
+    "bendera-putih-redirect-1": "Sekiranya anda mencari aplikasi Bendera Putih, ini adalah versi yang telah",
+    "bendera-putih-redirect-2": "untuk pengalaman pengguna yang lebih baik.",
+    "and": "dan",
+    "login-disclaimer": "Dengan log masuk, anda bersetuju dengan dasar privasi kami. Kami hanya menggunakan pengesahan ini untuk mendapatkan emel anda dan melindungi aplikasi daripada input yang tidak dibenarkan.",
+    "login-disclaimer-1": "Dengan log masuk, anda bersetuju dengan",
+    "login-disclaimer-2": "Kami hanya menggunakan pengesahan ini untuk mendapatkan emel anda dan melindungi aplikasi daripada input yang tidak dibenarkan",
+    "privacy-policy": "dasar privasi",
+    "google-button": "Log Masuk Dengan Google",
+    "facebook-button": "Log Masuk Dengan Facebook"
+  },
+  "home": {
+    "food-banks": "Bank Makanan",
+    "sos": "SOS",
+    "ask-for-help": "Minta Bantuan",
+    "report-sos": "Laporkan SOS"
+  },
+  "navigation": {
+    "find-sos": "Cari SOS",
+    "food-banks": "Bank Makanan",
+    "report-sos": "Laporkan SOS",
+    "log-out": "Log Keluar"
+  },
+  "foodbanks": {
+    "page-update-notice": "Halaman ini akan dikemaskini melalui data dari fail Google Sheets!",
+    "add-foodbank-form": "Sekiranya anda ingin meletakkan info berkaitan mana-mana Bank Makanan yang anda ketahui pada halaman ini, sila isikan borang di bawah.",
+    "go-to-form": "Isi borang",
+    "open-in-google-maps": "Buka dengan Google Maps"
+  },
+  "report-form": {
+    "upload-image-title": "Muat naik gambar",
+    "report-for-help": "LAPORKAN UNTUK BANTUAN",
+    "image-added": "Gambar telah ditambah! 😄",
+    "add-image-prompt": "Muat naik gambar (Untuk menjaga hak dan privasi, sila ambil gambar hadapan rumah berkenaan sahaja.)",
+    "should-not-be-a-white-flag": "Gambar tersebut tidak terhad dengan hanya bendera putih.",
+    "upload-disclaimer": "Dengan memuat naik gambar ini, anda memahami bahawa gambar tersebut akan dipaparkan kepada khalayak ramai. Sila pastikan tidak berlaku sebarang perlanggaran privasi. Kami akan menyemak gambar ini terlebih dahulu.",
+    "set-address": "Tetapkan alamat",
+    "location-set": "Lokasi telah ditetapkan! 😄",
+    "use-location-button": "Gunakan lokasi semasa",
+    "or": "Atau",
+    "where-are-you": "Dimanakah anda berada?",
+    "remarks": "Notis",
+    "what-did-you-see": "Contoh: Apa yang anda perhatikan? Apa yang anda perlukan?",
+    "enter-your-phone-number": "Masukkan nombor telefon anda",
+    "phone-number": "Nombor telefon",
+    "optional": "Pilihan",
+    "enter-phone-number": "Masukkan nombor telefon anda",
+    "human-review-disclaimer": "Kami akan menyemak terlebih dahulu semua laporan yang dihantar bagi memastikan laporan yang dibuat adalah sahih. Laporan anda akan diterima/ditolak dalam tempoh masa 24 jam selepas laporan dibuat.",
+    "terms-title": "Sila patuhi garis panduan berikut semasa membuat laporan SOS: ",
+    "term-1": "Gambar yang dimuat naik tidak hanya terhad kepada: lokasi laporan, tangkap layar perbualan di media sosial",
+    "term-2": "Gambar tersebut tidak boleh mengandungi identiti, atau apa-apa informasi peribadi",
+    "term-3": "Kandungan yang diletakkan dalam laporan SOS perlulah jelas supaya pengguna lain dapat mengenal pasti lokasi tersebut",
+    "term-4": "Tidak mengandungi bahan lucah, isu politik, agama dan isu sensitif yang lain yang boleh disabitkan atas kesalahan di bawah Perkara 10 Perlembagaan Persekutuan Malaysia",
+    "term-5": "Dengan menghantar borang ini, anda bersetuju dengan",
+    "privacy-policy": "dasar privasi",
+    "submit-button": "Hantar"
+  }
 }
