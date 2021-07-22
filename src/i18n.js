@@ -12,10 +12,10 @@ export const resources = {
   English: {
     translation: en,
   },
-  Malay: {
+  "Bahasa Malaysia": {
     translation: malay,
   },
-  Chinese: {
+  中文: {
     translation: cn,
   },
 };
