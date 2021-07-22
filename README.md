@@ -12,6 +12,33 @@
     <img src="https://img.shields.io/discord/859805317859377173?style=for-the-badge" alt="discord - users online" />
 </a>
 <img src="https://img.shields.io/github/languages/code-size/sidharrth2002/sambal-sos-app?style=for-the-badge">
+
+<br>
+
+<img src="https://img.shields.io/github/issues/sidharrth2002/sambal-sos-app?style=for-the-badge">
+
+<img src="https://img.shields.io/github/issues-pr/sidharrth2002/sambal-sos-app?style=for-the-badge">
+
+<img src="https://img.shields.io/website?down_color=red&down_message=website%20down&style=for-the-badge&up_color=green&up_message=website%20up%20and%20running&url=https%3A%2F%2Fwww.sambalsos.com">
+
+<img src="https://img.shields.io/github/contributors/sidharrth2002/sambal-sos-app?style=for-the-badge">
+
+<br>
+
+<img src="https://img.shields.io/github/forks/sidharrth2002/sambal-sos-app?style=social">
+<img src="https://img.shields.io/github/watchers/sidharrth2002/sambal-sos-app?style=social">
+<img src="https://img.shields.io/github/stars/sidharrth2002/sambal-sos-app?style=social">
+
+<br>
+
+<img src="https://img.shields.io/twitter/follow/SambalSos?style=social">
+
+<div style="background-color: white; width: 25px; height:25px; margin: auto;">
+  <a href="https://www.facebook.com/sambalsosapp"> 
+    <img src="https://image.flaticon.com/icons/png/512/124/124010.png" width="25px" height="25px">
+  </a>
+</div>
+
 </p>
 
 # Table of Contents
@@ -62,13 +89,6 @@ We believe that our project will provide the necessary support for communities n
 We're a team of student developers passionate to make a positive impact to our community. The development of the [Sambal SOS App](http://sambalsos.com/) is a continuous process for the time being, and we believe that developing this app is a way for us to volunteer and contribute to the communities in Malaysia.
 
 ## Contributing
-<img src="https://img.shields.io/github/issues/sidharrth2002/sambal-sos-app?style=for-the-badge">
-
-<img src="https://img.shields.io/github/issues-pr/sidharrth2002/sambal-sos-app?style=for-the-badge">
-
-<img src="https://img.shields.io/website?down_color=red&down_message=website%20down&style=for-the-badge&up_color=green&up_message=website%20up%20and%20running&url=https%3A%2F%2Fwww.sambalsos.com">
-
-<img src="https://img.shields.io/github/contributors/sidharrth2002/sambal-sos-app?style=for-the-badge">
 
 Currently, our team consists of mostly student developers, and we are running on a 0 budget. Maintaining the [Sambal SOS App](http://sambalsos.com/) involves financial costs, hence we are opening up to the public for volunteering or contributions.
 
@@ -196,19 +216,6 @@ Let's connect! 📧
 
 ## Publicity 
 
-<img src="https://img.shields.io/github/forks/sidharrth2002/sambal-sos-app?style=social">
-<img src="https://img.shields.io/github/watchers/sidharrth2002/sambal-sos-app?style=social">
-<img src="https://img.shields.io/github/stars/sidharrth2002/sambal-sos-app?style=social">
-
-<br>
-
-<img src="https://img.shields.io/twitter/follow/SambalSos?style=social">
-
-<div style="background-color: white; width: 25px; height:25px;">
-  <a href="https://www.facebook.com/sambalsosapp"> 
-    <img src="https://image.flaticon.com/icons/png/512/124/124010.png" width="25px" height="25px">
-  </a>
-</div>
 In the previous months, our app has gained the attention of the media, helping us widen our userbase
 
 here are the articles related to our app:
