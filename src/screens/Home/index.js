@@ -89,13 +89,11 @@ const Home = () => {
   }, []);
 
   const focusMap = () => {
-    setLoading(true);
     navigator?.geolocation.getCurrentPosition(
       ({ coords: { latitude: lat, longitude: lng } }) => {
         const pos = { lat, lng };
         setCenter(pos);
         setZoomLevel(12);
-        setLoading(false);
       }
     );
   };
