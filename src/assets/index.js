@@ -31,7 +31,6 @@ import FacebookIcon from "./svgs/facebook.svg";
 import SirenIconPNG from "./png/siren.png";
 import FoodBankIconPNG from "./png/groceries.png";
 import ChinaFlag from "./png/China.png";
-import CurrentLocationIcon from "./svgs/current-location.svg";
 
 export {
   MaintenanceSVG,
@@ -67,5 +66,4 @@ export {
   SirenIconPNG,
   FoodBankIconPNG,
   ChinaFlag,
-  CurrentLocationIcon,
 };
