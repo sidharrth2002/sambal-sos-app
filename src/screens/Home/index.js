@@ -39,10 +39,11 @@ const Home = () => {
   const { t } = useTranslation();
   const accessToken = useSelector((state) => state.auth.accessToken);
   const toast = useToast();
-  const [center] = useState({
+  const [center, setCenter] = useState({
     lat: 3.145081052343874,
     lng: 101.70524773008304,
   });
+  const [zoomLevel, setZoomLevel] = useState(8);
   const [flags, setFlags] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedMarker, setSelectedMarker] = useState(null);
@@ -72,12 +73,32 @@ const Home = () => {
 
   const onLoad = React.useCallback(function callback(map) {
     setMap(map);
+    // grab current location and set center
+    navigator?.geolocation.getCurrentPosition(
+      ({ coords: { latitude: lat, longitude: lng } }) => {
+        const pos = { lat, lng };
+        setCenter(pos);
+        setZoomLevel(14);
+      }
+    );
   }, []);
 
   // eslint-disable-next-line no-unused-vars
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null);
   }, []);
+
+  const focusMap = () => {
+    setLoading(true);
+    navigator?.geolocation.getCurrentPosition(
+      ({ coords: { latitude: lat, longitude: lng } }) => {
+        const pos = { lat, lng };
+        setCenter(pos);
+        setZoomLevel(12);
+        setLoading(false);
+      }
+    );
+  };
 
   useEffect(() => {
     axios
@@ -142,7 +163,7 @@ const Home = () => {
       ) : (
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
-          zoom={8}
+          zoom={zoomLevel}
           center={center}
           onLoad={onLoad}
           onUnmount={onUnmount}
@@ -220,8 +241,31 @@ const Home = () => {
               return sosMarkers.concat(foodbankMarkers);
             }}
           </MarkerClusterer>
+          <Marker position={{ lat: center.lat, lng: center.lng }} />
         </GoogleMap>
       )}
+      <Flex
+        flexDirection="column"
+        position="absolute"
+        top="15px"
+        left="15px"
+        borderRadius="50%"
+        height="50px"
+        width="50px"
+        padding="10px"
+        textAlign="center"
+        backgroundColor="white"
+        boxShadow="0px 8px 20px rgba(147, 147, 147, 0.25)"
+        justifyContent="center"
+        alignItems="center"
+        onClick={focusMap}
+      >
+        <Image
+          src={BDGraphics.CurrentLocationIcon}
+          alt="Current Location"
+          maxW="90%"
+        />
+      </Flex>
       <Flex
         flexDirection="column"
         position="absolute"
