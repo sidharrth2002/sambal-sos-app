@@ -170,7 +170,7 @@ const Home = () => {
             setFoodbankModalVisible(false);
           }}
         >
-          <MarkerClusterer maxZoom={20} ignoreHidden={true}>
+          <MarkerClusterer maxZoom={15} ignoreHidden={true}>
             {(clusterer) => {
               const sosMarkers = flags.map((flag, index) => {
                 return (
