@@ -78,7 +78,7 @@ const Home = () => {
       ({ coords: { latitude: lat, longitude: lng } }) => {
         const pos = { lat, lng };
         setCenter(pos);
-        setZoomLevel(14);
+        setZoomLevel(15);
       }
     );
   }, []);
@@ -91,9 +91,8 @@ const Home = () => {
   const focusMap = () => {
     navigator?.geolocation.getCurrentPosition(
       ({ coords: { latitude: lat, longitude: lng } }) => {
-        const pos = { lat, lng };
-        setCenter(pos);
-        setZoomLevel(12);
+        map.panTo(new window.google.maps.LatLng(lat, lng));
+        map.setZoom(15);
       }
     );
   };
@@ -171,7 +170,7 @@ const Home = () => {
             setFoodbankModalVisible(false);
           }}
         >
-          <MarkerClusterer maxZoom={12} ignoreHidden={true}>
+          <MarkerClusterer maxZoom={20} ignoreHidden={true}>
             {(clusterer) => {
               const sosMarkers = flags.map((flag, index) => {
                 return (
