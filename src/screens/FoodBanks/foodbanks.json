@@ -3427,22 +3427,6 @@
         "address": [
             {
                 "coordinates": {
-                    "latitude": 3.2408822,
-                    "longitude": 101.6498723
-                },
-                "fullAddress": "Boon Physiotherapy and Rehabilitation Centre, G-7, Kompleks Perniagaan Selayang Point, Jalan SP1, 68100, Selangor"
-            }
-        ],
-        "contactNumber": "0126543986",
-        "id": "F215",
-        "name": "Boon Physiotherapy Food Bank",
-        "remarks": "",
-        "website": ""
-    },
-    {
-        "address": [
-            {
-                "coordinates": {
                     "latitude": 3.11829,
                     "longitude": 101.621
                 },
