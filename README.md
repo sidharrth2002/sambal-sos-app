@@ -1,9 +1,5 @@
 <h1 align="center">The Sambal SOS App</h1>
 
-<p align="center">
-    <img src="https://scontent.fpen1-1.fna.fbcdn.net/v/t1.6435-9/209366870_107350384947725_2117872645097933309_n.png?_nc_cat=107&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ymfBYb-3XBkAX-wE__9&_nc_ht=scontent.fpen1-1.fna&oh=cc77f617d14b12cbbfdddaea349330a6&oe=60FD4FB8" align="center" width="300px">
-</p>
-
 <h4 align="center"> <i> Formerly the Bendera Putih App </i> </h4>
 
 <p align="center">
@@ -12,32 +8,10 @@
     <img src="https://img.shields.io/discord/859805317859377173?style=for-the-badge" alt="discord - users online" />
 </a>
 <img src="https://img.shields.io/github/languages/code-size/sidharrth2002/sambal-sos-app?style=for-the-badge">
-
-<br>
-
 <img src="https://img.shields.io/github/issues/sidharrth2002/sambal-sos-app?style=for-the-badge">
-
 <img src="https://img.shields.io/github/issues-pr/sidharrth2002/sambal-sos-app?style=for-the-badge">
-
 <img src="https://img.shields.io/website?down_color=red&down_message=website%20down&style=for-the-badge&up_color=green&up_message=website%20up%20and%20running&url=https%3A%2F%2Fwww.sambalsos.com">
-
 <img src="https://img.shields.io/github/contributors/sidharrth2002/sambal-sos-app?style=for-the-badge">
-
-<br>
-
-<img src="https://img.shields.io/github/forks/sidharrth2002/sambal-sos-app?style=social">
-<img src="https://img.shields.io/github/watchers/sidharrth2002/sambal-sos-app?style=social">
-<img src="https://img.shields.io/github/stars/sidharrth2002/sambal-sos-app?style=social">
-
-<br>
-
-<img src="https://img.shields.io/twitter/follow/SambalSos?style=social">
-
-<div style="background-color: white; width: 25px; height:25px; margin: auto;">
-  <a href="https://www.facebook.com/sambalsosapp"> 
-    <img src="https://image.flaticon.com/icons/png/512/124/124010.png" width="25px" height="25px">
-  </a>
-</div>
 
 </p>
 
