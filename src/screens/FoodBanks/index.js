@@ -30,8 +30,15 @@ const FoodBanks = () => {
           <VStack spacing="10" mb="150px">
             {foodbanks.resources
               .filter((bank) => {
+                if (bank.name && bank.location.address) {
+                  return true;
+                } else {
+                  return false;
+                }
+              })
+              .filter((bank) => {
                 return (
-                  bank.name.toLowerCase().includes(searchQuery) ||
+                  bank?.name.toLowerCase().includes(searchQuery) ||
                   bank?.location?.address.toLowerCase().includes(searchQuery)
                 );
               })
