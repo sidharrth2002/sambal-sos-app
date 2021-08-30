@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import {
   Center,
@@ -46,6 +47,7 @@ const Home = () => {
   const [zoomLevel, setZoomLevel] = useState(8);
   const [flags, setFlags] = useState([]);
   const [loading, setLoading] = useState(true);
+  // const [foodbanksLoading, setFoodbanksLoading] = useState(true);
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [selectedFoodbank, setSelectedFoodbank] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
@@ -115,9 +117,7 @@ const Home = () => {
             phonenumber: flag.phonenumber ?? "",
             createdAt: flag.createdAt,
           };
-
           let imageURL;
-
           // we don't have enough money so we have to switch between buckets
           if (flag.image !== null) {
             imageURL =
@@ -126,9 +126,7 @@ const Home = () => {
           } else {
             imageURL = flag.minioimage;
           }
-
           newInfoBoxObj.image = imageURL;
-
           setFlags((oldFlags) => [...oldFlags, newInfoBoxObj]);
         });
         setLoading(false);
@@ -170,7 +168,7 @@ const Home = () => {
             setFoodbankModalVisible(false);
           }}
         >
-          <MarkerClusterer maxZoom={15} ignoreHidden={true}>
+          <MarkerClusterer maxZoom={15} ignoreHidden={true} color="red">
             {(clusterer) => {
               const sosMarkers = flags.map((flag, index) => {
                 return (
@@ -204,38 +202,56 @@ const Home = () => {
                   />
                 );
               });
-              const foodbankMarkers = foodbanks.map((foodbank, index) => (
-                <Marker
-                  clusterer={clusterer}
-                  visible={showFoodbanks}
-                  key={index + flags.length + 1}
-                  position={{
-                    lat: parseFloat(foodbank.address[0].coordinates.latitude),
-                    lng: parseFloat(foodbank.address[0].coordinates.longitude),
-                  }}
-                  icon={{
-                    url: BDGraphics.FoodBankIconPNG,
-                    scaledSize: new window.google.maps.Size(20, 20),
-                    origin: new window.google.maps.Point(0, 0),
-                    anchor: new window.google.maps.Point(10, 10),
-                  }}
-                  options={{
-                    optimized: true,
-                  }}
-                  onVisibleChanged={() => {
-                    if (index + 1 === foodbanks.length) {
-                      clusterer.repaint();
-                    }
-                  }}
-                  onClick={() => {
-                    setSelectedFoodbank(foodbank);
-                    setModalVisible(false);
-                    setFoodbankModalVisible(true);
-                  }}
-                />
-              ));
+              return sosMarkers;
+            }}
+          </MarkerClusterer>
 
-              return sosMarkers.concat(foodbankMarkers);
+          <MarkerClusterer
+            maxZoom={15}
+            ignoreHidden={true}
+            defaultStyles={["default"]}
+          >
+            {(clusterer) => {
+              const foodbankMarkers = foodbanks.resources.map(
+                (foodbank, index) => {
+                  if (
+                    foodbank?.location?.latitude &&
+                    foodbank?.location?.longitude
+                  ) {
+                    return (
+                      <Marker
+                        clusterer={clusterer}
+                        visible={showFoodbanks}
+                        key={index + flags.length + 1}
+                        position={{
+                          lat: parseFloat(foodbank.location.latitude),
+                          lng: parseFloat(foodbank.location.longitude),
+                        }}
+                        icon={{
+                          url: BDGraphics.FoodBankIconPNG,
+                          scaledSize: new window.google.maps.Size(20, 20),
+                          origin: new window.google.maps.Point(0, 0),
+                          anchor: new window.google.maps.Point(10, 10),
+                        }}
+                        options={{
+                          optimized: true,
+                        }}
+                        onVisibleChanged={() => {
+                          if (index + 1 === foodbanks.length) {
+                            clusterer.repaint();
+                          }
+                        }}
+                        onClick={() => {
+                          setSelectedFoodbank(foodbank);
+                          setModalVisible(false);
+                          setFoodbankModalVisible(true);
+                        }}
+                      />
+                    );
+                  }
+                }
+              );
+              return foodbankMarkers;
             }}
           </MarkerClusterer>
           <Marker position={{ lat: center.lat, lng: center.lng }} />
@@ -421,8 +437,8 @@ const Home = () => {
                   h="100%"
                   py="0.5rem"
                 >
-                  <Flex
-                    backgroundColor="#ff8c82"
+                  <Button
+                    colorScheme="teal"
                     borderRadius="8px"
                     w="100%"
                     mb="5px"
@@ -440,15 +456,16 @@ const Home = () => {
                   >
                     <Image
                       src={BDGraphics.PinIcon}
+                      color="white"
                       alt=""
                       height="15px"
                       mr="10px"
                     />
-                    <Text fontSize="13px">Go to location</Text>
-                  </Flex>
+                    <Text>Go to location</Text>
+                  </Button>
                   {selectedMarker.phonenumber ? (
-                    <Flex
-                      backgroundColor="#EAEAEA"
+                    <Button
+                      // backgroundColor="#EAEAEA"
                       borderRadius="8px"
                       w="100%"
                       py="0.5rem"
@@ -467,8 +484,8 @@ const Home = () => {
                         height="15px"
                         mr="15px"
                       />
-                      <Text fontSize="13px">Call Phone</Text>
-                    </Flex>
+                      <Text>Call Phone</Text>
+                    </Button>
                   ) : (
                     <></>
                   )}
@@ -488,7 +505,7 @@ const Home = () => {
                         height="12px"
                         mr="5px"
                       />
-                      <Text fontSize="9px" color="#2F2F2F">
+                      <Text fontSize="1rem" color="#2F2F2F">
                         <Moment format="YYYY/MM/DD HH:MM" local>
                           {selectedMarker.createdAt}
                         </Moment>
@@ -497,12 +514,7 @@ const Home = () => {
                   ) : (
                     <></>
                   )}
-                  <Text
-                    textAlign="start"
-                    fontSize="12px"
-                    px="0.5rem"
-                    maxW="100%"
-                  >
+                  <Text textAlign="start" px="0.5rem" maxW="100%">
                     {selectedMarker?.description}
                   </Text>
                 </Center>
@@ -554,7 +566,29 @@ const Home = () => {
               <Heading as="h5" fontSize="md">
                 {selectedFoodbank?.name}
               </Heading>
-              <Text>{selectedFoodbank?.address[0]?.fullAddress}</Text>
+              {selectedFoodbank?.location?.address && (
+                <Text>Address: {selectedFoodbank?.location?.address}</Text>
+              )}
+              {selectedFoodbank?.location?.operatingTime && (
+                <Text>
+                  Operating Hours: {selectedFoodbank?.location?.operatingTime}
+                </Text>
+              )}
+              {selectedFoodbank?.offer?.mustContactFirst && (
+                <Text>
+                  Do you need to contact them first?:{" "}
+                  {selectedFoodbank?.offer?.mustContactFirst ? "Yes" : "No"}
+                </Text>
+              )}
+              {selectedFoodbank?.contact?.phone?.length > 0 && (
+                <Text>
+                  Phone:
+                  {selectedFoodbank?.contact?.phone[0]}
+                </Text>
+              )}
+              {selectedFoodbank?.offer?.launchDate && (
+                <Text>Launch Date: {selectedFoodbank?.offer?.launchDate}</Text>
+              )}
               <VStack
                 flexDirection="column"
                 justifyContent="flex-start"
@@ -566,13 +600,13 @@ const Home = () => {
                   colorScheme="teal"
                   onClick={() => {
                     window.open(
-                      `https://www.google.com.my/maps?daddr=${selectedFoodbank?.address[0]?.coordinates?.latitude},${selectedFoodbank?.address[0]?.coordinates?.longitude}`
+                      `https://www.google.com.my/maps?daddr=${selectedFoodbank?.location?.latitude},${selectedFoodbank?.location?.longitude}`
                     );
                   }}
                 >
                   Go to location
                 </Button>
-                {selectedFoodbank?.website !== "" && (
+                {/* {selectedFoodbank?.offer?.postUrl && (
                   <Button
                     onClick={() => {
                       window.open(selectedFoodbank?.website);
@@ -580,7 +614,7 @@ const Home = () => {
                   >
                     Go to the website
                   </Button>
-                )}
+                )} */}
               </VStack>
             </VStack>
           </VStack>
