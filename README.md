@@ -101,14 +101,15 @@ if you don't have the variables some parts of the app will not work
 ### Protocols
 Please Follow these suggestions to make sure that the repo is organized and other people who wish to contribute can have a nice time doing so
 
-> if you wish to be on the main team and actively contribute, we would recommend that you join our [discord server](https://discord.gg/kJUVyfzjeZ)
+> If you wish to be on the main team and actively contribute, we would recommend that you join our [discord server](https://discord.gg/kJUVyfzjeZ)
 
-otherwise you can:
+Otherwise you can:
 
 1. Open an issue about something 
 2. Comment on Issues and Pull Requests
-3. Giving Suggestions
-4. Bug Reports 
+3. Participate in issue threads
+4. Make Bug Reports
+5. Make your own pull requests to solve open issues 
 
 ### Pull Request Template
 ```NAMING CONVENTION: FEAT/FIX/REFACTOR nameOfContribution
@@ -134,12 +135,6 @@ Mention someone for review
 main -> development branch, fork or clone from this branch
 
 production -> deployed to vercel, don't touch this
-
-## Admins
-@sidharrth2002
-@Shaunmak1214
-
-contact them for more information
 
 ### Monetary
 If you're willing to support us financially, please do get in touch with us!
@@ -188,4 +183,4 @@ here are the articles related to our app:
 Please help us spread word about the app on your favorite social media platforms. People knowing about our existance helps grow the app and provides assistance to the needy, especially during times of crisis.
 
 ## License
-[Sambal SOS App](http://sambalsos.com/) is open source, licensed under the [MIT](https://choosealicense.com/licenses/mit/) license
+[Sambal SOS App](https://www.sambalsos.com/) is open source, licensed under the [MIT](https://choosealicense.com/licenses/mit/) license
