@@ -168,7 +168,7 @@ The features and milestones that we plan to achieve for [Sambal SOS App](http://
 ## Contact us
 Let's connect! 📧
 
-[Email ✉](mailto:info.benderaputih@gmail.com)
+[Email ✉](mailto:sambalsos.app@gmail.com)
 \
 [Discord 👾](https://discord.gg/9QeJu9M9)
 
