@@ -4,11 +4,10 @@ import {
   Input,
   VStack,
   Text,
-  Link,
-  Alert,
   Divider,
   Center,
   Image,
+  Button,
 } from "@chakra-ui/react";
 import foodbanks from "./foodbanks.json";
 import NavigationFooter from "../../components/NavigationFooter";
@@ -28,51 +27,12 @@ const FoodBanks = () => {
           onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
         />
         <Box marginTop="2rem">
-          <Alert
-            status="success"
-            fontSize="13px"
-            width="90%"
-            maxWidth="500px"
-            margin="20px auto"
-            borderRadius="10px"
-          >
-            {t("foodbanks.page-update-notice")}
-          </Alert>
-          <Alert
-            status="warning"
-            width="90%"
-            maxWidth="500px"
-            margin="20px auto"
-            borderRadius="10px"
-            flexDirection="column"
-          >
-            <Box fontSize="13px">{t("foodbanks.add-foodbank-form")}</Box>
-            <Center
-              fontSize="11px"
-              backgroundColor="#B2C8F5"
-              borderRadius="8px"
-              py="0.5rem"
-              px="1rem"
-              mt="20px"
-              cursor="pointer"
-              width="100%"
-              onClick={() => {
-                window.open(
-                  `https://docs.google.com/forms/d/e/1FAIpQLSftvjrOg72Vu2_z1qc1Hf1LsQrNGuvx2qSts_76lZ2dul5yHQ/viewform?usp=sf_link`
-                );
-              }}
-            >
-              {t("foodbanks.go-to-form")}
-            </Center>
-          </Alert>
           <VStack spacing="10" mb="150px">
-            {foodbanks
+            {foodbanks.resources
               .filter((bank) => {
                 return (
                   bank.name.toLowerCase().includes(searchQuery) ||
-                  bank.address[0].fullAddress
-                    .toLowerCase()
-                    .includes(searchQuery)
+                  bank?.location?.address.toLowerCase().includes(searchQuery)
                 );
               })
               .map((foodbank, index) => {
@@ -87,44 +47,54 @@ const FoodBanks = () => {
                     textAlign="left"
                   >
                     <Text fontFamily="Montserrat" fontWeight="600">
-                      {foodbank.name}
+                      {foodbank?.name}
                     </Text>
                     <Divider marginY="10px" />
-                    {foodbank.address.map((address, addressIndex) => {
-                      return (
-                        <div key={addressIndex}>
-                          <Text>{address.fullAddress}</Text>
-                        </div>
-                      );
-                    })}
-                    <Link
+                    {<Text>{foodbank?.location?.address}</Text>}
+                    {foodbank?.location?.operatingTime && (
+                      <Text>
+                        Operating Hours: {foodbank?.location?.operatingTime}
+                      </Text>
+                    )}
+                    <Center>
+                      <Button
+                        width="100%"
+                        colorScheme="teal"
+                        marginTop="1rem"
+                        onClick={() => window.open(foodbank?.offer?.postUrl)}
+                      >
+                        Go To Website
+                      </Button>
+                    </Center>
+
+                    {/* <Link
                       marginTop="5px"
-                      href={foodbank.website}
+                      href={foodbank?.offer?.postUrl}
                       target="_blank"
                     >
-                      {foodbank.website}
-                    </Link>
-
-                    <Center
-                      backgroundColor="#B2C8F5"
-                      borderRadius="8px"
-                      py="0.6rem"
-                      mt="20px"
-                      cursor="pointer"
-                      fontSize="13px"
-                      onClick={() => {
-                        window.open(
-                          `https://www.google.com.my/maps?daddr=${foodbank.address[0].coordinates.latitude},${foodbank.address[0].coordinates.longitude}`
-                        );
-                      }}
-                    >
-                      {t("foodbanks.open-in-google-maps")}
-                      <Image
-                        src={BDGraphics.GoogleMapsIcon}
-                        ml="10px"
-                        height="15px"
-                      />
-                    </Center>
+                      {foodbank?.offer?.postUrl}
+                    </Link> */}
+                    {foodbank?.location?.latitude &&
+                      foodbank?.location?.longitude && (
+                        <Button
+                          width="100%"
+                          borderRadius="8px"
+                          py="0.6rem"
+                          mt="1rem"
+                          onClick={() => {
+                            window.open(
+                              `https://www.google.com.my/maps?daddr=${foodbank.location.latitude},${foodbank.location.longitude}`
+                            );
+                          }}
+                        >
+                          {t("foodbanks.open-in-google-maps")}
+                          <Image
+                            src={BDGraphics.GoogleMapsIcon}
+                            ml="10px"
+                            height="15px"
+                          />
+                        </Button>
+                      )}
                   </Box>
                 );
               })}
