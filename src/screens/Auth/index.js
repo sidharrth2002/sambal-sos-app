@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 
+// eslint-disable-next-line no-unused-vars
 import * as BDGraphics from "../../assets/";
 import {
   Image,
@@ -8,11 +10,18 @@ import {
   Button,
   Heading,
   Box,
+  HStack,
   VStack,
+  SimpleGrid,
   Center,
   Link,
 } from "@chakra-ui/react";
-import { useToast } from "@chakra-ui/react";
+import {
+  useToast,
+  Container,
+  extendTheme,
+  ChakraProvider,
+} from "@chakra-ui/react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
@@ -24,7 +33,17 @@ import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props
 
 import LoginMapAsset from "../../assets/png/login-map.png";
 
+import "@fontsource/black-han-sans";
+import "@fontsource/archivo-black";
+
 require("dotenv").config();
+
+const theme = extendTheme({
+  fonts: {
+    heading: "Archivo Black",
+    body: "Montserrat, sans-serif",
+  },
+});
 
 const Auth = () => {
   const toast = useToast();
@@ -61,6 +80,7 @@ const Auth = () => {
     }
   };
 
+  // eslint-disable-next-line no-unused-vars
   const responseFacebook = async (facebookData) => {
     if (facebookData) {
       axios
@@ -99,97 +119,24 @@ const Auth = () => {
   }
 
   return (
-    <VStack>
-      <Flex
-        flexDirection="column"
-        justifyContent="space-between"
-        alignItems="center"
-        minHeight="90vh"
-        width="100%"
-        padding="0.5rem"
-      >
+    <ChakraProvider theme={theme}>
+      <Container maxw="container.sm">
         <Flex
-          flexDirection="row"
           justifyContent="center"
           alignItems="center"
-          w="100%"
-        >
-          <img
-            src={BDGraphics.SambalSosLogo}
-            style={{ width: "75px", height: "75px" }}
-            alt="Logo"
-          />
-          <Heading
-            fontFamily="Montserrat"
-            as="h1"
-            fontWeight="5fr00"
-            fontSize="25px"
-          >
-            {t("auth.title")}
-          </Heading>
-        </Flex>
-        <VStack marginBottom="0.5rem" spacing={5} width="100%">
-          <img mb="100px" mt="50px" src={LoginMapAsset} alt="Map" />
-
-          <Flex
-            w="100%"
-            flexDirection="column"
-            justifyContent="flex-start"
-            alignItems="flex-start"
-            padding="1rem"
-          >
-            <Heading
-              fontFamily="Montserrat"
-              as="h3"
-              fontSize="xl"
-              fontWeight="600"
-              textAlign="start"
-            >
-              {t("auth.tagline")}
-            </Heading>
-            <br></br>
-            <Box width="600px" maxWidth="80%">
-              <Text
-                fontFamily="Montserrat"
-                as="h3"
-                fontSize="15px"
-                textAlign="start"
-              >
-                <Trans i18nKey="bendera-putih-redirect">
-                  {t("auth.bendera-putih-redirect-1")}{" "}
-                  <strong title={t("auth.rebranded")}>
-                    {t("auth.rebranded")}
-                  </strong>{" "}
-                  {t("auth.and")}{" "}
-                  <strong title={t("auth.upgraded")}>
-                    {t("auth.upgraded")}
-                  </strong>{" "}
-                  {t("auth.bendera-putih-redirect-2")}
-                </Trans>
-              </Text>
-            </Box>
-          </Flex>
-        </VStack>
-        <Flex
+          minH="90vh"
           flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-          w="100%"
-          padding="1rem"
-          margin="0 auto"
         >
-          <Box marginBottom="1rem">
-            <Text fontFamily="Montserrat">
-              <Trans i18nKey="login-disclaimer">
-                {t("auth.login-disclaimer-1")}{" "}
-                <Link href="/privacy-policy" target="_blank" color="blue">
-                  {t("auth.privacy-policy")}
-                </Link>
-                . {t("auth.login-disclaimer-2")}.
-              </Trans>
-            </Text>
-          </Box>
-          <VStack spacing={5}>
+          <Image
+            src={BDGraphics.SambalSosLogo}
+            alt="Sambal Sos Logo"
+            style={{ width: "300px" }}
+          />
+          <Heading fontSize="4rem">Sambal SOS</Heading>
+          <Text fontSize="1.5rem">
+            Crowdsourcing aid data across the nation
+          </Text>
+          <VStack spacing={5} marginTop={6}>
             <GoogleLogin
               clientId={process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID}
               render={(renderProps) => (
@@ -279,15 +226,68 @@ const Auth = () => {
             />
           </VStack>
         </Flex>
-      </Flex>
-      <Center bottom="0" padding="1rem">
-        <Text fontFamily="Poppins" fontSize="0.7rem" as="i">
-          Built by For the Malaysians.
-          <br />
-          For Malaysians. By Malaysians.
-        </Text>
-      </Center>
-    </VStack>
+
+        <Flex
+          minHeight="100vh"
+          justifyContent="center"
+          alignItems="center"
+          padding="2rem"
+          flexDirection="column"
+        >
+          <Heading size="2xl" marginBottom="2rem">
+            Sambal SOS in the news
+          </Heading>
+
+          <SimpleGrid columns={2} spacing={5}>
+            <Box background="#f1f2f4" rounded="1rem" padding="2rem">
+              <VStack spacing={5}>
+                <VStack spacing={3}>
+                  <Heading size="md">The Star</Heading>
+                  <Text>
+                    #BenderaPutih: Malaysian uni students create app to locate
+                    food banks, white flags in four days
+                  </Text>
+                </VStack>
+                <Image
+                  src={BDGraphics.MalayMailSambalSOS}
+                  rounded="1rem"
+                  maxWidth="200px"
+                />
+              </VStack>
+            </Box>
+            <Box background="#f1f2f4" rounded="1rem" padding="2rem">
+              <VStack spacing={5}>
+                <VStack spacing={3}>
+                  <Heading size="md">Malaysiakini</Heading>
+                  <Text>
+                    Three youths create app to help people find those in need
+                  </Text>
+                </VStack>
+                <Image
+                  src={
+                    "https://icf.newscdn.net/publisher-c1a3f893382d2b2f8a9aa22a654d9c97/2020/05/233861c905ad09cca65feac6c45f4095.jpg=s800"
+                  }
+                  rounded="1rem"
+                  maxWidth="200px"
+                />
+              </VStack>
+            </Box>
+          </SimpleGrid>
+        </Flex>
+
+        <Flex
+          minHeight="100vh"
+          justifyContent="center"
+          alignItems="center"
+          padding="2rem"
+          flexDirection="column"
+        >
+          <Heading size="2xl" marginBottom="2rem">
+            What are people saying?
+          </Heading>
+        </Flex>
+      </Container>
+    </ChakraProvider>
   );
 };
 
