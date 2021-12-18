@@ -138,16 +138,11 @@ const Auth = () => {
               alt="Sambal Sos Logo"
               style={{ width: "300px" }}
             />
-            <Heading
-              as="h1"
-              size={"2xl"}
-              // fontSize={{ sm: "4rem", md: "5rem" }}
-              fontWeight={100}
-            >
-              Sambal SOS
+            <Heading as="h1" size={"2xl"} fontWeight={100}>
+              {t("auth.title")}
             </Heading>
             <Text fontSize={{ sm: "1rem", md: "1.5rem" }}>
-              Crowdsourcing aid data across the nation
+              {t("auth.tagline")}
             </Text>
             <VStack spacing={5} marginTop={6}>
               <GoogleLogin
@@ -241,6 +236,16 @@ const Auth = () => {
                   );
                 }}
               />
+              <Box marginBottom="1rem" width={300}>
+                <Text>
+                  <Trans i18nKey="login-disclaimer">
+                    {t("auth.login-disclaimer-1")}{" "}
+                    <Link href="/privacy-policy" target="_blank" color="blue">
+                      {t("auth.privacy-policy")}.
+                    </Link>
+                  </Trans>
+                </Text>
+              </Box>
             </VStack>
           </Flex>
         </Container>
