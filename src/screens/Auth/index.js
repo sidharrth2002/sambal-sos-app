@@ -241,6 +241,16 @@ const Auth = () => {
                   );
                 }}
               />
+              <Box marginBottom="1rem" width={300}>
+                <Text>
+                  <Trans i18nKey="login-disclaimer">
+                    {t("auth.login-disclaimer-1")}{" "}
+                    <Link href="/privacy-policy" target="_blank" color="blue">
+                      {t("auth.privacy-policy")}.
+                    </Link>
+                  </Trans>
+                </Text>
+              </Box>
             </VStack>
           </Flex>
         </Container>
