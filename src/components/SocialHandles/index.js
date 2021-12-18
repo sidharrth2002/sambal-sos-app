@@ -22,7 +22,9 @@ export default function SocialHandles() {
       <Container maxw="container.sm">
         <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={20} textAlign={"left"}>
           <VStack spacing={5}>
-            <Heading>Join Our Communities</Heading>
+            <Heading as="h2" size={"xl"}>
+              Join Our Communities
+            </Heading>
             <Text>
               For <b>quick, realtime updates</b> and{" "}
               <b>thought-provoking conversations</b>, follow our social handles

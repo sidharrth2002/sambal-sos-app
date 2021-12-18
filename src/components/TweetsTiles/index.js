@@ -7,7 +7,7 @@ export default function TweetsTiles(props) {
   return (
     <Box backgroundColor={"moccasin"}>
       <Box minHeight="100vh" padding="6rem">
-        <Heading size="2xl" marginBottom="2rem">
+        <Heading as="h2" size="xl" marginBottom="2rem">
           What are people saying?
         </Heading>
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} spacing={5}>
