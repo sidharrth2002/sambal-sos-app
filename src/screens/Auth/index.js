@@ -1,5 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
+import "./Auth.css";
 
+// eslint-disable-next-line no-unused-vars
 import * as BDGraphics from "../../assets/";
 import {
   Image,
@@ -8,11 +11,18 @@ import {
   Button,
   Heading,
   Box,
+  HStack,
   VStack,
+  SimpleGrid,
   Center,
   Link,
 } from "@chakra-ui/react";
-import { useToast } from "@chakra-ui/react";
+import {
+  useToast,
+  Container,
+  extendTheme,
+  ChakraProvider,
+} from "@chakra-ui/react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
@@ -20,11 +30,25 @@ import { LOGIN } from "../../features/counter/authSlice";
 import { GoogleLogin } from "react-google-login";
 import { useHistory } from "react-router-dom";
 import { useTranslation, Trans } from "react-i18next";
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import LoginMapAsset from "../../assets/png/login-map.png";
 
+import "@fontsource/black-han-sans";
+import "@fontsource/archivo-black";
+import SocialHandles from "../../components/SocialHandles";
+import TweetsTiles from "../../components/TweetsTiles";
+import HomepageFooter from "../../components/HomepageFooter";
+import OpenSource from "../../components/OpenSource";
+
 require("dotenv").config();
+
+const theme = extendTheme({
+  fonts: {
+    heading: "Archivo Black",
+    body: "Montserrat, sans-serif",
+  },
+});
 
 const Auth = () => {
   const toast = useToast();
@@ -61,6 +85,7 @@ const Auth = () => {
     }
   };
 
+  // eslint-disable-next-line no-unused-vars
   const responseFacebook = async (facebookData) => {
     if (facebookData) {
       axios
@@ -99,195 +124,143 @@ const Auth = () => {
   }
 
   return (
-    <VStack>
-      <Flex
-        flexDirection="column"
-        justifyContent="space-between"
-        alignItems="center"
-        minHeight="90vh"
-        width="100%"
-        padding="0.5rem"
-      >
-        <Flex
-          flexDirection="row"
-          justifyContent="center"
-          alignItems="center"
-          w="100%"
-        >
-          <img
-            src={BDGraphics.SambalSosLogo}
-            style={{ width: "75px", height: "75px" }}
-            alt="Logo"
-          />
-          <Heading
-            fontFamily="Montserrat"
-            as="h1"
-            fontWeight="5fr00"
-            fontSize="25px"
-          >
-            {t("auth.title")}
-          </Heading>
-        </Flex>
-        <VStack marginBottom="0.5rem" spacing={5} width="100%">
-          <img mb="100px" mt="50px" src={LoginMapAsset} alt="Map" />
-
+    <ChakraProvider theme={theme}>
+      <Box backgroundColor={"whitesmoke"}>
+        <Container maxw="container.sm">
           <Flex
-            w="100%"
+            justifyContent="center"
+            alignItems="center"
+            minH="100vh"
             flexDirection="column"
-            justifyContent="flex-start"
-            alignItems="flex-start"
-            padding="1rem"
           >
+            <Image
+              src={BDGraphics.SambalSosLogo}
+              alt="Sambal Sos Logo"
+              style={{ width: "300px" }}
+            />
             <Heading
-              fontFamily="Montserrat"
-              as="h3"
-              fontSize="xl"
-              fontWeight="600"
-              textAlign="start"
+              as="h1"
+              size={"2xl"}
+              // fontSize={{ sm: "4rem", md: "5rem" }}
+              fontWeight={100}
             >
-              {t("auth.tagline")}
+              Sambal SOS
             </Heading>
-            <br></br>
-            <Box width="600px" maxWidth="80%">
-              <Text
-                fontFamily="Montserrat"
-                as="h3"
-                fontSize="15px"
-                textAlign="start"
-              >
-                <Trans i18nKey="bendera-putih-redirect">
-                  {t("auth.bendera-putih-redirect-1")}{" "}
-                  <strong title={t("auth.rebranded")}>
-                    {t("auth.rebranded")}
-                  </strong>{" "}
-                  {t("auth.and")}{" "}
-                  <strong title={t("auth.upgraded")}>
-                    {t("auth.upgraded")}
-                  </strong>{" "}
-                  {t("auth.bendera-putih-redirect-2")}
-                </Trans>
-              </Text>
-            </Box>
-          </Flex>
-        </VStack>
-        <Flex
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-          w="100%"
-          padding="1rem"
-          margin="0 auto"
-        >
-          <Box marginBottom="1rem">
-            <Text fontFamily="Montserrat">
-              <Trans i18nKey="login-disclaimer">
-                {t("auth.login-disclaimer-1")}{" "}
-                <Link href="/privacy-policy" target="_blank" color="blue">
-                  {t("auth.privacy-policy")}
-                </Link>
-                . {t("auth.login-disclaimer-2")}.
-              </Trans>
+            <Text fontSize={{ sm: "1rem", md: "1.5rem" }}>
+              Crowdsourcing aid data across the nation
             </Text>
-          </Box>
-          <VStack spacing={5}>
-            <GoogleLogin
-              clientId={process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID}
-              render={(renderProps) => (
-                <Button
-                  backgroundColor="#FFFFFF"
-                  boxShadow="lg"
-                  w="100%"
-                  padding="28px 25px"
-                  mt="0px"
-                  onClick={() => {
-                    renderProps.onClick();
-                  }}
-                  disabled={renderProps.disabled}
-                >
-                  <Flex
-                    borderRadius="8px"
-                    fontFamily="Poppins"
-                    width="100%"
-                    flexDirection="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    position="relative"
+            <VStack spacing={5} marginTop={6}>
+              <GoogleLogin
+                clientId={process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID}
+                render={(renderProps) => (
+                  <Button
+                    backgroundColor="#FFFFFF"
+                    boxShadow="lg"
+                    w="100%"
+                    padding="28px 25px"
+                    mt="0px"
+                    onClick={() => {
+                      renderProps.onClick();
+                    }}
+                    disabled={renderProps.disabled}
                   >
-                    <Image
-                      alt="Google Login Button Svg"
-                      src={BDGraphics.GoogleLoginIcon}
-                      height="25px"
-                      width="25px"
-                      mr="20px"
-                    />
-                    <Text fontWeight="light" color="black">
-                      {t("auth.google-button")}
-                    </Text>
-                  </Flex>
-                </Button>
-              )}
-              autoLoad={false}
-              buttonText={t("auth.google-button")}
-              onSuccess={handleGoogleLogin}
-              onFailure={handleGoogleLogin}
-              cookiePolicy={"single_host_origin"}
-            />
-            <FacebookLogin
-              size="medium"
-              autoLoad={false}
-              appId={process.env.REACT_APP_FACEBOOK_APP_ID}
-              fields="name,email"
-              callback={responseFacebook}
-              isMobile={true}
-              redirectUri="https://www.sambalsos.com/"
-              disableMobileRedirect={false}
-              render={(renderProps) => (
-                <Button
-                  backgroundColor="#5476b9"
-                  _hover={null}
-                  color="white"
-                  boxShadow="lg"
-                  outline="#1877F2"
-                  w="100%"
-                  padding="28px 25px"
-                  mt="0px"
-                  onClick={() => {
-                    renderProps.onClick();
-                  }}
-                  disabled={renderProps.disabled}
-                >
-                  <Flex
-                    borderRadius="8px"
-                    fontFamily="Poppins"
-                    width="100%"
-                    flexDirection="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    position="relative"
-                  >
-                    <Image
-                      alt="Facebook Login Button Svg"
-                      src={BDGraphics.FacebookIcon}
-                      height="25px"
-                      width="25px"
-                      mr="20px"
-                    />
-                    <Text fontWeight="light">{t("auth.facebook-button")}</Text>
-                  </Flex>
-                </Button>
-              )}
-            />
-          </VStack>
-        </Flex>
-      </Flex>
-      <Center bottom="0" padding="1rem">
-        <Text fontFamily="Poppins" fontSize="0.7rem" as="i">
-          Built by For the Malaysians.
-          <br />
-          For Malaysians. By Malaysians.
-        </Text>
-      </Center>
-    </VStack>
+                    <Flex
+                      borderRadius="8px"
+                      fontFamily="Poppins"
+                      width="100%"
+                      flexDirection="row"
+                      justifyContent="center"
+                      alignItems="center"
+                      position="relative"
+                    >
+                      <Image
+                        alt="Google Login Button Svg"
+                        src={BDGraphics.GoogleLoginIcon}
+                        height="25px"
+                        width="25px"
+                        mr="20px"
+                      />
+                      <Text fontWeight="light" color="black">
+                        {t("auth.google-button")}
+                      </Text>
+                    </Flex>
+                  </Button>
+                )}
+                autoLoad={false}
+                buttonText={t("auth.google-button")}
+                onSuccess={handleGoogleLogin}
+                onFailure={handleGoogleLogin}
+                cookiePolicy={"single_host_origin"}
+              />
+              <FacebookLogin
+                size="medium"
+                autoLoad={false}
+                appId={process.env.REACT_APP_FACEBOOK_APP_ID}
+                fields="name,email"
+                callback={responseFacebook}
+                isMobile={true}
+                redirectUri="https://www.sambalsos.com/"
+                disableMobileRedirect={false}
+                render={(renderProps) => {
+                  return (
+                    <Button
+                      backgroundColor="#5476b9"
+                      _hover={null}
+                      color="white"
+                      boxShadow="lg"
+                      outline="#1877F2"
+                      w="100%"
+                      padding="28px 25px"
+                      mt="0px"
+                      onClick={() => {
+                        renderProps.onClick();
+                      }}
+                      disabled={renderProps.disabled}
+                    >
+                      <Flex
+                        borderRadius="8px"
+                        fontFamily="Poppins"
+                        width="100%"
+                        flexDirection="row"
+                        justifyContent="center"
+                        alignItems="center"
+                        position="relative"
+                      >
+                        <Image
+                          alt="Facebook Login Button Svg"
+                          src={BDGraphics.FacebookIcon}
+                          height="25px"
+                          width="25px"
+                          mr="20px"
+                        />
+                        <Text fontWeight="light">
+                          {t("auth.facebook-button")}
+                        </Text>
+                      </Flex>
+                    </Button>
+                  );
+                }}
+              />
+            </VStack>
+          </Flex>
+        </Container>
+      </Box>
+      <SocialHandles />
+
+      <TweetsTiles
+        tweetsList={[
+          "1411995238302818306",
+          "1412007023319818241",
+          "1412685947213254657",
+          "1412677312097648643",
+          // "1412927823883300867",
+          // "1412343154544578569",
+          // "1412663539903483909",
+        ]}
+      />
+      <OpenSource />
+      <HomepageFooter />
+    </ChakraProvider>
   );
 };
 

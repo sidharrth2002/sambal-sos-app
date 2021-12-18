@@ -32,6 +32,7 @@ import SirenIconPNG from "./png/siren.png";
 import FoodBankIconPNG from "./png/groceries.png";
 import ChinaFlag from "./png/China.png";
 import CurrentLocationIcon from "./svgs/current-location.svg";
+import MalayMailSambalSOS from "./png/malaymail-sambalsos.jpeg";
 
 export {
   MaintenanceSVG,
@@ -68,4 +69,5 @@ export {
   FoodBankIconPNG,
   ChinaFlag,
   CurrentLocationIcon,
+  MalayMailSambalSOS,
 };
