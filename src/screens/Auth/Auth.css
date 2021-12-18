@@ -1,0 +1,5 @@
+/* Override CSS of Twitter Widget */
+iframe[id^="twitter-widget-"] {
+  width: 100px !important;
+  border: none !important;
+}
