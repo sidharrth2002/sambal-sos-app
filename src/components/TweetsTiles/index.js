@@ -6,7 +6,7 @@ import { Tweet } from "react-twitter-widgets";
 export default function TweetsTiles(props) {
   return (
     <Box backgroundColor={"moccasin"}>
-      <Box minHeight="100vh" padding={{ sm: "2rem", md: "6rem" }}>
+      <Box minHeight="100vh" padding="3rem">
         <Heading as="h2" size="xl" marginBottom="2rem">
           What are people saying?
         </Heading>

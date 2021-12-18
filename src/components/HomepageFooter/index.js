@@ -5,7 +5,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomepageFooter() {
   return (
-    <Box textAlign={"center"} padding={"3rem"}>
+    <Box textAlign={"center"} padding={"2rem"}>
       <Text>
         All Rights Reserved | Built with{" "}
         <FontAwesomeIcon icon={faHeart} color="red" /> by the Sambal SOS team.

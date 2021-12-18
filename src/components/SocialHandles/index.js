@@ -18,7 +18,7 @@ import {
 
 export default function SocialHandles() {
   return (
-    <Box padding="4rem">
+    <Box padding="3rem">
       <Container maxw="container.sm">
         <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={20} textAlign={"left"}>
           <VStack spacing={5}>
