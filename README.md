@@ -1,45 +1,7 @@
 <h1 align="center">The Sambal SOS App</h1>
+<h4 align="center"> <i> Crowdsourcing Aid Data Across the Nation </i> </h4>
 
-<p align="center">
-    <img src="https://scontent.fpen1-1.fna.fbcdn.net/v/t1.6435-9/209366870_107350384947725_2117872645097933309_n.png?_nc_cat=107&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ymfBYb-3XBkAX-wE__9&_nc_ht=scontent.fpen1-1.fna&oh=cc77f617d14b12cbbfdddaea349330a6&oe=60FD4FB8" align="center" width="300px">
-</p>
-
-<h4 align="center"> <i> Formerly the Bendera Putih App </i> </h4>
-
-<p align="center">
-    <img src="https://img.shields.io/github/license/sidharrth2002/sambal-sos-app?style=for-the-badge">
-<a href="https://discord.gg/kJUVyfzjeZ">
-    <img src="https://img.shields.io/discord/859805317859377173?style=for-the-badge" alt="discord - users online" />
-</a>
-<img src="https://img.shields.io/github/languages/code-size/sidharrth2002/sambal-sos-app?style=for-the-badge">
-
-<br>
-
-<img src="https://img.shields.io/github/issues/sidharrth2002/sambal-sos-app?style=for-the-badge">
-
-<img src="https://img.shields.io/github/issues-pr/sidharrth2002/sambal-sos-app?style=for-the-badge">
-
-<img src="https://img.shields.io/website?down_color=red&down_message=website%20down&style=for-the-badge&up_color=green&up_message=website%20up%20and%20running&url=https%3A%2F%2Fwww.sambalsos.com">
-
-<img src="https://img.shields.io/github/contributors/sidharrth2002/sambal-sos-app?style=for-the-badge">
-
-<br>
-
-<img src="https://img.shields.io/github/forks/sidharrth2002/sambal-sos-app?style=social">
-<img src="https://img.shields.io/github/watchers/sidharrth2002/sambal-sos-app?style=social">
-<img src="https://img.shields.io/github/stars/sidharrth2002/sambal-sos-app?style=social">
-
-<br>
-
-<img src="https://img.shields.io/twitter/follow/SambalSos?style=social">
-
-<div style="background-color: white; width: 25px; height:25px; margin: auto;">
-  <a href="https://www.facebook.com/sambalsosapp"> 
-    <img src="https://image.flaticon.com/icons/png/512/124/124010.png" width="25px" height="25px">
-  </a>
-</div>
-
-</p>
+This is the repository for the frontend and you'll find usage, folder structure and contribution details below. For the backend's repository, refer [here](https://github.com/sidharrth2002/sambal-sos-backend). Sambal SOS is fully open-sourced and community driven, feel free to checkout the list of active issues and submit pull requests.
 
 # Table of Contents
   - [The #benderaputih Movement](#the-benderaputih-movement)
@@ -63,9 +25,7 @@
 
 [Sambal SOS App](http://sambalsos.com/) is a social welfare platform that supports Malaysians in need by bridging the gap of social inequity. 
 
-Hop on the [app](http://sambalsos.com/)  if:
-- you see someone who needs help when driving or in your neighbourhood and want to report it so someone can help
-- you're looking to support other fellow Malaysians
+Hop on the [app](http://sambalsos.com/)  if you see someone who needs help when driving or in your neighbourhood and want to report it so someone can help or you're looking to support other fellow Malaysians
 
 Built:
 - By Malaysians, for Malaysians.  🇲🇾
@@ -141,14 +101,15 @@ if you don't have the variables some parts of the app will not work
 ### Protocols
 Please Follow these suggestions to make sure that the repo is organized and other people who wish to contribute can have a nice time doing so
 
-> if you wish to be on the main team and actively contribute, we would recommend that you join our [discord server](https://discord.gg/kJUVyfzjeZ)
+> If you wish to be on the main team and actively contribute, we would recommend that you join our [discord server](https://discord.gg/kJUVyfzjeZ)
 
-otherwise you can:
+Otherwise you can:
 
 1. Open an issue about something 
 2. Comment on Issues and Pull Requests
-3. Giving Suggestions
-4. Bug Reports 
+3. Participate in issue threads
+4. Make Bug Reports
+5. Make your own pull requests to solve open issues 
 
 ### Pull Request Template
 ```NAMING CONVENTION: FEAT/FIX/REFACTOR nameOfContribution
@@ -175,12 +136,6 @@ main -> development branch, fork or clone from this branch
 
 production -> deployed to vercel, don't touch this
 
-## Admins
-@sidharrth2002
-@Shaunmak1214
-
-contact them for more information
-
 ### Monetary
 If you're willing to support us financially, please do get in touch with us!
 Monetary donations will be primarily utilized for maintenance costs of the [Sambal SOS App](http://sambalsos.com/), which includes: server costs, domain costs, etc. 
@@ -194,8 +149,6 @@ The frontend is hosted on Vercel, while our backend lives on App Engine.
 If you have experience in any of the following skills, you're exactly who we're looking for to join the team:
 - frontend development (JavaScript, React.js)
 - backend development (Node.js, Express.js)
-- social media management
-- crowdsourcing data
 
 ### Other
 If you're interested to support us in other ways, do reach out to us using any of the contact details listed in the [Contact us](src/README.md#Contact) section.
@@ -210,7 +163,7 @@ The features and milestones that we plan to achieve for [Sambal SOS App](http://
 ## Contact us
 Let's connect! 📧
 
-[Email ✉](mailto:info.benderaputih@gmail.com)
+[Email ✉](mailto:sambalsos.app@gmail.com)
 \
 [Discord 👾](https://discord.gg/9QeJu9M9)
 
@@ -227,9 +180,7 @@ here are the articles related to our app:
 6. The Star (https://www.wargabiz.com.my/2021/07/07/four-local-students-launched-sambal-sos-app-for-msians-to-locate-white-flags-food-banks/)
 7. KL foodie (https://klfoodie.com/sambal-sos-app-bendera-putih-malaysia)
 
-Please help us spread word about the app on your favorite social media platforms
-
-people knowing about our existance helps grow the app and provides assistance to the needy, especially during times of crisis
+Please help us spread word about the app on your favorite social media platforms. People knowing about our existance helps grow the app and provides assistance to the needy, especially during times of crisis.
 
 ## License
-[Sambal SOS App](http://sambalsos.com/) is open source, licensed under the [MIT](https://choosealicense.com/licenses/mit/) license
+[Sambal SOS App](https://www.sambalsos.com/) is open source, licensed under the [MIT](https://choosealicense.com/licenses/mit/) license
