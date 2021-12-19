@@ -186,6 +186,7 @@ const Auth = () => {
                 onSuccess={handleGoogleLogin}
                 onFailure={handleGoogleLogin}
                 cookiePolicy={"single_host_origin"}
+                uxMode="redirect"
               />
               <FacebookLogin
                 size="medium"
