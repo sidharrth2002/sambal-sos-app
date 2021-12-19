@@ -1,7 +1,6 @@
 /* eslint-disable react/no-children-prop */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { useDropzone } from "react-dropzone";
 import NavigationFooter from "../../components/NavigationFooter";
 import {
   Image,
@@ -19,6 +18,8 @@ import {
   Link,
   InputGroup,
   InputLeftAddon,
+  useRadioGroup,
+  Wrap,
 } from "@chakra-ui/react";
 import { Alert, AlertIcon, useToast } from "@chakra-ui/react";
 import usePlacesAutocomplete, {
@@ -31,11 +32,14 @@ import axios from "axios";
 import * as BDGraphics from "../../assets/";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import RadioCard from "../../components/RadioCard";
+import { getIcon } from "../../functions";
 require("dotenv").config();
+
+const TYPES_OF_AID = ["GENERAL", "FOOD", "BABY ITEMS", "FLOOD SHELTER"];
 
 const ReportForm = () => {
   const accessToken = useSelector((state) => state.auth.accessToken);
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
   const toast = useToast();
   const { t } = useTranslation();
 
@@ -43,6 +47,7 @@ const ReportForm = () => {
   const [remark, setRemark] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [coordinates, setCoordinates] = useState(null);
+  const [typeOfAid, setTypeOfAid] = useState("");
   const [progressBarValue, setProgressBarValue] = useState(5);
   const [locationLoading, setLocationLoading] = useState(false);
 
@@ -55,13 +60,14 @@ const ReportForm = () => {
   const [phoneNumberError, setPhoneNumberError] = useState(false);
 
   useEffect(() => {
-    let value = 5;
-    if (acceptedFiles.length > 0) value = value + 25;
+    let value = 0;
     if (coordinates) value = value + 25;
-    if (remark) value = value + 45;
+    if (remark) value = value + 25;
+    if (typeOfAid) value = value + 25;
+    if (phoneNumber) value = value + 25;
 
     setProgressBarValue(value);
-  }, [acceptedFiles, remark, coordinates]);
+  }, [coordinates, remark, typeOfAid, phoneNumber]);
 
   const popupLocation = () => {
     setLocationLoading(true);
@@ -116,7 +122,7 @@ const ReportForm = () => {
   };
 
   const reportFlag = async () => {
-    if (remark && coordinates && phoneNumberError === false) {
+    if (remark && coordinates && phoneNumberError === false && typeOfAid) {
       setSubmitLoading(true);
       axios
         .post(
@@ -127,6 +133,7 @@ const ReportForm = () => {
             description: remark,
             phonenumber: phoneNumber,
             image: "",
+            type: typeOfAid !== "" ? typeOfAid : "GENERAL",
           },
           {
             headers: {
@@ -185,6 +192,16 @@ const ReportForm = () => {
   const handleInput = (e) => {
     setValue(e.target.value);
   };
+
+  const { getRootProps, getRadioProps } = useRadioGroup({
+    name: "framework",
+    defaultValue: "react",
+    onChange: (aid) => {
+      setTypeOfAid(aid.toUpperCase());
+    },
+  });
+
+  const group = getRootProps();
 
   const handleSelect =
     ({ description }) =>
@@ -308,7 +325,7 @@ const ReportForm = () => {
                 color="#6598FF"
                 mr="10px"
               >
-                Step 1 of 3
+                Step 1 of 4
               </Text>
               <Text fontSize="lg" fontFamily="Poppins" fontWeight="500">
                 {t("report-form.set-address")}
@@ -423,7 +440,7 @@ const ReportForm = () => {
                 color="#6598FF"
                 mr="10px"
               >
-                Step 2 of 3
+                Step 2 of 4
               </Text>
               <Text fontSize="lg" fontFamily="Poppins" fontWeight="500">
                 {t("report-form.remarks")}
@@ -462,7 +479,48 @@ const ReportForm = () => {
                 color="#6598FF"
                 mr="10px"
               >
-                Step 3 of 3
+                Step 3 of 4
+              </Text>
+              <Text fontSize="lg" fontFamily="Poppins" fontWeight="500">
+                What type of aid do you require?
+              </Text>
+            </Flex>
+            <Flex className="Form-Content" flexDirection="column">
+              <Wrap {...group}>
+                {["General", "Food", "Baby Items", "Flood Shelter"].map(
+                  (value) => {
+                    const radio = getRadioProps({ value });
+                    return (
+                      <RadioCard key={value} {...radio}>
+                        {`${getIcon(value)} ${" "} ${value}`}
+                      </RadioCard>
+                    );
+                  }
+                )}
+              </Wrap>
+            </Flex>
+          </Flex>
+
+          <Flex
+            className="Form-Blocks"
+            flexDirection="column"
+            alignItems="flex-start"
+            mb="3rem"
+          >
+            <Flex
+              className="Form-Title"
+              flexDirection="row"
+              alignItems="center"
+              mb="15px"
+            >
+              <Text
+                fontSize="xs"
+                fontFamily="Poppins"
+                fontWeight="500"
+                color="#6598FF"
+                mr="10px"
+              >
+                Step 4 of 4
               </Text>
               <Text fontSize="lg" fontFamily="Poppins" fontWeight="500">
                 {t("report-form.enter-your-phone-number")}
