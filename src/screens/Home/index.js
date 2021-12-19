@@ -14,6 +14,8 @@ import {
   VStack,
   CloseButton,
   Checkbox,
+  Input,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
@@ -35,6 +37,7 @@ import { useTranslation } from "react-i18next";
 import FoodbankCard from "../../components/FoodbankCard";
 import FlagCard from "../../components/FlagCard";
 import Popup from "../../components/Popup";
+import SideDrawer from "../../components/SideDrawer";
 
 require("dotenv").config();
 
@@ -60,6 +63,7 @@ const Home = () => {
   // eslint-disable-next-line no-unused-vars
   const [map, setMap] = useState(null);
   const [libraries] = useState(["places"]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const mapContainerStyle = {
     width: "100vw",
@@ -119,6 +123,7 @@ const Home = () => {
             description: flag.description ?? "",
             phonenumber: flag.phonenumber ?? "",
             createdAt: flag.createdAt,
+            type: flag.type,
           };
           let imageURL;
           // we don't have enough money so we have to switch between buckets
@@ -374,10 +379,10 @@ const Home = () => {
           color="black"
           fontFamily="Montserrat"
           fontWeight="500"
-          onClick={() => history.push("/report-flag")}
+          onClick={onOpen}
         >
           <Image mr="5px" src={BDGraphics.FlagIcon} height="11px" />
-          {t("home.report-sos")}
+          View SOS in List
         </Flex>
       </Flex>
 
@@ -421,6 +426,12 @@ const Home = () => {
       </Popup>
 
       <NavigationFooter activeTab={0} />
+      <SideDrawer
+        flags={flags}
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onClose={onClose}
+      />
     </div>
   );
 };

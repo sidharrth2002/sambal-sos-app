@@ -481,7 +481,7 @@ const ReportForm = () => {
               >
                 Step 3 of 4
               </Text>
-              <Text fontSize="lg" fontFamily="Poppins" fontWeight="500">
+              <Text fontSize="md" fontFamily="Poppins" fontWeight="500">
                 What type of aid do you require?
               </Text>
             </Flex>
@@ -492,7 +492,7 @@ const ReportForm = () => {
                     const radio = getRadioProps({ value });
                     return (
                       <RadioCard key={value} {...radio}>
-                        {`${getIcon(value)} ${" "} ${value}`}
+                        {`${getIcon(value.toUpperCase())} ${" "} ${value}`}
                       </RadioCard>
                     );
                   }
