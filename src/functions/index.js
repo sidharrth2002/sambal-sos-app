@@ -1,12 +1,12 @@
 export const getIcon = (type) => {
   switch (type) {
-    case "General":
+    case "GENERAL":
       return "🛖 ";
-    case "Food":
+    case "FOOD":
       return "🍞 ";
-    case "Baby Items":
+    case "BABY ITEMS":
       return "👶 ";
-    case "Flood Shelter":
+    case "FLOOD SHELTER":
       return "🏠 ";
     default:
       return "🛖 ";
