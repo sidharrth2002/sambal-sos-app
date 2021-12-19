@@ -32,6 +32,9 @@ import foodbanks from "../FoodBanks/foodbanks.json";
 
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import FoodbankCard from "../../components/FoodbankCard";
+import FlagCard from "../../components/FlagCard";
+import Popup from "../../components/Popup";
 
 require("dotenv").config();
 
@@ -378,250 +381,44 @@ const Home = () => {
         </Flex>
       </Flex>
 
-      <Flex
+      <Popup
         className="more-details-modal"
-        flexDirection="column"
-        justifyContent="flex-start"
-        alignItems="center"
-        h="55%"
-        mh="55%"
-        w="100%"
-        position="fixed"
-        left="50%"
-        transform="translate(-50%, -50%)"
-        top={modalVisible ? "75%" : "200%"}
-        borderRadius="8px"
-        // padding="0.8rem"
-        overflowY="scroll"
-        transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)"
-        transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)"
+        visible={modalVisible}
+        positionFromTop="75%"
       >
         {selectedMarker ? (
-          <VStack
-            backgroundColor="white"
-            width="80%"
-            maxWidth={"500px"}
-            rounded="lg"
-            padding="1rem"
-            spacing={5}
-            shadow="lg"
-          >
-            <Flex
-              flexDirection="row"
-              justifyContent="space-between"
-              alignItems="center"
-              w="100%"
-              rounded="lg"
-              textAlign={"center"}
-            >
-              {/* Dirty way of spacing, don't do this */}
-              <Text> </Text>
-              <Heading> SOS Details </Heading>
-              <CloseButton
-                onClick={() => {
-                  setModalVisible(false);
-                  setFoodbankModalVisible(false);
-                }}
-              />
-            </Flex>
-            <Center
-              flexDirection="row"
-              // justifyContent="flex-start"
-              // alignContent="flex-start"
-              // padding="1rem"
-            >
-              <HStack h="100%">
-                <Center
-                  flexDirection="column"
-                  justifyContent="flex-start"
-                  h="100%"
-                  py="0.5rem"
-                  mr="1.5rem"
-                >
-                  <Button
-                    colorScheme="teal"
-                    borderRadius="8px"
-                    w="100%"
-                    mb="5px"
-                    py="0.5rem"
-                    // px="0.5rem"
-                    flexDirection="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    marginBottom="1rem"
-                    onClick={() => {
-                      window.open(
-                        `https://www.google.com.my/maps?daddr=${selectedMarker.lat},${selectedMarker.lng}`
-                      );
-                    }}
-                  >
-                    <Image
-                      src={BDGraphics.PinIcon}
-                      color="white"
-                      alt=""
-                      height="15px"
-                      mr="10px"
-                    />
-                    <Text>Go to location</Text>
-                  </Button>
-                  {selectedMarker.phonenumber ? (
-                    <Button
-                      borderRadius="8px"
-                      w="100%"
-                      py="0.5rem"
-                      px="0.5rem"
-                      flexDirection="row"
-                      justifyContent="center"
-                      alignItems="center"
-                      marginBottom="1rem"
-                      onClick={() => {
-                        window.open(`tel:${selectedMarker.phonenumber}`);
-                      }}
-                    >
-                      <Image
-                        src={BDGraphics.PhoneIcon}
-                        alt=""
-                        height="15px"
-                        mr="15px"
-                      />
-                      <Text>Call Phone</Text>
-                    </Button>
-                  ) : (
-                    <></>
-                  )}
-                  {selectedMarker.createdAt ? (
-                    <Flex
-                      borderRadius="8px"
-                      w="100%"
-                      px="0.2rem"
-                      flexDirection="row"
-                      justifyContent="flex-end"
-                      alignItems="center"
-                      marginBottom="0.5rem"
-                    >
-                      <Image
-                        src={BDGraphics.ClockIcon}
-                        alt=""
-                        height="12px"
-                        mr="5px"
-                      />
-                      <Text fontSize="1rem" color="#2F2F2F">
-                        <Moment format="YYYY/MM/DD HH:MM" local>
-                          {selectedMarker.createdAt}
-                        </Moment>
-                      </Text>
-                    </Flex>
-                  ) : (
-                    <></>
-                  )}
-                  <Text textAlign="start" px="0.5rem" maxW="100%">
-                    {selectedMarker?.description}
-                  </Text>
-                </Center>
-              </HStack>
-            </Center>
-          </VStack>
+          <FlagCard
+            setModalVisible={setModalVisible}
+            setFoodbankModalVisible={setFoodbankModalVisible}
+            phonenumber={selectedMarker?.phonenumber}
+            createdAt={selectedMarker?.createdAt}
+            description={selectedMarker?.description}
+            latitude={selectedMarker?.lat}
+            longitude={selectedMarker?.lng}
+          />
         ) : (
           <Text>No Selected Marker</Text>
         )}
-      </Flex>
+      </Popup>
 
-      <Flex
+      <Popup
         className="foodbank-details-modal"
-        flexDirection="column"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-        h="55%"
-        mh="55%"
-        w="100%"
-        position="fixed"
-        left="50%"
-        transform="translate(-50%, -50%)"
-        top={foodbankModalVisible ? "60%" : "200%"}
-        backgroundColor="white"
-        borderRadius="8px"
-        padding="0.8rem"
-        overflowY="scroll"
-        transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)"
-        transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)"
+        visible={foodbankModalVisible}
+        positionFromTop="60%"
       >
         {selectedFoodbank ? (
-          <VStack textAlign="center" width="100%" spacing={5}>
-            <Flex
-              flexDirection="row"
-              justifyContent="space-between"
-              alignItems="center"
-              padding="1rem"
-              w="100%"
-            >
-              <Heading> Food Banks Details </Heading>
-              <CloseButton
-                onClick={() => {
-                  setModalVisible(false);
-                  setFoodbankModalVisible(false);
-                }}
-              />
-            </Flex>
-            <VStack padding="0.5rem">
-              <Heading as="h5" fontSize="md">
-                {selectedFoodbank?.name}
-              </Heading>
-              {selectedFoodbank?.location?.address && (
-                <Text>Address: {selectedFoodbank?.location?.address}</Text>
-              )}
-              {selectedFoodbank?.location?.operatingTime && (
-                <Text>
-                  Operating Hours: {selectedFoodbank?.location?.operatingTime}
-                </Text>
-              )}
-              {selectedFoodbank?.offer?.mustContactFirst && (
-                <Text>
-                  Do you need to contact them first?:{" "}
-                  {selectedFoodbank?.offer?.mustContactFirst ? "Yes" : "No"}
-                </Text>
-              )}
-              {selectedFoodbank?.contact?.phone?.length > 0 && (
-                <Text>
-                  Phone:
-                  {selectedFoodbank?.contact?.phone[0]}
-                </Text>
-              )}
-              {selectedFoodbank?.offer?.launchDate && (
-                <Text>Launch Date: {selectedFoodbank?.offer?.launchDate}</Text>
-              )}
-              <VStack
-                flexDirection="column"
-                justifyContent="flex-start"
-                maxWidth="70%"
-                h="100%"
-                py="0.5rem"
-              >
-                <Button
-                  colorScheme="teal"
-                  onClick={() => {
-                    window.open(
-                      `https://www.google.com.my/maps?daddr=${selectedFoodbank?.location?.latitude},${selectedFoodbank?.location?.longitude}`
-                    );
-                  }}
-                >
-                  Go to location
-                </Button>
-                {/* {selectedFoodbank?.offer?.postUrl && (
-                  <Button
-                    onClick={() => {
-                      window.open(selectedFoodbank?.website);
-                    }}
-                  >
-                    Go to the website
-                  </Button>
-                )} */}
-              </VStack>
-            </VStack>
-          </VStack>
+          <FoodbankCard
+            setModalVisible={setModalVisible}
+            setFoodbankModalVisible={setFoodbankModalVisible}
+            name={selectedFoodbank?.name}
+            location={selectedFoodbank?.location}
+            contact={selectedFoodbank?.contact}
+            offer={selectedFoodbank?.offer}
+          />
         ) : (
           <Text>No Selected Marker</Text>
         )}
-      </Flex>
+      </Popup>
 
       <NavigationFooter activeTab={0} />
     </div>
