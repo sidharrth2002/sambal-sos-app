@@ -40,6 +40,7 @@ import SocialHandles from "../../components/SocialHandles";
 import TweetsTiles from "../../components/TweetsTiles";
 import HomepageFooter from "../../components/HomepageFooter";
 import OpenSource from "../../components/OpenSource";
+import Impact from "../../components/Impact";
 
 require("dotenv").config();
 
@@ -263,6 +264,7 @@ const Auth = () => {
           // "1412663539903483909",
         ]}
       />
+      <Impact />
       <OpenSource />
       <HomepageFooter />
     </ChakraProvider>
