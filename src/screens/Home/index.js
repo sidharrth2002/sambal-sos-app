@@ -382,30 +382,40 @@ const Home = () => {
         className="more-details-modal"
         flexDirection="column"
         justifyContent="flex-start"
-        alignItems="flex-start"
+        alignItems="center"
         h="55%"
         mh="55%"
         w="100%"
         position="fixed"
         left="50%"
         transform="translate(-50%, -50%)"
-        top={modalVisible ? "60%" : "200%"}
-        backgroundColor="white"
+        top={modalVisible ? "75%" : "200%"}
         borderRadius="8px"
-        padding="0.8rem"
+        // padding="0.8rem"
         overflowY="scroll"
         transition="all 300ms cubic-bezier(0.740, -0.175, 0.000, 1.080)"
         transitionTimingFunction="cubic-bezier(0.740, -0.175, 0.000, 1.080)"
       >
         {selectedMarker ? (
-          <>
+          <VStack
+            backgroundColor="white"
+            width="80%"
+            maxWidth={"500px"}
+            rounded="lg"
+            padding="1rem"
+            spacing={5}
+            shadow="lg"
+          >
             <Flex
               flexDirection="row"
               justifyContent="space-between"
               alignItems="center"
-              padding="1rem"
               w="100%"
+              rounded="lg"
+              textAlign={"center"}
             >
+              {/* Dirty way of spacing, don't do this */}
+              <Text> </Text>
               <Heading> SOS Details </Heading>
               <CloseButton
                 onClick={() => {
@@ -416,26 +426,17 @@ const Home = () => {
             </Flex>
             <Center
               flexDirection="row"
-              justifyContent="flex-start"
-              alignContent="flex-start"
-              padding="1rem"
+              // justifyContent="flex-start"
+              // alignContent="flex-start"
+              // padding="1rem"
             >
               <HStack h="100%">
-                <Box maxWidth="50%" px="0.5rem" py="0.5rem" h="100%">
-                  <Image
-                    borderRadius="8px"
-                    src={selectedMarker?.image}
-                    width="100%"
-                    maxWidth="200px"
-                    marginRight="1rem"
-                  />
-                </Box>
                 <Center
                   flexDirection="column"
                   justifyContent="flex-start"
-                  maxWidth="50%"
                   h="100%"
                   py="0.5rem"
+                  mr="1.5rem"
                 >
                   <Button
                     colorScheme="teal"
@@ -443,7 +444,7 @@ const Home = () => {
                     w="100%"
                     mb="5px"
                     py="0.5rem"
-                    px="0.5rem"
+                    // px="0.5rem"
                     flexDirection="row"
                     justifyContent="center"
                     alignItems="center"
@@ -465,7 +466,6 @@ const Home = () => {
                   </Button>
                   {selectedMarker.phonenumber ? (
                     <Button
-                      // backgroundColor="#EAEAEA"
                       borderRadius="8px"
                       w="100%"
                       py="0.5rem"
@@ -520,7 +520,7 @@ const Home = () => {
                 </Center>
               </HStack>
             </Center>
-          </>
+          </VStack>
         ) : (
           <Text>No Selected Marker</Text>
         )}
