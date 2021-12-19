@@ -404,7 +404,7 @@ const Home = () => {
       <Popup
         className="foodbank-details-modal"
         visible={foodbankModalVisible}
-        positionFromTop="75%"
+        positionFromTop="60%"
       >
         {selectedFoodbank ? (
           <FoodbankCard
