@@ -390,11 +390,11 @@ const Home = () => {
           <FlagCard
             setModalVisible={setModalVisible}
             setFoodbankModalVisible={setFoodbankModalVisible}
-            phonenumber={selectedMarker.phonenumber}
-            createdAt={selectedMarker.createdAt}
-            description={selectedMarker.description}
-            latitude={selectedMarker.lat}
-            longitude={selectedMarker.lng}
+            phonenumber={selectedMarker?.phonenumber}
+            createdAt={selectedMarker?.createdAt}
+            description={selectedMarker?.description}
+            latitude={selectedMarker?.lat}
+            longitude={selectedMarker?.lng}
           />
         ) : (
           <Text>No Selected Marker</Text>
