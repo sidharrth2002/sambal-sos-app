@@ -23,7 +23,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 
 const SideDrawer = (props) => {
-  const { flags } = props;
+  const { flags, currentLocation } = props;
   const [type, setTypeOfAid] = useState("GENERAL");
   const { isOpen, onOpen, onClose } = props;
   const btnRef = useRef();
@@ -76,6 +76,8 @@ const SideDrawer = (props) => {
               <VStack>
                 {flags
                   .filter((flag) => flag.type === type)
+                  // sort by distance
+                  .sort((a, b) => a.distance < b.distance)
                   .map((flag, key) => {
                     console.log(key);
                     return (
@@ -86,6 +88,7 @@ const SideDrawer = (props) => {
                         type={flag.type}
                         latitude={flag.lat}
                         longitude={flag.lng}
+                        distance={flag.distance}
                       />
                     );
                   })}
@@ -109,6 +112,7 @@ SideDrawer.propTypes = {
   isOpen: PropTypes.bool,
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
+  currentLocation: PropTypes.object,
 };
 
 export default SideDrawer;
