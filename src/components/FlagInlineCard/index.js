@@ -18,10 +18,13 @@ import {
 import { getIcon } from "../../functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from "react-i18next";
 
 import * as BDGraphics from "../../assets/";
 
 const FlagInlineCard = (props) => {
+  const { t } = useTranslation();
+
   return (
     <Box maxW="md" borderWidth="1px" borderRadius="lg" shadow={"lg"}>
       <VStack p="6" spacing={5} alignItems="start">
@@ -42,7 +45,7 @@ const FlagInlineCard = (props) => {
             textTransform="uppercase"
             ml="2"
           >
-            {props.type}
+            {t(`report-form.types-of-aid.${props.type.toLowerCase()}`)}
           </Box>
           <Box
             color="gray.500"

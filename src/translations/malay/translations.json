@@ -13,13 +13,22 @@
     "login-disclaimer-2": "Kami hanya menggunakan pengesahan ini untuk mendapatkan emel anda dan melindungi aplikasi daripada input yang tidak dibenarkan",
     "privacy-policy": "dasar privasi",
     "google-button": "Log Masuk Dengan Google",
-    "facebook-button": "Log Masuk Dengan Facebook"
+    "facebook-button": "Log Masuk Dengan Facebook",
+    "join-our-communities": "Sertai komuniti kami",
+    "communities-description": "Untuk <bold>kemas kini pantas dan masa nyata</bold> dan <bold>perbualan yang menggugah fikiran</bold>, ikut pengendalian sosial kami dan sertai server Discord, yang merupakan rumah kepada seluruh komuniti kami.",
+    "what-are-people-saying": "Apa yang orang cakap?",
+    "impact": "Kesan",
+    "open-source": "Sambal SOS adalah open source.",
+    "check-out-code": "Lihat kod",
+    "copyright": "Hak Cipta Terpelihara | Dibina dengan <heart></heart> oleh team Sambal SOS."
   },
   "home": {
     "food-banks": "Bank Makanan",
     "sos": "SOS",
     "ask-for-help": "Minta Bantuan",
-    "report-sos": "Laporkan SOS"
+    "report-sos": "Laporkan SOS",
+    "view-in-list": "Lihat SOS dalam Senarai",
+    "filter-reports": "Tapis Laporan SOS"
   },
   "navigation": {
     "find-sos": "Cari SOS",
@@ -47,6 +56,13 @@
     "where-are-you": "Dimanakah anda berada?",
     "remarks": "Notis",
     "what-did-you-see": "Contoh: Apa yang anda perhatikan? Apa yang anda perlukan?",
+    "what-type-of-aid-do-you-require": "Bantuan apa yang anda perlukan?",
+    "types-of-aid": {
+      "general": "Umum",
+      "food": "Makanan",
+      "baby items": "Barangan Bayi",
+      "flood shelter": "Bantuan Banjir"
+    },
     "enter-your-phone-number": "Masukkan nombor telefon anda",
     "phone-number": "Nombor telefon",
     "optional": "Pilihan",
