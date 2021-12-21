@@ -9,8 +9,11 @@ import {
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from "react-i18next";
 
 export default function OpenSource() {
+  const { t } = useTranslation();
+
   return (
     <Flex
       padding="4rem"
@@ -21,7 +24,7 @@ export default function OpenSource() {
     >
       <Container maxw="container.sm" fontWeight={200}>
         <VStack spacing={5}>
-          <Heading>Sambal SOS is open source.</Heading>
+          <Heading>{t("auth.open-source")}</Heading>
           <Button
             colorScheme="teal"
             onClick={() =>
@@ -32,7 +35,8 @@ export default function OpenSource() {
             }
           >
             <Text>
-              <FontAwesomeIcon icon={faGithub} size="1x" /> Check out the code
+              <FontAwesomeIcon icon={faGithub} size="1x" />{" "}
+              {t("auth.check-out-code")}
             </Text>
           </Button>
         </VStack>

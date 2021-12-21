@@ -13,13 +13,22 @@
     "login-disclaimer-2": "We only use this authentication to get your email and protect the app from unauthorised input",
     "privacy-policy": "privacy policy",
     "google-button": "Login with Google",
-    "facebook-button": "Login with Facebook"
+    "facebook-button": "Login with Facebook",
+    "join-our-communities": "Join our Communities",
+    "communities-description": "For <bold>quick, realtime updates</bold> and <bold>thought-provoking conversations</bold>, follow our social handles and join our Discord server, which is home to our entire community.",
+    "what-are-people-saying": "What are people saying?",
+    "impact": "Impact",
+    "open-source": "Sambal SOS is open source.",
+    "check-out-code": "Check out the code",
+    "copyright": "All Rights Reserved | Built with <heart></heart> by the Sambal SOS team."
   },
   "home": {
     "food-banks": "Food Banks",
     "sos": "SOS",
     "ask-for-help": "Ask for help",
-    "report-sos": "Report SOS"
+    "report-sos": "Report SOS",
+    "view-in-list": "View SOS in List",
+    "filter-reports": "Filter SOS Reports"
   },
   "navigation": {
     "find-sos": "Find SOS",
@@ -47,6 +56,13 @@
     "where-are-you": "Where are you?",
     "remarks": "Remarks",
     "what-did-you-see": "Eg: What did you see? What do you need?",
+    "what-type-of-aid-do-you-require": "What type of aid do you require?",
+    "types-of-aid": {
+      "general": "General",
+      "food": "Food",
+      "baby items": "Baby Items",
+      "flood shelter": "Flood Shelter"
+    },
     "enter-your-phone-number": "Enter your phone number",
     "phone-number": "Phone Number",
     "optional": "Optional",

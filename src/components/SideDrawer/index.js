@@ -21,6 +21,7 @@ import RadioCard from "../RadioCard";
 import FlagInlineCard from "../FlagInlineCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const SideDrawer = (props) => {
   const { flags, currentLocation } = props;
@@ -35,6 +36,7 @@ const SideDrawer = (props) => {
     },
   });
   const group = getRootProps();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -58,7 +60,7 @@ const SideDrawer = (props) => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Filter SOS Reports</DrawerHeader>
+          <DrawerHeader>{t("home.filter-reports")}</DrawerHeader>
           <DrawerBody>
             <VStack spacing={5}>
               <Wrap {...group}>
@@ -67,7 +69,9 @@ const SideDrawer = (props) => {
                     const radio = getRadioProps({ value });
                     return (
                       <RadioCard key={value} {...radio}>
-                        {`${getIcon(value.toUpperCase())} ${" "} ${value}`}
+                        {`${getIcon(value.toUpperCase())} ${" "} ${t(
+                          `report-form.types-of-aid.${value.toLowerCase()}`
+                        )}`}
                       </RadioCard>
                     );
                   }

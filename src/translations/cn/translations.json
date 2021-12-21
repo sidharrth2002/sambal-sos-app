@@ -13,13 +13,22 @@
     "login-disclaimer-2": "我们仅使用此认证来获取您的电子邮件，并保护应用程序以免受未经授权的输入。",
     "privacy-policy": "隐私政策",
     "google-button": "使用 Google 登入",
-    "facebook-button": "使用 Facebook 登入"
+    "facebook-button": "使用 Facebook 登入",
+    "join-our-communities": "加入我们的社区",
+    "communities-description": "如需快速、实时的更新和发人深省的对话，请关注我们的社交账号并加入我们整个社区的 Discord 服务器。",
+    "what-are-people-saying": "人们在说什么？",
+    "impact": "影响",
+    "open-source": "Sambal SOS 是 open source。",
+    "check-out-code": "查看代码。",
+    "copyright": "版权所有 |由 Sambal SOS 团队倾情打造。"
   },
   "home": {
     "food-banks": "食物银行",
     "sos": "SOS (求救信号)",
     "ask-for-help": "寻求帮助",
-    "report-sos": "报告 SOS"
+    "report-sos": "报告 SOS",
+    "view-in-list": "在列表中查看 SOS",
+    "filter-reports": "过滤 SOS 报告"
   },
   "navigation": {
     "find-sos": "寻找 SOS",
@@ -47,6 +56,13 @@
     "where-are-you": "你在哪里？",
     "remarks": "备注",
     "what-did-you-see": "例如：您看到了什么？ 您需要什么？",
+    "what-type-of-aid-do-you-require": "您需要什么类型的援助？",
+    "types-of-aid": {
+      "general": "一般的",
+      "food": "食物",
+      "baby items": "婴儿用品",
+      "flood shelter": "洪水援助"
+    },
     "enter-your-phone-number": "输入您的电话号码",
     "phone-number": "填写电话号码",
     "optional": "可选择性提供",

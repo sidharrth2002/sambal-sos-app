@@ -394,7 +394,7 @@ const Home = () => {
           onClick={onOpen}
         >
           <Image mr="5px" src={BDGraphics.FlagIcon} height="11px" />
-          View SOS in List
+          {t("home.view-in-list")}
         </Flex>
       </Flex>
 
