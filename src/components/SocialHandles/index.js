@@ -15,21 +15,24 @@ import {
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation, Trans } from "react-i18next";
 
 export default function SocialHandles() {
+  const { t } = useTranslation();
+
   return (
     <Box padding="3rem">
       <Container maxw="container.sm">
         <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={20} textAlign={"left"}>
           <VStack spacing={5}>
             <Heading as="h2" size={"xl"}>
-              Join Our Communities
+              {t("auth.join-our-communities")}
             </Heading>
             <Text>
-              For <b>quick, realtime updates</b> and{" "}
-              <b>thought-provoking conversations</b>, follow our social handles
-              and join our Discord server, which is home to our entire
-              community.
+              <Trans
+                i18nKey={"auth.communities-description"}
+                components={{ bold: <strong /> }}
+              />
             </Text>
             <HStack spacing={10} justifyContent={"center"}>
               <Link href="https://www.facebook.com/sambalsosapp">

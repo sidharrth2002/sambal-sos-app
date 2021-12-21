@@ -8,8 +8,11 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import CountUp from "react-countup";
+import { useTranslation } from "react-i18next";
 
 const Impact = () => {
+  const { t } = useTranslation();
+
   return (
     <Flex
       padding="3rem"
@@ -20,7 +23,7 @@ const Impact = () => {
       <Container maxw="container.sm" fontWeight={200}>
         <VStack spacing={5} alignItems={"center"}>
           <Heading as="h2" size={"xl"}>
-            Impact
+            {t("auth.impact")}
           </Heading>
           <Stack
             spacing={10}
