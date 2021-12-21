@@ -38,6 +38,7 @@ import FoodbankCard from "../../components/FoodbankCard";
 import FlagCard from "../../components/FlagCard";
 import Popup from "../../components/Popup";
 import SideDrawer from "../../components/SideDrawer";
+import { getDistance } from "geolib";
 
 require("dotenv").config();
 
@@ -124,6 +125,17 @@ const Home = () => {
             phonenumber: flag.phonenumber ?? "",
             createdAt: flag.createdAt,
             type: flag.type,
+            distance:
+              getDistance(
+                {
+                  latitude: center.lat,
+                  longitude: center.lng,
+                },
+                {
+                  latitude: flag.coordinates.coordinates[0],
+                  longitude: flag.coordinates.coordinates[1],
+                }
+              ) / 1000,
           };
           let imageURL;
           // we don't have enough money so we have to switch between buckets
@@ -431,6 +443,7 @@ const Home = () => {
         isOpen={isOpen}
         onOpen={onOpen}
         onClose={onClose}
+        currentLocation={center}
       />
     </div>
   );
