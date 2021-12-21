@@ -25,7 +25,12 @@ const FlagInlineCard = (props) => {
   return (
     <Box maxW="md" borderWidth="1px" borderRadius="lg" shadow={"lg"}>
       <VStack p="6" spacing={5} alignItems="start">
-        <Box display="flex" alignItems="baseline">
+        <Box
+          width={"100%"}
+          display="flex"
+          alignItems="baseline"
+          justifyContent="space-between"
+        >
           <Badge borderRadius="full" px="2" colorScheme="teal">
             {getIcon(props.type.toUpperCase())}
           </Badge>
@@ -38,6 +43,16 @@ const FlagInlineCard = (props) => {
             ml="2"
           >
             {props.type}
+          </Box>
+          <Box
+            color="gray.500"
+            fontWeight="semibold"
+            letterSpacing="wide"
+            fontSize="sm"
+            textTransform="uppercase"
+            ml="2"
+          >
+            {`${props.distance} km`}
           </Box>
         </Box>
         <Box>{props.description}</Box>
@@ -105,6 +120,7 @@ FlagInlineCard.propTypes = {
   type: PropTypes.string,
   latitude: PropTypes.number,
   longitude: PropTypes.number,
+  distance: PropTypes.number,
 };
 
 export default FlagInlineCard;
