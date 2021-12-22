@@ -191,8 +191,8 @@ const Auth = () => {
                 uxMode="redirect"
                 redirectUri={
                   process.env.REACT_APP_ENVIRONMENT === "production"
-                    ? "https://www.sambalsos.com/auth/google/"
-                    : "http://localhost:3000/auth/google/"
+                    ? "https://www.sambalsos.com/google/"
+                    : "http://localhost:3000/google/"
                 }
               />
               <FacebookLogin
