@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <LanguageSwitcher />
       <Switch>
-        <Route path="/google/" component={GoogleLanding} strict />
+        <Route strict path="/google/" component={GoogleLanding} />
         <Route exact path="/login" component={Auth} />
         <Route exact path="/food-banks" component={FoodBanks} />
         <ProtectedRoute exact path="/home" component={Home} />
