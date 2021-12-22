@@ -19,12 +19,12 @@ function App() {
     <div className="App">
       <LanguageSwitcher />
       <Switch>
+        <Route exact path="/google" component={GoogleLanding} />
         <Route exact path="/login" component={Auth} />
         <Route exact path="/food-banks" component={FoodBanks} />
         <ProtectedRoute exact path="/home" component={Home} />
         <ProtectedRoute exact path="/report-flag" component={ReportForm} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-        <Route exact path="/auth/google" component={GoogleLanding} />
         <Route path="/" component={Auth} />
       </Switch>
     </div>
