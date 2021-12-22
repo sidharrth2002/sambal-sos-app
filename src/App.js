@@ -7,6 +7,7 @@ import ReportForm from "./screens/ReportForm";
 import Home from "./screens/Home";
 import FoodBanks from "./screens/FoodBanks";
 import PrivacyPolicy from "./screens/PrivacyPolicy";
+import GoogleLanding from "./screens/GoogleLanding";
 
 // components imports
 import LanguageSwitcher from "./components/LanguageSwitcher";
@@ -23,6 +24,7 @@ function App() {
         <ProtectedRoute exact path="/home" component={Home} />
         <ProtectedRoute exact path="/report-flag" component={ReportForm} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+        <Route exact path="/auth/google" component={GoogleLanding} />
         <Route path="/" component={Auth} />
       </Switch>
     </div>
