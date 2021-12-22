@@ -73,13 +73,17 @@ this corresponds to `REACT_APP_GOOGLE_AUTH_CLIENT_ID` in the .env files
 1. Create an account in <a>https://console.developers.google.com</a>
 
 2. Create a new project
+   <br />
    <img src="./screenshots/step 1.1.png" />
+   <br />
    <img src="./screenshots/step 1.2.png" />
 
 3. Go to the Credentials Tab of your project
+   <br />
    <img src="./screenshots/step 2.png"/>
 
 4. Click on Create Credentials and Choose the OAuth Client ID option
+   <br />
    <img src="./screenshots/step 3.png" />
 
 after this you should be provided with a prompt that lets you copy the client id, paste it in the .env file and you are good to go
