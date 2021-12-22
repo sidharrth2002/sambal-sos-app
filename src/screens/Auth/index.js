@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
 import "./Auth.css";
 
 // eslint-disable-next-line no-unused-vars
@@ -59,6 +59,7 @@ const Auth = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   const handleGoogleLogin = async (googleData) => {
+    console.log(googleData);
     if (googleData) {
       await axios
         .post(`${process.env.REACT_APP_API_URL}auth/google`, {
@@ -187,6 +188,12 @@ const Auth = () => {
                 onSuccess={handleGoogleLogin}
                 onFailure={handleGoogleLogin}
                 cookiePolicy={"single_host_origin"}
+                uxMode="redirect"
+                redirectUri={
+                  process.env.REACT_APP_ENVIRONMENT === "production"
+                    ? "https://www.sambalsos.com/auth/google/"
+                    : "http://localhost:3000/auth/google/"
+                }
               />
               <FacebookLogin
                 size="medium"
