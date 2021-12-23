@@ -1,0 +1,4 @@
+.env
+node_modules/
+app.yaml
+serverless.yml

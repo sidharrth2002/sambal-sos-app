@@ -1,7 +1,7 @@
 <h1 align="center">The Sambal SOS App</h1>
 <h4 align="center"> <i> Crowdsourcing Aid Data Across the Nation </i> </h4>
 
-This is the repository for the frontend and you'll find usage, folder structure and contribution details below. For the backend's repository, refer [here](https://github.com/sidharrth2002/sambal-sos-backend). Sambal SOS is fully open-sourced and community driven, feel free to checkout the list of active issues and submit pull requests.
+This is the repository for Sambal SOS and you'll find usage, folder structure and contribution details below. Sambal SOS is fully open-sourced and community driven, feel free to checkout the list of active issues and submit pull requests.
 
 # Table of Contents
 
