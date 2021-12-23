@@ -1,5 +1,6 @@
 {
   "name": "sambal-sos",
+  "private": true,
   "version": "2.0.0",
   "description": "Crowdsourcing aid data across the nation",
   "main": "index.js",
