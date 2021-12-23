@@ -15,11 +15,11 @@
   },
   "lint-staged": {
     "*.+(js|jsx)": [
-      "cd packages/webapp && eslint --fix",
-      "cd packages/webapp && prettier --write --ignore-unknown"
+      "./node_modules/.bin/eslint --fix --prefix=packages/webapp",
+      "./node_modules/.bin/prettier --write --ignore-unknown --prefix=packages/webapp"
     ],
     "*.+(json|css|md)": [
-      "cd packages/webapp && prettier --write"
+      "./node_modules/.bin/prettier --write --prefix=packages/webapp"
     ]
   },
   "repository": {
