@@ -1,0 +1,166 @@
+{"message":"Unable to connect to the database:' connect ETIMEDOUT","level":"error","timestamp":"2021-06-30T15:00:57.233Z"}
+{"message":"Unable to connect to the database:' connect ETIMEDOUT","level":"error","timestamp":"2021-06-30T15:01:53.048Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-06-30T15:54:13.646Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-06-30T15:54:17.669Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-06-30T16:36:33.934Z"}
+{"message":"Unable to connect to the database:' syntax error at or near \"SERIAL\"","level":"error","timestamp":"2021-07-02T15:16:49.236Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:30:49.357Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:30:49.363Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:30:49.364Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:30:49.411Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:30:49.457Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:30:49.757Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:30:51.026Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:31:08.791Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:31:08.792Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:31:08.793Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:31:09.463Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:31:09.469Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:31:09.480Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:31:09.551Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T15:31:11.043Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T16:04:29.289Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T16:04:29.422Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-02T16:06:44.838Z"}
+{"message":"JWT: jwt must be provided","level":"error","timestamp":"2021-07-03T06:36:52.854Z"}
+{"message":"Error occured: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client","level":"error","timestamp":"2021-07-03T06:36:52.857Z"}
+{"message":"JWT: jwt must be provided","level":"error","timestamp":"2021-07-03T06:37:23.411Z"}
+{"message":"Error occured: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client","level":"error","timestamp":"2021-07-03T06:37:23.415Z"}
+{"message":"JWT: invalid token","level":"error","timestamp":"2021-07-03T06:38:23.455Z"}
+{"message":"JWT: invalid token","level":"error","timestamp":"2021-07-03T06:39:25.324Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-03T06:55:44.684Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-03T06:55:44.786Z"}
+{"message":"JWT: jwt malformed","level":"error","timestamp":"2021-07-03T07:00:43.491Z"}
+{"message":"JWT: jwt malformed","level":"error","timestamp":"2021-07-03T07:01:04.856Z"}
+{"message":"JWT: jwt malformed","level":"error","timestamp":"2021-07-03T07:01:47.351Z"}
+{"message":"JWT: jwt malformed","level":"error","timestamp":"2021-07-03T07:03:59.559Z"}
+{"message":"JWT: jwt malformed","level":"error","timestamp":"2021-07-03T07:04:29.719Z"}
+{"message":"JWT: jwt malformed","level":"error","timestamp":"2021-07-03T07:05:40.281Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-07-03T07:26:45.935Z"}
+{"message":"JWT: jwt expired","level":"error","timestamp":"2021-07-03T07:26:58.193Z"}
+{"message":"JWT: jwt malformed","level":"error","timestamp":"2021-07-03T07:27:43.603Z"}
+{"message":"JWT: jwt expired","level":"error","timestamp":"2021-07-03T08:58:51.191Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-07-03T08:59:20.422Z"}
+{"message":"JWT: jwt expired","level":"error","timestamp":"2021-07-03T16:24:43.594Z"}
+{"message":"Unable to connect to the database:' connect ENOENT /cloudsql/bendera-putih-database/.s.PGSQL.5432","level":"error","timestamp":"2021-07-03T16:43:20.694Z"}
+{"message":"Unable to connect to the database:' connect ENOENT /cloudsql/bendera-putih-database/.s.PGSQL.5432","level":"error","timestamp":"2021-07-03T16:58:00.174Z"}
+{"message":"Unable to connect to the database:' connect ENOENT /cloudsql/mesolitica-cloud:asia-southeast1:bendera-putih-database/.s.PGSQL.5432","level":"error","timestamp":"2021-07-03T17:07:28.512Z"}
+{"message":"Unable to connect to the database:' connect ENOENT /cloudsql/mesolitica-cloud:asia-southeast1:bendera-putih-database/.s.PGSQL.5432","level":"error","timestamp":"2021-07-03T17:11:35.294Z"}
+{"message":"Unable to connect to the database:' connect ENOENT /cloudsql/mesolitica-cloud:asia-southeast1:bendera-putih-database/.s.PGSQL.5432","level":"error","timestamp":"2021-07-03T17:18:47.839Z"}
+{"message":"Unable to connect to the database:' connect ENOENT /cloudsql/mesolitica-cloud:asia-southeast1:bendera-putih-database/.s.PGSQL.5432","level":"error","timestamp":"2021-07-04T03:46:50.730Z"}
+{"message":"Unable to connect to the database:' password authentication failed for user \"admin\"","level":"error","timestamp":"2021-07-04T03:51:18.374Z"}
+{"message":"Unable to connect to the database:' connect ECONNREFUSED 127.0.0.1:5432","level":"error","timestamp":"2021-07-04T17:10:53.742Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-07-04T17:42:06.841Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-05T14:29:48.128Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-05T14:29:48.424Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-05T15:03:55.277Z"}
+{"message":"JWT: jwt expired","level":"error","timestamp":"2021-07-05T15:04:03.100Z"}
+{"message":"JWT: jwt expired","level":"error","timestamp":"2021-07-05T15:04:15.161Z"}
+{"message":"Error occured: ReferenceError: Op is not defined","level":"error","timestamp":"2021-07-05T15:04:30.305Z"}
+{"message":"Error occured: ReferenceError: Op is not defined","level":"error","timestamp":"2021-07-05T15:05:13.224Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-07-08T04:42:11.835Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-08T04:53:23.367Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-08T04:53:23.973Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-07-08T06:51:28.691Z"}
+{"message":"Error occured: MulterError: Unexpected field","level":"error","timestamp":"2021-07-09T09:47:26.145Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-09T09:52:52.064Z"}
+{"message":"Error occured: InvalidBucketNameError: Invalid bucket name: undefined","level":"error","timestamp":"2021-07-09T09:53:05.928Z"}
+{"message":"Error occured: InvalidObjectNameError: Invalid object name: undefined","level":"error","timestamp":"2021-07-09T09:53:24.778Z"}
+{"message":"Error occured: ReferenceError: minioBucket is not defined","level":"error","timestamp":"2021-07-09T10:01:19.121Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T10:54:03.969Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T10:54:05.014Z"}
+{"message":"Error occured: PayloadTooLargeError: request entity too large","level":"error","timestamp":"2021-07-09T10:55:37.885Z"}
+{"message":"Error occured: PayloadTooLargeError: request entity too large","level":"error","timestamp":"2021-07-09T10:55:39.498Z"}
+{"message":"Error occured: PayloadTooLargeError: request entity too large","level":"error","timestamp":"2021-07-09T10:55:40.517Z"}
+{"message":"Error occured: PayloadTooLargeError: request entity too large","level":"error","timestamp":"2021-07-09T10:55:49.902Z"}
+{"message":"Error occured: PayloadTooLargeError: request entity too large","level":"error","timestamp":"2021-07-09T10:55:51.530Z"}
+{"message":"Error occured: PayloadTooLargeError: request entity too large","level":"error","timestamp":"2021-07-09T10:55:52.546Z"}
+{"message":"Error occured: PayloadTooLargeError: request entity too large","level":"error","timestamp":"2021-07-09T10:55:53.570Z"}
+{"message":"Error occured: PayloadTooLargeError: request entity too large","level":"error","timestamp":"2021-07-09T10:55:54.795Z"}
+{"message":"Error occured: PayloadTooLargeError: request entity too large","level":"error","timestamp":"2021-07-09T10:55:56.095Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:02:51.594Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:02:52.629Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:02:53.645Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:02:54.661Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:03:18.834Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:03:20.990Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:05:17.232Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:05:18.266Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:05:19.282Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:11:30.883Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:11:31.917Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:11:32.930Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:11:53.862Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:11:54.892Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:11:55.909Z"}
+{"message":"Error occured: Error: Multipart: Boundary not found","level":"error","timestamp":"2021-07-09T11:12:56.349Z"}
+{"message":"Error occured: Error: Multipart: Boundary not found","level":"error","timestamp":"2021-07-09T11:12:57.372Z"}
+{"message":"Error occured: Error: Multipart: Boundary not found","level":"error","timestamp":"2021-07-09T11:12:58.388Z"}
+{"message":"Error occured: Error: Multipart: Boundary not found","level":"error","timestamp":"2021-07-09T11:27:51.287Z"}
+{"message":"Error occured: Error: Multipart: Boundary not found","level":"error","timestamp":"2021-07-09T11:27:52.318Z"}
+{"message":"Error occured: Error: Multipart: Boundary not found","level":"error","timestamp":"2021-07-09T11:27:53.334Z"}
+{"message":"Error occured: Error: Multipart: Boundary not found","level":"error","timestamp":"2021-07-09T11:27:54.346Z"}
+{"message":"Error occured: Error: Multipart: Boundary not found","level":"error","timestamp":"2021-07-09T11:27:55.358Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:09.120Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:10.151Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:11.165Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:12.180Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:13.200Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:14.222Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:15.235Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:16.258Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:17.274Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:18.289Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:19.307Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:20.331Z"}
+{"message":"Error occured: Error: Only .png, .jpg and .jpeg format allowed!","level":"error","timestamp":"2021-07-09T11:28:21.357Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-07-09T12:28:50.196Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-07-10T03:11:49.726Z"}
+{"message":"Unable to connect to the database:' connect ECONNREFUSED 127.0.0.1:5432","level":"error","timestamp":"2021-07-19T14:21:06.456Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-07-20T18:35:18.609Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T19:17:52.364Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T19:18:08.230Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:18:12.140Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:18:13.058Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:18:13.464Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:18:13.830Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:18:14.982Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:18:45.932Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:19:19.450Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:19:26.164Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:20:14.179Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:20:16.836Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:20:17.424Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:20:18.266Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:20:32.013Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:20:33.383Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:20:35.843Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T19:30:15.894Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T19:36:50.148Z"}
+{"message":"Error occured: TypeError: Cannot read property 'split' of undefined","level":"error","timestamp":"2021-08-15T19:37:02.226Z"}
+{"message":"Flag not found: undefined","level":"error","timestamp":"2021-08-15T19:38:02.840Z"}
+{"message":"DB Error: invalid input value for enum enum_flags_status: \"BERB\"","level":"error","timestamp":"2021-08-15T21:14:13.102Z"}
+{"message":"DB Error: invalid input value for enum enum_flags_status: \"BERB\"","level":"error","timestamp":"2021-08-15T21:17:16.006Z"}
+{"message":"DB Error: invalid input syntax for type uuid: \"6cbe8965-3b1a-4b9e-83a0-9ce962cf5fc\"","level":"error","timestamp":"2021-08-15T21:17:32.889Z"}
+{"message":"DB Error: invalid input value for enum enum_flags_status: \"APPROVD\"","level":"error","timestamp":"2021-08-15T21:24:50.058Z"}
+{"message":"DB Error: invalid input value for enum enum_flags_status: \"APPROVD\"","level":"error","timestamp":"2021-08-15T21:24:58.214Z"}
+{"message":"DB Error: invalid input value for enum enum_flags_status: \"APPROVD\"","level":"error","timestamp":"2021-08-15T21:27:57.587Z"}
+{"message":"DB Error: invalid input value for enum enum_flags_status: \"APPROVD\"","level":"error","timestamp":"2021-08-15T21:28:10.863Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T21:31:36.747Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T21:31:38.101Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T21:31:44.909Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T21:31:49.063Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T21:31:53.713Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T21:31:54.486Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T21:31:54.994Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T21:32:04.818Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T21:32:05.355Z"}
+{"message":"Error occured: Error: Not found","level":"error","timestamp":"2021-08-15T21:32:37.046Z"}
+{"message":"DB Error: Cannot read property 'length' of null","level":"error","timestamp":"2021-08-15T21:35:00.440Z"}
+{"message":"Unable to connect to the database:' connect ECONNREFUSED 127.0.0.1:5432","level":"error","timestamp":"2021-07-26T15:28:11.814Z"}
+{"message":"Unable to connect to the database:' connect ECONNREFUSED 127.0.0.1:5432","level":"error","timestamp":"2021-07-27T02:52:48.378Z"}
+{"message":"Unable to connect to the database:' connect ECONNREFUSED 127.0.0.1:5432","level":"error","timestamp":"2021-08-14T09:01:42.722Z"}
+{"message":"Unable to connect to the database:' connect ECONNREFUSED 127.0.0.1:5432","level":"error","timestamp":"2021-09-13T05:54:03.330Z"}
+{"message":"Unable to connect to the database:' no pg_hba.conf entry for host \"14.192.220.110\", user \"sambalsosuser\", database \"benderaputih\", SSL off","level":"error","timestamp":"2021-12-20T12:17:18.416Z"}
+{"message":"Unable to connect to the database:' no pg_hba.conf entry for host \"14.192.220.110\", user \"sambalsosuser\", database \"benderaputih\", SSL off","level":"error","timestamp":"2021-12-20T12:17:43.876Z"}
+{"message":"Unable to connect to the database:' role \"SidharrthNagappansdfsd\" does not exist","level":"error","timestamp":"2021-12-22T04:09:01.901Z"}

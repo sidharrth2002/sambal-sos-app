@@ -1,104 +1,36 @@
 {
-  "name": "bendera-putih-webapp",
-  "homepage": ".",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@chakra-ui/icons": "^1.0.13",
-    "@chakra-ui/react": "^1.6.4",
-    "@craco/craco": "^6.1.2",
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
-    "@fontsource/archivo-black": "^4.5.0",
-    "@fontsource/black-han-sans": "^4.5.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.16",
-    "@react-google-maps/api": "^2.2.0",
-    "@reduxjs/toolkit": "^1.6.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "axios": "^0.21.1",
-    "chakra-ui-steps": "^1.1.1",
-    "cloudinary": "^1.26.1",
-    "dotenv": "^8.2.0",
-    "exif-js": "^2.3.0",
-    "framer-motion": "^4.1.17",
-    "geolib": "^3.3.3",
-    "http2": "^3.3.7",
-    "i18next": "^20.3.2",
-    "js-cookie": "^2.2.1",
-    "lodash": "^4.17.21",
-    "moment": "^2.29.1",
-    "pageclip": "^1.0.0",
-    "qs": "^6.7.0",
-    "react": "^17.0.2",
-    "react-bingmaps": "^3.6.1",
-    "react-clear-cache": "^1.4.12",
-    "react-cool-onclickoutside": "^1.6.2",
-    "react-countup": "^6.1.0",
-    "react-dom": "^17.0.2",
-    "react-dropzone": "^11.3.4",
-    "react-facebook-login": "^4.1.1",
-    "react-google-login": "^5.2.2",
-    "react-hook-form": "^7.9.0",
-    "react-i18next": "^11.11.1",
-    "react-lottie": "^1.2.3",
-    "react-moment": "^1.1.1",
-    "react-redux": "^7.2.4",
-    "react-router-dom": "^5.2.0",
-    "react-router-redux": "^4.0.8",
-    "react-scripts": "4.0.3",
-    "react-twitter-embed": "^3.0.3",
-    "react-twitter-widgets": "^1.10.0",
-    "styled-components": "^5.3.0",
-    "use-places-autocomplete": "^1.9.3",
-    "web-vitals": "^1.0.1",
-    "xlsx": "^0.17.0"
-  },
+  "name": "sambal-sos",
+  "version": "2.0.0",
+  "description": "Crowdsourcing aid data across the nation",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "cracostart": "craco start",
-    "cracobuild": "craco build",
-    "cracotest": "craco test",
-    "lint": "eslint ./ --ignore-path .gitignore",
-    "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\"",
+    "start-frontend": "cd packages/webapp && npm start",
+    "start-backend": "cd packages/server && npm start",
+    "build": "cd packages/webapp && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "husky install",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "cd packages/webapp && npm run lint:fix"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
-      "eslint --fix",
-      "prettier --write --ignore-unknown"
+      "cd packages/webapp && eslint --fix",
+      "cd packages/webapp && prettier --write --ignore-unknown"
     ],
     "*.+(json|css|md)": [
-      "prettier --write"
+      "cd packages/webapp && prettier --write"
     ]
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidharrth2002/sambal-sos-app.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "The Sambal SOS team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sidharrth2002/sambal-sos-app/issues"
   },
+  "homepage": "https://github.com/sidharrth2002/sambal-sos-app#readme",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "eslint": "^7.31.0",
@@ -106,9 +38,17 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "husky": "^7.0.0",
+    "lerna": "^4.0.0",
     "lint-staged": "^11.0.1",
     "postcss": "^7.0.36",
     "prettier": "^2.3.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
-  }
+    "turbo": "^1.0.19"
+  },
+  "turbo": {
+    "baseBranch": "origin/main"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
 }
