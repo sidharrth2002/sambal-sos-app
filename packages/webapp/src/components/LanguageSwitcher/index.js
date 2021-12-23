@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect, useRef } from "react";
 import { Flex, Image, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
