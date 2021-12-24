@@ -117,6 +117,16 @@ here are the articles related to our app:
 
 Please help us spread word about the app on your favorite social media platforms. People knowing about our existance helps grow the app and provides assistance to the needy, especially during times of crisis.
 
+## Contributors
+
+special thanks to these people that have worked on this project
+
+<a href="https://github.com/sidharrth2002/sambal-sos-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sidharrth2002/sambal-sos-app" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
 ## License
 
 [Sambal SOS App](https://www.sambalsos.com/) is open source, licensed under the [MIT](https://choosealicense.com/licenses/mit/) license
