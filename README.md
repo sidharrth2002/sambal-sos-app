@@ -1,5 +1,14 @@
 <h1 align="center">The Sambal SOS App</h1>
 <h4 align="center"> <i> Crowdsourcing Aid Data Across the Nation </i> </h4>
+<p align="center">
+  <strong>For Malaysians, By Malaysians 🇲🇾</strong>
+</p>
+<p align="center">
+  <a href="https://discord.gg/kJUVyfzjeZ">
+    <img src="https://img.shields.io/discord/859805317859377173?style=for-the-badge" alt="discord - users online" />
+  </a>
+  <img src="https://img.shields.io/github/languages/code-size/sidharrth2002/sambal-sos-backend?style=for-the-badge"> </img>
+</p>
 
 This is the repository for Sambal SOS and you'll find usage, folder structure and contribution details below. Sambal SOS is fully open-sourced and community driven, feel free to checkout the list of active issues and submit pull requests.
 
@@ -9,13 +18,7 @@ This is the repository for Sambal SOS and you'll find usage, folder structure an
 - [Usage](#usage)
 - [About us](#about-us)
 - [Contributing](#contributing)
-  - [Prerequisites](#prerequisites)
-  - [How to Install the app](#how-to-install-the-app)
-  - [Project Structure](#project-structure)
-  - [Protocols](#protocols)
-  - [Pull Request Template](#pull-request-template)
-  - [Branches](#branches)
-  - [Admins](#admins)
+  - [Technical](#technical)
   - [Monetary](#monetary)
   - [Development](#development)
   - [Other](#other)
@@ -54,120 +57,11 @@ We're a team of student developers passionate to make a positive impact to our c
 
 ## Contributing
 
-Currently, our team consists of mostly student developers, and we are running on a 0 budget. Maintaining the [Sambal SOS App](http://sambalsos.com/) involves financial costs, hence we are opening up to the public for volunteering or contributions.
+### Technical
 
-This Project is completely Open Source and we welcome all efforts to help the app grow and develop
+if you are a programmer that is interested to contribute, you can read [this](./CONTRIBUTING.md)
 
-### Prerequisites
-
-This app uses multiple APIs and has a list of env variables needed to start the app
-
-follow the [.env template](./.env.example) to setup your own
-
-if you don't have the variables some parts of the app will not work
-
-### How to Get google auth keys
-
-this corresponds to `REACT_APP_GOOGLE_AUTH_CLIENT_ID` in the .env files
-
-1. Create an account in <a>https://console.developers.google.com</a>
-
-2. Create a new project
-   <br />
-   <img src="./screenshots/step 1.1.png" />
-   <br />
-   <img src="./screenshots/step 1.2.png" />
-
-3. Go to the Credentials Tab of your project
-   <br />
-   <img src="./screenshots/step 2.png"/>
-
-4. Click on Create Credentials and Choose the OAuth Client ID option
-   <br />
-   <img src="./screenshots/step 3.png" />
-
-after this you should be provided with a prompt that lets you copy the client id, paste it in the .env file and you are good to go
-
-### How to Install the app
-
-1. Clone the project
-   `$ gh repo clone sidharrth2002/sambal-sos-app `
-
-2. Install Dependencies
-   `$ npm install`
-
-3. Start the Development Server
-   ` $ npm start`
-
-> the script will bring you to your default browser, wait for the development server to fully start and you are ready to go
-
-### Project Structure
-
-| Directory | Description                    |
-| --------- | ------------------------------ |
-| /public   | Stores static files and images |
-| /src      | Stores main content of project |
-
-> src
->
-> - **/api**-> endpoint to get geolocation data
-> - **/app** -> handles state in the app (redux)
-> - **/assets** -> static assets
-> - **/components** -> organize components
-> - **/constants** -> stores configurations and constants
-> - **/features** -> currently contains the auth slice (handles authentication and state of auth)
-> - **/screens** handles each page of the app
-
-    - *Auth* -> login & signup page
-    - *Foodbanks* -> contains a static list of food banks and the respective page
-    - *Home* -> contains the main page of the app (with the google maps component)
-    - *PrivacyPolicy* -> self explanatory
-    - *ReportForm* -> form page to report or request SOS
-
-> - **/style** -> stores the styling of the appp
-> - **/translations** -> contains i18n translation files
-> - **/utils** -> extra functions to help with the app
-
-### Protocols
-
-Please Follow these suggestions to make sure that the repo is organized and other people who wish to contribute can have a nice time doing so
-
-> If you wish to be on the main team and actively contribute, we would recommend that you join our [discord server](https://discord.gg/kJUVyfzjeZ)
-
-Otherwise you can:
-
-1. Open an issue about something
-2. Comment on Issues and Pull Requests
-3. Participate in issue threads
-4. Make Bug Reports
-5. Make your own pull requests to solve open issues
-
-### Pull Request Template
-
-```NAMING CONVENTION: FEAT/FIX/REFACTOR nameOfContribution
-
-What type of change did you make?
-feat (add something new) or fix (fix an issue) or refactor (no changes to features, e.g. removing comments, logs)
-
-Describe the changes:
-1.
-2.
-3.
-
-Add screenshots:
-
-
-[] Does your change break anything?
-
-Mention someone for review
-@someone
-```
-
-### Branches
-
-main -> development branch, fork or clone from this branch
-
-production -> deployed to vercel, don't touch this
+> particularly those who are familiar with Javascript, React and Chakra UI
 
 ### Monetary
 
@@ -222,6 +116,16 @@ here are the articles related to our app:
 7. KL foodie (https://klfoodie.com/sambal-sos-app-bendera-putih-malaysia)
 
 Please help us spread word about the app on your favorite social media platforms. People knowing about our existance helps grow the app and provides assistance to the needy, especially during times of crisis.
+
+## Contributors
+
+special thanks to these people that have worked on this project
+
+<a href="https://github.com/sidharrth2002/sambal-sos-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sidharrth2002/sambal-sos-app" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
 
 ## License
 
