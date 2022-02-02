@@ -6,7 +6,6 @@ import Auth from "./screens/Auth";
 import ReportForm from "./screens/ReportForm";
 import Home from "./screens/Home";
 import FoodBanks from "./screens/FoodBanks";
-import PrivacyPolicy from "./screens/PrivacyPolicy";
 import GoogleLanding from "./screens/GoogleLanding";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 
@@ -22,7 +21,11 @@ function App() {
         <Route exact path="/food-banks" component={FoodBanks} />
         <ProtectedRoute exact path="/home" component={Home} />
         <ProtectedRoute exact path="/report-flag" component={ReportForm} />
-        <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+        <Route exact path="/privacy-policy">
+          {window.location.replace(
+            "https://prickle-cost-0b4.notion.site/Sambal-SOS-Privacy-Policy-57f3de9f48bb4f489f508a7a58ea7175"
+          )}
+        </Route>
         <Route path="/" component={Auth} />
       </Switch>
     </div>
