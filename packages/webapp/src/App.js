@@ -21,11 +21,14 @@ function App() {
         <Route exact path="/food-banks" component={FoodBanks} />
         <ProtectedRoute exact path="/home" component={Home} />
         <ProtectedRoute exact path="/report-flag" component={ReportForm} />
-        <Route exact path="/privacy-policy">
-          {window.location.replace(
-            "https://prickle-cost-0b4.notion.site/Sambal-SOS-Privacy-Policy-57f3de9f48bb4f489f508a7a58ea7175"
-          )}
-        </Route>
+        <Route
+          exact
+          path="/privacy-policy"
+          render={() =>
+            (window.location =
+              "https://prickle-cost-0b4.notion.site/Sambal-SOS-Privacy-Policy-57f3de9f48bb4f489f508a7a58ea7175")
+          }
+        />
         <Route path="/" component={Auth} />
       </Switch>
     </div>
