@@ -1,0 +1,48 @@
+{
+  "name": "@sambalsos/server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "lint": "npx standard .",
+    "lint:fix": "npx standard --fix && echo 'Lint complete.'",
+    "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
+  },
+  "author": "Sidharrth Nagappan, Mak Yen Wei, Cornelius Pang and the Malaysian Developer Community",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^5.8.5",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.5.0",
+    "google-auth-library": "^7.2.0",
+    "helmet": "^3.22.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "minio": "^7.0.18",
+    "moment": "^2.29.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "mysql2": "^2.1.0",
+    "pg": "^8.6.0",
+    "sequelize": "^4.42.0",
+    "sequelize-auto-migrations": "^1.0.3",
+    "sharp": "^0.28.3",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4",
+    "uuidv4": "^6.2.11",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.4",
+    "sequelize-cli": "^5.5.1",
+    "standard": "^14.3.4"
+  }
+}

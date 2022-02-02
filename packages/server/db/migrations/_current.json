@@ -1,0 +1,144 @@
+{
+    "tables": {
+        "flags": {
+            "tableName": "flags",
+            "schema": {
+                "id": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.UUIDV4"
+                    },
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "id",
+                    "seqType": "Sequelize.UUID"
+                },
+                "coordinates": {
+                    "allowNull": false,
+                    "field": "coordinates",
+                    "seqType": "Sequelize.GEOMETRY('POINT')"
+                },
+                "address": {
+                    "allowNull": true,
+                    "field": "address",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "phonenumber": {
+                    "allowNull": true,
+                    "field": "phonenumber",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "description": {
+                    "allowNull": true,
+                    "field": "description",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "image": {
+                    "allowNull": true,
+                    "field": "image",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "minioimage": {
+                    "allowNull": true,
+                    "field": "minioimage",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "status": {
+                    "defaultValue": {
+                        "value": "PENDING"
+                    },
+                    "allowNull": false,
+                    "field": "status",
+                    "seqType": "Sequelize.ENUM('PENDING', 'APPROVED', 'UNDER REVIEW', 'REJECTED')"
+                },
+                "rejectionReason": {
+                    "allowNull": false,
+                    "field": "rejectionReason",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "assignedAdmin": {
+                    "allowNull": true,
+                    "field": "assignedAdmin",
+                    "name": "assignedAdmin",
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.UUID"
+                "type": {
+                    "allowNull": true,
+                    "defaultValue": {
+                        "value": "GENERAL"
+                    },
+                    "field": "type",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "userId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "userId",
+                    "seqType": "Sequelize.UUID"
+                }
+            },
+            "indexes": []
+        },
+        "users": {
+            "tableName": "users",
+            "schema": {
+                "id": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.UUIDV4"
+                    },
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "id",
+                    "seqType": "Sequelize.UUID"
+                },
+                "email": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "email",
+                    "seqType": "Sequelize.STRING"
+                },
+                "role": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "USER"
+                    },
+                    "field": "role",
+                    "seqType": "Sequelize.ENUM('SUPERADMIN', 'ADMIN', 'USER')"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 7
+}
