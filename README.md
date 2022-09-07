@@ -98,8 +98,6 @@ The features and milestones that we plan to achieve for [Sambal SOS App](http://
 Let's connect! 📧
 
 [Email ✉](mailto:sambalsos.app@gmail.com)
-\
-[Discord 👾](https://discord.gg/9QeJu9M9)
 
 ## Publicity
 
