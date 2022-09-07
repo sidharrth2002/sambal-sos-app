@@ -4,9 +4,6 @@
   <strong>For Malaysians, By Malaysians 🇲🇾</strong>
 </p>
 <p align="center">
-  <a href="https://discord.gg/kJUVyfzjeZ">
-    <img src="https://img.shields.io/discord/859805317859377173?style=for-the-badge" alt="discord - users online" />
-  </a>
   <img src="https://img.shields.io/github/languages/code-size/sidharrth2002/sambal-sos-backend?style=for-the-badge"> </img>
 </p>
 
