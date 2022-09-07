@@ -23,7 +23,7 @@ export default function SocialHandles() {
   return (
     <Box padding="3rem">
       <Container maxw="container.sm">
-        <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={20} textAlign={"left"}>
+        <SimpleGrid columns={{ sm: 1, md: 1 }} spacing={20} textAlign={"left"}>
           <VStack spacing={5}>
             <Heading as="h2" size={"xl"}>
               {t("auth.join-our-communities")}
@@ -50,16 +50,6 @@ export default function SocialHandles() {
               </Link>
             </HStack>
           </VStack>
-          <Box>
-            <iframe
-              src="https://discord.com/widget?id=859805317859377173&theme=dark"
-              width="300"
-              height="400"
-              allowtransparency="true"
-              frameBorder="0"
-              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-            ></iframe>
-          </Box>
         </SimpleGrid>
       </Container>
     </Box>
