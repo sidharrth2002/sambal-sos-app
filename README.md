@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/github/languages/code-size/sidharrth2002/sambal-sos-backend?style=for-the-badge"> </img>
 </p>
 
-This is the repository for Sambal SOS and you'll find usage, folder structure and contribution details below. Sambal SOS is fully open-sourced and community driven, feel free to checkout the list of active issues and submit pull requests.
+This is the repository for Sambal SOS and you'll find usage, folder structure and contribution details below. Sambal SOS is fully open-sourced and community driven, feel free to checkout the list of active issues and submit pull requests. 
 
 # Table of Contents
 
