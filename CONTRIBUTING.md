@@ -23,7 +23,7 @@ This Project is completely Open Source and we welcome all efforts to help the ap
 
 ## Monorepo
 
-A while back, we migrated separate repositories into a monorepo to streamline collaboration and CI/CD processes. The monorepo is managed by Lerna, housing two packages: the webapp and the server. The webapp is deployed onto Vercel, while the server lives on GCP App Engine. The database lives on a Digital Ocean droplet; it was originally on GCP Cloud SQL, but was moved to a droplet after rising maintenance costs. 
+A while back, we migrated separate repositories into a monorepo to streamline collaboration and CI/CD processes. The monorepo is managed by Lerna, housing two packages: the webapp and the server. The webapp is deployed onto Vercel, while the server lives on GCP App Engine. The database lives on a Digital Ocean droplet; it was originally on GCP Cloud SQL, but was moved to a droplet after rising maintenance costs.
 
 ## Frontend
 
@@ -44,18 +44,18 @@ this corresponds to `REACT_APP_GOOGLE_AUTH_CLIENT_ID` in the .env files
 2. Create a new project
    <br />
    <br />
-    <img src="./screenshots/step 1.1.png" />
+   <img src="./screenshots/step 1.1.png" />
    <br />
    <br />
    <img src="./screenshots/step 1.2.png" />
 
 3. Go to the Credentials Tab of your project
-    <br />
+   <br />
    <br />
    <img src="./screenshots/step 2.png"/>
 
 4. Click on Create Credentials and Choose the OAuth Client ID option
-    <br />
+   <br />
    <br />
    <img src="./screenshots/step 3.png" />
 
